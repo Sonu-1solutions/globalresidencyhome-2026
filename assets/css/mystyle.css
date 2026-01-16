@@ -1,0 +1,99 @@
+.pagetitle{
+    padding: 15px;
+    background-color: #FFC734;
+    margin: -4px -25px;
+}
+.sidebar .sidebar-logo {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.logo{
+    width: 80%;
+}
+.sidebar .slimScrollDiv {
+    top: 70px;
+    padding: 0;
+}
+
+.header{
+    height: 70px;
+}
+.sidebar .sidebar-menu > ul > li ul li a {
+    padding: 17px;
+}
+.sidebar .sidebar-menu > ul > li ul li a span {
+    font-size: 16px;
+    
+}
+.card-header {
+    text-align: center;
+}
+.add-user-btn {
+  background: #ff8c2b;
+  color: #fff;
+  border-radius: 25px;
+  padding: 8px 14px;
+  display: flex;
+  width: 116px !important;
+  margin-top: 30px;
+  
+}
+.card-title {
+    font-size: 24px;
+
+}
+.add-advisor{
+    margin-bottom: 30px;
+}
+
+.advisor-btn:hover,
+.advisor-btn:active,
+.advisor-btn:focus,
+.advisor-btn{
+    background-color: #ff8c2b;
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+}
+.form-control {
+
+    height: 55px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile */
+@media screen and (max-width: 481px) {
+  .pagetitle{
+    margin: -15px -25px;
+}
+.header{
+    height: 50px;
+}
+.sidebar .slimScrollDiv {
+    top: 0;
+
+}
+
+}
+ 
+/* mobile */
