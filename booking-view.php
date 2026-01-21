@@ -932,8 +932,9 @@ if (isset($_POST['formupdate'])) {
                             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#plotNoAssign">
                                 Plot No Assign
                             </button> -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#myModal">Plot No Assign</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                Plot No Assign
+                            </button>
                         </div>
                         <?php
                     }
@@ -943,72 +944,84 @@ if (isset($_POST['formupdate'])) {
 
 
                 <?php
-            if ($booking_installstatus == 'Completed') {
-              ?>
-              <div class="row" style="border-top: 2px solid #000;">
-                <div class="col-lg-4" style="margin-top: 20px;">
-                  <p><strong>Installment Date</strong> :
-                    <?php echo htmlspecialchars(@$propertydata['booking_installdate']); ?></p>
-                  <p><strong>Plot No</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plotno']); ?></p>
-                  <p><strong>Plot Size</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plotarea']); ?></p>
-                  <p><strong>Plot Rate</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plotrate']); ?></p>
-                  <p><strong>Plot PLC (%)</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plc']); ?></p>
-                  <p><strong>Plot EDC (%)</strong> : <?php echo htmlspecialchars(@$propertydata['booking_edc']); ?></p>
-                  <p><strong>Plot IDC (%)</strong> : <?php echo htmlspecialchars(@$propertydata['booking_idc']); ?></p>
-                  <p><strong>Plot Total Amount</strong> :
-                    <?php echo number_format($propertydata['booking_totalamt'], 2); ?></p>
-                </div>
+                if ($booking_installstatus == 'Completed') {
+                    ?>
+                    <div class="row" style="border-top: 2px solid #000;">
+                        <div class="col-lg-4" style="margin-top: 20px;">
+                            <p><strong>Installment Date</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_installdate']); ?>
+                            </p>
+                            <p><strong>Plot No</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plotno']); ?>
+                            </p>
+                            <p><strong>Plot Size</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_plotarea']); ?></p>
+                            <p><strong>Plot Rate</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_plotrate']); ?></p>
+                            <p><strong>Plot PLC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_plc']); ?></p>
+                            <p><strong>Plot EDC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_edc']); ?></p>
+                            <p><strong>Plot IDC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_idc']); ?></p>
+                            <p><strong>Plot Total Amount</strong> :
+                                <?php echo number_format($propertydata['booking_totalamt'], 2); ?>
+                            </p>
+                        </div>
 
-                <div class="col-lg-8" style="margin-top: 20px;">
-                  <h4>Payment Installment
-                    <hr>
-                  </h4>
-                  <div class="table-responsive">
-                    <table id="example1" class="table table-bordered table-striped">
-                      <thead>
-                        <tr>
-                          <th>SNO</th>
-                          <th>Installment Date</th>
-                          <th>Particulars</th>
-                          <th>%</th>
-                          <th>Amount</th>
-                          <th>Remaining Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                        $sn = 1;
-                        $cumulative_amount = 0;
-                        $totalamt = $propertydata['booking_totalamt'];
-                        $installmentqry = "SELECT * FROM `installment_master` WHERE installment_bookingid='$booking_id' ORDER BY installment_date";
-                        $installmentres = mysqli_query($con, $installmentqry);
-                        if (!$installmentres) {
-                          error_log("Failed to fetch installments: " . mysqli_error($con));
-                        }
-                        while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
-                          $cumulative_amount += $installmentdata['installment_amount'];
-                          $remaining_amount = $totalamt - $cumulative_amount;
-                          ?>
-                          <tr>
-                            <td><?php echo $sn; ?></td>
-                            <td><?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?></td>
-                            <td><?php echo htmlspecialchars($installmentdata['installment_particular']); ?></td>
-                            <td><?php echo htmlspecialchars($installmentdata['installment_emiper']); ?></td>
-                            <td><?php echo number_format($installmentdata['installment_amount'], 2); ?></td>
-                            <td><?php echo number_format($remaining_amount, 2); ?></td>
-                          </tr>
-                          <?php
-                          $sn++;
-                        }
-                        ?>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <?php
-            }
-            ?>
+                        <div class="col-lg-8" style="margin-top: 20px;">
+                            <h4>Payment Installment
+                                <hr>
+                            </h4>
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>SNO</th>
+                                            <th>Installment Date</th>
+                                            <th>Particulars</th>
+                                            <th>%</th>
+                                            <th>Amount</th>
+                                            <th>Remaining Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $sn = 1;
+                                        $cumulative_amount = 0;
+                                        $totalamt = $propertydata['booking_totalamt'];
+                                        $installmentqry = "SELECT * FROM `installment_master` WHERE installment_bookingid='$booking_id' ORDER BY installment_date";
+                                        $installmentres = mysqli_query($con, $installmentqry);
+                                        if (!$installmentres) {
+                                            error_log("Failed to fetch installments: " . mysqli_error($con));
+                                        }
+                                        while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
+                                            $cumulative_amount += $installmentdata['installment_amount'];
+                                            $remaining_amount = $totalamt - $cumulative_amount;
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $sn; ?></td>
+                                                <td><?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
+                                                </td>
+                                                <td><?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
+                                                </td>
+                                                <td><?php echo htmlspecialchars($installmentdata['installment_emiper']); ?></td>
+                                                <td><?php echo number_format($installmentdata['installment_amount'], 2); ?></td>
+                                                <td><?php echo number_format($remaining_amount, 2); ?></td>
+                                            </tr>
+                                            <?php
+                                            $sn++;
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
+
+
 
 
             </div>
@@ -1016,14 +1029,14 @@ if (isset($_POST['formupdate'])) {
         </div>
 
         <!-- <head> -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- </head> -->
 
         <div class="container">
             <!-- Modal -->
-            <div class="modal fade" id="plotNoAssign" role="dialog">
+            <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
@@ -1088,7 +1101,7 @@ if (isset($_POST['formupdate'])) {
                                 </div>
                             </form>
                         </div>
-  
+
                     </div>
 
                 </div>
@@ -1105,8 +1118,8 @@ if (isset($_POST['formupdate'])) {
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script type="text/javascript">
-      function getProductAmt() {
+<script type="text/javascript">
+    function getProductAmt() {
         var booking_plotarea = parseFloat(document.getElementById('booking_plotarea').value) || 0;
         var booking_plotrate = parseFloat(document.getElementById('booking_plotrate').value) || 0;
         var booking_plc = parseFloat(document.getElementById('booking_plc').value) || 0;
@@ -1120,26 +1133,26 @@ if (isset($_POST['formupdate'])) {
         var total_amount = base_amount + plc_amount + edc_amount + idc_amount;
 
         if (isNaN(total_amount) || total_amount <= 0) {
-          console.error("Invalid total amount: area=" + booking_plotarea + ", rate=" + booking_plotrate +
-            ", plc=" + booking_plc + ", edc=" + booking_edc + ", idc=" + booking_idc);
-          $('#booking_totalamt').val('0.00');
+            console.error("Invalid total amount: area=" + booking_plotarea + ", rate=" + booking_plotrate +
+                ", plc=" + booking_plc + ", edc=" + booking_edc + ", idc=" + booking_idc);
+            $('#booking_totalamt').val('0.00');
         } else {
-          $('#booking_totalamt').val(total_amount.toFixed(2));
+            $('#booking_totalamt').val(total_amount.toFixed(2));
         }
-      }
+    }
 
-      $(document).ready(function () {
+    $(document).ready(function () {
         $("#booking_paymode").change(function () {
-          if ($(this).val() == "offline") {
-            $("#account-details").show();
-            $("#netbanking-details").hide();
-          } else if ($(this).val() == "netbanking") {
-            $("#account-details").hide();
-            $("#netbanking-details").show();
-          } else {
-            $("#account-details").hide();
-            $("#netbanking-details").hide();
-          }
+            if ($(this).val() == "offline") {
+                $("#account-details").show();
+                $("#netbanking-details").hide();
+            } else if ($(this).val() == "netbanking") {
+                $("#account-details").hide();
+                $("#netbanking-details").show();
+            } else {
+                $("#account-details").hide();
+                $("#netbanking-details").hide();
+            }
         });
 
         // Trigger calculation on input change
@@ -1147,41 +1160,41 @@ if (isset($_POST['formupdate'])) {
 
         // Validate Plot No Assign form
         $('form[action="booking-plot-assign.php"]').submit(function (event) {
-          var totalamt = parseFloat($('#booking_totalamt').val()) || 0;
-          var plotarea = parseFloat($('#booking_plotarea').val()) || 0;
-          var plotrate = parseFloat($('#booking_plotrate').val()) || 0;
-          var installdate = $('#booking_installdate').val();
-          var plotno = $('#booking_plotno').val().trim();
-          if (totalamt <= 0) {
-            alert("Error: Total Amount must be greater than 0. Please check Plot Size and Plot Rate.");
-            event.preventDefault();
-            return false;
-          }
-          if (plotarea <= 0) {
-            alert("Error: Plot Size must be greater than 0.");
-            event.preventDefault();
-            return false;
-          }
-          if (plotrate <= 0) {
-            alert("Error: Plot Rate must be greater than 0.");
-            event.preventDefault();
-            return false;
-          }
-          if (!installdate || !Date.parse(installdate)) {
-            alert("Error: Please enter a valid Installment Date.");
-            event.preventDefault();
-            return false;
-          }
-          if (!plotno) {
-            alert("Error: Plot No is required.");
-            event.preventDefault();
-            return false;
-          }
+            var totalamt = parseFloat($('#booking_totalamt').val()) || 0;
+            var plotarea = parseFloat($('#booking_plotarea').val()) || 0;
+            var plotrate = parseFloat($('#booking_plotrate').val()) || 0;
+            var installdate = $('#booking_installdate').val();
+            var plotno = $('#booking_plotno').val().trim();
+            if (totalamt <= 0) {
+                alert("Error: Total Amount must be greater than 0. Please check Plot Size and Plot Rate.");
+                event.preventDefault();
+                return false;
+            }
+            if (plotarea <= 0) {
+                alert("Error: Plot Size must be greater than 0.");
+                event.preventDefault();
+                return false;
+            }
+            if (plotrate <= 0) {
+                alert("Error: Plot Rate must be greater than 0.");
+                event.preventDefault();
+                return false;
+            }
+            if (!installdate || !Date.parse(installdate)) {
+                alert("Error: Please enter a valid Installment Date.");
+                event.preventDefault();
+                return false;
+            }
+            if (!plotno) {
+                alert("Error: Plot No is required.");
+                event.preventDefault();
+                return false;
+            }
         });
-      });
-    </script>
+    });
+</script>
 
-    
+
 
 
 <?php

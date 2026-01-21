@@ -45,6 +45,19 @@ if (!empty($user_image) && file_exists($uploadPath)) {
 // INCLUDE HEADER (AFTER SESSION)
 include "layout/head.php";
 
+
+
+$getuserid=$_GET['getuserid'];
+if($getuserid)
+{
+$productqry1=mysqli_query($con,"select * from user_master where user_id='$getuserid'");
+$productdata1=mysqli_fetch_assoc($productqry1);
+}
+else
+{
+echo '<script> window.location="user-list"; </script>';
+}
+
 ?>
 
 <!-- Page Wrapper -->
@@ -58,6 +71,72 @@ include "layout/head.php";
 				<h1>Edit Advisor</h1>
 			</div>
 		</div>
+
+		<div class="row">
+      <form action="user-add-db.php" method="post">
+
+        <input type="hidden" name="usergetid" value="0">
+
+        <div class="row">
+
+
+          <div class="col-md-3"></div>
+          <div class="col-md-6 mt-3">
+            <div class="row">
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Name *</label>
+                <input type="hidden" class="form-control" name="usergetid" value="<?php echo $productdata1['user_id'] ?>" required />
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Mobile *</label>
+                <input type="text" class="form-control py-4" name="user_mobile" required>
+              </div>
+
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Email *</label>
+                <input type="email" class="form-control py-4" name="user_email" required>
+              </div>
+
+              <div class="col-md-6  mb-5">
+                <label class="fw-bold">User Password *</label>
+                <input type="password" class="form-control py-4" name="user_password" required>
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Department *</label>
+                <select class="form-control department" name="user_department" required>
+                  <option value="">Select</option>
+                  <option value="Admin">Admin</option>
+                  <option value="User">Advisor</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">Profile Image</label>
+                <input type="file" class="form-control py-4" name="profile_image" accept="image/*">
+              </div>
+
+              <div class="col-md-12  mb-5">
+                <button type="submit" name="usergetadd" class="btn advisor-btn py-3" style="width:100%">Submit</button>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+
+
+
+
+
+
+        </div>
+      </form>
+    </div>
+
 
 
 		
