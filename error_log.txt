@@ -1,0 +1,271 @@
+[19-Jan-2026 12:25:45 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:26:04 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:26:26 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:26:51 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:28:09 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:28:09 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:28:25 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:28:26 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:29:00 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:29:01 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 66
+[19-Jan-2026 12:30:46 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 65
+[19-Jan-2026 12:34:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 65
+[19-Jan-2026 12:34:15 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 65
+[19-Jan-2026 12:36:06 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 65
+[19-Jan-2026 12:36:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_id" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 65
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:02:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:04:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:14:43 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:25:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:26:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 06:59:59 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 253
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 253
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 254
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 254
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 255
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 255
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 256
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 256
+[20-Jan-2026 07:03:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:575
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 575
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 250
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 250
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 251
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 251
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 252
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 252
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 253
+[20-Jan-2026 07:05:15 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 253
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:09:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:09:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:10:12 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:11:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 07:17:55 Europe/Berlin] generateInstallments called with: booking_id=3779, payplan=Twelve Months, totalamt=220000.00, installdate=2025-12-15
+[20-Jan-2026 07:17:55 Europe/Berlin] Pending amount after first three installments: 132000
+[20-Jan-2026 07:17:55 Europe/Berlin] Remaining installment amount: 13200, percentage: 6%
+[20-Jan-2026 07:17:55 Europe/Berlin] Successfully generated 13 installments for booking_id=3779
+[20-Jan-2026 07:17:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:11:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:12:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:13:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 12:13:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[20-Jan-2026 13:35:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:12:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:13:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[21-Jan-2026 06:47:56 Europe/Berlin] generateInstallments called with: booking_id=3790, payplan=Six Months, totalamt=106000.00, installdate=2026-01-21
+[21-Jan-2026 06:47:56 Europe/Berlin] Pending amount after first three installments: 63600
+[21-Jan-2026 06:47:56 Europe/Berlin] Remaining installment amount: 15900, percentage: 15%
+[21-Jan-2026 06:47:56 Europe/Berlin] Successfully generated 7 installments for booking_id=3790
+[21-Jan-2026 06:47:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565

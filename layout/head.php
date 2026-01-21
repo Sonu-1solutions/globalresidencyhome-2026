@@ -8,7 +8,7 @@
     <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
     <meta name="author" content="Dreams technologies - Bootstrap Admin Template">
     <meta name="robots" content="noindex, nofollow">
-    <title>Smarthr Admin Template</title>
+    <title>Global Residency</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 /* ✅ Database connection */
-require_once 'database.php';   // ← yahi missing tha
+require_once 'database.php';   
 
 $uid = $_SESSION['user_id'];
 
@@ -96,7 +96,6 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
 
 
 ?>
-
 
     <!-- Main Wrapper -->
     <div class="main-wrapper">
@@ -157,11 +156,11 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
                                         </div>
                                         <div class="card-body">
                                             <a class="dropdown-item d-inline-flex align-items-center p-0 py-2"
-                                                href="profile.html">
+                                                href="profile-edit.php">
                                                 <i class="ti ti-user-circle me-1"></i>Edit Profile
                                             </a>
                                             <a class="dropdown-item d-inline-flex align-items-center p-0 py-2"
-                                                href="bussiness-settings.html">
+                                                href="change-password.php">
                                                 <i class="ti ti-lock me-1"></i>Change Password
                                             </a>
                                         </div>
@@ -183,8 +182,8 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
                         <i class="fa fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="#">Edit Profile</a>
-                        <a class="dropdown-item" href="#">Change Password</a>
+                        <a class="dropdown-item" href="profile-edit.php">Edit Profile</a>
+                        <a class="dropdown-item" href="change-password.php">Change Password</a>
                         <a class="dropdown-item" href="logout.php">Logout</a>
                     </div>
                 </div>
@@ -249,14 +248,14 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
                                     </a>
                                 </li>
 
-                                <li class="<?= ($currentPage == 'advisor.php') ? 'active' : '' ?>">
-                                    <a href="#">
+                                <li class="<?= ($currentPage == 'advisor-list.php') ? 'active' : '' ?>">
+                                    <a href="advisor-list.php">
                                         <i class="ti ti-user"></i><span>Advisor</span>
                                     </a>
                                 </li>
 
-                                <li class="<?= ($currentPage == 'booking.php') ? 'active' : '' ?>">
-                                    <a href="#">
+                                <li class="<?= ($currentPage == 'booking-list.php') ? 'active' : '' ?>">
+                                    <a href="booking-list.php">
                                         <i class="ti ti-details"></i><span>Online Booking</span>
                                     </a>
                                 </li>

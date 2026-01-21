@@ -1,8 +1,9 @@
-.pagetitle{
+.pagetitle {
     padding: 15px;
     background-color: #FFC734;
     margin: -4px -25px;
 }
+
 .sidebar .sidebar-logo {
     position: absolute;
     height: auto;
@@ -10,90 +11,106 @@
     padding: 10px;
 }
 
-.logo{
+.logo {
     width: 80%;
 }
+
 .sidebar .slimScrollDiv {
     top: 70px;
     padding: 0;
 }
 
-.header{
+.header {
     height: 70px;
 }
-.sidebar .sidebar-menu > ul > li ul li a {
+
+.sidebar .sidebar-menu>ul>li ul li a {
     padding: 17px;
 }
-.sidebar .sidebar-menu > ul > li ul li a span {
+
+.sidebar .sidebar-menu>ul>li ul li a span {
     font-size: 16px;
-    
+    padding: 3px;
+
 }
+
+    .sidebar .sidebar-menu > ul > li ul > li.active a,
+    .sidebar .sidebar-menu > ul > li ul li{
+    border-radius: 0px;
+}
+
 .card-header {
     text-align: center;
 }
+
 .add-user-btn {
-  background: #ff8c2b;
-  color: #fff;
-  border-radius: 25px;
-  padding: 8px 14px;
-  display: flex;
-  width: 116px !important;
-  margin-top: 30px;
-  
+    background: #ff8c2b;
+    color: #fff;
+    border-radius: 25px;
+    padding: 8px 14px;
+    display: flex;
+    width: 116px !important;
+    margin-top: 30px;
+
 }
+
 .card-title {
     font-size: 24px;
 
 }
-.add-advisor{
+
+.add-advisor {
     margin-bottom: 30px;
 }
 
 .advisor-btn:hover,
 .advisor-btn:active,
 .advisor-btn:focus,
-.advisor-btn{
+.advisor-btn {
     background-color: #ff8c2b;
     color: #fff;
     font-weight: 700;
     font-size: 24px;
 }
-.form-control {
+
+.department {
 
     height: 55px;
 
 }
 
+.action-btn {
+    margin: 3px;
+}
 
+/* Active menu background */
+ul li.active > a {
+    background-color: #FF7D23 !important;   /* apni choice ka color */
 
+}
+.avatar.avatar-sm {
+    width: 3.0rem;
+    height: 3.0rem;
+    margin-right: 10px;
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 /* mobile */
 @media screen and (max-width: 481px) {
-  .pagetitle{
-    margin: -15px -25px;
-}
-.header{
-    height: 50px;
-}
-.sidebar .slimScrollDiv {
-    top: 0;
+    .pagetitle {
+        margin: -15px -25px;
+    }
+
+    .header {
+        height: 50px;
+    }
+
+    .sidebar .slimScrollDiv {
+        top: 0;
+
+    }
 
 }
 
-}
- 
 /* mobile */

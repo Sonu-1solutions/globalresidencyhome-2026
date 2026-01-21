@@ -124,76 +124,75 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
     <div class="row">
       <form method="post" action="advisor-add-db.php" enctype="multipart/form-data">
 
-                  <input type="hidden" name="usergetid" value="0">
+        <input type="hidden" name="usergetid" value="0">
 
-                  <div class="row">
-
-
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6 mt-3">
-                      <div class="row">
-
-                        <div class="col-md-6 mb-5">
-                          <label class="fw-bold">User Name *</label>
-                          <input type="text" class="form-control py-4" name="user_name" required>
-                        </div>
-
-                        <div class="col-md-6 mb-5">
-                          <label class="fw-bold">User Mobile *</label>
-                          <input type="text" class="form-control py-4" name="user_mobile" required>
-                        </div>
+        <div class="row">
 
 
-                        <div class="col-md-6 mb-5">
-                          <label class="fw-bold">User Email *</label>
-                          <input type="email" class="form-control py-4" name="user_email" required>
-                        </div>
+          <div class="col-md-3"></div>
+          <div class="col-md-6 mt-3">
+            <div class="row">
 
-                        <div class="col-md-6  mb-5">
-                          <label class="fw-bold">User Password *</label>
-                          <input type="password" class="form-control py-4" name="user_password" required>
-                        </div>
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Name *</label>
+                <input type="text" class="form-control py-4" name="user_name" required>
+              </div>
 
-                        <div class="col-md-6 mb-5">
-                          <label class="fw-bold">User Department *</label>
-                          <select class="form-control ss" name="user_department" required>
-                            <option value="">Select</option>
-                            <option value="Admin">Admin</option>
-                            <option value="User">Advisor</option>
-                          </select>
-                        </div>
-
-                        <div class="col-md-6 mb-5">
-                          <label class="fw-bold">Profile Image</label>
-                          <input type="file" class="form-control py-4" name="profile_image" accept="image/*">
-                        </div>
-
-                        <div class="col-md-12  mb-5">
-                          <button type="submit" name="usergetadd" class="btn advisor-btn py-3"
-                            style="width:100%">Submit</button>
-                        </div>
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Mobile *</label>
+                <input type="text" class="form-control py-4" name="user_mobile" required>
+              </div>
 
 
-                      </div>
-                    </div>
-                    <div class="col-md-3"></div>
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Email *</label>
+                <input type="email" class="form-control py-4" name="user_email" required>
+              </div>
 
+              <div class="col-md-6  mb-5">
+                <label class="fw-bold">User Password *</label>
+                <input type="password" class="form-control py-4" name="user_password" required>
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">User Department *</label>
+                <select class="form-control department" name="user_department" required>
+                  <option value="">Select</option>
+                  <option value="Admin">Admin</option>
+                  <option value="User">Advisor</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-5">
+                <label class="fw-bold">Profile Image</label>
+                <input type="file" class="form-control py-4" name="profile_image" accept="image/*">
+              </div>
+
+              <div class="col-md-12  mb-5">
+                <button type="submit" name="usergetadd" class="btn advisor-btn py-3" style="width:100%">Submit</button>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="col-md-3"></div>
 
 
 
 
 
-                  </div>
-                </form>
+
+        </div>
+      </form>
     </div>
 
-    
+
 
 
 
 
   </div>
-  
+
 </div>
 
 <!-- Delete Modal -->
