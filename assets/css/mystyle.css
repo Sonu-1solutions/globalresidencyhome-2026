@@ -95,6 +95,11 @@ ul li.active > a {
 
 }
 
+.modal-header {
+
+    justify-content: center !important;
+}
+
 
 /* mobile */
 @media screen and (max-width: 481px) {

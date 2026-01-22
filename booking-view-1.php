@@ -1052,60 +1052,6 @@ if (isset($_POST['formupdate'])) {
                                 <input type="hidden" name="booking_payplan"
                                     value="<?php echo htmlspecialchars($propertydata['booking_payplan']); ?>" required>
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">Installment Date:</label>
-                                        <input type="date" class="form-control" id="booking_installdate"
-                                            name="booking_installdate" required>
-
-                                            </div>
-                                            
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">Plot Size:</label>
-                                        <input type="number" class="form-control" id="booking_plotarea"
-                                            name="booking_plotarea" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">Plot Rate:</label>
-                                        <input type="number" class="form-control" id="booking_plotrate"
-                                            name="booking_plotrate" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">PLC (%):</label>
-                                        <input type="number" class="form-control" id="booking_plc" name="booking_plc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">EDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_edc" name="booking_edc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">IDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_idc" name="booking_idc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                            </div>
-                                            
-                                            <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">IDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_idc" name="booking_idc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-
-
-
                                 
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Installment Date:</label>

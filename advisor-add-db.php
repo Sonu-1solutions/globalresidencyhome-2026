@@ -88,6 +88,6 @@ if (isset($_POST['usergetadd'])) {
         }
     }
 
-    // echo '<script>window.location="advisor-list.php";</script>';
+    echo '<script>window.location="advisor-list.php";</script>';
 }
 ?>

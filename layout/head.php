@@ -254,11 +254,19 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
                                     </a>
                                 </li>
 
+                                <li class="<?= ($currentPage == 'advisor-details.php') ? 'active' : '' ?>">
+                                    <a href="advisor-details.php">
+                                        <i class="ti ti-details"></i><span>Advisor Details</span>
+                                    </a>
+                                </li>
+
                                 <li class="<?= ($currentPage == 'booking-list.php') ? 'active' : '' ?>">
                                     <a href="booking-list.php">
                                         <i class="ti ti-details"></i><span>Online Booking</span>
                                     </a>
                                 </li>
+
+                                
                             </ul>
                         </li>
 

@@ -269,3 +269,426 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[21-Jan-2026 08:48:59 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 08:48:59 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 08:48:59 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 08:49:14 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 08:49:14 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 08:49:14 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 08:49:21 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 08:49:21 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 08:49:21 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:36:41 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 09:36:41 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:36:41 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:38:02 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 09:38:02 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:38:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:40:22 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 09:40:22 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:40:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:41:12 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 09:41:12 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 09:41:12 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:00:51 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 10:00:51 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:00:51 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:01:17 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3783
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 10:01:17 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:01:17 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3783')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:18:40 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc1213
+    [formadd] => 
+)
+
+[21-Jan-2026 10:18:40 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:18:40 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:20:56 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc1213
+    [formadd] => 
+)
+
+[21-Jan-2026 10:20:56 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:20:56 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:21:44 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 10:21:44 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:21:44 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:57:26 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 10:57:26 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:57:26 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:58:22 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc1213
+    [formadd] => 
+)
+
+[21-Jan-2026 10:58:22 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 10:58:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:04:03 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc1213
+    [formadd] => 
+)
+
+[21-Jan-2026 11:04:03 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:04:03 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:11:59 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 11:11:59 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:11:59 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:12:53 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 11:12:53 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:12:53 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:16:27 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 11:16:27 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:16:27 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:154
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(154): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 154
+[21-Jan-2026 11:21:33 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 11:21:33 Europe/Berlin] PHP Warning:  Undefined variable $con in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 156
+[21-Jan-2026 11:21:33 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: mysqli_real_escape_string(): Argument #1 ($mysql) must be of type mysqli, null given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php:156
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php(156): mysqli_real_escape_string(NULL, '3792')
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 156
+[21-Jan-2026 11:21:47 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3792
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 10600.00
+    [booking_plotno] => Abc123
+    [formadd] => 
+)
+
+[21-Jan-2026 11:21:47 Europe/Berlin] generateInstallments called with: booking_id=3792, payplan=Basic, totalamt=10600, installdate=2026-02-01
+[21-Jan-2026 11:21:47 Europe/Berlin] Pending amount after first three installments: 0
+[21-Jan-2026 11:21:47 Europe/Berlin] Successfully generated 3 installments for booking_id=3792
+[22-Jan-2026 08:39:29 Europe/Berlin] Advisor 'Rajesh Yadav' not found in user_master for booking_id=86
+[22-Jan-2026 11:33:37 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
+[22-Jan-2026 11:34:15 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
+[22-Jan-2026 11:44:26 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
+[22-Jan-2026 11:46:46 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
+[22-Jan-2026 11:47:10 Europe/Berlin] Advisor 'Jitendra Sain' not found in user_master for booking_id=110
