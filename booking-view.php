@@ -942,6 +942,17 @@ if (isset($_POST['formupdate'])) {
                 </div>
 
 
+                <?php
+                $booking_block = "SELECT booking_blockno FROM booking_master WHERE booking_id = '$booking_id'";
+                $result = mysqli_query($con, $booking_block);
+
+                $booking_blockno = mysqli_fetch_assoc($result);
+
+
+
+                ?>
+
+
 
                 <?php
                 if ($booking_installstatus == 'Completed') {
@@ -954,18 +965,28 @@ if (isset($_POST['formupdate'])) {
                             <p><strong>Plot No</strong> : <?php echo htmlspecialchars(@$propertydata['booking_plotno']); ?>
                             </p>
                             <p><strong>Plot Size</strong> :
-                                <?php echo htmlspecialchars(@$propertydata['booking_plotarea']); ?></p>
-                            <p><strong>Plot Rate</strong> :
-                                <?php echo htmlspecialchars(@$propertydata['booking_plotrate']); ?></p>
-                            <p><strong>Plot PLC (%)</strong> :
-                                <?php echo htmlspecialchars(@$propertydata['booking_plc']); ?></p>
-                            <p><strong>Plot EDC (%)</strong> :
-                                <?php echo htmlspecialchars(@$propertydata['booking_edc']); ?></p>
-                            <p><strong>Plot IDC (%)</strong> :
-                                <?php echo htmlspecialchars(@$propertydata['booking_idc']); ?></p>
-                            <p><strong>Plot Total Amount</strong> :
-                                <?php echo number_format($propertydata['booking_totalamt'], 2); ?>
+                                <?php echo htmlspecialchars(@$propertydata['booking_plotarea']); ?>
                             </p>
+                            <p><strong>Plot Rate</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_plotrate']); ?>
+                            </p>
+                            <p><strong>Plot PLC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_plc']); ?>
+                            </p>
+                            <p><strong>Plot EDC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_edc']); ?>
+                            </p>
+                            <p><strong>Plot IDC (%)</strong> :
+                                <?php echo htmlspecialchars(@$propertydata['booking_idc']); ?>
+                            </p>
+                            <p><strong>Plot Total Amount</strong> :
+                                <?php echo number_format($$propertydata['booking_totalamt'], 2); ?>
+                            </p>
+                            <p><strong>Block No</strong> :
+                                <?php echo $booking_blockno['booking_blockno']; ?>
+                            </p>
+
+
                         </div>
 
                         <div class="col-lg-8" style="margin-top: 20px;">
@@ -1034,6 +1055,17 @@ if (isset($_POST['formupdate'])) {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- </head> -->
 
+
+
+
+
+
+
+
+
+
+
+
         <div class="container">
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
@@ -1055,105 +1087,118 @@ if (isset($_POST['formupdate'])) {
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">Installment Date:</label>
-                                        <input type="date" class="form-control" id="booking_installdate"
-                                            name="booking_installdate" required>
+                                                <label for="recipient-name" class="col-form-label">Installment
+                                                    Date:</label>
+                                                <input type="date" class="form-control" id="booking_installdate"
+                                                    name="booking_installdate" required>
 
                                             </div>
-                                            
+
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">Plot Size:</label>
-                                        <input type="number" class="form-control" id="booking_plotarea"
-                                            name="booking_plotarea" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
+                                                <input type="number" class="form-control" id="booking_plotarea"
+                                                    name="booking_plotarea" required min="0" value="0"
+                                                    oninput="getProductAmt()" step="0.01">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">Plot Rate:</label>
-                                        <input type="number" class="form-control" id="booking_plotrate"
-                                            name="booking_plotrate" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
+                                                <input type="number" class="form-control" id="booking_plotrate"
+                                                    name="booking_plotrate" required min="0" value="0"
+                                                    oninput="getProductAmt()" step="0.01">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">PLC (%):</label>
-                                        <input type="number" class="form-control" id="booking_plc" name="booking_plc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
+                                                <input type="number" class="form-control" id="booking_plc"
+                                                    name="booking_plc" required min="0" value="0"
+                                                    oninput="getProductAmt()" step="0.01">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">EDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_edc" name="booking_edc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
+                                                <input type="number" class="form-control" id="booking_edc"
+                                                    name="booking_edc" required min="0" value="0"
+                                                    oninput="getProductAmt()" step="0.01">
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">IDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_idc" name="booking_idc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
+                                                <input type="number" class="form-control" id="booking_idc"
+                                                    name="booking_idc" required min="0" value="0"
+                                                    oninput="getProductAmt()" step="0.01">
                                             </div>
-                                            
+
                                             <div class="col-md-6">
-                                                <label for="recipient-name" class="col-form-label">IDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_idc" name="booking_idc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
+                                                <label for="recipient-name" class="col-form-label">Plot Amount:</label>
+                                                <input type="number" class="form-control" id="booking_totalamt"
+                                                    name="booking_totalamt" required min="0" readonly>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                <label for="recipient-name" class="col-form-label">Plot No:</label>
+                                                <input type="text" class="form-control" id="booking_plotno"
+                                                    name="booking_plotno" required>
+                                            </div>
+
+                                            <div class="col-md-12 mt-3">
+                                                <div class="row">
+                                                    <span>Block No:</span>
+
+                                                    <div class="col-md-3 mt-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="booking_blockno" id="blockA" value="A" required>
+                                                            <label class="form-check-label" for="blockA"
+                                                                style="font-weight: normal;">
+                                                                Block A
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 mt-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="booking_blockno" id="blockB" value="B">
+                                                            <label class="form-check-label" for="blockB"
+                                                                style="font-weight: normal;">Block B</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 mt-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="booking_blockno" id="blockC" value="C">
+                                                            <label class="form-check-label" for="blockC"
+                                                                style="font-weight: normal;">Block C</label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-3 mt-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="booking_blockno" id="blockD" value="D">
+                                                            <label class="form-check-label" for="blockD"
+                                                                style="font-weight: normal;">Block D</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
                                         </div>
 
 
                                     </div>
 
-
-
-
-                                
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Installment Date:</label>
-                                        <input type="date" class="form-control" id="booking_installdate"
-                                            name="booking_installdate" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Plot Size:</label>
-                                        <input type="number" class="form-control" id="booking_plotarea"
-                                            name="booking_plotarea" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Plot Rate:</label>
-                                        <input type="number" class="form-control" id="booking_plotrate"
-                                            name="booking_plotrate" required min="0" value="0" oninput="getProductAmt()"
-                                            step="0.01">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">PLC (%):</label>
-                                        <input type="number" class="form-control" id="booking_plc" name="booking_plc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">EDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_edc" name="booking_edc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">IDC (%):</label>
-                                        <input type="number" class="form-control" id="booking_idc" name="booking_idc"
-                                            required min="0" value="0" oninput="getProductAmt()" step="0.01">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Plot Amount:</label>
-                                        <input type="number" class="form-control" id="booking_totalamt"
-                                            name="booking_totalamt" required min="0" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Plot No:</label>
-                                        <input type="text" class="form-control" id="booking_plotno"
-                                            name="booking_plotno" required>
-                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" name="formadd" class="btn btn-primary">Generate Now</button>
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button type="submit" name="formadd" class="btn btn-primary">
+                                        Generate Now
+                                    </button>
                                 </div>
+
                             </form>
                         </div>
 

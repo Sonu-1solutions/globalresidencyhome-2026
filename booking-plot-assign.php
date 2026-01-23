@@ -184,27 +184,37 @@ if (isset($_POST['formadd'])) {
     $cdate = date('Y-m-d H:i:s');
     $cby = $_SESSION['user_id'] ?? 0;
 
-    // Update booking_master
-    $updateleadsql = "UPDATE `booking_master` SET 
-        `booking_installstatus`='Completed',
-        `booking_installdate`='$booking_installdate',
-        `booking_plotarea`='$booking_plotarea',
-        `booking_plotrate`='$booking_plotrate',
-        `booking_plc`='$booking_plc',
-        `booking_edc`='$booking_edc',
-        `booking_idc`='$booking_idc',
-        `booking_totalamt`='$booking_totalamt',
-        `booking_plotno`='$booking_plotno'
-        WHERE booking_id='$booking_id'";
-    
-    if (!mysqli_query($con, $updateleadsql)) {
-        error_log("Failed to update booking_master: " . mysqli_error($con));
-        header("Location: booking-view?booking_id=$booking_id&error=Failed to update booking");
-        exit;
-    }
+// Get Block No from form
+$booking_blockno = $_POST['booking_blockno'] ?? '';
+
+if ($booking_blockno === '') {
+    header("Location: booking-view?booking_id=$booking_id&error=Please select Block No");
+    exit;
+}
+
+// Update booking_master
+$updateleadsql = "UPDATE `booking_master` SET 
+    `booking_installstatus`='Completed',
+    `booking_installdate`='$booking_installdate',
+    `booking_plotarea`='$booking_plotarea',
+    `booking_plotrate`='$booking_plotrate',
+    `booking_plc`='$booking_plc',
+    `booking_edc`='$booking_edc',
+    `booking_idc`='$booking_idc',
+    `booking_totalamt`='$booking_totalamt',
+    `booking_plotno`='$booking_plotno',
+    `booking_blockno`='$booking_blockno'
+    WHERE booking_id='$booking_id'";
+
+if (!mysqli_query($con, $updateleadsql)) {
+    error_log("Failed to update booking_master: " . mysqli_error($con));
+    header("Location: booking-view?booking_id=$booking_id&error=Failed to update booking");
+    exit;
+}
+
 
     // Generate installments
-    if (!generateInstallments($con, $booking_id, $booking_payplan, $booking_totalamt, $booking_installdate)) {
+    if (!generateInstallments($con, $booking_id, $booking_payplan, $booking_totalamt, $booking_installdate, $booking_blockno,)) {
         error_log("Failed to generate installments for booking_id=$booking_id");
         header("Location: booking-view?booking_id=$booking_id&error=Failed to generate installments");
         exit;

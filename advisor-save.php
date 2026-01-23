@@ -55,8 +55,42 @@ include "layout/head.php";
 
         <!-- Breadcrumb -->
         <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
-            <h1>Advisor Datils</h1>
+            <h1>Advisor Details</h1>
         </div>
+
+
+        <form action="advisor-save.php" method="post">
+
+
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <label class="fw-bold">Advisor Name</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mt-4">
+                    <button type="submit" name="usergetadd" class="btn advisor-btn" style="height:45px;">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+        </form>
 
 
 

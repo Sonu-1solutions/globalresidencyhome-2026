@@ -692,3 +692,273 @@ Stack trace:
 [22-Jan-2026 11:44:26 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
 [22-Jan-2026 11:46:46 Europe/Berlin] Advisor 'Dheeraj Thakur' not found in user_master for booking_id=3
 [22-Jan-2026 11:47:10 Europe/Berlin] Advisor 'Jitendra Sain' not found in user_master for booking_id=110
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 06:53:28 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 06:53:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 06:53:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[23-Jan-2026 08:23:31 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3793
+    [booking_payplan] => Down Payment
+    [booking_installdate] => 2026-01-23
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 106000.00
+    [booking_plotno] => Abc123
+    [block_no] => A
+    [formadd] => 
+)
+
+[23-Jan-2026 08:23:31 Europe/Berlin] generateInstallments called with: booking_id=3793, payplan=Down Payment, totalamt=106000, installdate=2026-01-23
+[23-Jan-2026 08:23:31 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 08:23:31 Europe/Berlin] Successfully generated 3 installments for booking_id=3793
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 243
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 244
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 245
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Deprecated:  mysqli_real_escape_string(): Passing null to parameter #2 ($string) of type string is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 246
+[23-Jan-2026 08:28:51 Europe/Berlin] generateInstallments called with: booking_id=3793, payplan=Down Payment, totalamt=106000.00, installdate=2026-01-23
+[23-Jan-2026 08:28:51 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 08:28:51 Europe/Berlin] Successfully generated 3 installments for booking_id=3793
+[23-Jan-2026 08:28:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:565
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 565
+[23-Jan-2026 08:30:30 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3785
+    [booking_payplan] => Twenty Four Months
+    [booking_installdate] => 2026-01-24
+    [booking_plotarea] => 10
+    [booking_plotrate] => 100
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 1060.00
+    [booking_plotno] => abcd
+    [block_no] => A
+    [formadd] => 
+)
+
+[23-Jan-2026 08:30:30 Europe/Berlin] generateInstallments called with: booking_id=3785, payplan=Twenty Four Months, totalamt=1060, installdate=2026-01-24
+[23-Jan-2026 08:30:30 Europe/Berlin] Pending amount after first three installments: 636
+[23-Jan-2026 08:30:30 Europe/Berlin] Remaining installment amount: 28.91, percentage: 2.73%
+[23-Jan-2026 08:30:30 Europe/Berlin] Successfully generated 25 installments for booking_id=3785
+[23-Jan-2026 08:49:00 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3794
+    [booking_payplan] => Down Payment
+    [booking_installdate] => 2026-01-25
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 1
+    [booking_idc] => 1
+    [booking_totalamt] => 104000.00
+    [booking_plotno] => Abc123
+    [block_no] => A
+    [formadd] => 
+)
+
+[23-Jan-2026 08:49:00 Europe/Berlin] generateInstallments called with: booking_id=3794, payplan=Down Payment, totalamt=104000, installdate=2026-01-25
+[23-Jan-2026 08:49:00 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 08:49:00 Europe/Berlin] Successfully generated 3 installments for booking_id=3794
+[23-Jan-2026 09:51:05 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3795
+    [booking_payplan] => Six Months
+    [booking_installdate] => 2026-01-24
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 1
+    [booking_edc] => 1
+    [booking_idc] => 1
+    [booking_totalamt] => 103000.00
+    [booking_plotno] => Abc1213
+    [block_no] => D
+    [formadd] => 
+)
+
+[23-Jan-2026 09:51:05 Europe/Berlin] PHP Warning:  Undefined variable $booking_blockno in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-plot-assign.php on line 198
+[23-Jan-2026 09:51:05 Europe/Berlin] generateInstallments called with: booking_id=3795, payplan=Six Months, totalamt=103000, installdate=2026-01-24
+[23-Jan-2026 09:51:05 Europe/Berlin] Pending amount after first three installments: 61800
+[23-Jan-2026 09:51:05 Europe/Berlin] Remaining installment amount: 15450, percentage: 15%
+[23-Jan-2026 09:51:05 Europe/Berlin] Successfully generated 7 installments for booking_id=3795
+[23-Jan-2026 10:13:07 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3796
+    [booking_payplan] => Down Payment
+    [booking_installdate] => 2026-02-01
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 1
+    [booking_edc] => 1
+    [booking_idc] => 1
+    [booking_totalamt] => 103000.00
+    [booking_plotno] => Abc1213
+    [booking_blockno] => A
+    [formadd] => 
+)
+
+[23-Jan-2026 10:13:07 Europe/Berlin] generateInstallments called with: booking_id=3796, payplan=Down Payment, totalamt=103000, installdate=2026-02-01
+[23-Jan-2026 10:13:07 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 10:13:07 Europe/Berlin] Successfully generated 3 installments for booking_id=3796
+[23-Jan-2026 10:19:35 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:975
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php(975): number_format('A', 2)
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:19:42 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:975
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php(975): number_format('A', 2)
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:20:09 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:975
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php(975): number_format('A', 2)
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:20:14 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:975
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php(975): number_format('', 2)
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:20:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:975
+Stack trace:
+#0 C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php(975): number_format('', 2)
+#1 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:21:43 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:21:43 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:21:43 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:21:43 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:22:13 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:23:04 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Warning:  Undefined variable $booking_blockno in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:24:19 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Warning:  Undefined variable $booking_blockno in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:24:24 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:26:06 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:06 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:06 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:06 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:06 Europe/Berlin] PHP Warning:  Undefined variable $booking_blockno in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:26:27 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:27 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:27 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 972
+[23-Jan-2026 10:26:27 Europe/Berlin] PHP Warning:  Undefined variable $booking_blockno in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 975
+[23-Jan-2026 10:27:37 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:27:37 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:27:37 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:27:37 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:32:28 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:32:28 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:32:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:32:28 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:13 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:13 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:13 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:13 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:15 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:15 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:35:15 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:37:25 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3797
+    [booking_payplan] => Down Payment
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 1000
+    [booking_plotrate] => 1000
+    [booking_plc] => 2
+    [booking_edc] => 2
+    [booking_idc] => 2
+    [booking_totalamt] => 1060000.00
+    [booking_plotno] => abcd
+    [booking_blockno] => A
+    [formadd] => 
+)
+
+[23-Jan-2026 10:37:25 Europe/Berlin] generateInstallments called with: booking_id=3797, payplan=Down Payment, totalamt=1060000, installdate=2026-01-31
+[23-Jan-2026 10:37:25 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 10:37:25 Europe/Berlin] Successfully generated 3 installments for booking_id=3797
+[23-Jan-2026 10:37:25 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:37:25 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:37:25 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:37:25 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:44:10 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3798
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-01-31
+    [booking_plotarea] => 100
+    [booking_plotrate] => 1000
+    [booking_plc] => 1
+    [booking_edc] => 1
+    [booking_idc] => 3
+    [booking_totalamt] => 105000.00
+    [booking_plotno] => abcd
+    [booking_blockno] => C
+    [formadd] => 
+)
+
+[23-Jan-2026 10:44:10 Europe/Berlin] generateInstallments called with: booking_id=3798, payplan=Basic, totalamt=105000, installdate=2026-01-31
+[23-Jan-2026 10:44:10 Europe/Berlin] Pending amount after first three installments: 0
+[23-Jan-2026 10:44:10 Europe/Berlin] Successfully generated 3 installments for booking_id=3798
+[23-Jan-2026 10:44:10 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:44:10 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:44:10 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 10:44:10 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 13:12:15 Europe/Berlin] PHP Warning:  Array to string conversion in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 13:12:15 Europe/Berlin] PHP Warning:  Undefined variable $Array in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 13:12:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
+[23-Jan-2026 13:12:15 Europe/Berlin] PHP Deprecated:  number_format(): Passing null to parameter #1 ($num) of type float is deprecated in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 983
