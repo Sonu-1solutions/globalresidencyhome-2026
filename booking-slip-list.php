@@ -58,7 +58,7 @@ include "layout/head.php";
 		<!-- Breadcrumb -->
 		<div class="d-block text-center page-breadcrumb mb-3 pagetitle">
 			<div class="my-auto">
-				<h1>Booking List</h1>
+				<h1>View Slip</h1>
 			</div>
 		</div>
 

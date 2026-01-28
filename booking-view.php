@@ -627,6 +627,157 @@ if (isset($_POST['formupdate'])) {
 
 
 
+
+
+
+
+
+<!-- popup -->
+
+
+<style>
+    .payslip-sec {
+        width: 90% !important;
+        max-width: 100% !important;
+    }
+</style>
+
+
+
+
+
+
+
+<div class="modal fade" id="paySlip<?= $bokingno ?>" role="dialog">
+    <div class="modal-dialog payslip-sec">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Payments Received </h4>
+            </div>
+            <div class="modal-body ">
+
+                <div class="col-lg-12" style="margin-top: 20px;">
+
+                    <div class="table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>SNO</th>
+                                    <!-- <th>Registration Number</th> -->
+                                    <th>Slip Id</th>
+                                    <th>Current Date</th>
+                                    <!-- <th>Receive Name</th> -->
+                                    <th>Amount in Word</th>
+                                    <th>Payment By</th>
+                                    <th>Drawn On</th>
+                                    <th>Payment by date</th>
+                                    <!-- <th>Project Name</th> -->
+                                    <!-- <th>Plot No</th> -->
+                                    <!-- <th>Plot Size</th> -->
+                                    <th>Total Ammount</th>
+                                    <th>Percentage</th>
+                                    <th>Advisor Ammount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+
+                                <?php
+                                $totalreceiveamt = 0;
+                                $brokragetamotrec = 0;
+                                $sn = 1;
+                                $cumulative_amount = 0;
+                                $totalamt = $propertydata['booking_totalamt'];
+                                $paymentslipno = $propertydata['booking_no'];
+                                $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
+                                $installmentres = mysqli_query($con, $installmentqry);
+                                if (!$installmentres) {
+                                    error_log("Failed to fetch installments: " . mysqli_error($con));
+                                }
+                                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
+                                    // $cumulative_amount += $installmentdata['installment_amount'];
+                                    // $remaining_amount = $totalamt - $cumulative_amount;
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $sn; ?></td>
+                                        <!-- <td><?php echo htmlspecialchars($installmentdata['registration_number']); ?></td> -->
+                                        <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
+                                        </td>
+                                        <td><?php echo $installmentdata['current_date']; ?></td>
+                                        <!-- <td><?php echo $installmentdata['receive_name']; ?></td> -->
+                                        <td><?php echo $installmentdata['amount_in_word']; ?></td>
+                                        <td><?php echo $installmentdata['payment_by']; ?></td>
+                                        <td><?php echo $installmentdata['drawn_on']; ?></td>
+                                        <td><?php echo $installmentdata['payment_by_date']; ?></td>
+                                        <!-- <td><?php echo $installmentdata['project_name']; ?></td> -->
+                                        <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
+                                        <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
+                                        <td><?php echo $installmentdata['total_amout']; ?></td>
+                                        <td><?php echo $installmentdata['percentage']; ?></td>
+                                        <td><?php echo $installmentdata['advisor_amount']; ?></td>
+
+                                    </tr>
+                                    <?php
+                                    $sn++;
+                                }
+
+
+                                $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
+
+                                $res = mysqli_query($con, $qry);
+                                $row = mysqli_fetch_assoc($res);
+
+                                $totalreceiveamt = (float) ($row['total_received'] ?? 0);
+                                $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
+
+
+
+
+                                ?>
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- popup -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Page Wrapper -->
 <div class="page-wrapper">
 
@@ -943,13 +1094,10 @@ if (isset($_POST['formupdate'])) {
 
 
                 <?php
-                $booking_block = "SELECT booking_blockno FROM booking_master WHERE booking_id = '$booking_id'";
-                $result = mysqli_query($con, $booking_block);
-
-                $booking_blockno = mysqli_fetch_assoc($result);
-
-
-
+                // $booking_block = "SELECT booking_blockno FROM booking_master WHERE booking_id = '$booking_id'";
+                // $result = mysqli_query($con, $booking_block);
+                
+                // $booking_blockno = mysqli_fetch_assoc($result);
                 ?>
 
 
@@ -980,19 +1128,72 @@ if (isset($_POST['formupdate'])) {
                                 <?php echo htmlspecialchars(@$propertydata['booking_idc']); ?>
                             </p>
                             <p><strong>Plot Total Amount</strong> :
-                                <?php echo number_format($$propertydata['booking_totalamt'], 2); ?>
+                                <?php echo number_format($propertydata['booking_totalamt'], 2); ?>
+                            </p>
+                            <p><strong>Brokerage percentage</strong> :
+                                <?php echo $propertydata['percentage']; ?> %
                             </p>
                             <p><strong>Block No</strong> :
-                                <?php echo $booking_blockno['booking_blockno']; ?>
+                                <?php echo $propertydata['booking_blockno']; ?>
                             </p>
+                            <hr>
+                            <div>
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <tr>
+                                                <th><b>Total Ammount</b></th>
+                                                <td><?= $propertydata['booking_totalamt'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th><strong>Total Receive Ammount</strong></th>
+                                                <td><?= $totalreceiveamt ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th><strong>Total Pending Ammount</strong></th>
+                                                <td><?= $propertydata['booking_totalamt'] - $totalreceiveamt ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>Brokerage Ammount</b></th>
+                                                <td><?= $propertydata['advisor_amount'] ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Brokerage Receive Ammount</th>
+                                                <td><?= $brokragetamotrec ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Brokerage Pending Ammount</th>
+                                                <td><?= $propertydata['advisor_amount'] - $brokragetamotrec ?></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
 
+
+
+
                         <div class="col-lg-8" style="margin-top: 20px;">
-                            <h4>Payment Installment
-                                <hr>
-                            </h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-9">
+                                        <h4>Payment Installment
+                                            <hr>
+                                        </h4>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="#" class="btn btn-info" data-toggle="modal"
+                                            data-target="#paySlip<?= $bokingno ?>">
+                                            View Payment Slip</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div class="table-responsive">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
@@ -1003,6 +1204,7 @@ if (isset($_POST['formupdate'])) {
                                             <th>%</th>
                                             <th>Amount</th>
                                             <th>Remaining Amount</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -1028,6 +1230,7 @@ if (isset($_POST['formupdate'])) {
                                                 <td><?php echo htmlspecialchars($installmentdata['installment_emiper']); ?></td>
                                                 <td><?php echo number_format($installmentdata['installment_amount'], 2); ?></td>
                                                 <td><?php echo number_format($remaining_amount, 2); ?></td>
+                                                <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
                                             </tr>
                                             <?php
                                             $sn++;
@@ -1041,6 +1244,9 @@ if (isset($_POST['formupdate'])) {
                     <?php
                 }
                 ?>
+
+
+
 
 
 
@@ -1139,6 +1345,19 @@ if (isset($_POST['formupdate'])) {
                                                 <label for="recipient-name" class="col-form-label">Plot No:</label>
                                                 <input type="text" class="form-control" id="booking_plotno"
                                                     name="booking_plotno" required>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label class="col-form-label">Advisor Percentage *</label>
+                                                <input type="number" class="form-control" id="percentage"
+                                                    name="percentage" oninput="calculateAdvisorAmount()" required>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <label class="col-form-label">Advisor Amount *</label>
+                                                <input type="text" class="form-control" id="advisoramount"
+                                                    name="advisor_amount" required>
                                             </div>
 
                                             <div class="col-md-12 mt-3">
@@ -1294,6 +1513,20 @@ if (isset($_POST['formupdate'])) {
     });
 </script>
 
+
+<!-- Advisor percentage -->
+<script>
+    function calculateAdvisorAmount() {
+        let total = parseFloat(document.getElementById('booking_totalamt').value) || 0;
+        let percentage = parseFloat(document.getElementById('percentage').value) || 0;
+
+        let advisorAmount = (total * percentage) / 100;
+
+        document.getElementById('advisoramount').value = advisorAmount.toFixed(2);
+    }
+</script>
+
+<!-- Advisor percentage -->
 
 
 

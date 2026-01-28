@@ -91,6 +91,7 @@ if (isset($_POST['delete_booking_id'])) {
                                     <th>Plot Size</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
+                                    <th>Advisor Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -100,7 +101,7 @@ if (isset($_POST['delete_booking_id'])) {
                                 <?php
                                 $sn = 1;
                                 if ($user_department == 'Admin') {
-                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master ORDER BY booking_id DESC");
+                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master ORDER BY booking_id,booking_advisor DESC");
                                 } else {
                                     $productqry = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_advisorid='$user_id' ORDER BY booking_id DESC");
                                 }
@@ -118,6 +119,7 @@ if (isset($_POST['delete_booking_id'])) {
                                         <td><?php echo $productdata['booking_plotarea']; ?></td>
                                         <td><?php echo $productdata['booking_email']; ?></td>
                                         <td><?php echo $productdata['booking_phone']; ?></td>
+                                        <td><?php echo $productdata['booking_advisor']; ?></td>
                                         <td class="d-flex">
                                             <a href="booking-view.php?booking_id=<?php echo $productdata['booking_id']; ?>"
                                                 class="mr-1">

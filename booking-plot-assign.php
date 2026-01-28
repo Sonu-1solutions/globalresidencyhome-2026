@@ -11,7 +11,8 @@ ini_set('log_errors', 1);
 ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
 
 // Function to generate installments
-function generateInstallments($con, $booking_id, $payplan, $totalamt, $installdate) {
+function generateInstallments($con, $booking_id, $payplan, $totalamt, $installdate)
+{
     error_log("generateInstallments called with: booking_id=$booking_id, payplan=$payplan, totalamt=$totalamt, installdate=$installdate");
 
     // Delete existing installments
@@ -20,7 +21,7 @@ function generateInstallments($con, $booking_id, $payplan, $totalamt, $installda
         error_log("Failed to delete existing installments: " . mysqli_error($con));
         return false;
     }
-    
+
     $installments = [];
     $cdate = date('Y-m-d H:i:s');
     $cby = $_SESSION['user_id'] ?? 0;
@@ -164,16 +165,28 @@ if (isset($_POST['formadd'])) {
     $booking_totalamt = floatval($_POST['booking_totalamt'] ?? 0);
     $booking_plotno = mysqli_real_escape_string($con, $_POST['booking_plotno'] ?? '');
 
+    $booking_advisor_percentage = floatval($_POST['percentage'] ?? 0);
+    $booking_advisor_amount = floatval($_POST['advisor_amount'] ?? 0);
+
+
     // Validate inputs with specific error messages
     $errors = [];
-    if (empty($booking_id)) $errors[] = "booking_id is empty";
-    if (empty($booking_payplan)) $errors[] = "booking_payplan is empty";
-    if (empty($booking_installdate)) $errors[] = "booking_installdate is empty";
-    if ($booking_totalamt <= 0) $errors[] = "booking_totalamt is <= 0 ($booking_totalamt)";
-    if (!strtotime($booking_installdate)) $errors[] = "booking_installdate is invalid ($booking_installdate)";
-    if ($booking_plotarea <= 0) $errors[] = "booking_plotarea is <= 0 ($booking_plotarea)";
-    if ($booking_plotrate <= 0) $errors[] = "booking_plotrate is <= 0 ($booking_plotrate)";
-    if (empty($booking_plotno)) $errors[] = "booking_plotno is empty";
+    if (empty($booking_id))
+        $errors[] = "booking_id is empty";
+    if (empty($booking_payplan))
+        $errors[] = "booking_payplan is empty";
+    if (empty($booking_installdate))
+        $errors[] = "booking_installdate is empty";
+    if ($booking_totalamt <= 0)
+        $errors[] = "booking_totalamt is <= 0 ($booking_totalamt)";
+    if (!strtotime($booking_installdate))
+        $errors[] = "booking_installdate is invalid ($booking_installdate)";
+    if ($booking_plotarea <= 0)
+        $errors[] = "booking_plotarea is <= 0 ($booking_plotarea)";
+    if ($booking_plotrate <= 0)
+        $errors[] = "booking_plotrate is <= 0 ($booking_plotrate)";
+    if (empty($booking_plotno))
+        $errors[] = "booking_plotno is empty";
 
     if (!empty($errors)) {
         error_log("Invalid input data for booking_id=$booking_id: " . implode(", ", $errors));
@@ -184,16 +197,16 @@ if (isset($_POST['formadd'])) {
     $cdate = date('Y-m-d H:i:s');
     $cby = $_SESSION['user_id'] ?? 0;
 
-// Get Block No from form
-$booking_blockno = $_POST['booking_blockno'] ?? '';
+    // Get Block No from form
+    $booking_blockno = $_POST['booking_blockno'] ?? '';
 
-if ($booking_blockno === '') {
-    header("Location: booking-view?booking_id=$booking_id&error=Please select Block No");
-    exit;
-}
+    if ($booking_blockno === '') {
+        header("Location: booking-view?booking_id=$booking_id&error=Please select Block No");
+        exit;
+    }
 
-// Update booking_master
-$updateleadsql = "UPDATE `booking_master` SET 
+    // Update booking_master
+ $updateleadsql = "UPDATE `booking_master` SET 
     `booking_installstatus`='Completed',
     `booking_installdate`='$booking_installdate',
     `booking_plotarea`='$booking_plotarea',
@@ -203,18 +216,21 @@ $updateleadsql = "UPDATE `booking_master` SET
     `booking_idc`='$booking_idc',
     `booking_totalamt`='$booking_totalamt',
     `booking_plotno`='$booking_plotno',
-    `booking_blockno`='$booking_blockno'
-    WHERE booking_id='$booking_id'";
+    `booking_blockno`='$booking_blockno',
+    `percentage`='$booking_advisor_percentage',
+    `advisor_amount`='$booking_advisor_amount'
+WHERE booking_id='$booking_id'";
 
-if (!mysqli_query($con, $updateleadsql)) {
-    error_log("Failed to update booking_master: " . mysqli_error($con));
-    header("Location: booking-view?booking_id=$booking_id&error=Failed to update booking");
-    exit;
-}
+
+    if (!mysqli_query($con, $updateleadsql)) {
+        error_log("Failed to update booking_master: " . mysqli_error($con));
+        header("Location: booking-view?booking_id=$booking_id&error=Failed to update booking");
+        exit;
+    }
 
 
     // Generate installments
-    if (!generateInstallments($con, $booking_id, $booking_payplan, $booking_totalamt, $booking_installdate, $booking_blockno,)) {
+    if (!generateInstallments($con, $booking_id, $booking_payplan, $booking_totalamt, $booking_installdate, $booking_blockno, )) {
         error_log("Failed to generate installments for booking_id=$booking_id");
         header("Location: booking-view?booking_id=$booking_id&error=Failed to generate installments");
         exit;

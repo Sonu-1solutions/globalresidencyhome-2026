@@ -74,7 +74,7 @@ include "layout/head.php";
                         );
 
                         while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
+                            echo '<option value="' . $row['user_id'] . '">'
                                 . htmlspecialchars($row['user_name']) .
                                 '</option>';
                         }
@@ -103,31 +103,22 @@ include "layout/head.php";
 
 
         <style>
+            .modal-dialog {
+                width: 90%;
+                max-width: 100%;
+            }
 
+            .bgr {
+                /* background-color: lavender; */
+            }
 
+            .bgb {
+                /* background-color: lightblue; */
+            }
 
-
-
-    .modal-dialog {
-        width: 90%;
-        max-width: 100%;
-    }
-
-    .bgr{
-        /* background-color: lavender; */
-    }
-    .bgb{
-        /* background-color: lightblue; */
-    }
-    .fw600{
-        font-weight: 700;
-    }
-
-
-
-
-
-
+            .fw600 {
+                font-weight: 700;
+            }
         </style>
 
 
@@ -135,7 +126,7 @@ include "layout/head.php";
             <table id="example1" class="table table-striped datatable">
                 <thead>
                     <tr>
-                        
+
                         <th>Payment slip</th>
                         <th>ID</th>
                         <th>Booking Date</th>
@@ -172,40 +163,40 @@ include "layout/head.php";
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
 
-                        
-                        
-                    $bokingno = $row['booking_no'];
+
+
+                            $bokingno = $row['booking_no'];
 
                             ?>
-                    <tr id="row-<?php echo $row['booking_id']; ?>">
-                        
-                        <td>
-                            <a href="#" class="btn btn-info" 
-                                data-toggle="modal" data-target="#myModal<?= $bokingno ?>"> View</a>
-                        </td>
-                        <td><?php echo $row['booking_id']; ?></td>
-                        <td><?php echo $row['booking_date']; ?></td>
-                        <td><?php echo $row['booking_no']; ?></td>
-                        <td><?php echo $row['booking_fname']; ?></td>
-                        <td><?php echo $row['booking_lname']; ?></td>
-                        <td><?php echo $row['booking_phone']; ?></td>
-                        <td><?php echo $row['booking_email']; ?></td>
-                        <td><?php echo $row['booking_aadharno']; ?></td>
-                        <td><?php echo $row['booking_panno']; ?></td>
-                        <td><?php echo $row['booking_state']; ?></td>
-                        <td><?php echo $row['booking_city']; ?></td>
-                        <td><?php echo $row['booking_address']; ?></td>
-                        <td><?php echo $row['booking_project']; ?></td>
-                        <td><?php echo $row['booking_plottype']; ?></td>
-                        <td><?php echo $row['booking_plotsize']; ?></td>
-                        <td><?php echo $row['booking_plotno']; ?></td>
-                        <td><?php echo $row['booking_plotarea']; ?></td>
-                        <td><?php echo $row['booking_plotrate']; ?></td>
-                        <td><?php echo $row['booking_totalamt']; ?></td>
-                        <!-- <td><?php echo $row['booking_advisor']; ?></td> -->
-                        <!-- <td><?php echo $row['booking_status']; ?></td> -->
-                        <td><?php echo $row['booking_createat']; ?></td>
-                    </tr>
+                            <tr id="row-<?php echo $row['booking_id']; ?>">
+
+                                <td>
+                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal<?= $bokingno ?>">
+                                        View</a>
+                                </td>
+                                <td><?php echo $row['booking_id']; ?></td>
+                                <td><?php echo $row['booking_date']; ?></td>
+                                <td><?php echo $row['booking_no']; ?></td>
+                                <td><?php echo $row['booking_fname']; ?></td>
+                                <td><?php echo $row['booking_lname']; ?></td>
+                                <td><?php echo $row['booking_phone']; ?></td>
+                                <td><?php echo $row['booking_email']; ?></td>
+                                <td><?php echo $row['booking_aadharno']; ?></td>
+                                <td><?php echo $row['booking_panno']; ?></td>
+                                <td><?php echo $row['booking_state']; ?></td>
+                                <td><?php echo $row['booking_city']; ?></td>
+                                <td><?php echo $row['booking_address']; ?></td>
+                                <td><?php echo $row['booking_project']; ?></td>
+                                <td><?php echo $row['booking_plottype']; ?></td>
+                                <td><?php echo $row['booking_plotsize']; ?></td>
+                                <td><?php echo $row['booking_plotno']; ?></td>
+                                <td><?php echo $row['booking_plotarea']; ?></td>
+                                <td><?php echo $row['booking_plotrate']; ?></td>
+                                <td><?php echo $row['booking_totalamt']; ?></td>
+                                <!-- <td><?php echo $row['booking_advisor']; ?></td> -->
+                                <!-- <td><?php echo $row['booking_status']; ?></td> -->
+                                <td><?php echo $row['booking_createat']; ?></td>
+                            </tr>
 
 
 
@@ -213,138 +204,138 @@ include "layout/head.php";
 
 
 
-                    <!-- Payment Slip Models -->
-                    <div class="modal fade" id="myModal<?= $bokingno ?>" role="dialog">
-                        <div class="modal-dialog">
+                            <!-- Payment Slip Models -->
+                            <div class="modal fade" id="myModal<?= $bokingno ?>" role="dialog">
+                                <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Plot No <?= $bokingno ?> </h4>
-                                </div>
-                                <div class="modal-body ">
-                            
-                                
-                            <?php
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Plot No <?= $bokingno ?> </h4>
+                                        </div>
+                                        <div class="modal-body ">
 
-                    $query1 = "SELECT * FROM `payment_slip` WHERE `registration_number`='$bokingno' Order BY `id` ASC limit 1";
-                    $result1 = mysqli_query($con, $query1);
 
-                    if ($result1 && mysqli_num_rows($result1) > 0) {
-                        while ($row1 = mysqli_fetch_assoc($result1)) {
-                            ?>
+                                            <?php
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-1 bgb">
-                                        <span class="fw600">Reg. No</span><br>
-                                        <?php echo $row1['registration_number']; ?>
+                                            $query1 = "SELECT * FROM `payment_slip` WHERE `registration_number`='$bokingno' Order BY `id` ASC limit 1";
+                                            $result1 = mysqli_query($con, $query1);
+
+                                            if ($result1 && mysqli_num_rows($result1) > 0) {
+                                                while ($row1 = mysqli_fetch_assoc($result1)) {
+                                                    ?>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-1 bgb">
+                                                                <span class="fw600">Reg. No</span><br>
+                                                                <?php echo $row1['registration_number']; ?>
+                                                            </div>
+                                                            <div class="col-md-1 bgr">
+                                                                <span class="fw600">Plot No</span><br>
+                                                                <?php echo $row1['plot_no']; ?>
+                                                            </div>
+                                                            <div class="col-md-2 bgb">
+                                                                <span class="fw600">Plot Size</span><br>
+                                                                <?php echo $row1['plot_size']; ?>
+                                                            </div>
+                                                            <div class="col-md-2 bgb">
+                                                                <span class="fw600">Project Name</span><br>
+                                                                <?php echo $row1['project_name']; ?>
+                                                            </div>
+                                                            <div class="col-md-2 bgr">
+                                                                <span class="fw600">Receive Name</span><br>
+                                                                <?php echo $row1['receive_name']; ?>
+                                                            </div>
+                                                            <div class="col-md-2 bgb">
+                                                                <span class="fw600">Advisor Percentage</span><br>
+                                                                <!-- <?php echo $row1['percentage']; ?> -->
+                                                            </div>
+                                                            <div class="col-md-2 bgb">
+                                                                <span class="fw600">Advisor Amount</span><br>
+                                                                <!-- <?php echo $row1['advisor_amount']; ?> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+
+
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "<center><h5>Payment Installments not created yet</h5><center>";
+                                            }
+                                            ?>
+                                            <hr>
+
+                                            <?php
+
+                                            $query1 = "SELECT * FROM `payment_slip` WHERE `registration_number`='$bokingno'";
+                                            $result1 = mysqli_query($con, $query1);
+
+                                            if ($result1 && mysqli_num_rows($result1) > 0) {
+                                                while ($row1 = mysqli_fetch_assoc($result1)) {
+                                                    ?>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-3 bgr">
+                                                                <span class="fw600">Payment Date</span>
+                                                                <?php echo $row1['payment_by_date']; ?>
+                                                            </div>
+                                                            <div class="col-md-3 bgb">
+                                                                <span class="fw600">Date</span>
+                                                                <?php echo $row1['current_date']; ?>
+                                                            </div>
+                                                            <div class="col-md-3 bgr">
+                                                                <span class="fw600">Slip No</span>
+                                                                <?php echo $row1['slip_id']; ?>
+                                                            </div>
+                                                            <div class="col-md-3 bgb">
+                                                                <span class="fw600">Payment By</span>
+                                                                <?php echo $row1['payment_by']; ?>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 mt-3">
+                                                            <div class="col-md-3 bgb">
+                                                                <span class="fw600">Drawn On</span>
+                                                                <?php echo $row1['drawn_on']; ?>
+                                                            </div>
+                                                            <div class="col-md-3 bgr">
+                                                                <span class="fw600">Total Ammount</span>
+                                                                <?php echo $row1['total_amout']; ?>
+                                                            </div>
+                                                            <div class="col-md-6 bgr">
+                                                                <span class="fw600">Ammount in Word</span>
+                                                                <?php echo $row1['amount_in_word']; ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <?php
+                                                }
+                                            } else {
+                                                echo "<center><h5>Payment Installments not created yet</h5><center>";
+                                            }
+                                            ?>
+                                        </div>
+
                                     </div>
-                                    <div class="col-md-1 bgr">
-                                        <span class="fw600">Plot No</span><br>
-                                        <?php echo $row1['plot_no']; ?>
-                                    </div>
-                                    <div class="col-md-2 bgb">
-                                        <span class="fw600">Plot Size</span><br>
-                                        <?php echo $row1['plot_size']; ?>
-                                    </div>
-                                    <div class="col-md-2 bgb">
-                                        <span class="fw600">Project Name</span><br>
-                                        <?php echo $row1['project_name']; ?>
-                                    </div>
-                                    <div class="col-md-2 bgr">
-                                        <span class="fw600">Receive Name</span><br>
-                                        <?php echo $row1['receive_name']; ?>
-                                    </div>
-                                    <div class="col-md-2 bgb">
-                                        <span class="fw600">Advisor Percentage</span><br>
-                                        <?php echo $row1['percentage']; ?>
-                                    </div>
-                                    <div class="col-md-2 bgb">
-                                        <span class="fw600">Advisor Amount</span><br>
-                                        <?php echo $row1['advisor_amount']; ?>
-                                    </div>
+
                                 </div>
                             </div>
-                            <hr>
-                      
-                      
+
+
+                            <!-- Payment Slip -->
+
+
+
+
+
+
+
                             <?php
-                        }
-                    } else{
-                        echo "<center><h5>Payment Installments not created yet</h5><center>";
-                    }
-                    ?>
-<hr>
-                            
-                            <?php
-
-                    $query1 = "SELECT * FROM `payment_slip` WHERE `registration_number`='$bokingno'";
-                    $result1 = mysqli_query($con, $query1);
-
-                    if ($result1 && mysqli_num_rows($result1) > 0) {
-                        while ($row1 = mysqli_fetch_assoc($result1)) {
-                            ?>
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-3 bgr">
-                                        <span class="fw600">Payment Date</span>
-                                        <?php echo $row1['payment_by_date']; ?>
-                                    </div>
-                                    <div class="col-md-3 bgb">
-                                        <span class="fw600">Date</span>
-                                        <?php echo $row1['current_date']; ?>
-                                    </div>
-                                    <div class="col-md-3 bgr">
-                                        <span class="fw600">Slip No</span>
-                                        <?php echo $row1['slip_id']; ?>
-                                    </div>
-                                    <div class="col-md-3 bgb">
-                                        <span class="fw600">Payment By</span>
-                                        <?php echo $row1['payment_by']; ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 mt-3">
-                                    <div class="col-md-3 bgb">
-                                        <span class="fw600">Drawn On</span>
-                                        <?php echo $row1['drawn_on']; ?>
-                                    </div>
-                                    <div class="col-md-3 bgr">
-                                        <span class="fw600">Total Ammount</span>
-                                        <?php echo $row1['total_amout']; ?>
-                                    </div>
-                                    <div class="col-md-6 bgr">
-                                        <span class="fw600">Ammount in Word</span>
-                                        <?php echo $row1['amount_in_word']; ?>
-                                    </div>
-                                </div>
-                            </div>
-                      <hr>
-                            <?php
-                        }
-                    } else{
-                        echo "<center><h5>Payment Installments not created yet</h5><center>";
-                    }
-                    ?>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <!-- Payment Slip -->
-
-
-
-
-
-
-
-                    <?php
                         }
                     } else {
                         echo "<tr><td colspan='23' class='text-center'>No Records Found</td></tr>";

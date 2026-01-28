@@ -56,7 +56,7 @@ include "layout/head.php";
         <!-- Breadcrumb -->
         <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
             <div class="my-auto">
-                <h1>Booking List</h1>
+                <h1>Add Slip</h1>
             </div>
         </div>
         <!-- /Breadcrumb -->
@@ -149,21 +149,28 @@ include "layout/head.php";
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Total Amount *</label>
+                                        <!-- <input type="number" style="height:50px;" class="form-control"
+                                            value="<?= $productdata['booking_totalamt']; ?>" id="totalamount" name="totalamout"
+                                            required> -->
+
                                         <input type="number" style="height:50px;" class="form-control"
                                             value="<?= $productdata['booking_totalamt']; ?>" id="totalamount" name="totalamout"
-                                            required>
+                                            oninput="calculateAdvisorAmount()" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Advisor Percentage *</label>
+
                                         <input type="number" style="height:50px;" class="form-control" id="percentage"
-                                            name="percentage" oninput="calculateAdvisorAmount()" required>
+                                            name="percentage" oninput="calculateAdvisorAmount()"
+                                            value="<?= $productdata['percentage'] ?>" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Advisor Amount *</label>
                                         <input type="text" style="height:50px;" class="form-control" id="advisoramount"
-                                            name="ammount" required>
+                                            name="ammount" readonly required>
+
                                     </div>
 
                                     <div class="col-md-12  mb-4">
@@ -194,6 +201,20 @@ include "layout/head.php";
 
 
 <!-- JAVASCRIPT -->
+<!-- <script>
+    function calculateAdvisorAmount() {
+        let total = parseFloat(document.getElementById('totalamount').value) || 0;
+        let percentage = parseFloat(document.getElementById('percentage').value) || 0;
+
+        let advisorAmount = (total * percentage) / 100;
+
+        document.getElementById('advisoramount').value = advisorAmount.toFixed(2);
+    }
+</script> -->
+
+
+
+
 <script>
     function calculateAdvisorAmount() {
         let total = parseFloat(document.getElementById('totalamount').value) || 0;
@@ -203,7 +224,13 @@ include "layout/head.php";
 
         document.getElementById('advisoramount').value = advisorAmount.toFixed(2);
     }
+
+    // PAGE LOAD HOTE HI AUTO CALCULATE
+    window.onload = function () {
+        calculateAdvisorAmount();
+    };
 </script>
+
 
 
 <script>
