@@ -248,6 +248,43 @@ if (isset($_POST['formupdate'])) {
     $booking_advisor = mysqli_real_escape_string($con, $_POST['booking_advisor']);
     $booking_aadharno = mysqli_real_escape_string($con, $_POST['booking_aadharno']);
     $booking_panno = mysqli_real_escape_string($con, $_POST['booking_panno']);
+    // $booking_advisorid = mysqli_real_escape_string($con, $_POST['booking_advisorid']);
+
+
+
+
+
+
+    // ===== FETCH ADVISOR ID FROM NAME =====
+$booking_advisorid = null;
+
+$advisor_id_qry = mysqli_query(
+    $con,
+    "SELECT user_id FROM user_master 
+     WHERE user_name='$booking_advisor'
+     AND user_status='Enable'
+     AND user_department='User'
+     LIMIT 1"
+);
+
+if ($advisor_id_qry && mysqli_num_rows($advisor_id_qry) > 0) {
+    $advisor_row = mysqli_fetch_assoc($advisor_id_qry);
+    $booking_advisorid = $advisor_row['user_id'];
+} else {
+    error_log("Advisor ID not found for advisor name: $booking_advisor");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Convert booking_date back to DD-MM-YY for storage
     $booking_date_stored = $booking_date;
@@ -282,36 +319,41 @@ if (isset($_POST['formupdate'])) {
         }
     }
 
-    $update_query = "UPDATE booking_master SET 
-        booking_no='$booking_no',
-        booking_date='$booking_date_stored',
-        booking_fname='$booking_fname',
-        booking_lname='$booking_lname',
-        booking_phone='$booking_phone',
-        booking_email='$booking_email',
-        booking_sur='$booking_sur',
-        booking_surname='$booking_surname',
-        booking_dob='$booking_dob',
-        booking_state='$booking_state',
-        booking_city='$booking_city',
-        booking_address='$booking_address',
-        booking_project='$booking_project',
-        booking_plottype='$booking_plottype',
-        booking_facing='$booking_facing',
-        booking_plotsize='$booking_plotsize',
-        booking_payplan='$booking_payplan',
-        booking_paymode='$booking_paymode',
-        booking_acname='$booking_acname',
-        booking_acno='$booking_acno',
-        booking_ifsc='$booking_ifsc',
-        booking_cheque='$booking_cheque',
-        booking_schemeamt='$booking_schemeamt',
-        booking_advisor='$booking_advisor',
-        booking_aadharno='$booking_aadharno',
-        booking_panno='$booking_panno',
-        booking_aadharphoto='$booking_aadharphoto',
-        booking_panphoto='$booking_panphoto'
-        WHERE booking_id='$booking_id'";
+
+  $update_query = "UPDATE booking_master SET 
+    booking_no='$booking_no',
+    booking_date='$booking_date_stored',
+    booking_fname='$booking_fname',
+    booking_lname='$booking_lname',
+    booking_phone='$booking_phone',
+    booking_email='$booking_email',
+    booking_sur='$booking_sur',
+    booking_surname='$booking_surname',
+    booking_dob='$booking_dob',
+    booking_state='$booking_state',
+    booking_city='$booking_city',
+    booking_address='$booking_address',
+    booking_project='$booking_project',
+    booking_plottype='$booking_plottype',
+    booking_facing='$booking_facing',
+    booking_plotsize='$booking_plotsize',
+    booking_payplan='$booking_payplan',
+    booking_paymode='$booking_paymode',
+    booking_acname='$booking_acname',
+    booking_acno='$booking_acno',
+    booking_ifsc='$booking_ifsc',
+    booking_cheque='$booking_cheque',
+    booking_schemeamt='$booking_schemeamt',
+    booking_advisor='$booking_advisor',
+    booking_advisorid='$booking_advisorid',
+    booking_aadharno='$booking_aadharno',
+    booking_panno='$booking_panno',
+    booking_aadharphoto='$booking_aadharphoto',
+    booking_panphoto='$booking_panphoto'
+WHERE booking_id='$booking_id'";
+
+
+
 
     if (mysqli_query($con, $update_query)) {
         // Update installments if booking_installstatus is Completed
@@ -325,8 +367,10 @@ if (isset($_POST['formupdate'])) {
             }
         }
 
+
+
         // Fetch updated booking details
-        $bookingmasterquery = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_id='$booking_id'");
+         $bookingmasterquery = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_id='$booking_id'");
         if ($bookingmasterquery && mysqli_num_rows($bookingmasterquery) > 0) {
             $bookingmasterqry = mysqli_fetch_assoc($bookingmasterquery);
             $to = $bookingmasterqry['booking_email'];
@@ -336,7 +380,9 @@ if (isset($_POST['formupdate'])) {
             $user_address = $bookingmasterqry['booking_address'] . ', ' . $bookingmasterqry['booking_city'] . ', ' . $bookingmasterqry['booking_state'];
 
             // Fetch advisor details
-            $advisiorqry = mysqli_query($con, "SELECT * FROM user_master WHERE user_name='$booking_advisor' AND user_status='Enable' AND user_department='User'");
+          $advisiorqry = mysqli_query($con, "SELECT * FROM user_master WHERE user_name='$booking_advisor' AND user_status='Enable' AND user_department='User'");
+
+          
             if ($advisiorqry && mysqli_num_rows($advisiorqry) > 0) {
                 $advisiordata = mysqli_fetch_assoc($advisiorqry);
                 $aduser_email = $advisiordata['user_email'];
@@ -598,32 +644,27 @@ if (isset($_POST['formupdate'])) {
                 error_log("PHPMailer exception: " . $e->getMessage());
                 echo '<script>alert("Booking updated successfully, but failed to send email notification due to an error.");</script>';
             }
+
+            
+
         } else {
+
+    
+
             error_log("Failed to fetch updated booking details for booking_id=$booking_id");
             echo '<script>alert("Booking updated successfully, but failed to fetch updated details for email notification.");</script>';
         }
 
         echo '<script>alert("Booking updated successfully"); window.location="booking-view?booking_id=' . $booking_id . '";</script>';
     } else {
+
         error_log("Failed to update booking: " . mysqli_error($con));
         echo '<script>alert("Error updating booking: ' . mysqli_error($con) . '");</script>';
+
     }
+
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -758,22 +799,6 @@ if (isset($_POST['formupdate'])) {
 
 
 <!-- popup -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -999,7 +1024,6 @@ if (isset($_POST['formupdate'])) {
 
 
 
-
                     </div>
                     <div class="row">
 
@@ -1036,7 +1060,7 @@ if (isset($_POST['formupdate'])) {
 
                             <div class="row">
                                 <div class="col-md-12  mb-2">
-                                    <label class="fw-bold">Aadhar Details1</label>
+                                    <label class="fw-bold">Aadhar Details</label>
                                     <input type="text" class="form-control py-4" name="booking_aadharno"
                                         value="<?php echo htmlspecialchars(@$propertydata['booking_aadharno']); ?>"
                                         minlength="12" maxlength="12">
@@ -1154,7 +1178,7 @@ if (isset($_POST['formupdate'])) {
                                                 <td><?= $propertydata['booking_totalamt'] - $totalreceiveamt ?></td>
                                             </tr>
                                             <tr>
-                                                <th><b>Brokerage Ammount</b></th>
+                                                <th><b>Total Brokerage Ammount</b></th>
                                                 <td><?= $propertydata['advisor_amount'] ?></td>
                                             </tr>
                                             <tr>
@@ -1245,12 +1269,6 @@ if (isset($_POST['formupdate'])) {
                 }
                 ?>
 
-
-
-
-
-
-
             </div>
 
         </div>
@@ -1260,14 +1278,6 @@ if (isset($_POST['formupdate'])) {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- </head> -->
-
-
-
-
-
-
-
-
 
 
 

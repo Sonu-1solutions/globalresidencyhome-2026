@@ -122,12 +122,15 @@ include "layout/head.php";
         </style>
 
 
+
+
         <div class="table-responsive">
             <table id="example1" class="table table-striped datatable">
                 <thead>
                     <tr>
 
                         <th>Payment slip</th>
+                        <th>Advisor</th>
                         <th>ID</th>
                         <th>Booking Date</th>
                         <th>Booking No</th>
@@ -147,7 +150,6 @@ include "layout/head.php";
                         <th>Plot Area</th>
                         <th>Plot Rate</th>
                         <th>Total Amount</th>
-                        <!-- <th>Advisor</th> -->
                         <!-- <th>Status</th> -->
                         <th>Created At</th>
                     </tr>
@@ -157,7 +159,7 @@ include "layout/head.php";
                     <?php
                     $adviserid = $_POST['booking_advisor'];
 
-                    $query = "SELECT * FROM booking_master WHERE booking_advisorid='$adviserid'";
+                    echo $query = "SELECT * FROM booking_master WHERE booking_advisorid='$adviserid'";
                     $result = mysqli_query($con, $query);
 
                     if ($result && mysqli_num_rows($result) > 0) {
@@ -175,6 +177,7 @@ include "layout/head.php";
                                         View</a>
                                 </td>
                                 <td><?php echo $row['booking_id']; ?></td>
+                                <td><?php echo $row['booking_advisor']; ?></td>
                                 <td><?php echo $row['booking_date']; ?></td>
                                 <td><?php echo $row['booking_no']; ?></td>
                                 <td><?php echo $row['booking_fname']; ?></td>
@@ -193,15 +196,9 @@ include "layout/head.php";
                                 <td><?php echo $row['booking_plotarea']; ?></td>
                                 <td><?php echo $row['booking_plotrate']; ?></td>
                                 <td><?php echo $row['booking_totalamt']; ?></td>
-                                <!-- <td><?php echo $row['booking_advisor']; ?></td> -->
                                 <!-- <td><?php echo $row['booking_status']; ?></td> -->
                                 <td><?php echo $row['booking_createat']; ?></td>
                             </tr>
-
-
-
-
-
 
 
                             <!-- Payment Slip Models -->
@@ -328,11 +325,6 @@ include "layout/head.php";
 
 
                             <!-- Payment Slip -->
-
-
-
-
-
 
 
                             <?php

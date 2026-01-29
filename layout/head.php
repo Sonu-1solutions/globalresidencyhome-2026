@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="Smarthr - Bootstrap Admin Template">
-    <meta name="keywords" content="admin, estimates, bootstrap, business, html5, responsive, Projects">
-    <meta name="author" content="Dreams technologies - Bootstrap Admin Template">
+    <meta name="description" content="Global Residency">
+    <meta name="keywords" content="Global Residency">
+    <meta name="author" content="Global Residency">
     <meta name="robots" content="noindex, nofollow">
     <title>Global Residency</title>
 
