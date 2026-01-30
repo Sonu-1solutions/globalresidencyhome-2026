@@ -21,8 +21,17 @@ if (isset($_POST['slipbtn'])) {
     $projectname        = $_POST['projectname'] ?? '';
     $plotno             = $_POST['plotno'] ?? '';
     $plotsize           = $_POST['plotsize'] ?? '';
-    $totalamout         = $_POST['totalamout'] ?? '';
- 
+    // $totalamout         = $_POST['totalamout'] ?? '';
+    // $beforepaybalance   = $_POST['beforepaybalance'] ?? '';
+    // $remainbalance = (float)$beforepaybalance - (float)$totalamout;
+
+    // 💰 Amount fields (numeric)
+    $totalamout       = (float)($_POST['totalamout'] ?? 0);
+    $beforepaybalance = (float)($_POST['beforepaybalance'] ?? 0);
+
+    // ➖ Remaining balance
+    $remainbalance = $beforepaybalance - $totalamout;
+
     // ✅ NEW FIELDS
     $percentage         = $_POST['percentage'] ?? '';
     $advisoramount      = $_POST['ammount'] ?? '';
@@ -43,10 +52,11 @@ if (isset($_POST['slipbtn'])) {
         plot_no,
         plot_size,
         total_amout,
+        remaing_balance,
         percentage,
         advisor_amount
     )
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
 ");
 
  
@@ -56,7 +66,7 @@ if (isset($_POST['slipbtn'])) {
  
     // Bind parameters
     $stmt->bind_param(
-        "ssssssssssssss",
+        "sssssssssssssss",
         $registrationNumber,
         $slip_no,
         $currentDate,
@@ -69,6 +79,7 @@ if (isset($_POST['slipbtn'])) {
         $plotno,
         $plotsize,
         $totalamout,
+        $remainbalance,
         $percentage,
         $advisoramount
     );

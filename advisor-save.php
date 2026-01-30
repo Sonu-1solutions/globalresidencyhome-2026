@@ -122,6 +122,20 @@ include "layout/head.php";
         </style>
 
 
+        <?php $adviserid = $_POST['booking_advisor'];
+         $query1 = "SELECT booking_advisor FROM booking_master WHERE booking_advisorid='$adviserid'";
+        $result1 = mysqli_query($con, $query1);
+        if ($result1 && mysqli_num_rows($result1) > 0) {
+            $row1 = mysqli_fetch_assoc($result1);
+            $advisorname = $row1['booking_advisor'];
+        } ?>
+
+        <div class="">
+            <strong>Advisor Name:</strong>
+            <?php echo $row1['booking_advisor']; ?>
+        </div>
+
+
 
 
         <div class="table-responsive">
@@ -159,7 +173,7 @@ include "layout/head.php";
                     <?php
                     $adviserid = $_POST['booking_advisor'];
 
-                    echo $query = "SELECT * FROM booking_master WHERE booking_advisorid='$adviserid'";
+                    $query = "SELECT * FROM booking_master WHERE booking_advisorid='$adviserid'";
                     $result = mysqli_query($con, $query);
 
                     if ($result && mysqli_num_rows($result) > 0) {
@@ -176,8 +190,9 @@ include "layout/head.php";
                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#myModal<?= $bokingno ?>">
                                         View</a>
                                 </td>
-                                <td><?php echo $row['booking_id']; ?></td>
                                 <td><?php echo $row['booking_advisor']; ?></td>
+                                <td><?php echo $row['booking_id']; ?></td>
+
                                 <td><?php echo $row['booking_date']; ?></td>
                                 <td><?php echo $row['booking_no']; ?></td>
                                 <td><?php echo $row['booking_fname']; ?></td>

@@ -56,7 +56,25 @@ include "layout/head.php";
         <!-- Breadcrumb -->
         <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
             <div class="my-auto">
-                <h1>Add Slip</h1>
+                
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-10"><h1>Add Slip</h1></div>
+                        <div class="col-md-2">
+                            <?php
+                            $alloted = $_GET['slip_id'];
+                            $bkingque = mysqli_query($con, "select booking_id from booking_master where booking_no='$alloted'");
+                            $bkingquer = mysqli_fetch_assoc($bkingque);
+                            $bkingqueres = $bkingquer['booking_id'];
+                            ?>
+                            <a href="booking-view.php?booking_id=<?php echo $bkingqueres; ?>"
+                                class="btn btn-sm btn-success">
+                                ← Back
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!-- /Breadcrumb -->
@@ -149,13 +167,13 @@ include "layout/head.php";
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Total Amount *</label>
-                                        <!-- <input type="number" style="height:50px;" class="form-control"
-                                            value="<?= $productdata['booking_totalamt']; ?>" id="totalamount" name="totalamout"
-                                            required> -->
-
+                                        <?php
+                                        $balanceamt = $_GET['balanceamt'];
+                                        ?>
+                                        <input type="hidden" name="beforepaybalance" value="<?php echo $balanceamt; ?>">
                                         <input type="number" style="height:50px;" class="form-control"
-                                            value="<?= $productdata['booking_totalamt']; ?>" id="totalamount" name="totalamout"
-                                            oninput="calculateAdvisorAmount()" required>
+                                            value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount"
+                                            name="totalamout" oninput="calculateAdvisorAmount()" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">
@@ -178,11 +196,8 @@ include "layout/head.php";
                                             Submit
                                         </button>
                                     </div>
-
-
                                 </div>
                             </div>
-
                         </div>
 
                         <?php

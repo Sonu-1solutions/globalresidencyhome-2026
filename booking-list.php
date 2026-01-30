@@ -127,11 +127,11 @@ if (isset($_POST['delete_booking_id'])) {
                                             </a>
                                             <a href="booking-slip.php?slip_id=<?php echo $productdata['booking_no']; ?>"
                                                 class="mr-1">
-                                                <button class="btn btn-sm btn-success action-btn"> Add Slip </button>
+                                                <button class="btn btn-sm btn-success action-btn" style="display:none;"> Add Slip </button>
                                             </a>
                                             <a href="booking-slip-list.php?slip_id=<?php echo $productdata['booking_no']; ?>"
                                                 class="mr-1">
-                                                <button class="btn btn-sm btn-dark action-btn"> View Slip </button>
+                                                <button class="btn btn-sm btn-success action-btn" > View Slip </button>
                                             </a>
                                             <form action="" method="post" onsubmit="return confirmSubmission()">
                                                 <button type="submit" class="btn btn-sm btn-danger" title="Delete">

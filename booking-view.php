@@ -53,6 +53,7 @@ include "layout/head.php";
 
 
 
+
 <?php
 // include('../smtp/PHPMailerAutoload.php');
 
@@ -256,23 +257,23 @@ if (isset($_POST['formupdate'])) {
 
 
     // ===== FETCH ADVISOR ID FROM NAME =====
-$booking_advisorid = null;
+    $booking_advisorid = null;
 
-$advisor_id_qry = mysqli_query(
-    $con,
-    "SELECT user_id FROM user_master 
+    $advisor_id_qry = mysqli_query(
+        $con,
+        "SELECT user_id FROM user_master 
      WHERE user_name='$booking_advisor'
      AND user_status='Enable'
      AND user_department='User'
      LIMIT 1"
-);
+    );
 
-if ($advisor_id_qry && mysqli_num_rows($advisor_id_qry) > 0) {
-    $advisor_row = mysqli_fetch_assoc($advisor_id_qry);
-    $booking_advisorid = $advisor_row['user_id'];
-} else {
-    error_log("Advisor ID not found for advisor name: $booking_advisor");
-}
+    if ($advisor_id_qry && mysqli_num_rows($advisor_id_qry) > 0) {
+        $advisor_row = mysqli_fetch_assoc($advisor_id_qry);
+        $booking_advisorid = $advisor_row['user_id'];
+    } else {
+        error_log("Advisor ID not found for advisor name: $booking_advisor");
+    }
 
 
 
@@ -320,7 +321,7 @@ if ($advisor_id_qry && mysqli_num_rows($advisor_id_qry) > 0) {
     }
 
 
-  $update_query = "UPDATE booking_master SET 
+    $update_query = "UPDATE booking_master SET 
     booking_no='$booking_no',
     booking_date='$booking_date_stored',
     booking_fname='$booking_fname',
@@ -370,7 +371,7 @@ WHERE booking_id='$booking_id'";
 
 
         // Fetch updated booking details
-         $bookingmasterquery = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_id='$booking_id'");
+        $bookingmasterquery = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_id='$booking_id'");
         if ($bookingmasterquery && mysqli_num_rows($bookingmasterquery) > 0) {
             $bookingmasterqry = mysqli_fetch_assoc($bookingmasterquery);
             $to = $bookingmasterqry['booking_email'];
@@ -380,9 +381,9 @@ WHERE booking_id='$booking_id'";
             $user_address = $bookingmasterqry['booking_address'] . ', ' . $bookingmasterqry['booking_city'] . ', ' . $bookingmasterqry['booking_state'];
 
             // Fetch advisor details
-          $advisiorqry = mysqli_query($con, "SELECT * FROM user_master WHERE user_name='$booking_advisor' AND user_status='Enable' AND user_department='User'");
+            $advisiorqry = mysqli_query($con, "SELECT * FROM user_master WHERE user_name='$booking_advisor' AND user_status='Enable' AND user_department='User'");
 
-          
+
             if ($advisiorqry && mysqli_num_rows($advisiorqry) > 0) {
                 $advisiordata = mysqli_fetch_assoc($advisiorqry);
                 $aduser_email = $advisiordata['user_email'];
@@ -645,11 +646,11 @@ WHERE booking_id='$booking_id'";
                 echo '<script>alert("Booking updated successfully, but failed to send email notification due to an error.");</script>';
             }
 
-            
+
 
         } else {
 
-    
+
 
             error_log("Failed to fetch updated booking details for booking_id=$booking_id");
             echo '<script>alert("Booking updated successfully, but failed to fetch updated details for email notification.");</script>';
@@ -718,14 +719,13 @@ WHERE booking_id='$booking_id'";
                                     <!-- <th>Project Name</th> -->
                                     <!-- <th>Plot No</th> -->
                                     <!-- <th>Plot Size</th> -->
-                                    <th>Total Ammount</th>
+                                    <th>Installment Ammount</th>
+                                    <th>Remaining Amount</th>
                                     <th>Percentage</th>
-                                    <th>Advisor Ammount</th>
+                                    <th>Advisor Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-
 
                                 <?php
                                 $totalreceiveamt = 0;
@@ -758,6 +758,8 @@ WHERE booking_id='$booking_id'";
                                         <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
                                         <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
                                         <td><?php echo $installmentdata['total_amout']; ?></td>
+                                        <td><?php echo $installmentdata['remaing_balance']; ?></td>
+                                        <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
                                         <td><?php echo $installmentdata['percentage']; ?></td>
                                         <td><?php echo $installmentdata['advisor_amount']; ?></td>
 
@@ -809,9 +811,12 @@ WHERE booking_id='$booking_id'";
     <div class="content">
 
         <!-- Breadcrumb -->
-        <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
+       <div class="d-block text-center page-breadcrumb mb-3 pagetitle"
+     style="padding: 15px !important;">
+
+
             <div class="my-auto">
-                <h1>Booking Views</h1>
+                <h1 style=" font-size: 28px; font-weight: 700; margin: 0px !important;">Booking Views</h1>
             </div>
         </div>
 
@@ -820,7 +825,7 @@ WHERE booking_id='$booking_id'";
 
             <div class="col-md-12 mt-3">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="row">
+                    <div class="row" style="margin-top: 0px;">
 
                         <div class="col-md-6 mb-5">
                             <label class="fw-bold">Booking No</label>
@@ -1126,6 +1131,10 @@ WHERE booking_id='$booking_id'";
 
 
 
+
+
+
+
                 <?php
                 if ($booking_installstatus == 'Completed') {
                     ?>
@@ -1175,7 +1184,9 @@ WHERE booking_id='$booking_id'";
                                             </tr>
                                             <tr>
                                                 <th><strong>Total Pending Ammount</strong></th>
-                                                <td><?= $propertydata['booking_totalamt'] - $totalreceiveamt ?></td>
+                                                <td><?php
+                                                echo $totalpendingbalnce = $propertydata['booking_totalamt'] - $totalreceiveamt;
+                                                ?></td>
                                             </tr>
                                             <tr>
                                                 <th><b>Total Brokerage Ammount</b></th>
@@ -1203,10 +1214,26 @@ WHERE booking_id='$booking_id'";
                         <div class="col-lg-8" style="margin-top: 20px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="col-md-9">
+                                    <div class="col-md-5">
                                         <h4>Payment Installment
                                             <hr>
                                         </h4>
+
+                                    </div>
+                                    <div class="col-md-4">
+
+
+                                        <button type="button" class="btn btn-m btn-success action-btn"
+                                            onclick="window.location.href='booking-slip.php?slip_id=<?php echo $propertydata['booking_no']; ?>&balanceamt=<?= $totalpendingbalnce ?>'">
+                                            Add Slip
+                                        </button>
+
+
+
+
+
+
+
 
                                     </div>
                                     <div class="col-md-3">
