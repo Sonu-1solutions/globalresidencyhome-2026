@@ -102,13 +102,115 @@ include "layout/head.php";
 
 
 
+
+
+                        <?php
+// PHP function for number to words
+function numberToWords($num) {
+    $ones = array(
+        "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+        "seventeen", "eighteen", "nineteen"
+    );
+    $tens = array(
+        "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+    );
+ 
+    function convertTwoDigit($n, $ones, $tens) {
+        if ($n < 20) return $ones[$n];
+        else return $tens[intval($n/10)] . ($n%10 ? " " . $ones[$n%10] : "");
+    }
+ 
+    function convertThreeDigit($n, $ones, $tens) {
+        $word = "";
+        if ($n > 99) {
+            $word .= $ones[intval($n/100)] . " hundred ";
+            $n = $n % 100;
+        }
+        if ($n > 0) $word .= convertTwoDigit($n, $ones, $tens);
+        return trim($word);
+    }
+ 
+    $parts = explode(".", number_format($num,2,'.',''));
+    $integer = intval($parts[0]);
+    $decimal = intval($parts[1]);
+ 
+    $words = "";
+ 
+    $lakh = intval($integer/100000);
+    $integer = $integer % 100000;
+    $thousand = intval($integer/1000);
+    $integer = $integer % 1000;
+    $hundreds = $integer;
+ 
+    if($lakh) $words .= convertTwoDigit($lakh,$ones,$tens) . " lakh ";
+    if($thousand) $words .= convertTwoDigit($thousand,$ones,$tens) . " thousand ";
+    if($hundreds) $words .= convertThreeDigit($hundreds,$ones,$tens);
+ 
+    $words = trim($words);
+ 
+    if($decimal > 0){
+        $words .= " " . convertTwoDigit($decimal,$ones,$tens) . " paisa";
+    }
+ 
+    return ucfirst($words);
+}
+ 
+// Default balance amount
+$balanceamt = isset($_GET['balanceamt']) ? $_GET['balanceamt'] : 369837.10;
+?>
+ 
+ 
+<script>
+function updateWords(){
+    let val = document.getElementById("totalamount").value;
+    document.getElementById("sumAmount").value = numToWords(val);
+}
+ 
+function numToWords(num){
+    num = parseFloat(num);
+    if(isNaN(num)) return "";
+ 
+    let ones = ["","one","two","three","four","five","six","seven","eight","nine",
+                "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen",
+                "seventeen","eighteen","nineteen"];
+    let tens = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+ 
+    function convertTwoDigit(n){
+        if(n<20) return ones[n];
+        return tens[Math.floor(n/10)] + (n%10 ? " "+ones[n%10] : "");
+    }
+    function convertThreeDigit(n){
+        let word="";
+        if(n>99){ word+=ones[Math.floor(n/100)]+" hundred "; n=n%100; }
+        if(n>0) word+=convertTwoDigit(n);
+        return word.trim();
+    }
+ 
+    let parts = num.toFixed(2).split(".");
+    let integer = parseInt(parts[0]);
+    let decimal = parseInt(parts[1]);
+ 
+    let words="";
+    let lakh = Math.floor(integer/100000);
+    integer = integer%100000;
+    let thousand = Math.floor(integer/1000);
+    integer = integer%1000;
+    let hundreds = integer;
+ 
+    if(lakh) words+=convertTwoDigit(lakh)+" lakh ";
+    if(thousand) words+=convertTwoDigit(thousand)+" thousand ";
+    if(hundreds) words+=convertThreeDigit(hundreds);
+ 
+    words = words.trim();
+    if(decimal>0) words+=" "+convertTwoDigit(decimal)+" paisa";
+ 
+    return words.charAt(0).toUpperCase()+words.slice(1);
+}
+</script>
                                     <div class="">
                                         <strong>Total Amount:</strong>
                                         <?php echo $productdata['booking_totalamt']?>
-
-
-                                       
-                                        
                                     </div>
                                 
 
@@ -148,8 +250,9 @@ include "layout/head.php";
 
                                         <div class="col-md-12  mb-4">
                                             <label class="fw-bold">The sum of Rupees *</label>
-                                            <input type="text" class="form-control" placeholder="Enter Amount In Words"
-                                                name="sumAmount" required>
+                                            <!-- <input type="text" class="form-control" placeholder="Enter Amount In Words"
+                                                name="sumAmount" required> -->
+                                                <input type="text" class="form-control" placeholder="Enter Amount In Words" id="sumAmount" name="sumAmount" value="<?php echo numberToWords($balanceamt); ?>" required>
                                         </div>
 
                                     </div>
@@ -194,9 +297,10 @@ include "layout/head.php";
                                         $balanceamt = $_GET['balanceamt'];
                                         ?>
                                         <input type="hidden" name="beforepaybalance" value="<?php echo $balanceamt; ?>">
-                                        <input type="number" style="height:50px;" class="form-control"
+                                        <!-- <input type="number" style="height:50px;" class="form-control"
                                             value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount"
-                                            name="totalamout" oninput="calculateAdvisorAmount()" required>
+                                            name="totalamout" oninput="calculateAdvisorAmount()" required> -->
+                                            <input type="number" class="form-control" id="totalamount" value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount" name="totalamout" oninput="updateWords()" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">

@@ -99,6 +99,7 @@ include "layout/head.php";
             <div id="printableArea<?php echo $count++ ?>">
               <div class="payment-slip" style="position: relative; width: 100%; margin: 0 auto;display: inline-block;">
                 <img class="slip-img" src="https://globalresidencyhome.com/erp/booking-image/payment-slip.png">
+               
 
                 <input
                   style="position: absolute;top: 31%;left: 8%;font-size: 25px;font-weight: 500;font-family: fantasy;letter-spacing: 3px;text-align: center;border: none;background: transparent;padding: 0;"

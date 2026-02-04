@@ -4337,3 +4337,323 @@ Stack trace:
 [04-Feb-2026 07:23:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
 [04-Feb-2026 07:23:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
 [04-Feb-2026 07:23:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:32:57 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:14 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 07:33:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 08:11:11 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 09:43:37 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 10:26:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:09 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:58:44 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 11:59:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:16 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:05:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:25:58 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:08 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:26:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:29:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:29:26 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 776
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:41:32 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:32 Europe/Berlin] generateInstallments called with: booking_id=3802, payplan=Twelve Months, totalamt=179.30, installdate=2026-03-08
+[04-Feb-2026 12:42:32 Europe/Berlin] Pending amount after first three installments: 107.58
+[04-Feb-2026 12:42:32 Europe/Berlin] Remaining installment amount: 10.76, percentage: 6%
+[04-Feb-2026 12:42:32 Europe/Berlin] Successfully generated 13 installments for booking_id=3802
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:42:33 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:34 Europe/Berlin] generateInstallments called with: booking_id=3802, payplan=Twelve Months, totalamt=16300.00, installdate=2026-03-08
+[04-Feb-2026 12:43:34 Europe/Berlin] Pending amount after first three installments: 9780
+[04-Feb-2026 12:43:34 Europe/Berlin] Remaining installment amount: 978, percentage: 6%
+[04-Feb-2026 12:43:34 Europe/Berlin] Successfully generated 13 installments for booking_id=3802
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:43:35 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:15 Europe/Berlin] generateInstallments called with: booking_id=3802, payplan=Twelve Months, totalamt=16300.00, installdate=2026-03-08
+[04-Feb-2026 12:44:15 Europe/Berlin] Pending amount after first three installments: 9780
+[04-Feb-2026 12:44:15 Europe/Berlin] Remaining installment amount: 978, percentage: 6%
+[04-Feb-2026 12:44:15 Europe/Berlin] Successfully generated 13 installments for booking_id=3802
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:44:17 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:45:31 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:47:32 Europe/Berlin] Received POST data: Array
+(
+    [booking_id] => 3803
+    [booking_payplan] => Basic
+    [booking_installdate] => 2026-02-07
+    [booking_plotarea] => 10
+    [booking_plotrate] => 100
+    [booking_plc] => 0
+    [booking_edc] => 0
+    [booking_idc] => 0
+    [booking_totalamt] => 1000.00
+    [booking_plotno] => Abc1213
+    [percentage] => 10
+    [advisor_amount] => 100.00
+    [booking_blockno] => B
+    [formadd] => 
+)
+
+[04-Feb-2026 12:47:32 Europe/Berlin] generateInstallments called with: booking_id=3803, payplan=Basic, totalamt=1000, installdate=2026-02-07
+[04-Feb-2026 12:47:32 Europe/Berlin] Pending amount after first three installments: 0
+[04-Feb-2026 12:47:32 Europe/Berlin] Successfully generated 3 installments for booking_id=3803
+[04-Feb-2026 12:47:52 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 389
+[04-Feb-2026 12:47:52 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 390
+[04-Feb-2026 12:47:52 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 391
+[04-Feb-2026 12:47:52 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 392
+[04-Feb-2026 12:47:52 Europe/Berlin] generateInstallments called with: booking_id=3803, payplan=Six Months, totalamt=1000.00, installdate=2026-02-07
+[04-Feb-2026 12:47:52 Europe/Berlin] Pending amount after first three installments: 600
+[04-Feb-2026 12:47:52 Europe/Berlin] Remaining installment amount: 150, percentage: 15%
+[04-Feb-2026 12:47:52 Europe/Berlin] Successfully generated 7 installments for booking_id=3803
+[04-Feb-2026 12:47:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:757
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 757
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 12:49:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:22:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:20 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:23:22 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:35:15 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:13 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:24 Europe/Berlin] PHP Warning:  Undefined array key "booking_acname" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 389
+[04-Feb-2026 13:37:24 Europe/Berlin] PHP Warning:  Undefined array key "booking_acno" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 390
+[04-Feb-2026 13:37:24 Europe/Berlin] PHP Warning:  Undefined array key "booking_ifsc" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 391
+[04-Feb-2026 13:37:24 Europe/Berlin] PHP Warning:  Undefined array key "booking_cheque" in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 392
+[04-Feb-2026 13:37:24 Europe/Berlin] generateInstallments called with: booking_id=3802, payplan=Twenty Four Months, totalamt=16300.00, installdate=2026-03-08
+[04-Feb-2026 13:37:24 Europe/Berlin] Pending amount after first three installments: 9780
+[04-Feb-2026 13:37:24 Europe/Berlin] Remaining installment amount: 444.55, percentage: 2.73%
+[04-Feb-2026 13:37:24 Europe/Berlin] Successfully generated 25 installments for booking_id=3802
+[04-Feb-2026 13:37:24 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "PHPMailer" not found in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php:757
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 757
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[04-Feb-2026 13:37:25 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921

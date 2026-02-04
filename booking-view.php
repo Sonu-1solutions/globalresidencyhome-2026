@@ -221,6 +221,151 @@ function generateInstallments($con, $booking_id, $payplan, $totalamt, $installda
     }
 }
 
+// plot update installment
+function plotupdategenerateInstallments($con, $booking_id, $payplan, $totalamt, $installdate)
+{
+    error_log("generateInstallments called with: booking_id=$booking_id, payplan=$payplan, totalamt=$totalamt, installdate=$installdate");
+
+    // Delete existing installments
+    $delete_query = "DELETE FROM installment_master WHERE installment_bookingid='$booking_id'";
+    if (!mysqli_query($con, $delete_query)) {
+        error_log("Failed to delete existing installments: " . mysqli_error($con));
+        return false;
+    }
+
+    $installments = [];
+    $cdate = date('Y-m-d H:i:s');
+    $cby = $_SESSION['user_id'] ?? 0;
+
+    try {
+        // Validate inputs
+        if (!$installdate || !strtotime($installdate)) {
+            error_log("Invalid installdate: $installdate");
+            return false;
+        }
+        if ($totalamt <= 0) {
+            error_log("Invalid totalamt: $totalamt");
+            return false;
+        }
+        $start_date = $installdate;
+
+        // First three fixed installments
+        $threedayamt = round((10 * $totalamt) / 100, 2); // 10%
+        $eightydayamt = round(($payplan == 'Down Payment' || $payplan == 'Basic' ? 80 : 20) * $totalamt / 100, 2); // 80% or 20%
+        $sixtydayamt = round((10 * $totalamt) / 100, 2); // 10%
+        $threedayemi = '10%';
+        $eightydayemi = ($payplan == 'Down Payment' || $payplan == 'Basic') ? '80%' : '20%';
+        $sixtydayemi = '10%';
+
+        $date3 = date('Y-m-d', strtotime('+3 days', strtotime($start_date)));
+        $date28 = date('Y-m-d', strtotime('+28 days', strtotime($start_date)));
+        $date60 = date('Y-m-d', strtotime('+60 days', strtotime($start_date)));
+
+        $particulars1 = 'On Booking';
+        $particulars2 = 'Within 28 days';
+        $particulars3 = 'Within 60 days';
+
+        // Add first three installments
+        $installments[] = [
+            'date' => $date3,
+            'particular' => $particulars1,
+            'emiper' => $threedayemi,
+            'amount' => $threedayamt,
+            'percentage' => 3
+        ];
+        $installments[] = [
+            'date' => $date28,
+            'particular' => $particulars2,
+            'emiper' => $eightydayemi,
+            'amount' => $eightydayamt,
+            'percentage' => 28
+        ];
+        $installments[] = [
+            'date' => $date60,
+            'particular' => $particulars3,
+            'emiper' => $sixtydayemi,
+            'amount' => $sixtydayamt,
+            'percentage' => 60
+        ];
+
+        // Calculate remaining amount and number of remaining installments
+        $pendingamt = $totalamt - ($threedayamt + $eightydayamt + $sixtydayamt);
+        error_log("Pending amount after first three installments: $pendingamt");
+        $installment_count = 0;
+        switch ($payplan) {
+            case 'Six Months':
+                $installment_count = 4;
+                break;
+            case 'Twelve Months':
+                $installment_count = 10;
+                break;
+            case 'Eighteen Months':
+                $installment_count = 16;
+                break;
+            case 'Twenty Four Months':
+                $installment_count = 22;
+                break;
+            case 'Down Payment':
+            case 'Basic':
+                $installment_count = 0;
+                break;
+            default:
+                error_log("Invalid payment plan: $payplan");
+                return false;
+        }
+
+        // Generate remaining installments
+        if ($installment_count > 0) {
+            $installmentamt = round($pendingamt / $installment_count, 2);
+            $installment_emipernew = ($installmentamt / $totalamt) * 100;
+            $installment_emiper = round($installment_emipernew, 2) . '%';
+            error_log("Remaining installment amount: $installmentamt, percentage: $installment_emiper");
+
+            for ($j = 1; $j <= $installment_count; $j++) {
+                $noofday = 60 + ($j * 30);
+                $date = date('Y-m-d', strtotime("+$noofday days", strtotime($start_date)));
+                if (!$date || $date == '1970-01-01') {
+                    error_log("Invalid date generated for installment $j: $date");
+                    return false;
+                }
+                $installments[] = [
+                    'date' => $date,
+                    'particular' => "$j Emi",
+                    'emiper' => $installment_emiper,
+                    'amount' => $installmentamt,
+                    'percentage' => $noofday
+                ];
+            }
+        }
+
+        // Insert installments into database
+        foreach ($installments as $index => $installment) {
+            $date = mysqli_real_escape_string($con, $installment['date']);
+            $particular = mysqli_real_escape_string($con, $installment['particular']);
+            $emiper = mysqli_real_escape_string($con, $installment['emiper']);
+            $amount = $installment['amount'];
+            $percentage = $installment['percentage'];
+            $query = "INSERT INTO installment_master (installment_bookingid, installment_date, installment_percentage, installment_amount, installment_ctime, installment_cby, installment_particular, installment_emiper) 
+                      VALUES ('$booking_id', '$date', '$percentage', '$amount', '$cdate', '$cby', '$particular', '$emiper')";
+            if (!mysqli_query($con, $query)) {
+                error_log("Failed to insert installment #$index: " . mysqli_error($con));
+                return false;
+            }
+        }
+        error_log("Successfully generated " . count($installments) . " installments for booking_id=$booking_id");
+        echo '<script> window.location="booking-view.php?booking_id=' . $booking_id . '"; </script>';
+        echo '<script>alert("Please try again.");</script>';
+        // return true;
+    } catch (Exception $e) {
+        error_log("Exception in generateInstallments: " . $e->getMessage());
+        echo '<script>alert("Please check error logs.");</script>';
+        // return false;
+    }
+}
+
+// plot update installment end
+
+
 // Handle form submission for updating booking details
 if (isset($_POST['formupdate'])) {
     $booking_no = mysqli_real_escape_string($con, $_POST['booking_no']);
@@ -1226,65 +1371,74 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-<?php
-// include("database.php"); 
+                        <?php
+                        // include("database.php"); 
+                    
+                        if (isset($_POST['updateplot'])) {
 
-if (isset($_POST['formadd'])) {
+                            $booking_id = $_POST['booking_id'];
+                            $booking_payplan = $_POST['booking_payplan'];
+                            $booking_installdate = $_POST['booking_installdate'];
+                            $booking_plotarea = $_POST['booking_plotarea'];
+                            $booking_plotrate = $_POST['booking_plotrate'];
+                            $booking_plc = $_POST['booking_plc'];
+                            $booking_edc = $_POST['booking_edc'];
+                            $booking_idc = $_POST['booking_idc'];
+                            $booking_totalamt = $_POST['booking_totalamt'];
+                            $booking_plotno = $_POST['booking_plotno'];
+                            $percentage = $_POST['percentage'];
+                            $advisor_amount = $_POST['advisor_amount'];
+                            $booking_blockno = $_POST['booking_blockno'];
 
-    $booking_id          = $_POST['booking_id'];
-    $booking_payplan     = $_POST['booking_payplan'];
-    $booking_installdate = $_POST['booking_installdate'];
-    $booking_plotarea    = $_POST['booking_plotarea'];
-    $booking_plotrate    = $_POST['booking_plotrate'];
-    $booking_plc         = $_POST['booking_plc'];
-    $booking_edc         = $_POST['booking_edc'];
-    $booking_idc         = $_POST['booking_idc'];
-    $booking_totalamt    = $_POST['booking_totalamt'];
-    $booking_plotno      = $_POST['booking_plotno'];
-    $percentage          = $_POST['percentage'];
-    $advisor_amount      = $_POST['advisor_amount'];
-    $booking_blockno     = $_POST['booking_blockno'];
+                            $query = "UPDATE booking_master SET
+                                booking_payplan = ?,
+                                booking_installdate = ?,
+                                booking_plotarea = ?,
+                                booking_plotrate = ?,
+                                booking_plc = ?,
+                                booking_edc = ?,
+                                booking_idc = ?,
+                                booking_totalamt = ?,
+                                booking_plotno = ?,
+                                percentage = ?,
+                                advisor_amount = ?,
+                                booking_blockno = ?
+                            WHERE booking_id = ?";
 
-    $query = "UPDATE booking_master SET
-                booking_payplan = ?,
-                booking_installdate = ?,
-                booking_plotarea = ?,
-                booking_plotrate = ?,
-                booking_plc = ?,
-                booking_edc = ?,
-                booking_idc = ?,
-                booking_totalamt = ?,
-                booking_plotno = ?,
-                percentage = ?,
-                advisor_amount = ?,
-                booking_blockno = ?
-              WHERE booking_id = ?";
+                            $stmt = $con->prepare($query);
+                            $stmt->bind_param(
+                                "ssddddddssssi",
+                                $booking_payplan,
+                                $booking_installdate,
+                                $booking_plotarea,
+                                $booking_plotrate,
+                                $booking_plc,
+                                $booking_edc,
+                                $booking_idc,
+                                $booking_totalamt,
+                                $booking_plotno,
+                                $percentage,
+                                $advisor_amount,
+                                $booking_blockno,
+                                $booking_id
+                            );
 
-    $stmt = $con->prepare($query);
-    $stmt->bind_param(
-        "ssddddddssssi",
-        $booking_payplan,
-        $booking_installdate,
-        $booking_plotarea,
-        $booking_plotrate,
-        $booking_plc,
-        $booking_edc,
-        $booking_idc,
-        $booking_totalamt,
-        $booking_plotno,
-        $percentage,
-        $advisor_amount,
-        $booking_blockno,
-        $booking_id
-    );
+                            // if ($stmt->execute()) {
+                            //     echo "<script>alert('Plot Updated Successfully');</script>";
+                            // } else {
+                            //     echo "<script>alert('Update Failed!');</script>";
+                            // }
+                    
+                            if ($stmt->execute()) {
+                                echo "<script>alert('Plot Updated Successfully');</script>";
+                                plotupdategenerateInstallments($con, $booking_id, $booking_payplan, $booking_totalamt, $booking_installdate);
+                            } else {
+                                echo "<script>alert('Update Failed!');</script>";
+                            }
 
-    if ($stmt->execute()) {
-        echo "<script>alert('Plot Updated Successfully');</script>";
-    } else {
-        echo "<script>alert('Update Failed!');</script>";
-    }
-}
-?>
+
+                        }
+                        ?>
 
 
 
@@ -1469,7 +1623,7 @@ if (isset($_POST['formadd'])) {
 
                                             </div>
                                             <div class="modal-footer d-flex justify-content-center">
-                                                <button type="submit" name="formadd" class="btn btn-primary">
+                                                <button type="submit" name="updateplot" class="btn btn-primary">
                                                     Update Plot
                                                 </button>
                                             </div>
@@ -1523,7 +1677,7 @@ if (isset($_POST['formadd'])) {
                                     </div>
 
                                     <div class="col-md-3">
-                                        <a href="bba.php?booking_id=<?php echo $booking_id; ?>" class="btn btn-warning">
+                                        <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>" class="btn btn-warning">
                                             BBA</a>
                                     </div>
 

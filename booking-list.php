@@ -60,6 +60,20 @@ if (isset($_POST['delete_booking_id'])) {
 <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css">
 
 
+
+
+
+
+
+<style>
+table.table.dataTable > tbody > tr td,
+table.table.dataTable > thead > tr th {
+    font-size: 13px;
+    padding: 5px 10px;
+}
+</style>
+
+
 <!-- Page Wrapper -->
 <div class="page-wrapper">
 
@@ -101,9 +115,9 @@ if (isset($_POST['delete_booking_id'])) {
                                 <?php
                                 $sn = 1;
                                 if ($user_department == 'Admin') {
-                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master ORDER BY booking_id,booking_advisor DESC");
+                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master ORDER BY `booking_id` DESC");
                                 } else {
-                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_advisorid='$user_id' ORDER BY booking_id DESC");
+                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_advisorid='$user_id' ORDER BY `booking_id` DESC");
                                 }
 
                                 while ($productdata = mysqli_fetch_assoc($productqry)) {
