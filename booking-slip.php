@@ -97,6 +97,29 @@ include "layout/head.php";
                         <div class="row">
 
 
+
+
+
+
+
+                                    <div class="">
+                                        <strong>Total Amount:</strong>
+                                        <?php echo $productdata['booking_totalamt']?>
+
+
+                                       
+                                        
+                                    </div>
+                                
+
+
+
+
+
+
+
+
+
                             <!-- <div class="col-md-3"></div> -->
                             <div class="col-md-12 mt-3">
                                 <div class="row">
@@ -139,7 +162,7 @@ include "layout/head.php";
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Drawn On *</label>
-                                        <input type="text" class="form-control py-4" name="profile_image" accept="image/*">
+                                        <input type="text" class="form-control py-4" name="drawnon" accept="image/*">
                                     </div>
 
                                     <div class="col-md-4 mb-4">

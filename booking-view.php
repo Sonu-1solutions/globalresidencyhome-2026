@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+// error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // SESSION START
@@ -58,9 +58,9 @@ include "layout/head.php";
 // include('../smtp/PHPMailerAutoload.php');
 
 // Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 0); // Set to 0 for production
-ini_set('log_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 0); // Set to 0 for production
+// ini_set('log_errors', 1);
 ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
 
 $booking_id = $_GET['booking_id'];
@@ -624,9 +624,16 @@ WHERE booking_id='$booking_id'";
                 $mail->SetFrom("info@shaanrealtech.com", "Shaan Realtech Pvt. Ltd.");
                 $mail->Subject = $subject;
                 $mail->Body = $message;
-                $mail->AddAddress($to);
-                $mail->AddCC('info@globalresidencyhome.com');
-                $mail->AddCC($aduser_email);
+
+
+                // $mail->AddAddress($to);
+                // $mail->AddCC('info@globalresidencyhome.com');
+                // $mail->AddCC($aduser_email);
+                $mail->AddAddress('sonu@1solutions.biz');
+                $mail->AddCC('sonu@1solutions.biz');
+                $mail->AddCC('sonu@1solutions.biz');
+
+
                 $mail->SMTPOptions = [
                     'ssl' => [
                         'verify_peer' => false,
@@ -685,19 +692,26 @@ WHERE booking_id='$booking_id'";
 </style>
 
 
+<?php
+
+$paymentslipno = $propertydata['booking_no'];
+
+?>
 
 
 
 
-
-<div class="modal fade" id="paySlip<?= $bokingno ?>" role="dialog">
+<div class="modal fade" id="paySlip" role="dialog">
     <div class="modal-dialog payslip-sec">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Payments Received </h4>
+                <h4 class="modal-title">
+                    Payments Received (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
+                </h4>
+
             </div>
             <div class="modal-body ">
 
@@ -811,8 +825,7 @@ WHERE booking_id='$booking_id'";
     <div class="content">
 
         <!-- Breadcrumb -->
-       <div class="d-block text-center page-breadcrumb mb-3 pagetitle"
-     style="padding: 15px !important;">
+        <div class="d-block text-center page-breadcrumb mb-3 pagetitle" style="padding: 15px !important;">
 
 
             <div class="my-auto">
@@ -824,7 +837,7 @@ WHERE booking_id='$booking_id'";
         <div class="row">
 
             <div class="col-md-12 mt-3">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data" id="bookingForm">
                     <div class="row" style="margin-top: 0px;">
 
                         <div class="col-md-6 mb-5">
@@ -1139,7 +1152,7 @@ WHERE booking_id='$booking_id'";
                 if ($booking_installstatus == 'Completed') {
                     ?>
                     <div class="row" style="border-top: 2px solid #000;">
-                        <div class="col-lg-4" style="margin-top: 20px;">
+                        <div class="col-lg-3" style="margin-top: 20px;">
                             <p><strong>Installment Date</strong> :
                                 <?php echo htmlspecialchars(@$propertydata['booking_installdate']); ?>
                             </p>
@@ -1211,16 +1224,310 @@ WHERE booking_id='$booking_id'";
 
 
 
+
+
+<?php
+// include("database.php"); 
+
+if (isset($_POST['formadd'])) {
+
+    $booking_id          = $_POST['booking_id'];
+    $booking_payplan     = $_POST['booking_payplan'];
+    $booking_installdate = $_POST['booking_installdate'];
+    $booking_plotarea    = $_POST['booking_plotarea'];
+    $booking_plotrate    = $_POST['booking_plotrate'];
+    $booking_plc         = $_POST['booking_plc'];
+    $booking_edc         = $_POST['booking_edc'];
+    $booking_idc         = $_POST['booking_idc'];
+    $booking_totalamt    = $_POST['booking_totalamt'];
+    $booking_plotno      = $_POST['booking_plotno'];
+    $percentage          = $_POST['percentage'];
+    $advisor_amount      = $_POST['advisor_amount'];
+    $booking_blockno     = $_POST['booking_blockno'];
+
+    $query = "UPDATE booking_master SET
+                booking_payplan = ?,
+                booking_installdate = ?,
+                booking_plotarea = ?,
+                booking_plotrate = ?,
+                booking_plc = ?,
+                booking_edc = ?,
+                booking_idc = ?,
+                booking_totalamt = ?,
+                booking_plotno = ?,
+                percentage = ?,
+                advisor_amount = ?,
+                booking_blockno = ?
+              WHERE booking_id = ?";
+
+    $stmt = $con->prepare($query);
+    $stmt->bind_param(
+        "ssddddddssssi",
+        $booking_payplan,
+        $booking_installdate,
+        $booking_plotarea,
+        $booking_plotrate,
+        $booking_plc,
+        $booking_edc,
+        $booking_idc,
+        $booking_totalamt,
+        $booking_plotno,
+        $percentage,
+        $advisor_amount,
+        $booking_blockno,
+        $booking_id
+    );
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Plot Updated Successfully');</script>";
+    } else {
+        echo "<script>alert('Update Failed!');</script>";
+    }
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="modal fade" id="updatemodel" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Update Plot</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="" method="post" id="plotForm">
+                                            <input type="hidden" name="booking_id"
+                                                value="<?php echo htmlspecialchars($propertydata['booking_id']); ?>"
+                                                required>
+                                            <input type="hidden" name="booking_payplan"
+                                                value="<?php echo htmlspecialchars($propertydata['booking_payplan']); ?>"
+                                                required>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">
+                                                            <label for="recipient-name" class="col-form-label">Installment
+                                                                Date:</label>
+                                                            <input type="date" class="form-control" id="booking_installdate"
+                                                                name="booking_installdate"
+                                                                value="<?= $propertydata['booking_installdate']; ?>"
+                                                                required>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Plot Size:</label>
+                                                            <input type="number" class="form-control" id="booking_plotarea"
+                                                                name="booking_plotarea" required min="0"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plotarea']); ?>"
+                                                                oninput="getProductAmt()" step="0.01">
+                                                        </div>
+
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Plot Rate:</label>
+                                                            <input type="number" class="form-control" id="booking_plotrate"
+                                                                name="booking_plotrate" min="0" step="0.01"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plotrate']); ?>"
+                                                                oninput="getProductAmt()" required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">PLC (%):</label>
+                                                            <input type="number" class="form-control" id="booking_plc"
+                                                                name="booking_plc" min="0" step="0.01"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plc']); ?>"
+                                                                oninput="getProductAmt()" required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">EDC (%):</label>
+                                                            <input type="number" class="form-control" id="booking_edc"
+                                                                name="booking_edc" min="0" step="0.01"
+                                                                value="<?= htmlspecialchars($propertydata['booking_edc']); ?>"
+                                                                oninput="getProductAmt()" required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">IDC (%):</label>
+                                                            <input type="number" class="form-control" id="booking_idc"
+                                                                name="booking_idc" min="0" step="0.01"
+                                                                value="<?= htmlspecialchars($propertydata['booking_idc']); ?>"
+                                                                oninput="getProductAmt()" required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Plot Amount:</label>
+                                                            <input type="number" class="form-control" id="booking_totalamt"
+                                                                name="booking_totalamt"
+                                                                value="<?= htmlspecialchars($propertydata['booking_totalamt']); ?>"
+                                                                readonly required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Plot No:</label>
+                                                            <input type="text" class="form-control" id="booking_plotno"
+                                                                name="booking_plotno"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plotno']); ?>"
+                                                                required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Advisor Percentage *</label>
+                                                            <input type="number" class="form-control" id="percentage"
+                                                                name="percentage"
+                                                                value="<?= htmlspecialchars($propertydata['percentage']); ?>"
+                                                                oninput="calculateAdvisorAmount()" required>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <label class="col-form-label">Advisor Amount *</label>
+                                                            <input type="text" class="form-control" id="advisoramount"
+                                                                name="advisor_amount"
+                                                                value="<?= htmlspecialchars($propertydata['advisor_amount']); ?>"
+                                                                required>
+                                                        </div>
+
+
+                                                        <div class="col-md-12 mt-3">
+                                                            <div class="row">
+                                                                <span>Block No:</span>
+
+                                                                <div class="col-md-3 mt-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="booking_blockno" id="blockA" value="A"
+                                                                            <?= ($propertydata['booking_blockno'] == 'A') ? 'checked' : ''; ?> required>
+                                                                        <label class="form-check-label" for="blockA"
+                                                                            style="font-weight: normal;">
+                                                                            Block A
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 mt-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="booking_blockno" id="blockB" value="B"
+                                                                            <?= ($propertydata['booking_blockno'] == 'B') ? 'checked' : ''; ?>>
+                                                                        <label class="form-check-label" for="blockB"
+                                                                            style="font-weight: normal;">
+                                                                            Block B
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 mt-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="booking_blockno" id="blockC" value="C"
+                                                                            <?= ($propertydata['booking_blockno'] == 'C') ? 'checked' : ''; ?>>
+                                                                        <label class="form-check-label" for="blockC"
+                                                                            style="font-weight: normal;">
+                                                                            Block C
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-3 mt-3">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="booking_blockno" id="blockD" value="D"
+                                                                            <?= ($propertydata['booking_blockno'] == 'D') ? 'checked' : ''; ?>>
+                                                                        <label class="form-check-label" for="blockD"
+                                                                            style="font-weight: normal;">
+                                                                            Block D
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-center">
+                                                <button type="submit" name="formadd" class="btn btn-primary">
+                                                    Update Plot
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-m btn-warning" data-toggle="modal"
+                                data-target="#updatemodel">
+                                Edit
+                            </button>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <div class="col-lg-8" style="margin-top: 20px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="col-md-5">
+                                    <div class="col-md-3">
                                         <h4>Payment Installment
                                             <hr>
                                         </h4>
 
                                     </div>
-                                    <div class="col-md-4">
+
+                                    <div class="col-md-3">
+                                        <a href="bba.php?booking_id=<?php echo $booking_id; ?>" class="btn btn-warning">
+                                            BBA</a>
+                                    </div>
+
+                                    <div class="col-md-3">
 
 
                                         <button type="button" class="btn btn-m btn-success action-btn"
@@ -1237,8 +1544,7 @@ WHERE booking_id='$booking_id'";
 
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="#" class="btn btn-info" data-toggle="modal"
-                                            data-target="#paySlip<?= $bokingno ?>">
+                                        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#paySlip">
                                             View Payment Slip</a>
                                     </div>
                                 </div>
@@ -1372,6 +1678,10 @@ WHERE booking_id='$booking_id'";
                                                     oninput="getProductAmt()" step="0.01">
                                             </div>
 
+
+
+
+
                                             <div class="col-md-6">
                                                 <label for="recipient-name" class="col-form-label">Plot Amount:</label>
                                                 <input type="number" class="form-control" id="booking_totalamt"
@@ -1489,8 +1799,13 @@ WHERE booking_id='$booking_id'";
         var total_amount = base_amount + plc_amount + edc_amount + idc_amount;
 
         if (isNaN(total_amount) || total_amount <= 0) {
-            console.error("Invalid total amount: area=" + booking_plotarea + ", rate=" + booking_plotrate +
-                ", plc=" + booking_plc + ", edc=" + booking_edc + ", idc=" + booking_idc);
+            console.error(
+                "Invalid total amount: area=" + booking_plotarea +
+                ", rate=" + booking_plotrate +
+                ", plc=" + booking_plc +
+                ", edc=" + booking_edc +
+                ", idc=" + booking_idc
+            );
             $('#booking_totalamt').val('0.00');
         } else {
             $('#booking_totalamt').val(total_amount.toFixed(2));
@@ -1512,7 +1827,8 @@ WHERE booking_id='$booking_id'";
         });
 
         // Trigger calculation on input change
-        $('#booking_plotarea, #booking_plotrate, #booking_plc, #booking_edc, #booking_idc').on('input', getProductAmt);
+        $('#booking_plotarea, #booking_plotrate, #booking_plc, #booking_edc, #booking_idc')
+            .on('input', getProductAmt);
 
         // Validate Plot No Assign form
         $('form[action="booking-plot-assign.php"]').submit(function (event) {
@@ -1521,6 +1837,7 @@ WHERE booking_id='$booking_id'";
             var plotrate = parseFloat($('#booking_plotrate').val()) || 0;
             var installdate = $('#booking_installdate').val();
             var plotno = $('#booking_plotno').val().trim();
+
             if (totalamt <= 0) {
                 alert("Error: Total Amount must be greater than 0. Please check Plot Size and Plot Rate.");
                 event.preventDefault();
@@ -1551,6 +1868,8 @@ WHERE booking_id='$booking_id'";
 </script>
 
 
+
+
 <!-- Advisor percentage -->
 <script>
     function calculateAdvisorAmount() {
@@ -1564,6 +1883,15 @@ WHERE booking_id='$booking_id'";
 </script>
 
 <!-- Advisor percentage -->
+
+
+
+
+
+
+
+
+
 
 
 
