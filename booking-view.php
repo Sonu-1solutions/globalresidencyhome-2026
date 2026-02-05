@@ -1646,7 +1646,7 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-                        <div class="col-md-1">
+                        <div class="col-md-1 mt-3">
                             <button type="button" class="btn btn-m btn-warning" data-toggle="modal"
                                 data-target="#updatemodel">
                                 Edit

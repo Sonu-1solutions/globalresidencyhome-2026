@@ -208,10 +208,10 @@ function numToWords(num){
     return words.charAt(0).toUpperCase()+words.slice(1);
 }
 </script>
-                                    <div class="">
+                                    <!-- <div class="">
                                         <strong>Total Amount:</strong>
                                         <?php echo $productdata['booking_totalamt']?>
-                                    </div>
+                                    </div> -->
                                 
 
 
@@ -228,20 +228,20 @@ function numToWords(num){
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Booking ID *</label>
-                                        <input class="form-control" value="<?= $productdata['booking_no'] ?>" type="text"
+                                        <input class="form-control" style="height:50px;" value="<?= $productdata['booking_no'] ?>" type="text"
                                             name="registrationNumber" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Current Date *</label>
-                                        <input class="form-control" value="<?= $currentDate ?>" type="text" name="currentDate"
+                                        <input class="form-control" style="height:50px;" value="<?= $currentDate ?>" type="text" name="currentDate"
                                             required>
                                     </div>
 
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Received with thanks from *</label>
-                                        <input class="form-control"
+                                        <input class="form-control" style="height:50px;"
                                             value="<?= $productdata['booking_fname'] . ' ' . $productdata['booking_lname'] ?>"
                                             type="text" name="receiveName" required>
                                     </div>
@@ -252,7 +252,7 @@ function numToWords(num){
                                             <label class="fw-bold">The sum of Rupees *</label>
                                             <!-- <input type="text" class="form-control" placeholder="Enter Amount In Words"
                                                 name="sumAmount" required> -->
-                                                <input type="text" class="form-control" placeholder="Enter Amount In Words" id="sumAmount" name="sumAmount" value="<?php echo numberToWords($balanceamt); ?>" required>
+                                                <input type="text" class="form-control" style="height:50px;" placeholder="Enter Amount In Words" id="sumAmount" name="sumAmount" value="<?php echo numberToWords($balanceamt); ?>" required>
                                         </div>
 
                                     </div>
@@ -265,7 +265,7 @@ function numToWords(num){
 
                                     <div class="col-md-4 mb-4">
                                         <label class="fw-bold">Drawn On *</label>
-                                        <input type="text" class="form-control py-4" name="drawnon" accept="image/*">
+                                        <input type="text" class="form-control py-4" style="height:50px;" name="drawnon" accept="image/*">
                                     </div>
 
                                     <div class="col-md-4 mb-4">
@@ -300,7 +300,7 @@ function numToWords(num){
                                         <!-- <input type="number" style="height:50px;" class="form-control"
                                             value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount"
                                             name="totalamout" oninput="calculateAdvisorAmount()" required> -->
-                                            <input type="number" class="form-control" id="totalamount" value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount" name="totalamout" oninput="updateWords()" required>
+                                            <input type="number" class="form-control" id="totalamount" value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount" style="height:50px;" name="totalamout" oninput="updateWords()" required>
                                     </div>
 
                                     <div class="col-md-4 mb-4">
