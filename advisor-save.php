@@ -123,7 +123,7 @@ include "layout/head.php";
 
 
         <?php $adviserid = $_POST['booking_advisor'];
-         $query1 = "SELECT booking_advisor FROM booking_master WHERE booking_advisorid='$adviserid'";
+        $query1 = "SELECT booking_advisor FROM booking_master WHERE booking_advisorid='$adviserid'";
         $result1 = mysqli_query($con, $query1);
         if ($result1 && mysqli_num_rows($result1) > 0) {
             $row1 = mysqli_fetch_assoc($result1);
@@ -148,8 +148,7 @@ include "layout/head.php";
                         <th>ID</th>
                         <th>Booking Date</th>
                         <th>Booking No</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th> Name</th>
                         <th>Mobile</th>
                         <th>Email</th>
                         <th>Aadhar No</th>
@@ -159,27 +158,71 @@ include "layout/head.php";
                         <th>Address</th>
                         <th>Project</th>
                         <th>Plot Type</th>
-                        <th>Plot Size</th>
+                        <th>Plan</th>
+                        <!-- <th>Plot Size</th> -->
                         <th>Plot No</th>
                         <th>Plot Area</th>
                         <th>Plot Rate</th>
                         <th>Total Amount</th>
+                        <th>Receive Amount</th>
+                        <th>Pending</th>
                         <!-- <th>Status</th> -->
+                         <th>Advisor Amount</th>
                         <th>Created At</th>
                     </tr>
                 </thead>
 
                 <tbody>
+
                     <?php
                     $adviserid = $_POST['booking_advisor'];
 
-                    $query = "SELECT * FROM booking_master WHERE booking_advisorid='$adviserid'";
+                   $query = "SELECT * FROM booking_master WHERE booking_advisorid = '$adviserid' ORDER BY booking_no DESC";
+
                     $result = mysqli_query($con, $query);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
 
 
+
+
+
+                        
+
+
+$paymentslipno = $row['booking_no'];
+
+                    $qry1 = "SELECT 
+                            SUM(total_amout) AS total_received, 
+                            SUM(advisor_amount) AS total_brokageamt 
+                        FROM payment_slip 
+                        WHERE registration_number = '$paymentslipno'";
+
+                    $res1 = mysqli_query($con, $qry1);
+
+                    $totalreceiveamt1 = 0;
+                    $brokragetamotrec1 = 0;
+
+                    while ($row1 = mysqli_fetch_assoc($res1)) {
+                        $totalreceiveamt1 = (float) ($row1['total_received'] ?? 0);
+                        $brokragetamotrec1 = (float) ($row1['total_brokageamt'] ?? 0);
+                    }
 
                             $bokingno = $row['booking_no'];
 
@@ -195,8 +238,8 @@ include "layout/head.php";
 
                                 <td><?php echo $row['booking_date']; ?></td>
                                 <td><?php echo $row['booking_no']; ?></td>
-                                <td><?php echo $row['booking_fname']; ?></td>
-                                <td><?php echo $row['booking_lname']; ?></td>
+                                <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
+
                                 <td><?php echo $row['booking_phone']; ?></td>
                                 <td><?php echo $row['booking_email']; ?></td>
                                 <td><?php echo $row['booking_aadharno']; ?></td>
@@ -206,12 +249,18 @@ include "layout/head.php";
                                 <td><?php echo $row['booking_address']; ?></td>
                                 <td><?php echo $row['booking_project']; ?></td>
                                 <td><?php echo $row['booking_plottype']; ?></td>
-                                <td><?php echo $row['booking_plotsize']; ?></td>
+                                <td><?php echo $row['booking_payplan']; ?></td>
+                                <!-- <td><?php echo $row['booking_plotsize']; ?></td> -->
                                 <td><?php echo $row['booking_plotno']; ?></td>
                                 <td><?php echo $row['booking_plotarea']; ?></td>
                                 <td><?php echo $row['booking_plotrate']; ?></td>
                                 <td><?php echo $row['booking_totalamt']; ?></td>
                                 <!-- <td><?php echo $row['booking_status']; ?></td> -->
+                                <td><?php echo $totalreceiveamt1 ?></td>
+                                <td><?php 
+                                    echo ($row['booking_totalamt'] - $totalreceiveamt1);
+                                ?></td>
+                                <td><?php echo $row['advisor_amount']; ?></td>
                                 <td><?php echo $row['booking_createat']; ?></td>
                             </tr>
 
@@ -233,6 +282,8 @@ include "layout/head.php";
 
                                             $query1 = "SELECT * FROM `payment_slip` WHERE `registration_number`='$bokingno' Order BY `id` ASC limit 1";
                                             $result1 = mysqli_query($con, $query1);
+
+
 
                                             if ($result1 && mysqli_num_rows($result1) > 0) {
                                                 while ($row1 = mysqli_fetch_assoc($result1)) {

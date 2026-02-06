@@ -94,7 +94,7 @@ include "layout/head.php";
         $sn = 1;
         $count = 1;
         $countbtn = 1;
-        $slipqry = mysqli_query($con, "select * from payment_slip order by registration_number DESC");
+        $slipqry = mysqli_query($con, "select * from payment_slip order by slip_id DESC");
         while ($slipdata = mysqli_fetch_assoc($slipqry)) {
           $bookingNo = $slipdata['registration_number'];
           if ($bookingNo == $alloted) {

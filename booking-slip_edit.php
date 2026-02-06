@@ -78,6 +78,9 @@ include "layout/head.php";
 
                 <?php
                 $alloted = $_GET['slip_id'];
+                
+                $payslip_id = $_GET['slipno'];
+
                 $sn = 1;
 
 
@@ -85,8 +88,7 @@ include "layout/head.php";
 
 
 
-                $slipqry = mysqli_query($con, "SELECT * FROM `payment_slip` WHERE `registration_number`='$alloted'");
-                
+                $slipqry = mysqli_query($con, "SELECT * FROM `payment_slip` WHERE `slip_id`='$payslip_id'");
                 $slipqryres = mysqli_fetch_assoc($slipqry) ?? [];
                 
 
@@ -195,9 +197,6 @@ include "layout/head.php";
 
                                 return ucfirst($words);
                             }
-
-                            // Default balance amount
-                            $balanceamt = isset($_GET['balanceamt']) ? $_GET['balanceamt'] : 369837.10;
                             ?>
 
 
@@ -278,95 +277,93 @@ include "layout/head.php";
                             <div class="col-md-12 mt-3">
                                 <div class="row">
 
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Booking ID *</label>
-                                        <input class="form-control" style="height:50px;"
-                                            value="<?= $productdata['booking_no'] ?>" type="text" name="registrationNumber"
-                                            required>
+                                
+                                    <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Booking ID *</label>
+                                            <input class="form-control" style="height:50px;"
+                                                value="<?= $productdata['booking_no'] ?>" type="text" name="registrationNumber"
+                                                required readonly>
+                                        </div>
+
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Current Date *</label>
+                                            <input class="form-control" style="height:50px;" value="<?= $currentDate ?>" type="text" name="currentDate" required>
+                                        </div>
+
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Slip ID *</label>
+                                            <input class="form-control" style="height:50px;" value="<?= $payslip_id ?>" type="text"name="currentDate" required readonly>
+                                        </div>
+
                                     </div>
 
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Current Date *</label>
-                                        <input class="form-control" style="height:50px;" value="<?= $currentDate ?>" type="text"
-                                            name="currentDate" required>
-                                    </div>
+                                    
 
+                                    <div class="row">
+                                        <div class="col-md-3 mb-4">
+                                            <label class="fw-bold">Received with thanks from *</label>
+                                            <input class="form-control" style="height:50px;"
+                                                value="<?= $slipqryres['receive_name'] ?>" type="text" name="receiveName" required>
+                                        </div>
 
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Received with thanks from *</label>
-                                        <input class="form-control" style="height:50px;"
-                                            value="<?= $slipqryres['receive_name'] ?>" type="text" name="receiveName" required>
+                                        <div class="col-md-3 mb-4">
+                                            <label class="fw-bold">By Online/Cheque/D.D.No. *</label>
+                                            <input type="text" class="form-control" style="height:50px;" name="paymentby"
+                                                value="<?= $slipqryres['payment_by']; ?>" required>
+                                        </div>
+
+                                        <div class="col-md-3 mb-4">
+                                            <label class="fw-bold">Drawn On *</label>
+                                            <input type="text" class="form-control py-4" style="height:50px;" name="drawnon"
+                                                value="<?= $slipqryres['drawn_on']; ?>" accept="image/*">
+                                        </div>
+
+                                        <div class="col-md-3 mb-4">
+                                            <label class="fw-bold">Cheque Date *</label>
+                                            <input type="date" class="form-control" name="chequedate"
+                                                value="<?= $slipqryres['payment_by_date']; ?>" style="height:50px;" required>
+                                        </div>
                                     </div>
 
                                     <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Project Name *</label>
+                                            <input type="text" class="form-control" value="Global Residency Homes"
+                                                name="projectname" style="height:50px;" required>
+                                        </div>
 
-                                        <div class="col-md-12  mb-4">
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Plot No. *</label>
+                                            <input type="text" style="height:50px;" class="form-control"
+                                                value="<?= $slipqryres['plot_no']; ?>" name="plotno" required>
+                                        </div>
+
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Plot Size *</label>
+                                            <input type="text" style="height:50px;" class="form-control"
+                                                value="<?= $slipqryres['plot_size']; ?> " name="plotsize" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                            <label class="fw-bold">Total Amount *</label>
+                                            <input type="number" class="form-control" id="totalamount"
+                                                value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;" name="totalamout"
+                                                oninput="updateWords()" required>
+                                        </div>
+                                        <div class="col-md-8  mb-4">
                                             <label class="fw-bold">The sum of Rupees *</label>
                                             <!-- <input type="text" class="form-control" placeholder="Enter Amount In Words"
                                                 name="sumAmount" required> -->
                                             <input type="text" class="form-control" style="height:50px;"
                                                 placeholder="Enter Amount In Words" id="sumAmount" name="sumAmount"
-                                                value="<?php echo numberToWords($balanceamt); ?>" required>
+                                                value="<?php echo numberToWords($slipqryres['total_amout']); ?>" required>
                                         </div>
-
                                     </div>
 
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">By Online/Cheque/D.D.No. *</label>
-                                        <input type="text" class="form-control" style="height:50px;" name="paymentby"
-                                            value="<?= $slipqryres['payment_by']; ?>" required>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Drawn On *</label>
-                                        <input type="text" class="form-control py-4" style="height:50px;" name="drawnon"
-                                            value="<?= $slipqryres['drawn_on']; ?>" accept="image/*">
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Cheque Date *</label>
-                                        <input type="date" class="form-control" name="chequedate"
-                                            value="<?= $slipqryres['payment_by_date']; ?>" style="height:50px;" required>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Project Name *</label>
-                                        <input type="text" class="form-control" value="Global Residency Homes"
-                                            name="projectname" style="height:50px;" required>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Plot No. *</label>
-                                        <input type="text" style="height:50px;" class="form-control"
-                                            value="<?= $slipqryres['plot_no']; ?>" name="plotno" required>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Plot Size *</label>
-                                        <input type="text" style="height:50px;" class="form-control"
-                                            value="<?= $slipqryres['plot_size']; ?> " name="plotsize" required>
-                                    </div>
-
-                                    <div class="col-md-4 mb-4">
-                                        <label class="fw-bold">Total Amount *</label>
-                                        <!-- <?php
-                                        $balanceamt = $_GET['balanceamt'];
-                                        ?> -->
-                                        <input type="hidden" name="beforepaybalance" value="<?php echo $slipqryres; ?>">
-
-                                        <!-- <input type="number" class="form-control" id="totalamount" value="<?php echo $balanceamt; ?>" max="<?= $balanceamt ?>" id="totalamount" style="height:50px;" name="totalamout" oninput="updateWords()" required> -->
-
-                                        <input type="number" class="form-control" id="totalamount"
-                                            value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;" name="totalamout"
-                                            oninput="updateWords()" required>
-
-
-
-
-                                    </div>
-
-                                    <div class="col-md-4 mb-4" style=" display: none; ">
+                                    <!-- <div class="col-md-4 mb-4" style=" display: none; ">
                                         <label class="fw-bold">Advisor Percentage *</label>
 
                                         <input type="number" style="height:50px;" class="form-control" id="percentage"
@@ -379,7 +376,7 @@ include "layout/head.php";
                                         <input type="text" style="height:50px;" class="form-control" id="advisoramount"
                                             name="ammount" readonly required>
 
-                                    </div>
+                                    </div> -->
 
                                     <div class="col-md-12  mb-4">
                                         <button type="submit" name="slipbtn" class="btn btn-primary mt-4">
@@ -405,18 +402,6 @@ include "layout/head.php";
 
 
 
-<!-- JAVASCRIPT -->
-<!-- <script>
-    function calculateAdvisorAmount() {
-        let total = parseFloat(document.getElementById('totalamount').value) || 0;
-        let percentage = parseFloat(document.getElementById('percentage').value) || 0;
-
-        let advisorAmount = (total * percentage) / 100;
-
-        document.getElementById('advisoramount').value = advisorAmount.toFixed(2);
-    }
-</script> -->
-
 
 
 
@@ -437,7 +422,7 @@ include "layout/head.php";
 </script>
 
 
-
+<!-- 
 <script>
     function printDiv(divName) {
         var printContents = document.getElementById(divName).innerHTML;
@@ -449,7 +434,7 @@ include "layout/head.php";
 
         document.body.innerHTML = originalContents;
     } 
-</script>
+</script> -->
 
 
 
