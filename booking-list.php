@@ -144,7 +144,7 @@ table.table.dataTable > thead > tr th {
                                                 <button class="btn btn-sm btn-success action-btn" style="display:none;"> Add Slip </button>
                                             </a>
                                             <a href="booking-slip-list.php?slip_id=<?php echo $productdata['booking_no']; ?>"
-                                                class="mr-1">
+                                                class="mr-1" target="_blank"   >
                                                 <button class="btn btn-sm btn-success action-btn" > View Slip </button>
                                             </a>
                                             <form action="" method="post" onsubmit="return confirmSubmission()">

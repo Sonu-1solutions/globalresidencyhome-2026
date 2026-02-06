@@ -1677,7 +1677,8 @@ $paymentslipno = $propertydata['booking_no'];
                                     </div>
 
                                     <div class="col-md-3">
-                                        <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>" class="btn btn-warning">
+                                        <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>"
+                                            class="btn btn-warning">
                                             BBA</a>
                                     </div>
 
@@ -1688,6 +1689,9 @@ $paymentslipno = $propertydata['booking_no'];
                                             onclick="window.location.href='booking-slip.php?slip_id=<?php echo $propertydata['booking_no']; ?>&balanceamt=<?= $totalpendingbalnce ?>'">
                                             Add Slip
                                         </button>
+
+                                        
+
 
 
 

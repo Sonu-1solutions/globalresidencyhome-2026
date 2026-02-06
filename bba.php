@@ -64,7 +64,7 @@ include "layout/head.php";
 
 
 
-        <table border="1" cellpadding="5" cellspacing="0" style="display: ;">
+        <table border="1" cellpadding="5" cellspacing="0" style="display: none ;">
             <tr>
                 <th>Booking Date</th>
                 <th>Name</th>
@@ -220,6 +220,62 @@ include "layout/head.php";
             .text-primary {
                 color: #007bff;
             }
+
+
+
+
+
+
+
+
+
+
+
+            @media print {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 🔒 Absolute text lock */
+    .print-box {
+        position: absolute !important;
+        transform: translateZ(0);
+    }
+
+    /* Page scaling fix */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+
+.print-box {
+    bottom: 85mm;
+    left: 25mm;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </style>
 
 
@@ -328,7 +384,7 @@ include "layout/head.php";
 
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <div style="
+                            <div class="print-box" style="
                             position:absolute;
                             bottom:320px;   /*  yaha adjust kar sakte ho */
                             left:95px;
@@ -381,11 +437,11 @@ include "layout/head.php";
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
-                            font-size:15px;
+                            font-size:20px;
                             color:black;
                         ">
                                 <?php
-                                echo $row['booking_plotsize'];
+                                echo $row['booking_plotarea'];
                                 ?>
 
                             </div>
@@ -443,11 +499,11 @@ include "layout/head.php";
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
-                            font-size:10px;
+                            font-size:20px;
                             color:black;
                         ">
                                 <?php
-                                echo $row['booking_plotsize'];
+                                echo $row['booking_plotarea'];
                                 ?>
 
                             </div>
@@ -575,7 +631,7 @@ include "layout/head.php";
                                         <td><?php echo $row['booking_date']; ?></td>
                                         <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
                                         <td><?php echo $row['booking_plotno']; ?></td>
-                                        <td><?php echo $row['booking_plotsize']; ?></td>
+                                        <td><?php echo $row['booking_plotarea']; ?></td>
                                         <td><?php echo $row['booking_payplan']; ?></td>
                                         <td><?php echo $row['booking_plotrate']; ?></td>
                                         <td><?php echo $row['booking_plc']; ?></td>

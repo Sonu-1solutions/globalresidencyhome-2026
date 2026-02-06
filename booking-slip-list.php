@@ -52,6 +52,8 @@ include "layout/head.php";
 
 
 
+
+
 <!-- Page Wrapper -->
 <div class="page-wrapper">
 
@@ -60,16 +62,18 @@ include "layout/head.php";
     <!-- Breadcrumb -->
     <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
       <div class="my-auto">
-        
+
         <div class="col-md-12">
           <div class="row">
-            <div class="col-md-10"><h1>View Slip</h1></div>
+            <div class="col-md-10">
+              <h1>View Slip</h1>
+            </div>
             <div class="col-md-2">
               <?php
-                $alloted = $_GET['slip_id'];
-                $bkingque = mysqli_query($con, "select booking_id from booking_master where booking_no='$alloted'");
-                $bkingquer = mysqli_fetch_assoc($bkingque);
-                $bkingqueres = $bkingquer['booking_id'];
+              $alloted = $_GET['slip_id'];
+              $bkingque = mysqli_query($con, "select booking_id from booking_master where booking_no='$alloted'");
+              $bkingquer = mysqli_fetch_assoc($bkingque);
+              $bkingqueres = $bkingquer['booking_id'];
               ?>
               <a href="booking-view.php?booking_id=<?php echo $bkingqueres; ?>" class="btn btn-sm btn-success">
                 ← Back
@@ -99,7 +103,7 @@ include "layout/head.php";
             <div id="printableArea<?php echo $count++ ?>">
               <div class="payment-slip" style="position: relative; width: 100%; margin: 0 auto;display: inline-block;">
                 <img class="slip-img" src="https://globalresidencyhome.com/erp/booking-image/payment-slip.png">
-               
+
 
                 <input
                   style="position: absolute;top: 31%;left: 8%;font-size: 25px;font-weight: 500;font-family: fantasy;letter-spacing: 3px;text-align: center;border: none;background: transparent;padding: 0;"
@@ -154,6 +158,19 @@ include "layout/head.php";
             </div>
             <button class="btn btn-primary my-3" onclick="printDiv('printableArea<?php echo $countbtn++ ?>')"
               style="font-size: 18px;padding:">Print Now</button>
+
+            <!-- <a href="booking-slip_edit.php?slip_id=<?= $slipdata['registration_number']; ?>&slip_id=<?= $slipdata['slip_id']; ?>"
+              class="btn btn-m btn-success action-btn">
+              Edit
+            </a> -->
+
+
+            <a href="booking-slip_edit.php?slip_id=<?= $slipdata['registration_number']; ?>&slipno=<?= $slipdata['slip_id']; ?>"
+              class="btn btn-m btn-success action-btn">
+              Edit
+            </a>
+
+
             <?php
             $sn++;
           }

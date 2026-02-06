@@ -64,7 +64,7 @@ include "layout/head.php";
 
 
             <div class="row">
-                <div class="col-md-6 mb-5">
+                <div class="col-md-2 mb-5">
                     <label class="fw-bold">Advisor Name</label>
                     <select class="form-control" name="booking_advisor" required style="height:50px;">
                         <option value="">— Please choose Advisor —</option>
@@ -83,8 +83,156 @@ include "layout/head.php";
                     </select>
 
                 </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Bookign Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Bookign No</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
 
-                <div class="col-md-6 mt-4">
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">State</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">City</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Project</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Plot Type</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Plot Size</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Plot Area</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-5">
+                    <label class="fw-bold">Plot Rate</label>
+                    <select class="form-control" name="booking_advisor" required style="height:50px;">
+                        <option value="">— Please choose Advisor —</option>
+                        <?php
+                        $query = mysqli_query(
+                            $con,
+                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
+                        );
+
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            echo '<option value="' .$row['user_id'] . '">'
+                                . htmlspecialchars($row['user_name']) .
+                                '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="col-md-2 mt-4">
                     <button type="submit" name="usergetadd" class="btn advisor-btn" style="height:45px;">
                         Submit
                     </button>
