@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2026 at 11:56 AM
+-- Generation Time: Feb 09, 2026 at 05:20 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -516,12 +516,14 @@ INSERT INTO `booking_master` (`booking_id`, `booking_date`, `booking_no`, `booki
 (3799, '27-01-26', 'GRHB7365', 'Deepak', 'test', '7388385654', 'test@123gmail.com', NULL, 'C/o', 'deepak', '2001-01-01', '123456789012', '86889-Banner.jpg', '0987654321', '731203-Commercial Interior Design.jpg', 'delhi', 'dwarika', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 05:11:42', 'Completed', '2026-02-01', 100.00, 1000.00, 2, 106000.00, 'Abc101', 'Corner Facing', 2, 2, 'D', 0, 0),
 (3800, '27-01-26', 'GRHB7366', 'chetan', 'test', '7388385654', 'chetan@gmail.com', NULL, 'C/o', 'test', '2001-01-27', '123456789012', '658189-Why Choose us in Vivek Vihar.jpg', '0987654321', '760851-Residential Interior Design (3).jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 06:45:09', 'Completed', '2026-02-01', 100.00, 1000.00, 0, 100000.00, 'Abc1234', 'Corner Facing', 0, 0, 'C', 0, 0),
 (3801, '27-01-26', 'GRHB7367', 'Ram', 'test', '7388385654', 'ram@gmail.com', NULL, 'C/o', 'test', '2001-01-20', '123456789012', '414135-Banner.jpg', '0987654321', '868574-Custom Interior Designing.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 06:59:19', 'Completed', '2026-01-01', 100.00, 1000.00, 0, 100000.00, 'Abc1213', 'Corner Facing', 0, 0, 'C', 20, 0),
-(3802, '27-01-26', 'GRHB7368', 'shyam', 'test', '7388385654', 'shyam@gmail.com', NULL, 'C/o', 'test', '2000-01-05', '123456789012', '187926-Our Interior Design Process.jpg', '0987654321', '670347-Why Choose us in Vivek Vihar.jpg', 'de', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Twelve Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:01:13', 'Completed', '2026-02-01', 10.00, 100.00, 0, 1000.00, 'Abc1213', 'Corner Facing', 0, 0, 'C', 10, 100),
-(3803, '27-01-26', 'GRHB7369', 'Ayush', 'test', '7388385654', 'ayush@gmail.com', NULL, 'C/o', 'test', '2006-01-05', '123456789012', '461469-Banner.jpg', '0987654321', '595436-Commercial Interior Design.jpg', 'delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Basic', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:03:50', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0),
-(3804, '27-01-26', 'GRHB7370', 'Shivam', 'test', '7388385654', 'shivam@gmail.com', NULL, 'C/o', 'test', '1999-01-05', '123456789012', '233139-Banner.jpg', '0987654321', '864578-Commercial Interior Design.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:06:34', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0),
-(3805, '27-01-26', 'GRHB7371', 'sonu', 'test', '7388385654', 'sonu@gmail.com', NULL, 'C/o', 'test', '2001-01-27', '123456789012', '390244-Why Choose us in Vivek Vihar.jpg', '0987654321', '44057-Custom Interior Designing.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:08:46', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0),
-(3806, '27-01-26', 'GRHB7372', 'admin', 'test', '7388385654', 'admin@gmail.com', NULL, 'C/o', 'test', '2003-01-20', '123456789012', '252824-Our Interior Design Process.jpg', '0987654321', '575568-Custom Interior Designing.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:10:44', 'Completed', '2026-01-29', 100.00, 1000.00, 0, 100000.00, '24', 'Corner Facing', 0, 0, 'C', 2, 2000),
-(3807, '29-01-26', 'GRHB7373', 'Sonu', 'Yadav', '7388385654', 'test@123gmail.com', NULL, 'C/o', 'deepak', '2000-01-01', '123456789012', '', '0987654321', '', 'delhi', 'Delhi', '401', 'Global Residency Homes', 'Commercial', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Twelve Months', 'offline', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '29-01-26 10:44:46', 'Completed', '2026-01-29', 100.00, 1000.00, 2, 106000.00, '25', 'Park Facing', 3, 1, 'B', 2, 2120);
+(3802, '27-01-26', 'GRHB7368', 'shyam', 'test', '7388385654', 'shyam@gmail.com', NULL, 'C/o', 'test', '2000-01-05', '123456789012', '187926-Our Interior Design Process.jpg', '0987654321', '670347-Why Choose us in Vivek Vihar.jpg', 'de', 'Delhi 1', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Twenty Four Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:01:13', 'Completed', '2026-03-08', 100.00, 100.00, 11, 16300.00, 'abc4', 'Corner Facing', 21, 31, 'D', 10, 1630),
+(3803, '27-01-26', 'GRHB7369', 'Ayush', 'test', '7388385654', 'ayush@gmail.com', NULL, 'C/o', 'test', '2006-01-05', '123456789012', '461469-Banner.jpg', '0987654321', '595436-Commercial Interior Design.jpg', 'delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:03:50', 'Completed', '2026-02-07', 10.00, 100.00, 0, 1000.00, 'Abc1213', 'Corner Facing', 0, 0, 'B', 10, 100),
+(3804, '27-01-26', 'GRHB7370', 'Shivam', 'test', '7388385654', 'shivam@gmail.com', NULL, 'C/o', 'test', '1999-01-05', '123456789012', '233139-Banner.jpg', '0987654321', '864578-Commercial Interior Design.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Twelve Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:06:34', 'Completed', '2026-02-06', 10.00, 100.00, 0, 1000.00, '123', 'Corner Facing', 0, 0, 'A', 10, 100),
+(3805, '27-01-26', 'GRHB7371', 'sonu', 'test', '7388385654', 'sonu@gmail.com', NULL, 'C/o', 'test', '2001-01-27', '123456789012', '390244-Why Choose us in Vivek Vihar.jpg', '0987654321', '44057-Custom Interior Designing.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:08:46', 'Completed', '2026-02-03', 10.00, 100.00, 0, 1000.00, 'Abc1213', 'Corner Facing', 0, 0, 'A', 10, 100),
+(3806, '27-01-26', 'GRHB7372', 'admin', 'test', '7388385654', 'admin@gmail.com', NULL, 'C/o', 'test', '2003-01-20', '123456789012', '252824-Our Interior Design Process.jpg', '0987654321', '575568-Custom Interior Designing.jpg', 'Delhi', 'Delhi', '401', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Eighteen Months', 'online', '', '', '', '', 2100.00, 'Som Nath Das', 15, 'Enabled', '27-01-26 07:10:44', 'Completed', '2026-01-29', 100.00, 1000.00, 0, 98000.00, '24', 'Corner Facing', 0, 0, 'C', 2, 2000),
+(3808, '09-02-26', 'GRHB7374', 'Sumit', 'test', '7388385654', 'sumit@gmail.com', NULL, 'C/o', 'test', '2001-01-09', '123456789012', '256164-EQUITAS ORIGINAL Logo_page-0001 (1).jpg', '0987654321', '991740-Bank-Of-Maharashtra-1-e1764657656257.png', 'Delhi', 'Delhi', '401 laxminagar block b', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Six Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '09-02-26 05:11:08', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0),
+(3809, '09-02-26', 'GRHB7375', 'Mohan ', 'test', '7388385654', 'mohan@gmail.com', NULL, 'C/o', 'test', '2000-01-09', '123456789012', '397677-SBI English Logo Approved (1).jpg', '0987654321', '79926-Untitled design 1.jpg', 'Delhi', 'Delhi', '401 laxminagar block c', 'Global Residency Homes', 'Residential', '150 (Sq.Yrd) to 200 (Sq.Yrd)', 'Twelve Months', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '09-02-26 05:14:52', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0),
+(3810, '09-02-26', 'GRHB7376', 'monu', 'test', '7388385654', 'monu@gmail.com', NULL, 'C/o', 'test', '2005-05-12', '123456789012', '520604-Digital Bank (Private).jpg', '0987654321', '401266-Digital Bank.jpg', 'Delhi', 'Delhi', '401 laxminagar block A', 'Global Residency Homes', 'Residential', '100 (Sq.Yrd) to 150 (Sq.Yrd)', 'Down Payment', 'online', '1234567', 'test', '12345678900', 'SBIN001245', 2100.00, 'Som Nath Das', 15, 'Enabled', '09-02-26 05:18:23', 'Pending', '', 0.00, 0.00, 0, 0.00, '0', 'Corner Facing', 0, 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -6340,19 +6342,6 @@ INSERT INTO `installment_master` (`installment_id`, `installment_bookingid`, `in
 (6990, 3801, '2026-05-01', 120, 15000.00, '2 Emi', '15%', 'Enabled', '2026-01-27 08:27:58', 1),
 (6991, 3801, '2026-05-31', 150, 15000.00, '3 Emi', '15%', 'Enabled', '2026-01-27 08:27:58', 1),
 (6992, 3801, '2026-06-30', 180, 15000.00, '4 Emi', '15%', 'Enabled', '2026-01-27 08:27:58', 1),
-(6993, 3802, '2026-02-04', 3, 100.00, 'On Booking', '10%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6994, 3802, '2026-03-01', 28, 200.00, 'Within 28 days', '20%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6995, 3802, '2026-04-02', 60, 100.00, 'Within 60 days', '10%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6996, 3802, '2026-05-02', 90, 60.00, '1 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6997, 3802, '2026-06-01', 120, 60.00, '2 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6998, 3802, '2026-07-01', 150, 60.00, '3 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(6999, 3802, '2026-07-31', 180, 60.00, '4 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7000, 3802, '2026-08-30', 210, 60.00, '5 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7001, 3802, '2026-09-29', 240, 60.00, '6 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7002, 3802, '2026-10-29', 270, 60.00, '7 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7003, 3802, '2026-11-28', 300, 60.00, '8 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7004, 3802, '2026-12-28', 330, 60.00, '9 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
-(7005, 3802, '2027-01-27', 360, 60.00, '10 Emi', '6%', 'Enabled', '2026-01-27 08:38:04', 1),
 (7027, 3800, '2026-02-04', 3, 10000.00, 'On Booking', '10%', 'Enabled', '2026-01-29 10:22:51', 1),
 (7028, 3800, '2026-03-01', 28, 20000.00, 'Within 28 days', '20%', 'Enabled', '2026-01-29 10:22:51', 1),
 (7029, 3800, '2026-04-02', 60, 10000.00, 'Within 60 days', '10%', 'Enabled', '2026-01-29 10:22:51', 1),
@@ -6360,26 +6349,102 @@ INSERT INTO `installment_master` (`installment_id`, `installment_bookingid`, `in
 (7031, 3800, '2026-06-01', 120, 15000.00, '2 Emi', '15%', 'Enabled', '2026-01-29 10:22:51', 1),
 (7032, 3800, '2026-07-01', 150, 15000.00, '3 Emi', '15%', 'Enabled', '2026-01-29 10:22:51', 1),
 (7033, 3800, '2026-07-31', 180, 15000.00, '4 Emi', '15%', 'Enabled', '2026-01-29 10:22:51', 1),
-(7037, 3807, '2026-02-01', 3, 10600.00, 'On Booking', '10%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7038, 3807, '2026-02-26', 28, 21200.00, 'Within 28 days', '20%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7039, 3807, '2026-03-30', 60, 10600.00, 'Within 60 days', '10%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7040, 3807, '2026-04-29', 90, 6360.00, '1 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7041, 3807, '2026-05-29', 120, 6360.00, '2 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7042, 3807, '2026-06-28', 150, 6360.00, '3 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7043, 3807, '2026-07-28', 180, 6360.00, '4 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7044, 3807, '2026-08-27', 210, 6360.00, '5 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7045, 3807, '2026-09-26', 240, 6360.00, '6 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7046, 3807, '2026-10-26', 270, 6360.00, '7 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7047, 3807, '2026-11-25', 300, 6360.00, '8 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7048, 3807, '2026-12-25', 330, 6360.00, '9 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7049, 3807, '2027-01-24', 360, 6360.00, '10 Emi', '6%', 'Enabled', '2026-01-29 10:47:48', 1),
-(7050, 3806, '2026-02-01', 3, 10000.00, 'On Booking', '10%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7051, 3806, '2026-02-26', 28, 20000.00, 'Within 28 days', '20%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7052, 3806, '2026-03-30', 60, 10000.00, 'Within 60 days', '10%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7053, 3806, '2026-04-29', 90, 15000.00, '1 Emi', '15%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7054, 3806, '2026-05-29', 120, 15000.00, '2 Emi', '15%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7055, 3806, '2026-06-28', 150, 15000.00, '3 Emi', '15%', 'Enabled', '2026-01-29 10:53:34', 1),
-(7056, 3806, '2026-07-28', 180, 15000.00, '4 Emi', '15%', 'Enabled', '2026-01-29 10:53:34', 1);
+(7083, 3806, '2026-02-01', 3, 9800.00, 'On Booking', '10%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7084, 3806, '2026-02-26', 28, 19600.00, 'Within 28 days', '20%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7085, 3806, '2026-03-30', 60, 9800.00, 'Within 60 days', '10%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7086, 3806, '2026-04-29', 90, 3675.00, '1 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7087, 3806, '2026-05-29', 120, 3675.00, '2 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7088, 3806, '2026-06-28', 150, 3675.00, '3 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7089, 3806, '2026-07-28', 180, 3675.00, '4 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7090, 3806, '2026-08-27', 210, 3675.00, '5 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7091, 3806, '2026-09-26', 240, 3675.00, '6 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7092, 3806, '2026-10-26', 270, 3675.00, '7 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7093, 3806, '2026-11-25', 300, 3675.00, '8 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7094, 3806, '2026-12-25', 330, 3675.00, '9 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7095, 3806, '2027-01-24', 360, 3675.00, '10 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7096, 3806, '2027-02-23', 390, 3675.00, '11 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7097, 3806, '2027-03-25', 420, 3675.00, '12 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7098, 3806, '2027-04-24', 450, 3675.00, '13 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7099, 3806, '2027-05-24', 480, 3675.00, '14 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7100, 3806, '2027-06-23', 510, 3675.00, '15 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7101, 3806, '2027-07-23', 540, 3675.00, '16 Emi', '3.75%', 'Enabled', '2026-02-03 12:32:52', 1),
+(7112, 3807, '2026-02-01', 3, 10600.00, 'On Booking', '10%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7113, 3807, '2026-02-26', 28, 21200.00, 'Within 28 days', '20%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7114, 3807, '2026-03-30', 60, 10600.00, 'Within 60 days', '10%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7115, 3807, '2026-04-29', 90, 2890.91, '1 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7116, 3807, '2026-05-29', 120, 2890.91, '2 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7117, 3807, '2026-06-28', 150, 2890.91, '3 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7118, 3807, '2026-07-28', 180, 2890.91, '4 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7119, 3807, '2026-08-27', 210, 2890.91, '5 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7120, 3807, '2026-09-26', 240, 2890.91, '6 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7121, 3807, '2026-10-26', 270, 2890.91, '7 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7122, 3807, '2026-11-25', 300, 2890.91, '8 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7123, 3807, '2026-12-25', 330, 2890.91, '9 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7124, 3807, '2027-01-24', 360, 2890.91, '10 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7125, 3807, '2027-02-23', 390, 2890.91, '11 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7126, 3807, '2027-03-25', 420, 2890.91, '12 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7127, 3807, '2027-04-24', 450, 2890.91, '13 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7128, 3807, '2027-05-24', 480, 2890.91, '14 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7129, 3807, '2027-06-23', 510, 2890.91, '15 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7130, 3807, '2027-07-23', 540, 2890.91, '16 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7131, 3807, '2027-08-22', 570, 2890.91, '17 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7132, 3807, '2027-09-21', 600, 2890.91, '18 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7133, 3807, '2027-10-21', 630, 2890.91, '19 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7134, 3807, '2027-11-20', 660, 2890.91, '20 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7135, 3807, '2027-12-20', 690, 2890.91, '21 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7136, 3807, '2028-01-19', 720, 2890.91, '22 Emi', '2.73%', 'Enabled', '2026-02-03 12:34:10', 1),
+(7176, 3805, '2026-02-06', 3, 100.00, 'On Booking', '10%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7177, 3805, '2026-03-03', 28, 200.00, 'Within 28 days', '20%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7178, 3805, '2026-04-04', 60, 100.00, 'Within 60 days', '10%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7179, 3805, '2026-05-04', 90, 150.00, '1 Emi', '15%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7180, 3805, '2026-06-03', 120, 150.00, '2 Emi', '15%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7181, 3805, '2026-07-03', 150, 150.00, '3 Emi', '15%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7182, 3805, '2026-08-02', 180, 150.00, '4 Emi', '15%', 'Enabled', '2026-02-03 13:07:54', 1),
+(7342, 3803, '2026-02-10', 3, 100.00, 'On Booking', '10%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7343, 3803, '2026-03-07', 28, 200.00, 'Within 28 days', '20%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7344, 3803, '2026-04-08', 60, 100.00, 'Within 60 days', '10%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7345, 3803, '2026-05-08', 90, 150.00, '1 Emi', '15%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7346, 3803, '2026-06-07', 120, 150.00, '2 Emi', '15%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7347, 3803, '2026-07-07', 150, 150.00, '3 Emi', '15%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7348, 3803, '2026-08-06', 180, 150.00, '4 Emi', '15%', 'Enabled', '2026-02-04 12:47:52', 1),
+(7349, 3802, '2026-03-11', 3, 1630.00, 'On Booking', '10%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7350, 3802, '2026-04-05', 28, 3260.00, 'Within 28 days', '20%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7351, 3802, '2026-05-07', 60, 1630.00, 'Within 60 days', '10%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7352, 3802, '2026-06-06', 90, 444.55, '1 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7353, 3802, '2026-07-06', 120, 444.55, '2 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7354, 3802, '2026-08-05', 150, 444.55, '3 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7355, 3802, '2026-09-04', 180, 444.55, '4 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7356, 3802, '2026-10-04', 210, 444.55, '5 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7357, 3802, '2026-11-03', 240, 444.55, '6 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7358, 3802, '2026-12-03', 270, 444.55, '7 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7359, 3802, '2027-01-02', 300, 444.55, '8 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7360, 3802, '2027-02-01', 330, 444.55, '9 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7361, 3802, '2027-03-03', 360, 444.55, '10 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7362, 3802, '2027-04-02', 390, 444.55, '11 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7363, 3802, '2027-05-02', 420, 444.55, '12 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7364, 3802, '2027-06-01', 450, 444.55, '13 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7365, 3802, '2027-07-01', 480, 444.55, '14 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7366, 3802, '2027-07-31', 510, 444.55, '15 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7367, 3802, '2027-08-30', 540, 444.55, '16 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7368, 3802, '2027-09-29', 570, 444.55, '17 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7369, 3802, '2027-10-29', 600, 444.55, '18 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7370, 3802, '2027-11-28', 630, 444.55, '19 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7371, 3802, '2027-12-28', 660, 444.55, '20 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7372, 3802, '2028-01-27', 690, 444.55, '21 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7373, 3802, '2028-02-26', 720, 444.55, '22 Emi', '2.73%', 'Enabled', '2026-02-04 13:37:24', 1),
+(7394, 3804, '2026-02-09', 3, 100.00, 'On Booking', '10%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7395, 3804, '2026-03-06', 28, 200.00, 'Within 28 days', '20%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7396, 3804, '2026-04-07', 60, 100.00, 'Within 60 days', '10%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7397, 3804, '2026-05-07', 90, 60.00, '1 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7398, 3804, '2026-06-06', 120, 60.00, '2 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7399, 3804, '2026-07-06', 150, 60.00, '3 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7400, 3804, '2026-08-05', 180, 60.00, '4 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7401, 3804, '2026-09-04', 210, 60.00, '5 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7402, 3804, '2026-10-04', 240, 60.00, '6 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7403, 3804, '2026-11-03', 270, 60.00, '7 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7404, 3804, '2026-12-03', 300, 60.00, '8 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7405, 3804, '2027-01-02', 330, 60.00, '9 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1),
+(7406, 3804, '2027-02-01', 360, 60.00, '10 Emi', '6%', 'Enabled', '2026-02-06 08:41:30', 1);
 
 -- --------------------------------------------------------
 
@@ -7434,13 +7499,32 @@ INSERT INTO `payment_slip` (`id`, `registration_number`, `slip_id`, `current_dat
 (1017, 'GRHB7368', '7417', '01/03/2026', 'shyam test', 'Two hundred', '123456', '', '2026-01-27', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '200.00', 700, '10', '20.00'),
 (1018, 'GRHB7368', '7418', '03-04-2026', 'shyam test', 'One hundred', '123456', '', '2026-04-02', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 600, '10', '10.00'),
 (1019, 'GRHB7373', '7419', '29-01-2026', 'Sonu Yadav', 'one crore', 'asdads', '', '2026-01-29', 'Global Residency Homes', '25', '100.00 Sqyds.', '100000000000', NULL, '2', '2000000000.00'),
-(1020, 'GRHB7372', '7420', '29-01-2026', 'admin test', 'five thousand only', '123123', '', '2026-01-29', 'Global Residency Homes', '24', '100.00 Sqyds.', '5000', NULL, '2', '100.00'),
-(1021, 'GRHB7372', '7421', '29-01-2026', 'admin test', 'seven', '234234', '', '2026-01-29', 'Global Residency Homes', '24', '100.00 Sqyds.', '7000.00', NULL, '2', '140.00'),
+(1020, 'GRHB7372', '7420', '29-01-2026', 'admin test', 'Five thousand', '123123', '', '2026-01-29', 'Global Residency Homes', '24', '100.00 Sqyds.      ', '5000', NULL, '2', '100.00'),
+(1021, 'GRHB7372', '7421', '29-01-2026', 'admin test', 'Seventy thousand eighty eight', '234234', '', '2026-01-29', 'Global Residency Homes', '24', '100.00 Sqyds.  ', '70088', NULL, '2', '140.00'),
 (1022, 'GRHB7373', '7422', '29-01-2026', 'Sonu Yadav', 'test', 'test', '', '2026-01-01', 'Global Residency Homes', '25', '100.00 Sqyds.', '608', NULL, '2', '12.16'),
 (1023, 'GRHB7373', '7423', '30-01-2026', 'Sonu Yadav', 'One hundred towenty five', '123456', '', '2026-01-08', 'Global Residency Homes', '25', '100.00 Sqyds.', '125', 475, '2', '2.50'),
 (1024, 'GRHB7368', '7424', '30-01-2026', 'shyam test', 'tow ', '123456', '', '2026-01-30', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '200', 400, '10', '20.00'),
 (1025, 'GRHB7368', '7425', '30-01-2026', 'shyam test', 'One hundred', '123456', '', '2026-01-30', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 300, '10', '10.00'),
-(1026, 'GRHB7368', '7426', '30-01-2026', 'shyam test', 'fiftey', '23456', '', '2026-01-30', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '50', 250, '10', '5.00');
+(1026, 'GRHB7368', '7426', '30-01-2026', 'shyam test', 'fiftey', '23456', '', '2026-01-30', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '50', 250, '10', '5.00'),
+(1027, 'GRHB7368', '7427', '03-02-2026', 'shyam test', 'One hundred', '123456', '', '2026-02-03', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 150, '10', '10.00'),
+(1028, 'GRHB7368', '7428', '03-02-2026', 'shyam test', 'One hundred', '123456', 'test', '2026-02-03', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 50, '10', '10.00'),
+(1029, 'GRHB7368', '7429', '04-02-2026', 'shyam test', 'One hundred', '123456', 'test', '2026-02-04', 'Global Residency Homes', 'abc4', '100.00 Sqyds.', '100', 15250, '10', '10.00'),
+(1030, 'GRHB7368', '7430', '05-02-2026', 'shyam test', 'Fifteen thousand two hundred fifty', '123456', 'test', '2026-02-05', 'Global Residency Homes', 'abc4', '100.00 Sqyds.', '15250', 0, '10', '1525.00'),
+(1031, 'GRHB7371', '7431', '05-02-2026', 'sonu test', 'One thousand', '123456', 'test', '2026-02-05', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '1000', 0, '10', '100.00'),
+(1032, 'GRHB7368', '7432', '05-02-2026', 'shyam test', 'One hundred five', '54321', '12345', '2026-01-28', 'Global Residency Homes', '123', '150.00 Sqyds.        ', '105', -100, '10', '10.00'),
+(1033, 'GRHB7370', '7433', '06-02-2026', 'Shivam test', 'One hundred', '123456', 'test', '2026-02-06', 'Global Residency Homes', '123', '10.00 Sqyds.', '100', 900, '0', '0'),
+(1034, 'GRHB7370', '7434', '06-02-2026', 'Shivam test', 'Two hundred', '123456', 'test', '2026-02-06', 'Global Residency Homes', '123', '10.00 Sqyds.', '200', 700, '70', '70.00'),
+(1035, 'GRHB7370', '7435', '06-02-2026', 'Shivam test', 'Fifty', '123456', 'test', '2026-02-06', 'Global Residency Homes', '123', '10.00 Sqyds.', '50', 650, '0', '0'),
+(1036, 'GRHB7370', '7436', '06-02-2026', 'Shivam test', 'One thousand', '123456', 'test', '2026-02-06', 'Global Residency Homes', '123', '10.00 Sqyds.   ', '1000', 550, '100', '30.00'),
+(1037, 'GRHB7369', '7437', '06-02-2026', 'Ayush test', 'One hundred', '123456', 'test', '2026-02-06', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 900, '0', '0'),
+(1038, 'GRHB7369', '7438', '06-02-2026', 'Ayush test', 'Two hundred', '123456', 'test', '2026-02-06', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '200', 700, '70', '70.00'),
+(1039, 'GRHB7369', '7439', '06-02-2026', 'Ayush test', 'One hundred', '123456', 'test', '2026-02-07', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '100', 600, '0', '0'),
+(1040, 'GRHB7369', '7440', '06-02-2026', 'Ayush test', 'One hundred fifty', '123456', 'test', '2026-02-06', 'Global Residency Homes', 'Abc1213', '10.00 Sqyds.', '150', 450, '100', '30.00'),
+(1041, 'GRHB7367', '7441', '08-02-2026', 'Ram test', 'Ten thousand', '123456', 'test', '2026-02-08', 'Global Residency Homes', 'Abc1213', '100.00 Sqyds.', '10000', 90000, '0', '0'),
+(1042, 'GRHB7367', '7442', '08-02-2026', 'Ram test', 'Twenty thousand', '123456', 'test', '2026-02-08', 'Global Residency Homes', 'Abc1213', '100.00 Sqyds.', '20000', 70000, '0', '0'),
+(1043, 'GRHB7367', '7443', '08-02-2026', 'Ram test', 'Ten thousand', '123456', 'test', '2026-02-08', 'Global Residency Homes', 'Abc1213', '100.00 Sqyds.', '10000', 60000, '0', '0'),
+(1044, 'GRHB7367', '7444', '08-02-2026', 'Ram test', 'Ten thousand', '123123', 'test', '2026-02-08', 'Global Residency Homes', 'Abc1213', '100.00 Sqyds.', '10000', 50000, '0', '0'),
+(1045, 'GRHB7372', '7445', '08-02-2026', 'admin test', 'Twenty two thousand nine hundred twelve', '123456', 'test', '2026-02-06', 'Global Residency Homes', '24', '100.00 Sqyds.', '22912', 0, '100', '1760.00');
 
 -- --------------------------------------------------------
 
@@ -7460,29 +7544,33 @@ CREATE TABLE `user_master` (
   `user_createby` int(15) NOT NULL,
   `user_createtime` varchar(80) NOT NULL,
   `user_changeby` int(15) NOT NULL,
-  `user_changetime` varchar(80) NOT NULL
+  `user_changetime` varchar(80) NOT NULL,
+  `is_deleted` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_master`
 --
 
-INSERT INTO `user_master` (`user_id`, `user_name`, `user_email`, `user_mobile`, `user_department`, `user_password`, `user_image`, `user_status`, `user_createby`, `user_createtime`, `user_changeby`, `user_changetime`) VALUES
-(1, 'Admin', '9988776655', '9988776655', 'Admin', 'cc03e747a6afbbcbf8be7668acfebee5', '1769057416_360_F_511559113_UTxNAE1EP40z1qZ8hIzGNrB0LwqwjruK.jpg', 'Enable', 0, '', 1, '2025-04-30 08:49:27'),
-(15, 'Som Nath Das', 'somnath@globalresidencyhome.com', '8527746547', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-05 12:36:47', 1, '2023-12-05 12:36:47'),
-(16, 'Rajesh Yadav', 'rajesh@globalresidencyhome.com', '9911658496', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2023-12-05 12:39:36', 1, '2025-06-17 10:52:19'),
-(17, 'Himanshu Chaudhary', 'himanshu@globalresidencyhome.com', '7042419124', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2023-12-05 12:44:32', 1, '2025-11-04 09:35:38'),
-(19, 'Aryan Pundhir', 'aryan@globalresidencyhome.com', '8510918613', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:07:08', 1, '2024-09-02 06:04:23'),
-(20, 'Anurag Pathak', 'anurag@globalresidencyhome.com', '8860122230', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:07:39', 1, '2024-07-07 14:40:28'),
-(23, 'Vikas Kumar', 'vikas@globalresidencyhome.com', '9910666193', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:08:44', 1, '2025-04-25 09:00:31'),
-(29, 'Aryan Giri', 'aryan1@globalresidencyhome.com', '8437070810', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-03-04 08:11:52', 1, '2025-11-04 09:33:49'),
-(30, 'Praveen Saxena', 'praveen@globalresidencyhome.com', '8700207762', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2024-03-04 08:25:38', 1, '2025-11-04 09:38:52'),
-(31, 'Sakshi Rajput', 'sakshi@globalresidencyhome.com', '8882538662', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-03-23 06:01:11', 1, '2025-11-04 09:33:13'),
-(33, 'RISHABH KUMAR', 'rishabh@globalresidencyhome.com', '8755575253', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2024-11-27 09:07:58', 1, '2024-11-27 09:07:58'),
-(34, 'Lakshay Dhall', 'lakshay@globalresidencyhome.com', '9205008680', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2024-11-27 09:09:15', 1, '2024-11-27 09:09:15'),
-(35, 'Harsh Vashishtha', 'harsh@globalresidencyhome.com', '9027658350', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-11-27 09:10:28', 1, '2025-11-04 09:33:05'),
-(36, 'Manoj Kumar Gupta', 'manoj@globalresidencyhome.com', '9958973758', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-12-11 10:53:04', 1, '2025-06-23 06:11:32'),
-(37, 'Nikhil Sharma', 'nikhil@globalresidencyhome.com', '8506046005', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2025-04-30 04:20:01', 1, '2026-01-14 10:13:45');
+INSERT INTO `user_master` (`user_id`, `user_name`, `user_email`, `user_mobile`, `user_department`, `user_password`, `user_image`, `user_status`, `user_createby`, `user_createtime`, `user_changeby`, `user_changetime`, `is_deleted`) VALUES
+(1, 'Admin', '9988776655', '9988776655', 'Admin', 'cc03e747a6afbbcbf8be7668acfebee5', '1769057416_360_F_511559113_UTxNAE1EP40z1qZ8hIzGNrB0LwqwjruK.jpg', 'Enable', 0, '', 1, '2025-04-30 08:49:27', 0),
+(15, 'Som Nath Das', 'somnath@globalresidencyhome.com', '8527746547', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-05 12:36:47', 1, '2023-12-05 12:36:47', 0),
+(16, 'Rajesh Yadav', 'rajesh@globalresidencyhome.com', '9911658496', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2023-12-05 12:39:36', 1, '2025-06-17 10:52:19', 0),
+(17, 'Himanshu Chaudhary', 'himanshu@globalresidencyhome.com', '7042419124', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2023-12-05 12:44:32', 1, '2025-11-04 09:35:38', 0),
+(19, 'Aryan Pundhir', 'aryan@globalresidencyhome.com', '8510918613', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:07:08', 1, '2024-09-02 06:04:23', 0),
+(20, 'Anurag Pathak', 'anurag@globalresidencyhome.com', '8860122230', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:07:39', 1, '2024-07-07 14:40:28', 0),
+(23, 'Vikas Kumar', 'vikas@globalresidencyhome.com', '9910666193', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2023-12-08 04:08:44', 1, '2025-04-25 09:00:31', 0),
+(29, 'Aryan Giri', 'aryan1@globalresidencyhome.com', '8437070810', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-03-04 08:11:52', 1, '2025-11-04 09:33:49', 0),
+(30, 'Praveen Saxena', 'praveen@globalresidencyhome.com', '8700207762', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2024-03-04 08:25:38', 1, '2025-11-04 09:38:52', 0),
+(31, 'Sakshi Rajput', 'sakshi@globalresidencyhome.com', '8882538662', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-03-23 06:01:11', 1, '2025-11-04 09:33:13', 0),
+(33, 'RISHABH KUMAR', 'rishabh@globalresidencyhome.com', '8755575253', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2024-11-27 09:07:58', 1, '2024-11-27 09:07:58', 0),
+(34, 'Lakshay Dhall', 'lakshay@globalresidencyhome.com', '9205008680', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-11-27 09:09:15', 1, '2026-02-06 18:01:17', 0),
+(35, 'Harsh Vashishtha', 'harsh@globalresidencyhome.com', '9027658350', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-11-27 09:10:28', 1, '2025-11-04 09:33:05', 0),
+(36, 'Manoj Kumar Gupta', 'manoj@globalresidencyhome.com', '9958973758', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2024-12-11 10:53:04', 1, '2025-06-23 06:11:32', 0),
+(37, 'Nikhil Sharma', 'nikhil@globalresidencyhome.com', '8506046005', 'Admin', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2025-04-30 04:20:01', 1, '2026-02-06 19:18:10', 0),
+(47, 'Sonu', 'sonu@gmail.com', '1234567890', 'User', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Disable', 1, '2026-02-06 17:37:24', 1, '2026-02-06 19:16:23', 1),
+(49, 'Monu', 'monu@gmail.com', '1234567890', 'Admin', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2026-02-06 19:19:57', 1, '2026-02-09 04:51:15', 0),
+(50, 'Sonu', 'sonu@gmail.com', '987654321', 'Admin', 'cc03e747a6afbbcbf8be7668acfebee5', '', 'Enable', 1, '2026-02-09 05:04:49', 1, '2026-02-09 05:04:49', 0);
 
 --
 -- Indexes for dumped tables
@@ -7520,25 +7608,25 @@ ALTER TABLE `user_master`
 -- AUTO_INCREMENT for table `booking_master`
 --
 ALTER TABLE `booking_master`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3808;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3811;
 
 --
 -- AUTO_INCREMENT for table `installment_master`
 --
 ALTER TABLE `installment_master`
-  MODIFY `installment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7057;
+  MODIFY `installment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7407;
 
 --
 -- AUTO_INCREMENT for table `payment_slip`
 --
 ALTER TABLE `payment_slip`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1027;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1046;
 
 --
 -- AUTO_INCREMENT for table `user_master`
 --
 ALTER TABLE `user_master`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -880,8 +880,8 @@ $paymentslipno = $propertydata['booking_no'];
                                     <!-- <th>Plot Size</th> -->
                                     <th>Installment Ammount</th>
                                     <th>Remaining Amount</th>
-                                    <th>Percentage</th>
-                                    <th>Advisor Amount</th>
+                                    <!-- <th>Percentage</th> -->
+                                    <!-- <th>Advisor Amount</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -919,8 +919,8 @@ $paymentslipno = $propertydata['booking_no'];
                                         <td><?php echo $installmentdata['total_amout']; ?></td>
                                         <td><?php echo $installmentdata['remaing_balance']; ?></td>
                                         <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
-                                        <td><?php echo $installmentdata['percentage']; ?></td>
-                                        <td><?php echo $installmentdata['advisor_amount']; ?></td>
+                                        <!-- <td><?php echo $installmentdata['percentage']; ?></td> -->
+                                        <!-- <td><?php echo $installmentdata['advisor_amount']; ?></td> -->
 
                                     </tr>
                                     <?php
@@ -960,156 +960,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 <!-- popup -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Advisor pop-up -->
-
-
-
-
-<div class="modal fade" id="advisorSlip" role="dialog">
-    <div class="modal-dialog payslip-sec">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">
-                    Advisor Slip (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
-                </h4>
-
-            </div>
-            <div class="modal-body ">
-
-                <div class="col-lg-12" style="margin-top: 20px;">
-
-                    <div class="table-responsive">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>SNO</th>
-                                    <!-- <th>Registration Number</th> -->
-                                    <th>Slip Id</th>
-                                    <th>Current Date</th>
-                                    <!-- <th>Receive Name</th> -->
-                                    <!-- <th>Amount in Word</th> -->
-                                    <!-- <th>Payment By</th> -->
-                                    <!-- <th>Drawn On</th> -->
-                                    <!-- <th>Payment by date</th> -->
-                                    <!-- <th>Project Name</th> -->
-                                    <!-- <th>Plot No</th> -->
-                                    <!-- <th>Plot Size</th> -->
-                                    <!-- <th>Installment Ammount</th> -->
-                                    <!-- <th>Remaining Amount</th> -->
-                                     <th>Total Advisor Amt</th>
-                                    <th>Percentage</th>
-                                    <th>Advisor Amount</th>
-                                    <th>Advisor Pending Amt</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                $totalreceiveamt = 0;
-                                $brokragetamotrec = 0;
-                                $sn = 1;
-                                $cumulative_amount = 0;
-                                $totalamt = $propertydata['booking_totalamt'];
-                                $paymentslipno = $propertydata['booking_no'];
-                                $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
-                                $installmentres = mysqli_query($con, $installmentqry);
-                                if (!$installmentres) {
-                                    error_log("Failed to fetch installments: " . mysqli_error($con));
-                                }
-                                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
-                                    // $cumulative_amount += $installmentdata['installment_amount'];
-                                    // $remaining_amount = $totalamt - $cumulative_amount;
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $sn; ?></td>
-                                        <!-- <td><?php echo htmlspecialchars($installmentdata['registration_number']); ?></td> -->
-                                        <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
-                                        </td>
-                                        <td><?php echo $installmentdata['current_date']; ?></td>
-                                        <!-- <td><?php echo $installmentdata['receive_name']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['amount_in_word']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['payment_by']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['drawn_on']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['payment_by_date']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['project_name']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['total_amout']; ?></td> -->
-                                        <!-- <td><?php echo $installmentdata['remaing_balance']; ?></td> -->
-                                        <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
-
-                                        <td></td>
-                                        <td><?php echo $installmentdata['percentage']; ?></td>
-                                        <td><?php echo $installmentdata['advisor_amount']; ?></td>
-
-                                    </tr>
-                                    <?php
-                                    $sn++;
-                                }
-
-
-                                $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
-
-                                $res = mysqli_query($con, $qry);
-                                $row = mysqli_fetch_assoc($res);
-
-                                $totalreceiveamt = (float) ($row['total_received'] ?? 0);
-                                $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
-
-
-
-
-                                ?>
-
-
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
-
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-
-
-
-
-
-<!-- Advisor pop-up -->
-
-
-
-
-
 
 
 
@@ -1496,30 +1346,30 @@ $paymentslipno = $propertydata['booking_no'];
                                     <div class="table-responsive">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <tr>
-                                                <th><b>Total Ammount</b></th>
+                                                <th><b>Total Amount</b></th>
                                                 <td><?= $propertydata['booking_totalamt'] ?></td>
                                             </tr>
                                             <tr>
-                                                <th><strong>Total Receive Ammount</strong></th>
+                                                <th><strong>Total Receive Amount</strong></th>
                                                 <td><?= $totalreceiveamt ?></td>
                                             </tr>
                                             <tr>
-                                                <th><strong>Total Pending Ammount</strong></th>
+                                                <th><strong>Total Pending Amount</strong></th>
                                                 <td><?php
                                                 echo $totalpendingbalnce = $propertydata['booking_totalamt'] - $totalreceiveamt;
                                                 ?></td>
                                             </tr>
                                             <tr>
-                                                <th><b>Total Brokerage Ammount</b></th>
+                                                <th><b>Total Brokerage Amount</b></th>
                                                 <td><?= $propertydata['advisor_amount'] ?></td>
                                             </tr>
                                             <tr>
-                                                <th>Brokerage Receive Ammount</th>
+                                                <th>Brokerage Receive Amount</th>
                                                 <td><?= $brokragetamotrec ?></td>
                                             </tr>
                                             <tr>
-                                                <th>Brokerage Pending Ammount</th>
-                                                <td><?= $propertydata['advisor_amount'] - $brokragetamotrec ?></td>
+                                                <th>Brokerage Pending Amount</th>
+                                                <td><?= $propertydata['advisor_amount'] - $brokragetamotrec ?></td> 
                                             </tr>
                                         </table>
                                     </div>
@@ -1528,8 +1378,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
                         </div>
-
-
 
 
 
@@ -1802,13 +1650,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-
-
-
-
-
-
-
                         <div class="col-md-1 mt-3">
                             <button type="button" class="btn btn-m btn-warning" data-toggle="modal"
                                 data-target="#updatemodel">
@@ -1816,13 +1657,6 @@ $paymentslipno = $propertydata['booking_no'];
                             </button>
 
                         </div>
-
-
-
-
-
-
-
 
 
 
@@ -2091,6 +1925,167 @@ $paymentslipno = $propertydata['booking_no'];
             </div>
 
         </div>
+
+
+
+
+
+
+
+
+
+        
+
+
+<!-- Advisor pop-up -->
+
+
+
+
+<div class="modal fade" id="advisorSlip" role="dialog">
+    <div class="modal-dialog payslip-sec">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    Advisor Slip (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
+                </h4>
+
+            </div>
+            <div class="modal-body ">
+
+                <div class="col-lg-12" style="margin-top: 20px;">
+
+                    <div class="table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>SNO</th>
+                                    <!-- <th>Registration Number</th> -->
+                                    <th>Slip Id</th>
+                                    <th>Current Date</th>
+                                    <!-- <th>Receive Name</th> -->
+                                    <!-- <th>Amount in Word</th> -->
+                                    <!-- <th>Payment By</th> -->
+                                    <!-- <th>Drawn On</th> -->
+                                    <!-- <th>Payment by date</th> -->
+                                    <!-- <th>Project Name</th> -->
+                                    <!-- <th>Plot No</th> -->
+                                    <!-- <th>Plot Size</th> -->
+                                    <!-- <th>Installment Ammount</th> -->
+                                    <!-- <th>Remaining Amount</th> -->
+                                    <!-- <th>Total Advisor Amt</th> -->
+                                    <th>Advisor Received Amt</th>
+                                    <!-- <th>Advisor Pending Amt</th> -->
+                                    <!-- <th>Percentage</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
+                                $totalreceiveamt = 0;
+                                $brokragetamotrec = 0;
+                                $sn = 1;
+                                $cumulative_amount = 0;
+                                $totalamt = $propertydata['booking_totalamt'];
+                                $paymentslipno = $propertydata['booking_no'];
+                                $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
+                                $installmentres = mysqli_query($con, $installmentqry);
+                                if (!$installmentres) {
+                                    error_log("Failed to fetch installments: " . mysqli_error($con));
+                                }
+                                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
+                                    // $cumulative_amount += $installmentdata['installment_amount'];
+                                    // $remaining_amount = $totalamt - $cumulative_amount;
+                                    if(!empty($installmentdata['advisor_amount'])){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $sn; ?></td>
+                                            <!-- <td><?php echo htmlspecialchars($installmentdata['registration_number']); ?></td> -->
+                                            <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
+                                            </td>
+                                            <td><?php echo $installmentdata['current_date']; ?></td>
+                                            <!-- <td><?php echo $installmentdata['receive_name']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['amount_in_word']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['payment_by']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['drawn_on']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['payment_by_date']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['project_name']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['total_amout']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['remaing_balance']; ?></td> -->
+                                            <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
+
+                                            <!-- <td><?= $propertydata['advisor_amount'] ?></td> -->
+                                            <td><?php echo $installmentdata['advisor_amount']   ; ?></td>
+                                            <!-- <td><?php echo $propertydata['advisor_amount'] - $installmentdata['advisor_amount']; ?></td> -->
+                                            <!-- <td><?php echo $installmentdata['percentage']; ?></td> -->
+
+                                        </tr>
+                                    <?php
+
+                                        $sn++;
+                                    }
+                            }
+
+
+                                $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
+
+                                $res = mysqli_query($con, $qry);
+                                $row = mysqli_fetch_assoc($res);
+
+                                $totalreceiveamt = (float) ($row['total_received'] ?? 0);
+                                $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
+
+
+
+
+                                ?>
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Advisor pop-up -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

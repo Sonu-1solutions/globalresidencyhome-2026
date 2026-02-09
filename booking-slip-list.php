@@ -107,7 +107,7 @@ include "layout/head.php";
 
                 <input
                   style="position: absolute;top: 31%;left: 8%;font-size: 25px;font-weight: 500;font-family: fantasy;letter-spacing: 3px;text-align: center;border: none;background: transparent;padding: 0;"
-                  type="text" value="<?= $slipdata['slip_id']; ?>" maxlength="4">
+                  type="text" value="<?= $slipdata['slip_id']; ?>" maxlength="4" readonly>
 
                 <p style="position: absolute;top: 32%;right: 8%;font-size: 16px;font-weight: 500;width: 150px;color: #000;">
                   <?= $slipdata['current_date']; ?>
@@ -120,19 +120,19 @@ include "layout/head.php";
 
                 <input
                   style="position: absolute;top: 47.5%;left: 26%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 71%;"
-                  type="text" value="<?= $slipdata['amount_in_word']; ?>">
+                  type="text" value="<?= $slipdata['amount_in_word']; ?>" readonly>
 
                 <input
                   style="position: absolute;top: 54%;right: 30px;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 26%;"
-                  type="text" value="<?= $slipdata['payment_by']; ?>">
+                  type="text" value="<?= $slipdata['payment_by']; ?>" readonly>
 
                 <input
                   style="position: absolute;bottom: 34.8%;left: 19%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 49%;"
-                  type="text" value="<?= $slipdata['drawn_on']; ?>">
+                  type="text" value="<?= $slipdata['drawn_on']; ?>" readonly>
 
                 <input
                   style="position: absolute;bottom: 34.8%;right: 30px;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 22%;"
-                  type="text" value="<?= $slipdata['payment_by_date']; ?>">
+                  type="text" value="<?= $slipdata['payment_by_date']; ?>" readonly>
 
 
 
@@ -143,16 +143,16 @@ include "layout/head.php";
 
                 <input
                   style="position: absolute;bottom: 19.8%;left: 16%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 30%;"
-                  type="text" value="<?php echo $slipdata['plot_no']; ?>">
+                  type="text" value="<?php echo $slipdata['plot_no']; ?>" readonly>
 
                 <input
                   style="position: absolute;bottom: 19.8%;right: 7%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 30%;"
-                  type="text" value="<?php echo $slipdata['plot_size']; ?>">
+                  type="text" value="<?php echo $slipdata['plot_size']; ?>" readonly> 
 
 
                 <input
                   style="position: absolute;bottom: 8.5%;left: 10%;font-size: 20px;font-weight: 600;border: none;background: transparent;padding: 0;width: 15%;font-family: cursive;"
-                  type="text" value="<?php echo $slipdata['total_amout']; ?>">
+                  type="text" value="<?php echo $slipdata['total_amout']; ?>" readonly>
 
               </div>
             </div>

@@ -572,7 +572,7 @@ $balanceamt = isset($_GET['balanceamt']) ? $_GET['balanceamt'] : '0';
                                             <div class="col-md-3 mb-4">
                                                 <label class="fw-bold">Advisor Percentage *</label>
                                                 <input type="number" class="form-control" id="percentage30"
-                                                    name="percentage30" oninput="calculateAdvisorAmount30()" value="100"
+                                                    name="percentage30" oninput="calculateAdvisorAmount30()" value="100" readonly
                                                     required>
                                             </div>
 
