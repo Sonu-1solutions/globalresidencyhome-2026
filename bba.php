@@ -56,9 +56,35 @@ include "layout/head.php";
 
         <!-- Breadcrumb -->
 
+        <?php
+
+        $booking_id = $_GET['booking_id'];
+        if (!$booking_id) {
+            echo '<script> window.location="booking-list.php"; </script>';
+            exit;
+        }
+
+        $query = "SELECT * FROM booking_master WHERE booking_id = $booking_id";
+        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_assoc($result);
+       
+        ?>
+
         <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
             <div class="my-auto">
-                <h1> BBA </h1>
+                <div class="row">
+                        <div class="col-md-10">
+                            <h1>BBA</h1>
+                        </div>
+                        <div class="col-md-2">
+                            
+                            <a href="booking-view.php?booking_id=<?php echo $row['booking_id'] ?>"
+                                class="btn btn-sm btn-success">
+                                ← Back
+                            </a>
+                        </div>
+                    </div>
+              
             </div>
         </div>
 
@@ -76,18 +102,7 @@ include "layout/head.php";
                 <!-- apne table ke hisaab se columns add karo -->
             </tr>
 
-            <?php
 
-            $booking_id = $_GET['booking_id'];
-            if (!$booking_id) {
-                echo '<script> window.location="booking-list.php"; </script>';
-                exit;
-            }
-
-            $query = "SELECT * FROM booking_master WHERE booking_id = $booking_id";
-            $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_assoc($result);
-            ?>
             <tr>
                 <td><?php echo $row['booking_date']; ?></td>
                 <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
@@ -203,79 +218,65 @@ include "layout/head.php";
         ?>
 
         <style>
-            .form-control {
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .mt-2 {
+            margin-top: 10px;
+        }
+
+        .text-primary {
+            color: #007bff;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        @media print {
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
                 width: 100%;
-                padding: 10px;
-                font-size: 16px;
+                height: auto;
+                display: block;
             }
 
-            .fw-bold {
-                font-weight: bold;
+            /* 🔒 Absolute text lock */
+            .print-box {
+                position: absolute !important;
+                transform: translateZ(0);
             }
 
-            .mt-2 {
-                margin-top: 10px;
+            /* Page scaling fix */
+            @page {
+                size: A4;
+                margin: 0;
             }
-
-            .text-primary {
-                color: #007bff;
-            }
+        }
 
 
-
-
-
-
-
-
-
-
-
-            @media print {
-
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* 🔒 Absolute text lock */
-    .print-box {
-        position: absolute !important;
-        transform: translateZ(0);
-    }
-
-    /* Page scaling fix */
-    @page {
-        size: A4;
-        margin: 0;
-    }
-}
-
-
-.print-box {
-    bottom: 85mm;
-    left: 25mm;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        .print-box {
+            bottom: 85mm;
+            left: 25mm;
+        }
         </style>
 
 
@@ -286,52 +287,57 @@ include "layout/head.php";
 
 
         <script>
-            // JS function to convert number to words (simplified same logic)
-            function updateWords() {
-                let val = document.getElementById("totalamount").value;
-                document.getElementById("amountWords").innerText = numToWords(val);
+        // JS function to convert number to words (simplified same logic)
+        function updateWords() {
+            let val = document.getElementById("totalamount").value;
+            document.getElementById("amountWords").innerText = numToWords(val);
+        }
+
+        function numToWords(num) {
+            num = parseFloat(num);
+            if (isNaN(num)) return "";
+
+            let ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+                "seventeen", "eighteen", "nineteen"
+            ];
+            let tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+            function convertTwoDigit(n) {
+                if (n < 20) return ones[n];
+                return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
             }
 
-            function numToWords(num) {
-                num = parseFloat(num);
-                if (isNaN(num)) return "";
-
-                let ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-                    "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
-                    "seventeen", "eighteen", "nineteen"];
-                let tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-
-                function convertTwoDigit(n) {
-                    if (n < 20) return ones[n];
-                    return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
+            function convertThreeDigit(n) {
+                let word = "";
+                if (n > 99) {
+                    word += ones[Math.floor(n / 100)] + " hundred ";
+                    n = n % 100;
                 }
-                function convertThreeDigit(n) {
-                    let word = "";
-                    if (n > 99) { word += ones[Math.floor(n / 100)] + " hundred "; n = n % 100; }
-                    if (n > 0) word += convertTwoDigit(n);
-                    return word.trim();
-                }
-
-                let parts = num.toFixed(2).split(".");
-                let integer = parseInt(parts[0]);
-                let decimal = parseInt(parts[1]);
-
-                let words = "";
-                let lakh = Math.floor(integer / 100000);
-                integer = integer % 100000;
-                let thousand = Math.floor(integer / 1000);
-                integer = integer % 1000;
-                let hundreds = integer;
-
-                if (lakh) words += convertTwoDigit(lakh) + " lakh ";
-                if (thousand) words += convertTwoDigit(thousand) + " thousand ";
-                if (hundreds) words += convertThreeDigit(hundreds);
-
-                words = words.trim();
-                if (decimal > 0) words += " " + convertTwoDigit(decimal) + " paisa";
-
-                return words.charAt(0).toUpperCase() + words.slice(1);
+                if (n > 0) word += convertTwoDigit(n);
+                return word.trim();
             }
+
+            let parts = num.toFixed(2).split(".");
+            let integer = parseInt(parts[0]);
+            let decimal = parseInt(parts[1]);
+
+            let words = "";
+            let lakh = Math.floor(integer / 100000);
+            integer = integer % 100000;
+            let thousand = Math.floor(integer / 1000);
+            integer = integer % 1000;
+            let hundreds = integer;
+
+            if (lakh) words += convertTwoDigit(lakh) + " lakh ";
+            if (thousand) words += convertTwoDigit(thousand) + " thousand ";
+            if (hundreds) words += convertThreeDigit(hundreds);
+
+            words = words.trim();
+            if (decimal > 0) words += " " + convertTwoDigit(decimal) + " paisa";
+
+            return words.charAt(0).toUpperCase() + words.slice(1);
+        }
         </script>
 
 
@@ -341,16 +347,16 @@ include "layout/head.php";
 
 
         <style>
-            table.table.dataTable>tbody>tr td,
-            table.table.dataTable>thead>tr th {
-                font-size: 13px;
-                padding: 5px 10px;
-            }
+        table.table.dataTable>tbody>tr td,
+        table.table.dataTable>thead>tr th {
+            font-size: 13px;
+            padding: 5px 10px;
+        }
         </style>
 
 
 
-<button onclick="printDiv()" style="
+        <button onclick="printDiv()" style="
     padding:10px 20px;
     background:#007bff;
     color:#fff;
@@ -358,8 +364,8 @@ include "layout/head.php";
     cursor:pointer;
     margin-bottom:20px;
 ">
-    🖨 Print BBA Document
-</button>
+            🖨 Print BBA Document
+        </button>
 
 
 
@@ -376,15 +382,15 @@ include "layout/head.php";
             foreach ($images as $img) {
                 $srno++;
                 ?>
-                <div style="margin-bottom:30px; text-align:center;">
+            <div style="margin-bottom:30px; text-align:center;">
 
-                    <!-- ✅ Sirf pehli image par name -->
-                    <?php if ($srno == 1) { ?>
-                        <div style="position:relative; width:100%;">
+                <!-- ✅ Sirf pehli image par name -->
+                <?php if ($srno == 1) { ?>
+                <div style="position:relative; width:100%;">
 
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+                    <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <div class="print-box" style="
+                    <div class="print-box" style="
                             position:absolute;
                             bottom:320px;   /*  yaha adjust kar sakte ho */
                             left:95px;
@@ -395,17 +401,17 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?>
-                            </div>
+                        <?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?>
+                    </div>
 
-                        </div>
+                </div>
 
-                    <?php } elseif ($srno == 2) { ?>
-                        <div style="position:relative; width:100%;">
+                <?php } elseif ($srno == 2) { ?>
+                <div style="position:relative; width:100%;">
 
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+                    <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <div style="
+                    <div style="
                             position:absolute;
                             bottom:197px;   /*  yaha adjust kar sakte ho */
                             left:200px;
@@ -416,20 +422,20 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php
+                        <?php
                                 echo $row['booking_fname'] . ' ' . $row['booking_lname'] . ' (Aadhar No: ' . $row['booking_aadharno'] . ')';
                                 ?>
 
-                            </div>
+                    </div>
 
-                        </div>
-                    <?php } elseif ($srno == 4) { ?>
+                </div>
+                <?php } elseif ($srno == 4) { ?>
 
-                        <div style="position:relative; width:100%;">
+                <div style="position:relative; width:100%;">
 
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+                    <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <div style="
+                    <div style="
                             position:absolute;
                             bottom:781px;   /*  yaha adjust kar sakte ho */
                             left:497px;
@@ -440,12 +446,12 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php
+                        <?php
                                 echo $row['booking_plotarea'];
                                 ?>
 
-                            </div>
-                            <div style="
+                    </div>
+                    <div style="
                             position:absolute;
                             bottom:533px;   /*  yaha adjust kar sakte ho */
                             left:497px;
@@ -456,24 +462,24 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php
+                        <?php
                                 echo $row['booking_plotno'];
                                 ?>
 
-                            </div>
+                    </div>
 
-                        </div>
+                </div>
 
-                    <?php } elseif ($srno == 7) { ?>
+                <?php } elseif ($srno == 7) { ?>
 
-                        <div style="position:relative; width:100%;">
+                <div style="position:relative; width:100%;">
 
-                            <!-- Image -->
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+                    <!-- Image -->
+                    <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <!-- Name just above Allottee(s) -->
+                    <!-- Name just above Allottee(s) -->
 
-                            <div style="
+                    <div style="
                             position:absolute;
                             bottom:473px;   /*  yaha adjust kar sakte ho */
                             left:880px;
@@ -484,14 +490,14 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php
+                        <?php
                                 echo $row['booking_plotno'];
 
                                 ?>
 
 
-                            </div>
-                            <div style="
+                    </div>
+                    <div style="
                             position:absolute;
                             bottom:450px;   /*  yaha adjust kar sakte ho */
                             left:250px;
@@ -502,12 +508,12 @@ include "layout/head.php";
                             font-size:20px;
                             color:black;
                         ">
-                                <?php
+                        <?php
                                 echo $row['booking_plotarea'];
                                 ?>
 
-                            </div>
-                            <div style="
+                    </div>
+                    <div style="
                             position:absolute;
                             bottom:370px;   /*  yaha adjust kar sakte ho */
                             left:750px;
@@ -519,12 +525,12 @@ include "layout/head.php";
                             color:black;
                         ">
 
-                                <span style="font-size:20px;">
-                                    <?php echo $row['booking_totalamt']; ?>
-                                </span>
+                        <span style="font-size:20px;">
+                            <?php echo $row['booking_totalamt']; ?>
+                        </span>
 
-                            </div>
-                            <div style="
+                    </div>
+                    <div style="
                             position:absolute;
                             bottom:340px;   /*  yaha adjust kar sakte ho */
                             left:125px;
@@ -535,30 +541,30 @@ include "layout/head.php";
                             font: size 20px;
                             color:black;
                         ">
-                                <span id="amountWords" class="" style="font-size:20px;">
-                                    <?php echo numberToWords($row['booking_totalamt']); ?>
-                                </span>
+                        <span id="amountWords" class="" style="font-size:20px;">
+                            <?php echo numberToWords($row['booking_totalamt']); ?>
+                        </span>
 
-                            </div>
+                    </div>
 
-                        </div>
-
-
+                </div>
 
 
 
-                    <?php } elseif ($srno == 17) { ?>
-
-                        <div style="position:relative; width:100%;">
-
-                            <!-- Image -->
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
-
-                            <!-- Name just above Allottee(s) -->
 
 
+                <?php } elseif ($srno == 17) { ?>
 
-                            <div style="
+                <div style="position:relative; width:100%;">
+
+                    <!-- Image -->
+                    <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                    <!-- Name just above Allottee(s) -->
+
+
+
+                    <div style="
                             position:absolute;
                             bottom:800px;   /*  yaha adjust kar sakte ho */
                             left:0px;
@@ -571,50 +577,50 @@ include "layout/head.php";
                         ">
 
 
-                                <style>
-                                    /* Table overall */
-                                    #example1 {
-                                        width: 100%;
-                                        border-collapse: collapse;
-                                        table-layout: fixed;
-                                        /* important for wrapping */
-                                    }
+                        <style>
+                        /* Table overall */
+                        #example1 {
+                            width: 100%;
+                            border-collapse: collapse;
+                            table-layout: fixed;
+                            /* important for wrapping */
+                        }
 
-                                    /* Table headers & cells */
-                                    #example1 th,
-                                    #example1 td {
-                                        border: 1px solid #ccc;
-                                        padding: 8px;
-                                        font-size: 13px;
-                                        /* text-align: left; */
-                                        vertical-align: top;
+                        /* Table headers & cells */
+                        #example1 th,
+                        #example1 td {
+                            border: 1px solid #ccc;
+                            padding: 8px;
+                            font-size: 13px;
+                            /* text-align: left; */
+                            vertical-align: top;
 
-                                        white-space: normal;
-                                        word-wrap: break-word;
-                                        word-break: break-word;
-                                    }
+                            white-space: normal;
+                            word-wrap: break-word;
+                            word-break: break-word;
+                        }
 
-                                    /* Optional: header styling */
-                                    #example1 th {
-                                        background: #f5f5f5;
-                                        font-weight: 600;
-                                    }
-                                </style>
+                        /* Optional: header styling */
+                        #example1 th {
+                            background: #f5f5f5;
+                            font-weight: 600;
+                        }
+                        </style>
 
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <tr>
-                                        <th style="width:70px;">Booking Date</th>
-                                        <th style="width:90px;">Client Name</th>
-                                        <th style="width:80px;">Allotted Unit</th>
-                                        <th style="width:80px;">Area (Sq. Yds.)</th>
-                                        <th style="width:90px;">Payment Plan</th>
-                                        <th style="width:110px;">Basic Sales Price (Per Sq. Yard)</th>
-                                        <th style="width:60px;">PLC</th>
-                                        <th style="width:60px;">IDC</th>
-                                        <th style="width:90px;">Total Cost</th>
-                                    </tr>
+                        <table id="example1" class="table table-bordered table-striped">
+                            <tr>
+                                <th style="width:70px;">Booking Date</th>
+                                <th style="width:90px;">Client Name</th>
+                                <th style="width:80px;">Allotted Unit</th>
+                                <th style="width:80px;">Area (Sq. Yds.)</th>
+                                <th style="width:90px;">Payment Plan</th>
+                                <th style="width:110px;">Basic Sales Price (Per Sq. Yard)</th>
+                                <th style="width:60px;">PLC</th>
+                                <th style="width:60px;">IDC</th>
+                                <th style="width:90px;">Total Cost</th>
+                            </tr>
 
-                                    <?php
+                            <?php
                                     $booking_id = $_GET['booking_id'] ?? '';
 
                                     if (!$booking_id) {
@@ -627,25 +633,25 @@ include "layout/head.php";
                                     $row = mysqli_fetch_assoc($result);
                                     ?>
 
-                                    <tr>
-                                        <td><?php echo $row['booking_date']; ?></td>
-                                        <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
-                                        <td><?php echo $row['booking_plotno']; ?></td>
-                                        <td><?php echo $row['booking_plotarea']; ?></td>
-                                        <td><?php echo $row['booking_payplan']; ?></td>
-                                        <td><?php echo $row['booking_plotrate']; ?></td>
-                                        <td><?php echo $row['booking_plc']; ?></td>
-                                        <td><?php echo $row['booking_idc']; ?></td>
-                                        <td><?php echo $row['booking_totalamt']; ?></td>
-                                    </tr>
-                                </table>
+                            <tr>
+                                <td><?php echo $row['booking_date']; ?></td>
+                                <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
+                                <td><?php echo $row['booking_plotno']; ?></td>
+                                <td><?php echo $row['booking_plotarea']; ?></td>
+                                <td><?php echo $row['booking_payplan']; ?></td>
+                                <td><?php echo $row['booking_plotrate']; ?></td>
+                                <td><?php echo $row['booking_plc']; ?></td>
+                                <td><?php echo $row['booking_idc']; ?></td>
+                                <td><?php echo $row['booking_totalamt']; ?></td>
+                            </tr>
+                        </table>
 
 
 
 
 
-                            </div>
-                            <div style="
+                    </div>
+                    <div style="
                             position:absolute;
                             bottom:-210px;   /*  yaha adjust kar sakte ho */
                             left:0px;
@@ -657,21 +663,21 @@ include "layout/head.php";
                             color:black;
                         ">
 
-                                <div class="table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th style=" text-align:center; ">SNO</th>
-                                                <th style=" text-align:center; ">Installment Date</th>
-                                                <th style=" text-align:center; ">Particulars</th>
-                                                <th style=" text-align:center; ">%</th>
-                                                <th style=" text-align:center; ">Amount</th>
-                                                <th style=" text-align:center; ">Remaining Amount</th>
+                        <div class="table-responsive">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style=" text-align:center; ">SNO</th>
+                                        <th style=" text-align:center; ">Installment Date</th>
+                                        <th style=" text-align:center; ">Particulars</th>
+                                        <th style=" text-align:center; ">%</th>
+                                        <th style=" text-align:center; ">Amount</th>
+                                        <th style=" text-align:center; ">Remaining Amount</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
                                             $sn = 1;
                                             $cumulative_amount = 0;
                                             $totalamt = $_GET['propertamt'];
@@ -684,49 +690,52 @@ include "layout/head.php";
                                                 $cumulative_amount += $installmentdata['installment_amount'];
                                                 $remaining_amount = $totalamt - $cumulative_amount;
                                                 ?>
-                                                <tr>
-                                                    <td style=" text-align:center; "><?php echo $sn; ?></td>
-                                                    <td style=" text-align:center; ">
-                                                        <?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
-                                                    </td>
-                                                    <td style=" text-align:center; ">
-                                                        <?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
-                                                    </td>
-                                                    <td style=" text-align:center; ">
-                                                        <?php echo htmlspecialchars($installmentdata['installment_emiper']); ?></td>
-                                                    <td style=" text-align:center; ">
-                                                        <?php echo number_format($installmentdata['installment_amount'], 2); ?></td>
-                                                    <td style=" text-align:center; ">
-                                                        <?php echo number_format($remaining_amount, 2); ?></td>
-                                                    <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
-                                                </tr>
-                                                <?php
+                                    <tr>
+                                        <td style=" text-align:center; "><?php echo $sn; ?></td>
+                                        <td style=" text-align:center; ">
+                                            <?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
+                                        </td>
+                                        <td style=" text-align:center; ">
+                                            <?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
+                                        </td>
+                                        <td style=" text-align:center; ">
+                                            <?php echo htmlspecialchars($installmentdata['installment_emiper']); ?>
+                                        </td>
+                                        <td style=" text-align:center; ">
+                                            <?php echo number_format($installmentdata['installment_amount'], 2); ?>
+                                        </td>
+                                        <td style=" text-align:center; ">
+                                            <?php echo number_format($remaining_amount, 2); ?>
+                                        </td>
+                                        <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
+                                    </tr>
+                                    <?php
                                                 $sn++;
                                             }
                                             ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-
+                                </tbody>
+                            </table>
                         </div>
 
-
-
-
-
-                    <?php } else { ?>
-
-                        <img src="<?php echo $img; ?>" style="width:100%; display:block;">
-
-                    <?php } ?>
-
-
-
-
+                    </div>
 
                 </div>
+
+
+
+
+
+                <?php } else { ?>
+
+                <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                <?php } ?>
+
+
+
+
+
+            </div>
             <?php } ?>
 
 
@@ -759,11 +768,11 @@ include "layout/head.php";
 
 
     <script>
-function printDiv() {
-    var printContents = document.getElementById("printArea").innerHTML;
-    var originalContents = document.body.innerHTML;
+    function printDiv() {
+        var printContents = document.getElementById("printArea").innerHTML;
+        var originalContents = document.body.innerHTML;
 
-    document.body.innerHTML = `
+        document.body.innerHTML = `
         <html>
         <head>
             <title>Print</title>
@@ -780,11 +789,11 @@ function printDiv() {
         </html>
     `;
 
-    window.print();
-    document.body.innerHTML = originalContents;
-    location.reload();
-}
-</script>
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload();
+    }
+    </script>
 
 
 

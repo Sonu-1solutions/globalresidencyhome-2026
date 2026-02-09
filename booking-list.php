@@ -106,6 +106,7 @@ table.table.dataTable > thead > tr th {
                                     <th>Email</th>
                                     <th>Mobile</th>
                                     <th>Advisor Name</th>
+                                    <th>Pending</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -134,6 +135,43 @@ table.table.dataTable > thead > tr th {
                                         <td><?php echo $productdata['booking_email']; ?></td>
                                         <td><?php echo $productdata['booking_phone']; ?></td>
                                         <td><?php echo $productdata['booking_advisor']; ?></td>
+
+<td>
+
+
+<?php
+    $totalreceiveamt = 0;
+    $brokragetamotrec = 0;
+    $cumulative_amount = 0;
+    $totalamt = $productdata['booking_totalamt'];
+    $paymentslipno = $productdata['booking_no'];
+
+    $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
+
+    $res = mysqli_query($con, $qry);
+    $row = mysqli_fetch_assoc($res);
+    //    echo"</pre>";
+    //     print_r($row);
+
+    $totalreceiveamt = (float) ($row['total_received'] ?? 0);
+    $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
+
+
+// echo "<b>Total Amt : </b>".$totalamt;
+// echo " | <b>Received Amt : </b>".$totalreceiveamt;
+// echo " | <b>Balance Amt : </b>".$totalpendingbalnce = $totalamt - $totalreceiveamt;
+echo $totalpendingbalnce = $totalamt - $totalreceiveamt;
+
+// echo "<br>";
+
+// echo "<b>A-Total Amt : </b>".$productdata['advisor_amount'];
+// echo " | <b>A-Received Amt : </b>".$brokragetamotrec;
+// echo " | <b>A-Balance Amt : </b>".$totalpendingadvisor = $productdata['advisor_amount'] - $brokragetamotrec;
+
+?>
+
+</td>
+
                                         <td class="d-flex">
                                             <a href="booking-view.php?booking_id=<?php echo $productdata['booking_id']; ?>"
                                                 class="mr-1">
@@ -163,6 +201,25 @@ table.table.dataTable > thead > tr th {
                             </tbody>
                         </table>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
 
             </div>

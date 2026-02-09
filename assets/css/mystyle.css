@@ -51,8 +51,18 @@
     display: flex;
     width: 116px !important;
     margin-top: 30px;
-
 }
+
+/* 🔴 Hover remove */
+.add-user-btn:hover,
+.add-user-btn:focus,
+.add-user-btn:active {
+    background: #ff8c2b !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 
 .card-title {
     font-size: 24px;

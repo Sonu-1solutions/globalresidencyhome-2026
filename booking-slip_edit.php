@@ -72,13 +72,76 @@ include "layout/head.php";
         </div>
         <!-- /Breadcrumb -->
 
+
+
+
+
+        <?php
+
+        
+        if (isset($_POST['slipbtn'])) {
+
+            // GET se aaya hua slip_id (primary key)
+            $payslip_id = $_GET['slipno'];
+
+            // Form data
+            $receiveName = $_POST['receiveName'];
+            $paymentby = $_POST['paymentby'];
+            $drawnon = $_POST['drawnon'];
+            $chequedate = $_POST['chequedate'];
+            $plotno = $_POST['plotno'];
+            $plotsize = $_POST['plotsize'];
+            $totalamout = $_POST['totalamout'];
+            $sumAmount = $_POST['sumAmount'];
+            $slip_id = $_POST['registrationNumber'];
+
+            // Update query
+            $updateQry = "
+        UPDATE payment_slip SET
+            receive_name      = '$receiveName',
+            payment_by        = '$paymentby',
+            drawn_on          = '$drawnon',
+            payment_by_date   = '$chequedate',
+            plot_no           = '$plotno',
+            plot_size         = '$plotsize',
+            total_amout       = '$totalamout',
+            amount_in_word  = '$sumAmount'
+        WHERE slip_id = '$payslip_id'
+    ";
+
+        if (mysqli_query($con, $updateQry)) {
+            echo "<script>
+                alert('Payment Slip Updated Successfully');
+                window.location.href = 'booking-slip-list.php?slip_id={$slip_id}';
+            </script>";
+        } else {
+            echo 'Error: ' . mysqli_error($con);
+        }
+
+        }
+        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="row">
             <form action="" method="POST">
-                
+
 
                 <?php
                 $alloted = $_GET['slip_id'];
-                
+
                 $payslip_id = $_GET['slipno'];
 
                 $sn = 1;
@@ -90,7 +153,7 @@ include "layout/head.php";
 
                 $slipqry = mysqli_query($con, "SELECT * FROM `payment_slip` WHERE `slip_id`='$payslip_id'");
                 $slipqryres = mysqli_fetch_assoc($slipqry) ?? [];
-                
+
 
 
 
@@ -254,30 +317,11 @@ include "layout/head.php";
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <!-- <div class="col-md-3"></div> -->
                             <div class="col-md-12 mt-3">
                                 <div class="row">
 
-                                
+
                                     <div class="row">
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Booking ID *</label>
@@ -288,23 +332,26 @@ include "layout/head.php";
 
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Current Date *</label>
-                                            <input class="form-control" style="height:50px;" value="<?= $currentDate ?>" type="text" name="currentDate" required>
+                                            <input class="form-control" style="height:50px;" value="<?= $currentDate ?>"
+                                                type="text" name="currentDate" required>
                                         </div>
 
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Slip ID *</label>
-                                            <input class="form-control" style="height:50px;" value="<?= $payslip_id ?>" type="text"name="currentDate" required readonly>
+                                            <input class="form-control" style="height:50px;" value="<?= $payslip_id ?>"
+                                                type="text" name="currentDate" required readonly>
                                         </div>
 
                                     </div>
 
-                                    
+
 
                                     <div class="row">
                                         <div class="col-md-3 mb-4">
                                             <label class="fw-bold">Received with thanks from *</label>
                                             <input class="form-control" style="height:50px;"
-                                                value="<?= $slipqryres['receive_name'] ?>" type="text" name="receiveName" required>
+                                                value="<?= $slipqryres['receive_name'] ?>" type="text" name="receiveName"
+                                                required>
                                         </div>
 
                                         <div class="col-md-3 mb-4">
@@ -350,8 +397,8 @@ include "layout/head.php";
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Total Amount *</label>
                                             <input type="number" class="form-control" id="totalamount"
-                                                value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;" name="totalamout"
-                                                oninput="updateWords()" required>
+                                                value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;"
+                                                name="totalamout" oninput="updateWords()" required>
                                         </div>
                                         <div class="col-md-8  mb-4">
                                             <label class="fw-bold">The sum of Rupees *</label>

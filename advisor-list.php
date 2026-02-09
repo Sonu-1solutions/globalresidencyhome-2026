@@ -69,7 +69,10 @@ include "layout/head.php";
 								<?php
 								$id = 1;
 
-								$usergetqry = mysqli_query($con, "select * from user_master where user_id!='1' order by user_id DESC");
+								$usergetqry = mysqli_query($con, "select * from user_master 
+									where user_id!='1'
+									and is_deleted = 0
+									order by user_id desc");
 								while ($usergetdata = mysqli_fetch_assoc($usergetqry)) {
 									?>
 									<tr>
@@ -91,25 +94,28 @@ include "layout/head.php";
 											<?php
 											if ($usergetdata['user_status'] == 'Enable') {
 												?>
-												<a href="advisor-delete.php?getuserid=<?php echo $usergetdata['user_id']; ?>&status=Disable"
+												<a href="advisor-disable.php?getuserid=<?php echo $usergetdata['user_id']; ?>&status=Disable"
 													class="mr-1" onclick="return confirm('Are you sure want to Disable?')">
 													<button class="btn btn-sm btn-success"> Enable </button>
 												</a>
 												<?php
 											} else {
 												?>
-												<a href="advisor-delete.php?getuserid=<?php echo $usergetdata['user_id']; ?>&status=Enable"
+												<a href="advisor-disable.php?getuserid=<?php echo $usergetdata['user_id']; ?>&status=Enable"
 													class="mr-1" onclick="return confirm('Are you sure want to Enable?')">
 													<button class="btn btn-sm btn-danger"> Disable </button>
 												</a>
 												<?php
 											}
 											?>
-											<a href="advisor-permanent-delete.php?getuserid=<?php echo $usergetdata['user_id']; ?>"
-												class="mr-1"
-												onclick="return confirm('Are you sure want to permanently delete this user?')">
-												<button class="btn btn-md "><i class="fa fa-trash"></i></button>
+
+											<a href="advisor-delete.php?getuserid=<?php echo $usergetdata['user_id']; ?>&delete=1"
+												onclick="return confirm('Are you sure want to delete this user?')">
+												<button class="btn btn-md">
+													<i class="fa fa-trash"></i>
+												</button>
 											</a>
+
 										</td>
 									</tr>
 

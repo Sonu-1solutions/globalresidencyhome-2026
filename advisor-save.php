@@ -165,9 +165,12 @@ include "layout/head.php";
                         <th>Plot Rate</th>
                         <th>Total Amount</th>
                         <th>Receive Amount</th>
+                        <th>%</th>
                         <th>Pending</th>
                         <!-- <th>Status</th> -->
-                         <th>Advisor Amount</th>
+                         <th>Status</th>
+                        <th>Advisor Amount</th>
+                        
                         <th>Created At</th>
                     </tr>
                 </thead>
@@ -177,7 +180,7 @@ include "layout/head.php";
                     <?php
                     $adviserid = $_POST['booking_advisor'];
 
-                   $query = "SELECT * FROM booking_master WHERE booking_advisorid = '$adviserid' ORDER BY booking_no DESC";
+                    $query = "SELECT * FROM booking_master WHERE booking_advisorid = '$adviserid' ORDER BY booking_no DESC";
 
                     $result = mysqli_query($con, $query);
 
@@ -203,26 +206,26 @@ include "layout/head.php";
 
 
 
-                        
 
 
-$paymentslipno = $row['booking_no'];
 
-                    $qry1 = "SELECT 
+                            $paymentslipno = $row['booking_no'];
+
+                            $qry1 = "SELECT 
                             SUM(total_amout) AS total_received, 
                             SUM(advisor_amount) AS total_brokageamt 
                         FROM payment_slip 
                         WHERE registration_number = '$paymentslipno'";
 
-                    $res1 = mysqli_query($con, $qry1);
+                            $res1 = mysqli_query($con, $qry1);
 
-                    $totalreceiveamt1 = 0;
-                    $brokragetamotrec1 = 0;
+                            $totalreceiveamt1 = 0;
+                            $brokragetamotrec1 = 0;
 
-                    while ($row1 = mysqli_fetch_assoc($res1)) {
-                        $totalreceiveamt1 = (float) ($row1['total_received'] ?? 0);
-                        $brokragetamotrec1 = (float) ($row1['total_brokageamt'] ?? 0);
-                    }
+                            while ($row1 = mysqli_fetch_assoc($res1)) {
+                                $totalreceiveamt1 = (float) ($row1['total_received'] ?? 0);
+                                $brokragetamotrec1 = (float) ($row1['total_brokageamt'] ?? 0);
+                            }
 
                             $bokingno = $row['booking_no'];
 
@@ -257,10 +260,33 @@ $paymentslipno = $row['booking_no'];
                                 <td><?php echo $row['booking_totalamt']; ?></td>
                                 <!-- <td><?php echo $row['booking_status']; ?></td> -->
                                 <td><?php echo $totalreceiveamt1 ?></td>
-                                <td><?php 
-                                    echo ($row['booking_totalamt'] - $totalreceiveamt1);
+                                <td>
+                                    <?php
+                                    echo ($row['booking_totalamt'] > 0)
+                                        ? number_format(min(($totalreceiveamt1 / $row['booking_totalamt']) * 100, 100), 2) . '%'
+                                        : '0%';
+                                    ?>
+                                </td>
+
+                                <td><?php
+                                echo ($row['booking_totalamt'] - $totalreceiveamt1);
                                 ?></td>
+                                <td>
+                                    <?php
+                                    $total = (float) $row['booking_totalamt'];
+                                    $received = (float) $totalreceiveamt1;
+
+                                    if ($total > 0 && $received >= $total) {
+                                        echo '<span >Completed</span>';
+                                    } else {
+                                        echo '<span >Pending</span>';
+                                    }
+                                    ?>
+                                </td>
                                 <td><?php echo $row['advisor_amount']; ?></td>
+                                
+
+
                                 <td><?php echo $row['booking_createat']; ?></td>
                             </tr>
 

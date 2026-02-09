@@ -991,7 +991,7 @@ $paymentslipno = $propertydata['booking_no'];
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">
-                    Advisor Slip (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
+                    Advisor Slip(Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
                 </h4>
 
             </div>
@@ -1017,10 +1017,9 @@ $paymentslipno = $propertydata['booking_no'];
                                     <!-- <th>Plot Size</th> -->
                                     <!-- <th>Installment Ammount</th> -->
                                     <!-- <th>Remaining Amount</th> -->
-                                     <th>Total Advisor Amt</th>
                                     <th>Percentage</th>
-                                    <th>Advisor Amount</th>
-                                    <th>Advisor Pending Amt</th>
+                                    <th>Advisor Total Amount</th>
+                                    <th>Advisor Receive Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1058,10 +1057,10 @@ $paymentslipno = $propertydata['booking_no'];
                                         <!-- <td><?php echo $installmentdata['total_amout']; ?></td> -->
                                         <!-- <td><?php echo $installmentdata['remaing_balance']; ?></td> -->
                                         <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
-
-                                        <td></td>
                                         <td><?php echo $installmentdata['percentage']; ?></td>
                                         <td><?php echo $installmentdata['advisor_amount']; ?></td>
+                                        
+                                        
 
                                     </tr>
                                     <?php
@@ -1848,7 +1847,7 @@ $paymentslipno = $propertydata['booking_no'];
                                     <div class="col-md-2">
 
 
-                                        <button type="button" class="btn btn-m btn-success "
+                                        <button type="button" class="btn btn-m btn-success action-btn"
                                             onclick="window.location.href='booking-slip.php?slip_id=<?php echo $propertydata['booking_no']; ?>&balanceamt=<?= $totalpendingbalnce ?>'">
                                             Add Slip
                                         </button>
