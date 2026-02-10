@@ -1,5 +1,5 @@
 <?php
-session_start(); // ✅ MUST
+session_start(); //
 
 require 'database.php';
 require 'layout/head-login.php';
@@ -27,7 +27,7 @@ if (isset($_POST['loginsubmit'])) {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['user_id'] = $row['user_id'];
 
-            // ✅ Proper redirect
+            //  Proper redirect
             header("Location: dashboard.php");
             exit;
 

@@ -41,8 +41,9 @@ include "layout/head.php";
 		<!-- Breadcrumb -->
 		<div class="d-block text-center page-breadcrumb mb-3 pagetitle">
 			<div class="my-auto">
-				<h1>Advisor List</h1>
-				 <!-- <h1> <?php  echo $user_department ?> List </h1> -->
+				<!-- <h1>Advisor List</h1> -->
+				<h1> <?php echo $user_department ?> List </h1>
+
 			</div>
 		</div>
 		<!-- /Breadcrumb -->
@@ -70,11 +71,13 @@ include "layout/head.php";
 								<?php
 								$id = 1;
 
+
 								$usergetqry = mysqli_query($con, "SELECT * FROM user_master 
 									WHERE user_id != '1'
 									AND is_deleted = 0
-									AND user_department = 'user'
+									AND user_department = 'Admin'
 									ORDER BY user_id DESC");
+
 
 								while ($usergetdata = mysqli_fetch_assoc($usergetqry)) {
 									?>

@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// ✅ All session variables remove
+//  All session variables remove
 $_SESSION = [];
 
-// ✅ Session destroy
+//  Session destroy
 session_destroy();
 
-// ✅ Login page redirect
+//  Login page redirect
 header("Location: login.php");
 exit;
 ?>

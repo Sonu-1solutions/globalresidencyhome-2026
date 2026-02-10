@@ -7504,3 +7504,4 @@ Stack trace:
 [09-Feb-2026 13:21:27 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
 [09-Feb-2026 13:21:27 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
 [09-Feb-2026 13:21:27 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 921
+[10-Feb-2026 05:44:27 Europe/Berlin] Advisor 'Heena Mittal' not found in user_master for booking_id=280

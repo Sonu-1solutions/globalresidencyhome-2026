@@ -7,8 +7,6 @@ if (session_status() === PHP_SESSION_NONE) {
 // ================= DATABASE =================
 include('database.php');
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -46,30 +44,22 @@ if (isset($_POST['usergetadd'])) {
     /* ================= INSERT ================= */
     if ($usergetid == 0) {
 
+        // New user password required
         $user_password = md5($_POST['user_password']);
 
         $sql = "INSERT INTO user_master 
         (user_name, user_email, user_password, user_department, user_image,
-         user_createtime, user_createby, user_changeby, user_changetime, user_mobile) 
+         user_createtime, user_createby, user_changeby, user_changetime, user_mobile)
         VALUES
         ('$user_name','$user_email','$user_password','$user_department','$user_image',
          '$cdate','$cby','$cby','$cdate','$user_mobile')";
 
-        try {
-            mysqli_query($con, $sql);
-        } catch (mysqli_sql_exception $e) {
-
-            if ($e->getCode() == 1062) {
-                echo "<script>
-                    alert('This mobile number is already registered!');
-                    history.back();
-                </script>";
-                exit;
-            } else {
-                die("Insert Error: " . $e->getMessage());
-            }
+        if (!mysqli_query($con, $sql)) {
+            die("Insert Error: " . mysqli_error($con));
         }
     }
+
+    
 
     /* ================= UPDATE ================= */
     else {
@@ -95,19 +85,8 @@ if (isset($_POST['usergetadd'])) {
             user_changetime='$cdate'
             WHERE user_id='$usergetid'";
 
-        try {
-            mysqli_query($con, $sql);
-        } catch (mysqli_sql_exception $e) {
-
-            if ($e->getCode() == 1062) {
-                echo "<script>
-                    alert('This mobile number is already used by another advisor!');
-                    history.back();
-                </script>";
-                exit;
-            } else {
-                die("Update Error: " . $e->getMessage());
-            }
+        if (!mysqli_query($con, $sql)) {
+            die("Update Error: " . mysqli_error($con));
         }
     }
 

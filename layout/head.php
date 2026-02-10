@@ -254,6 +254,12 @@ if (!empty($user_image) && file_exists("upload/user/" . $user_image)) {
                                     </a>
                                 </li>
 
+                                <li class="<?= ($currentPage == 'admin-list.php') ? 'active' : '' ?>">
+                                    <a href="admin-list.php">
+                                        <i class="ti ti-user"></i><span>Admin</span>
+                                    </a>
+                                </li>
+
                                 <li class="<?= ($currentPage == 'advisor-details.php') ? 'active' : '' ?>">
                                     <a href="advisor-details.php">
                                         <i class="ti ti-details"></i><span>Advisor Details</span>

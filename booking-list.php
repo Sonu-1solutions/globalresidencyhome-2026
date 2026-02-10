@@ -66,11 +66,11 @@ if (isset($_POST['delete_booking_id'])) {
 
 
 <style>
-table.table.dataTable > tbody > tr td,
-table.table.dataTable > thead > tr th {
-    font-size: 13px;
-    padding: 5px 10px;
-}
+    table.table.dataTable>tbody>tr td,
+    table.table.dataTable>thead>tr th {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
 </style>
 
 
@@ -94,7 +94,7 @@ table.table.dataTable > thead > tr th {
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table id="example1"  class="table table-striped datatable ">
+                        <table id="example1" class="table table-striped datatable ">
                             <thead>
                                 <tr>
                                     <th>S.NO</th>
@@ -115,11 +115,10 @@ table.table.dataTable > thead > tr th {
 
                                 <?php
                                 $sn = 1;
-                                if ($user_department == 'Admin') {
-                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master ORDER BY `booking_id` DESC");
-                                } else {
-                                    $productqry = mysqli_query($con, "SELECT * FROM booking_master WHERE booking_advisorid='$user_id' ORDER BY `booking_id` DESC");
-                                }
+                                $productqry = mysqli_query(
+                                    $con,
+                                    "SELECT * FROM booking_master ORDER BY booking_id DESC"
+                                );
 
                                 while ($productdata = mysqli_fetch_assoc($productqry)) {
                                     ?>
@@ -136,41 +135,41 @@ table.table.dataTable > thead > tr th {
                                         <td><?php echo $productdata['booking_phone']; ?></td>
                                         <td><?php echo $productdata['booking_advisor']; ?></td>
 
-<td>
+                                        <td>
 
 
-<?php
-    $totalreceiveamt = 0;
-    $brokragetamotrec = 0;
-    $cumulative_amount = 0;
-    $totalamt = $productdata['booking_totalamt'];
-    $paymentslipno = $productdata['booking_no'];
+                                            <?php
+                                            $totalreceiveamt = 0;
+                                            $brokragetamotrec = 0;
+                                            $cumulative_amount = 0;
+                                            $totalamt = $productdata['booking_totalamt'];
+                                            $paymentslipno = $productdata['booking_no'];
 
-    $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
+                                            $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
 
-    $res = mysqli_query($con, $qry);
-    $row = mysqli_fetch_assoc($res);
-    //    echo"</pre>";
-    //     print_r($row);
+                                            $res = mysqli_query($con, $qry);
+                                            $row = mysqli_fetch_assoc($res);
+                                            //    echo"</pre>";
+                                            //     print_r($row);
+                                        
+                                            $totalreceiveamt = (float) ($row['total_received'] ?? 0);
+                                            $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
 
-    $totalreceiveamt = (float) ($row['total_received'] ?? 0);
-    $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
 
-
-// echo "<b>Total Amt : </b>".$totalamt;
+                                            // echo "<b>Total Amt : </b>".$totalamt;
 // echo " | <b>Received Amt : </b>".$totalreceiveamt;
 // echo " | <b>Balance Amt : </b>".$totalpendingbalnce = $totalamt - $totalreceiveamt;
-echo $totalpendingbalnce = $totalamt - $totalreceiveamt;
+                                            echo $totalpendingbalnce = $totalamt - $totalreceiveamt;
 
-// echo "<br>";
-
-// echo "<b>A-Total Amt : </b>".$productdata['advisor_amount'];
+                                            // echo "<br>";
+                                        
+                                            // echo "<b>A-Total Amt : </b>".$productdata['advisor_amount'];
 // echo " | <b>A-Received Amt : </b>".$brokragetamotrec;
 // echo " | <b>A-Balance Amt : </b>".$totalpendingadvisor = $productdata['advisor_amount'] - $brokragetamotrec;
+                                        
+                                            ?>
 
-?>
-
-</td>
+                                        </td>
 
                                         <td class="d-flex">
                                             <a href="booking-view.php?booking_id=<?php echo $productdata['booking_id']; ?>"
@@ -179,17 +178,19 @@ echo $totalpendingbalnce = $totalamt - $totalreceiveamt;
                                             </a>
                                             <a href="booking-slip.php?slip_id=<?php echo $productdata['booking_no']; ?>"
                                                 class="mr-1">
-                                                <button class="btn btn-sm btn-success action-btn" style="display:none;"> Add Slip </button>
+                                                <button class="btn btn-sm btn-success action-btn" style="display:none;"> Add
+                                                    Slip </button>
                                             </a>
                                             <a href="booking-slip-list.php?slip_id=<?php echo $productdata['booking_no']; ?>"
-                                                class="mr-1" target="_blank"   >
-                                                <button class="btn btn-sm btn-success action-btn" > View Slip </button>
+                                                class="mr-1" target="_blank">
+                                                <button class="btn btn-sm btn-success action-btn"> View Slip </button>
                                             </a>
                                             <form action="" method="post" onsubmit="return confirmSubmission()">
                                                 <button type="submit" class="btn btn-sm btn-danger" title="Delete">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
-                                                <input type="hidden" name="delete_booking_id" value="<?php echo $productdata['booking_id']; ?>">
+                                                <input type="hidden" name="delete_booking_id"
+                                                    value="<?php echo $productdata['booking_id']; ?>">
                                             </form>
                                         </td>
                                     </tr>
@@ -233,13 +234,13 @@ echo $totalpendingbalnce = $totalamt - $totalreceiveamt;
 
 
 <script>
-    
+
     function confirmSubmission() {
         var agree = confirm("Are you sure you want to submit the form?");
         if (agree) {
-            return true; 
+            return true;
         } else {
-            return false; 
+            return false;
         }
     }
 </script>
