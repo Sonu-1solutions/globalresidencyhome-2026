@@ -82,7 +82,7 @@ include "layout/head.php";
         if (isset($_POST['slipbtn'])) {
 
             // GET se aaya hua slip_id (primary key)
-            $payslip_id = $_GET['slipno'];
+            echo $payslip_id = $_GET['slipno'];
 
             // Form data
             $receiveName = $_POST['receiveName'];
@@ -92,8 +92,15 @@ include "layout/head.php";
             $plotno = $_POST['plotno'];
             $plotsize = $_POST['plotsize'];
             $totalamout = $_POST['totalamout'];
+            
+            $currentamt = $_POST['currentamt'];
+            $remainamt = $_POST['remainamt'];
+
             $sumAmount = $_POST['sumAmount'];
             $slip_id = $_POST['registrationNumber'];
+
+            $newremainbalance = $currentamt - $totalamout;
+            $newremainamt = $remainamt + $newremainbalance;
 
             // Update query
             $updateQry = "
@@ -105,6 +112,7 @@ include "layout/head.php";
             plot_no           = '$plotno',
             plot_size         = '$plotsize',
             total_amout       = '$totalamout',
+            remaing_balance       = '$newremainamt',
             amount_in_word  = '$sumAmount'
         WHERE slip_id = '$payslip_id'
     ";
@@ -396,6 +404,8 @@ include "layout/head.php";
                                     <div class="row">
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Total Amount *</label>
+                                            <input type="hidden" name="currentamt" value="<?= $slipqryres['total_amout']; ?>">
+                                            <input type="hidden" name="remainamt" value="<?= $slipqryres['remaing_balance']; ?>">
                                             <input type="number" class="form-control" id="totalamount"
                                                 value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;"
                                                 name="totalamout" oninput="updateWords()" required>

@@ -718,10 +718,10 @@ function checkAdvisorSection() {
         below30.style.display = 'block';
         document.getElementById('advisoramountifany').value = 0;
         document.getElementById('advisorpercentage').value = 0;
-    } else if (updatedTotalReceiveAmount >= amount30 && updatedTotalReceiveAmount <= amount40) {
+    } else if (updatedTotalReceiveAmount >= amount30 && updatedTotalReceiveAmount < amount40) {
         between30and40.style.display = 'block';
         calculateAdvisorAmount70();
-    } else if (updatedTotalReceiveAmount > amount40) {
+    } else if (updatedTotalReceiveAmount >= amount40) {
         above40.style.display = 'block';
         calculateAdvisorAmount30();
     }

@@ -62,171 +62,136 @@ include "layout/head.php";
         </div>
         <form action="advisor-save.php" method="post">
 
-
             <div class="row">
+
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Advisor Name</label>
                     <select class="form-control" name="booking_advisor" required style="height:50px;">
                         <option value="">— Please choose Advisor —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
-                        }
+                            $advisornames = mysqli_query($con,"SELECT user_id, user_name FROM user_master WHERE user_status='Enable' AND user_department='User'");
+                            while ($row = mysqli_fetch_assoc($advisornames)) {
+                                echo '<option value="' .$row['user_id'] . '">'. htmlspecialchars($row['user_name']) .'</option>';
+                            }
                         ?>
                     </select>
-
                 </div>
+
+
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Bookign Date</label>
                     <input type="date" class="form-control">
                 </div>
+
+
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Bookign No</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="booking_no" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT booking_no FROM booking_master WHERE booking_status='Enabled' order by booking_id desc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            echo '<option value="' .$row['booking_no'] . '">'. htmlspecialchars($row['booking_no']) .'</option>';
                         }
                         ?>
                     </select>
                 </div>
+
+
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">State</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="state" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_state) FROM booking_master WHERE booking_status='Enabled'order by booking_state asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_state'])) {
+                                echo '<option value="' .$row['booking_state'] . '">'. htmlspecialchars($row['booking_state']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">City</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="city" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_city) FROM booking_master WHERE booking_status='Enabled'order by booking_city asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_city'])) {
+                                echo '<option value="' .$row['booking_city'] . '">'. htmlspecialchars($row['booking_city']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Project</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="project" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_project) FROM booking_master WHERE booking_status='Enabled'order by booking_project asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_project'])) {
+                                echo '<option value="' .$row['booking_project'] . '">'. htmlspecialchars($row['booking_project']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Plot Type</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="plot_type" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_plottype) FROM booking_master WHERE booking_status='Enabled'order by booking_plottype asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_plottype'])) {
+                                echo '<option value="' .$row['booking_plottype'] . '">'. htmlspecialchars($row['booking_plottype']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Plot Size</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="plot_size" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_plotsize) FROM booking_master WHERE booking_status='Enabled'order by booking_plotsize asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_plotsize'])) {
+                                echo '<option value="' .$row['booking_plotsize'] . '">'. htmlspecialchars($row['booking_plotsize']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Plot Area</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="plot_area" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_plotarea) FROM booking_master WHERE booking_status='Enabled'order by booking_plotarea asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_plotarea'])) {
+                                echo '<option value="' .$row['booking_plotarea'] . '">'. htmlspecialchars($row['booking_plotarea']) .'</option>';
+                            }
                         }
                         ?>
                     </select>
                 </div>
                 <div class="col-md-2 mb-5">
                     <label class="fw-bold">Plot Rate</label>
-                    <select class="form-control" name="booking_advisor" required style="height:50px;">
-                        <option value="">— Please choose Advisor —</option>
+                    <select class="form-control" name="plot_rate" style="height:50px;">
+                        <option value="">—  Select —</option>
                         <?php
-                        $query = mysqli_query(
-                            $con,
-                            "SELECT * FROM user_master WHERE user_status='Enable' AND user_department='User'"
-                        );
-
-                        while ($row = mysqli_fetch_assoc($query)) {
-                            echo '<option value="' .$row['user_id'] . '">'
-                                . htmlspecialchars($row['user_name']) .
-                                '</option>';
+                        $bookingno = mysqli_query($con,"SELECT DISTINCT(booking_plotrate) FROM booking_master WHERE booking_status='Enabled'order by booking_plotrate asc");
+                        while ($row = mysqli_fetch_assoc($bookingno)) {
+                            if (!empty($row['booking_plotrate'])) {
+                                echo '<option value="' .$row['booking_plotrate'] . '">'. htmlspecialchars($row['booking_plotrate']) .'</option>';
+                            }
                         }
                         ?>
                     </select>

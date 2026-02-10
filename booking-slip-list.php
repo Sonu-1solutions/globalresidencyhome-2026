@@ -165,10 +165,16 @@ include "layout/head.php";
             </a> -->
 
 
-            <a href="booking-slip_edit.php?slip_id=<?= $slipdata['registration_number']; ?>&slipno=<?= $slipdata['slip_id']; ?>"
-              class="btn btn-m btn-success action-btn">
-              Edit
-            </a>
+            <?php
+              if($sn == 1){
+            ?>
+              <a href="booking-slip_edit.php?slip_id=<?= $slipdata['registration_number']; ?>&slipno=<?= $slipdata['slip_id']; ?>"
+                class="btn btn-m btn-success action-btn">
+                Edit
+              </a>
+            <?php
+              }
+            ?>
 
 
             <?php
