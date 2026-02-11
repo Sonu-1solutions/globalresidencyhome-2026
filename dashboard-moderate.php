@@ -136,7 +136,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 			<div class="d-block text-center page-breadcrumb mb-3 pagetitle">
 				<div class="my-auto">
 
-					<h1>Admin Dashboard</h1>
+					<h1>Moderate Dashboard</h1>
 				</div>
 			</div>
 
@@ -168,9 +168,9 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 						<div class="row add-advisor">
 							<div class="col-md-8"></div>
 							<div class="col-md-4 text-right">
-								<a href="advisor-add.php" class="add-user-btn" >
+								<!-- <a href="advisor-add.php" class="add-user-btn" >
 										+ Add Advisor
-									</a>
+									</a> -->
 							</div>
 						</div>
 
@@ -204,7 +204,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 						<div class="card-header">
 							<h4 class="card-title mb-0">Total Booking</h4>
 						</div>
-						<a href="booking-list.php">
+						<a href="moderate-booking-list.php">
 							<div class="card-body">
 								<div id="chart-donut2"></div>
 							</div>

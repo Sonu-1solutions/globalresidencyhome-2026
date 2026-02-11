@@ -160,7 +160,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
                   <option value="">Select</option>
                   <option value="Admin">Admin</option>
                   <option value="User">Advisor</option>
-                  <option value="Modarate">Modarate</option>
+                  <option value="Moderate">Moderate</option>
                 </select>
               </div>
 

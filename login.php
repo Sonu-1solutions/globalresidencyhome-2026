@@ -14,7 +14,7 @@ if (isset($_POST['loginsubmit'])) {
 
         $loginpassword = md5($login_password);
 
-        $query = "SELECT user_id 
+        $query = "SELECT * 
                   FROM user_master 
                   WHERE user_mobile='$login_email' 
                   AND user_password='$loginpassword' 
@@ -26,9 +26,24 @@ if (isset($_POST['loginsubmit'])) {
 
             $row = mysqli_fetch_assoc($result);
             $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['user_department'] = $row['user_department'];
+
+            if ($row['user_department'] == 'Admin') {
+
+                header("Location: dashboard.php");
+            }elseif ($row['user_department'] == 'User') {
+
+                header("Location: dashboard-user.php");
+            }elseif ($row['user_department'] == 'Moderate') {
+
+                header("Location: dashboard-moderate.php");
+            }else{
+
+                header("Location: login.php");
+            }
 
             //  Proper redirect
-            header("Location: dashboard.php");
+            // header("Location: dashboard.php");
             exit;
 
         } else {
