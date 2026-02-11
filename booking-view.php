@@ -834,6 +834,11 @@ WHERE booking_id='$booking_id'";
         width: 90% !important;
         max-width: 100% !important;
     }
+
+    .bba {
+        width: 70% !important;
+        max-width: 100% !important;
+    }
 </style>
 
 
@@ -1369,7 +1374,7 @@ $paymentslipno = $propertydata['booking_no'];
                                             </tr>
                                             <tr>
                                                 <th>Brokerage Pending Amount</th>
-                                                <td><?= $propertydata['advisor_amount'] - $brokragetamotrec ?></td> 
+                                                <td><?= $propertydata['advisor_amount'] - $brokragetamotrec ?></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1450,16 +1455,6 @@ $paymentslipno = $propertydata['booking_no'];
 
                         }
                         ?>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1663,6 +1658,152 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
+
+
+
+
+
+
+
+
+
+                        <!-- Add BBA -->
+
+
+
+
+                        <div class="modal fade" id="addbba" role="dialog">
+                            <div class="modal-dialog bba">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">BBA</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="" method="post" id="">
+
+
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-4">
+                                                            <label for="recipient-name" class="col-form-label">E
+                                                                StampNo</label>
+                                                            <input type="text" class="form-control" name="estampno">
+
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Allottee Name</label>
+                                                            <input type="text" class="form-control" name="allotteename">
+                                                        </div>
+
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">BBA Date</label>
+                                                            <input type="date" class="form-control" name="bbadate">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Allottee Fathers Name</label>
+                                                            <input type="text" class="form-control"
+                                                                name="allotteefathersname">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Allottee Adhaar Number</label>
+                                                            <input type="text" class="form-control"
+                                                                name="allotteeadhaarnumber">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Allottee Address</label>
+                                                            <input type="adress" class="form-control"
+                                                                name="allotteeaddress">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Application Booking Date</label>
+                                                            <input type="date" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Plot No</label>
+                                                            <input type="text" name="plotno" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Plot Area</label>
+                                                            <input type="number" name="plotarea" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Khasra No</label>
+                                                            <input type="number" name="khasrano" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Block</label>
+                                                            <select name="block" class="form-control">
+                                                                <option value="">Select Block</option>
+                                                                <option value="A">Block A</option>
+                                                                <option value="B">Block B</option>
+                                                                <option value="C">Block C</option>
+                                                                <option value="D">Block D</option>
+                                                            </select>
+                                                        </div>
+
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Amount Received</label>
+                                                            <input type="number" name="khasrano" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Annexure A Payment Plan</label>
+                                                            <input type="number" name="khasrano" class="form-control">
+                                                        </div>
+
+
+
+
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer d-flex justify-content-center">
+                                                <button type="submit" name="" class="btn btn-primary">
+                                                    Add BBA
+                                                </button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <!-- Add BAA -->
+
+
+
+
+
+
                         <div class="col-lg-8" style="margin-top: 20px;">
                             <div class="row">
                                 <div class="col-md-12">
@@ -1697,6 +1838,12 @@ $paymentslipno = $propertydata['booking_no'];
                                     <div class="col-md-2">
                                         <a href="#" class="btn btn-success" data-toggle="modal" data-target="#advisorSlip">
                                             View Advisor Slip</a>
+                                    </div>
+
+                                    <div class="col-md-1">
+                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#addbba">
+                                            Add BBA</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -1934,140 +2081,140 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-        
-
-
-<!-- Advisor pop-up -->
 
 
 
-
-<div class="modal fade" id="advisorSlip" role="dialog">
-    <div class="modal-dialog payslip-sec">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">
-                    Advisor Slip (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
-                </h4>
-
-            </div>
-            <div class="modal-body ">
-
-                <div class="col-lg-12" style="margin-top: 20px;">
-
-                    <div class="table-responsive">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>SNO</th>
-                                    <!-- <th>Registration Number</th> -->
-                                    <th>Slip Id</th>
-                                    <th>Current Date</th>
-                                    <!-- <th>Receive Name</th> -->
-                                    <!-- <th>Amount in Word</th> -->
-                                    <!-- <th>Payment By</th> -->
-                                    <!-- <th>Drawn On</th> -->
-                                    <!-- <th>Payment by date</th> -->
-                                    <!-- <th>Project Name</th> -->
-                                    <!-- <th>Plot No</th> -->
-                                    <!-- <th>Plot Size</th> -->
-                                    <!-- <th>Installment Ammount</th> -->
-                                    <!-- <th>Remaining Amount</th> -->
-                                    <!-- <th>Total Advisor Amt</th> -->
-                                    <th>Advisor Received Amt</th>
-                                    <!-- <th>Advisor Pending Amt</th> -->
-                                    <!-- <th>Percentage</th> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php
-                                $totalreceiveamt = 0;
-                                $brokragetamotrec = 0;
-                                $sn = 1;
-                                $cumulative_amount = 0;
-                                $totalamt = $propertydata['booking_totalamt'];
-                                $paymentslipno = $propertydata['booking_no'];
-                                $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
-                                $installmentres = mysqli_query($con, $installmentqry);
-                                if (!$installmentres) {
-                                    error_log("Failed to fetch installments: " . mysqli_error($con));
-                                }
-                                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
-                                    // $cumulative_amount += $installmentdata['installment_amount'];
-                                    // $remaining_amount = $totalamt - $cumulative_amount;
-                                    if(!empty($installmentdata['advisor_amount'])){
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $sn; ?></td>
-                                            <!-- <td><?php echo htmlspecialchars($installmentdata['registration_number']); ?></td> -->
-                                            <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
-                                            </td>
-                                            <td><?php echo $installmentdata['current_date']; ?></td>
-                                            <!-- <td><?php echo $installmentdata['receive_name']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['amount_in_word']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['payment_by']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['drawn_on']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['payment_by_date']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['project_name']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['total_amout']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['remaing_balance']; ?></td> -->
-                                            <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
-
-                                            <!-- <td><?= $propertydata['advisor_amount'] ?></td> -->
-                                            <td><?php echo $installmentdata['advisor_amount']   ; ?></td>
-                                            <!-- <td><?php echo $propertydata['advisor_amount'] - $installmentdata['advisor_amount']; ?></td> -->
-                                            <!-- <td><?php echo $installmentdata['percentage']; ?></td> -->
-
-                                        </tr>
-                                    <?php
-
-                                        $sn++;
-                                    }
-                            }
-
-
-                                $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
-
-                                $res = mysqli_query($con, $qry);
-                                $row = mysqli_fetch_assoc($res);
-
-                                $totalreceiveamt = (float) ($row['total_received'] ?? 0);
-                                $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
+        <!-- Advisor pop-up -->
 
 
 
 
-                                ?>
+        <div class="modal fade" id="advisorSlip" role="dialog">
+            <div class="modal-dialog payslip-sec">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">
+                            Advisor Slip (Reg. No: <?php echo htmlspecialchars($paymentslipno); ?>)
+                        </h4>
 
-
-
-                            </tbody>
-                        </table>
                     </div>
+                    <div class="modal-body ">
+
+                        <div class="col-lg-12" style="margin-top: 20px;">
+
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>SNO</th>
+                                            <!-- <th>Registration Number</th> -->
+                                            <th>Slip Id</th>
+                                            <th>Current Date</th>
+                                            <!-- <th>Receive Name</th> -->
+                                            <!-- <th>Amount in Word</th> -->
+                                            <!-- <th>Payment By</th> -->
+                                            <!-- <th>Drawn On</th> -->
+                                            <!-- <th>Payment by date</th> -->
+                                            <!-- <th>Project Name</th> -->
+                                            <!-- <th>Plot No</th> -->
+                                            <!-- <th>Plot Size</th> -->
+                                            <!-- <th>Installment Ammount</th> -->
+                                            <!-- <th>Remaining Amount</th> -->
+                                            <!-- <th>Total Advisor Amt</th> -->
+                                            <th>Advisor Received Amt</th>
+                                            <!-- <th>Advisor Pending Amt</th> -->
+                                            <!-- <th>Percentage</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <?php
+                                        $totalreceiveamt = 0;
+                                        $brokragetamotrec = 0;
+                                        $sn = 1;
+                                        $cumulative_amount = 0;
+                                        $totalamt = $propertydata['booking_totalamt'];
+                                        $paymentslipno = $propertydata['booking_no'];
+                                        $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
+                                        $installmentres = mysqli_query($con, $installmentqry);
+                                        if (!$installmentres) {
+                                            error_log("Failed to fetch installments: " . mysqli_error($con));
+                                        }
+                                        while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
+                                            // $cumulative_amount += $installmentdata['installment_amount'];
+                                            // $remaining_amount = $totalamt - $cumulative_amount;
+                                            if (!empty($installmentdata['advisor_amount'])) {
+                                                ?>
+                                                <tr>
+                                                    <td><?php echo $sn; ?></td>
+                                                    <!-- <td><?php echo htmlspecialchars($installmentdata['registration_number']); ?></td> -->
+                                                    <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
+                                                    </td>
+                                                    <td><?php echo $installmentdata['current_date']; ?></td>
+                                                    <!-- <td><?php echo $installmentdata['receive_name']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['amount_in_word']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['payment_by']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['drawn_on']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['payment_by_date']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['project_name']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['plot_no']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['plot_size']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['total_amout']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['remaing_balance']; ?></td> -->
+                                                    <!-- <td><?php echo $totalpendingbalnce; ?></td> -->
+
+                                                    <!-- <td><?= $propertydata['advisor_amount'] ?></td> -->
+                                                    <td><?php echo $installmentdata['advisor_amount']; ?></td>
+                                                    <!-- <td><?php echo $propertydata['advisor_amount'] - $installmentdata['advisor_amount']; ?></td> -->
+                                                    <!-- <td><?php echo $installmentdata['percentage']; ?></td> -->
+
+                                                </tr>
+                                                <?php
+
+                                                $sn++;
+                                            }
+                                        }
+
+
+                                        $qry = "SELECT SUM(total_amout)   AS total_received, SUM(advisor_amount) AS total_brokageamt FROM payment_slip WHERE registration_number = '$paymentslipno'";
+
+                                        $res = mysqli_query($con, $qry);
+                                        $row = mysqli_fetch_assoc($res);
+
+                                        $totalreceiveamt = (float) ($row['total_received'] ?? 0);
+                                        $brokragetamotrec = (float) ($row['total_brokageamt'] ?? 0);
+
+
+
+
+                                        ?>
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
                 </div>
 
-
-
             </div>
-
         </div>
 
-    </div>
-</div>
 
 
 
 
 
-
-<!-- Advisor pop-up -->
+        <!-- Advisor pop-up -->
 
 
 
