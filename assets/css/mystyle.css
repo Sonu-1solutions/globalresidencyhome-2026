@@ -44,20 +44,20 @@
 }
 
 .add-user-btn {
-    background: #ff8c2b;
+    background: #ff7d23;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 7px;
     padding: 8px 14px;
     display: flex;
     width: 116px !important;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
-/* 🔴 Hover remove */
+/*  Hover remove */
 .add-user-btn:hover,
 .add-user-btn:focus,
 .add-user-btn:active {
-    background: #ff8c2b !important;
+    background: #ff7d23 !important;
     color: #fff !important;
     box-shadow: none !important;
     outline: none !important;

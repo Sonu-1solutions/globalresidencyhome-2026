@@ -47,7 +47,22 @@ include "layout/head.php";
 		</div>
 		<!-- /Breadcrumb -->
 
+		<!-- <div class="row add-advisor">
+							<div class="col-md-8"></div>
+							<div class="col-md-4 text-right">
+								<a href="advisor-add.php" class="add-user-btn" >
+										+ Add Advisor
+									</a>
+							</div>
+						</div> -->
+
 		<div class="row">
+			<div class="col-md-4 text-right">
+								<a href="advisor-add.php" class="add-user-btn" >
+										+ Add Advisor
+									</a>
+							</div>
+			
 			<div class="col-sm-12">
 
 

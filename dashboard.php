@@ -1,3 +1,5 @@
+
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -165,14 +167,14 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 							</div>
 						</a>
 
-						<div class="row add-advisor">
+						<!-- <div class="row add-advisor">
 							<div class="col-md-8"></div>
 							<div class="col-md-4 text-right">
 								<a href="advisor-add.php" class="add-user-btn" >
 										+ Add Advisor
 									</a>
 							</div>
-						</div>
+						</div> -->
 
 					</div>
 				</div>
@@ -306,24 +308,38 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 	var directValue = 0;
 
-	c3.generate({
-		bindto: '#chart-donut3',
-		data: {
-			columns: [
-				['Moderate', totalModerate]
-			],
-			type: 'donut',
-			colors: {
-				'Moderate': '#67b7dc'   // ✅ GREEN (yahan color change karo)
-			}
-		},
-		donut: {
-			title: totalModerate.toString()
-		},
-		legend: {
-			show: false
-		}
-	});
+var moderateColumns;
+var moderateColor;
+
+if (parseInt(totalModerate) === 0) {
+    moderateColumns = [
+        ['Moderate', 1]   // dummy value so donut render ho
+    ];
+    moderateColor = '#E0E0E0'; // GRAY when zero
+} else {
+    moderateColumns = [
+        ['Moderate', totalModerate]
+    ];
+    moderateColor = '#67b7dc'; // color
+}
+
+c3.generate({
+    bindto: '#chart-donut3',
+    data: {
+        columns: moderateColumns,
+        type: 'donut',
+        colors: {
+            'Moderate': moderateColor
+        }
+    },
+    donut: {
+        title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
+    },
+    legend: {
+        show: false
+    }
+});
+
 
 
 </script>

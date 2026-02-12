@@ -1001,28 +1001,18 @@ $paymentslipno = $propertydata['booking_no'];
 
             <div class="col-md-12 mt-3">
                 <form action="" method="post" enctype="multipart/form-data" id="bookingForm">
+                    <div class="row" style="margin-top: 0px;">
 
-
-                    <div class="row">
-
-
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">Booking No</label>
 
                             <input type="text" class="form-control py-4" name="booking_no"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_no']); ?>" readonly>
+                                value="<?php echo htmlspecialchars(@$propertydata['booking_no']); ?>">
                         </div>
 
-
-                        <div class="col-md-3 mb-5">
-                            <label class="fw-bold">Booking Date</label>
-                            <input type="date" class="form-control py-4" name="booking_date"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_date']); ?>">
-                        </div>
-
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">Project</label>
-                            <select class="form-control" name="booking_project" required>
+                            <select class="form-control" name="booking_project" required style="height: 50px;">
                                 <option value="">—Please choose an option—</option>
                                 <option value="Global Residency Homes" <?php echo ($propertydata['booking_project'] == 'Global Residency Homes') ? 'selected' : ''; ?>>
                                     Global Residency Homes</option>
@@ -1033,73 +1023,102 @@ $paymentslipno = $propertydata['booking_no'];
 
                         </div>
 
+                        <div class="col-md-6 mb-5">
+                            <label class="fw-bold">Booking Date</label>
+                            <input type="date" class="form-control py-4" name="booking_date"
+                                value="<?php echo htmlspecialchars(@$propertydata['booking_date']); ?>">
+                        </div>
 
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold"> Plot Type </label>
-                            <select class="form-control" name="booking_plottype" required>
+                            <select class="form-control" name="booking_plottype" required style="height: 50px;">
                                 <option value="Residential" <?php echo ($propertydata['booking_plottype'] == 'Residential') ? 'selected' : ''; ?>>Residential
                                 </option>
                                 <option value="Commercial" <?php echo ($propertydata['booking_plottype'] == 'Commercial') ? 'selected' : ''; ?>>Commercial</option>
                             </select>
                         </div>
 
-                    </div>
-
-
-                    <div class="row">
-
-
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">First Name</label>
                             <input type="text" class="form-control py-4" name="booking_fname"
                                 value="<?php echo htmlspecialchars(@$propertydata['booking_fname']); ?>">
                         </div>
 
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
+                            <label class="fw-bold">Plot Facing</label>
+                            <select class="form-control" name="booking_facing" required style="height: 50px;">
+                                <option value="Corner Facing" <?php echo ($propertydata['booking_facing'] == 'Corner Facing') ? 'selected' : ''; ?>>Corner Facing</option>
+                                <option value="Park Facing" <?php echo ($propertydata['booking_facing'] == 'Park Facing') ? 'selected' : ''; ?>>Park Facing</option>
+                                <option value="Wide Road Facing" <?php echo ($propertydata['booking_facing'] == 'Wide Road Facing') ? 'selected' : ''; ?>>Wide Road Facing</option>
+                                <option value="Behind Commercial" <?php echo ($propertydata['booking_facing'] == 'Behind Commercial') ? 'selected' : ''; ?>>Behind Commercial</option>
+                                <option value="None" <?php echo ($propertydata['booking_facing'] == 'None') ? 'selected' : ''; ?>>None</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">Last Name</label>
                             <input type="text" class="form-control py-4" name="booking_lname"
                                 value="<?php echo htmlspecialchars(@$propertydata['booking_lname']); ?>">
                         </div>
 
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
+                            <label class="fw-bold">Plot Size</label>
+                            <select class="form-control" name="booking_plotsize" required style="height: 50px;">
+                                <option value="">—Please choose an option—</option>
+                                <option value="100 (Sq.Yrd) to 150 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '100 (Sq.Yrd) to 150 (Sq.Yrd)') ? 'selected' : ''; ?>>100 (Sq.Yrd) to 150 (Sq.Yrd)</option>
+                                <option value="150 (Sq.Yrd) to 200 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '150 (Sq.Yrd) to 200 (Sq.Yrd)') ? 'selected' : ''; ?>>150 (Sq.Yrd) to 200 (Sq.Yrd)</option>
+                                <option value="200 (Sq.Yrd) to 250 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '200 (Sq.Yrd) to 250 (Sq.Yrd)') ? 'selected' : ''; ?>>200 (Sq.Yrd) to 250 (Sq.Yrd)</option>
+                                <option value="250 (Sq.Yrd) to 300 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '250 (Sq.Yrd) to 300 (Sq.Yrd)') ? 'selected' : ''; ?>>250 (Sq.Yrd) to 300 (Sq.Yrd)</option>
+                                <option value="300 (Sq.Yrd) to 350 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '300 (Sq.Yrd) to 350 (Sq.Yrd)') ? 'selected' : ''; ?>>300 (Sq.Yrd) to 350 (Sq.Yrd)</option>
+                                <option value="350 (Sq.Yrd) to 400 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '350 (Sq.Yrd) to 400 (Sq.Yrd)') ? 'selected' : ''; ?>>350 (Sq.Yrd) to 400 (Sq.Yrd)</option>
+                                <option value="400 (Sq.Yrd) to 450 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '400 (Sq.Yrd) to 450 (Sq.Yrd)') ? 'selected' : ''; ?>>400 (Sq.Yrd) to 450 (Sq.Yrd)</option>
+                                <option value="450 (Sq.Yrd) to 500 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '450 (Sq.Yrd) to 500 (Sq.Yrd)') ? 'selected' : ''; ?>>450 (Sq.Yrd) to 500 (Sq.Yrd)</option>
+                                <option value="300 (Sq.Yrd) to 500 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '300 (Sq.Yrd) to 500 (Sq.Yrd)') ? 'selected' : ''; ?>>300 (Sq.Yrd) to 500 (Sq.Yrd) Global Farms Size</option>
+                                <option value="700 (Sq.Yrd) to 1000 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '700 (Sq.Yrd) to 1000 (Sq.Yrd)') ? 'selected' : ''; ?>>500 (Sq.Yrd) to 700 (Sq.Yrd) Global Farms Size</option>
+                                <option value="Area will be 100 sq feet" <?php echo ($propertydata['booking_plotsize'] == 'Area will be 100 sq feet') ? 'selected' : ''; ?>>
+                                    Area will be 100 sq feet Global Galleria Shops</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">Phone Number</label>
                             <input type="text" class="form-control py-4" name="booking_phone"
                                 value="<?php echo htmlspecialchars(@$propertydata['booking_phone']); ?>" minlength="10"
                                 maxlength="10">
                         </div>
 
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
+                            <label class="fw-bold">Payment Plan</label>
+                            <select class="form-control" name="booking_payplan" required style="height: 50px;">
+                                <option value="">—Please choose an option—</option>
+                                <option value="Down Payment" <?php echo ($propertydata['booking_payplan'] == 'Down Payment') ? 'selected' : ''; ?>>Down Payment</option>
+                                <option value="Basic" <?php echo ($propertydata['booking_payplan'] == 'Basic') ? 'selected' : ''; ?>>Basic</option>
+                                <option value="Six Months" <?php echo ($propertydata['booking_payplan'] == 'Six Months') ? 'selected' : ''; ?>>Six Months</option>
+                                <option value="Twelve Months" <?php echo ($propertydata['booking_payplan'] == 'Twelve Months') ? 'selected' : ''; ?>>Twelve Months</option>
+                                <option value="Eighteen Months" <?php echo ($propertydata['booking_payplan'] == 'Eighteen Months') ? 'selected' : ''; ?>>Eighteen Months</option>
+                                <option value="Twenty Four Months" <?php echo ($propertydata['booking_payplan'] == 'Twenty Four Months') ? 'selected' : ''; ?>>Twenty Four Months</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">Email</label>
                             <input type="email" class="form-control py-4" name="booking_email"
                                 value="<?php echo htmlspecialchars(@$propertydata['booking_email']); ?>">
                         </div>
 
-                    </div>
-
-
-                    <div class="row">
-
-
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">DOB</label>
-                            <input type="date" class="form-control py-4" name="booking_dob"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_dob']); ?>">
-                        </div>
-
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">State</label>
-                            <input type="text" class="form-control py-4" name="booking_state"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_state']); ?>">
-                        </div>
-
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">City</label>
-                            <input type="text" class="form-control py-4" name="booking_city"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_city']); ?>">
+                        <div class="col-md-6 mb-5">
+                            <label class="fw-bold">Payment Mode</label>
+                            <select class="form-control" name="booking_paymode" id="booking_paymode" required
+                                style="height: 50px;">
+                                <option value="">Select Payment Mode</option>
+                                <option value="offline" <?php echo ($propertydata['booking_paymode'] == 'offline') ? 'selected' : ''; ?>>Offline</option>
+                                <option value="netbanking" <?php echo ($propertydata['booking_paymode'] == 'netbanking') ? 'selected' : ''; ?>>Net Banking</option>
+                                <option value="online" <?php echo ($propertydata['booking_paymode'] == 'online') ? 'selected' : ''; ?>>Online</option>
+                            </select>
                         </div>
 
 
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-6 mb-5">
                             <label class="fw-bold">S/O, W/o</label>
                             <div class="row">
                                 <div class="col-md-3">
@@ -1118,169 +1137,21 @@ $paymentslipno = $propertydata['booking_no'];
                             </div>
                         </div>
 
-
-
-                    </div>
-
-                    <div class="row mb-5">
-
-
-                        <div class="col-md-4">
-                            <label class="fw-bold">Address</label>
-                            <textarea class="form-control" rows="5"
-                                name="booking_address"><?php echo htmlspecialchars(@$propertydata['booking_address']); ?></textarea>
-                        </div>
-
-
-                        <div class="col-md-4"
-                            style="display: flex;flex-direction: column;justify-content: space-between;">
-
-
-                            <label class="fw-bold">Aadhar Details & Doc File</label>
-
-                            <?php if ($propertydata['booking_aadharphoto']) { ?>
-                                <div>
-                                    <img src="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
-                                        style="max-height: 80px; max-width: 60%;">
-                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
-                                        target="_blank" class="btn btn-sm btn-info" style="margin-left: 10px;">
-                                        <i class="fa fa-eye"></i> View
-                                    </a>
-                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
-                                        download class="btn btn-sm btn-success" style="margin-left: 5px;">
-                                        <i class="fa fa-download"></i> Download
-                                    </a>
-                                </div>
-                            <?php } else { ?>
-                                <p>No file uploaded</p>
-                            <?php } ?>
-
-
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input type="text" class="form-control py-4" name="booking_aadharno"
-                                        value="<?php echo htmlspecialchars(@$propertydata['booking_aadharno']); ?>"
-                                        minlength="12" maxlength="12">
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="file" class="form-control" name="booking_aadharphoto" accept="image/*">
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="col-md-4"
-                            style="display: flex;flex-direction: column;justify-content: space-between;">
-
-                            <label class="fw-bold">Pan Details & Doc file</label>
-
-                            <?php if ($propertydata['booking_panphoto']) { ?>
-                                <div>
-                                    <img src="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
-                                        style="max-height: 80px; max-width: 60%;">
-                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
-                                        target="_blank" class="btn btn-sm btn-info" style="margin-left: 10px;">
-                                        <i class="fa fa-eye"></i> View
-                                    </a>
-                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
-                                        download class="btn btn-sm btn-success" style="margin-left: 5px;">
-                                        <i class="fa fa-download"></i> Download
-                                    </a>
-                                </div>
-                            <?php } else { ?>
-                                <p>No file uploaded</p>
-                            <?php } ?>
-
-
-
-
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <input type="text" class="form-control py-4" name="booking_panno"
-                                        value="<?php echo htmlspecialchars(@$propertydata['booking_panno']); ?>"
-                                        minlength="10" maxlength="10">
-                                </div>
-                                <div class="col-md-7">
-                                    <input type="file" class="form-control" name="booking_panphoto" accept="image/*">
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <hr style="border-top: 2px solid #ffc734;">
-                    <div class="row">
-
-
-                        <div class="col-md-3  mb-5">
+                        <div class="col-md-6  mb-5">
                             <label class="fw-bold">Scheme Amount</label>
                             <input type="text" class="form-control py-4" name="booking_schemeamt"
                                 value="<?php echo htmlspecialchars(@$propertydata['booking_schemeamt']); ?>">
                         </div>
 
-                        <div class="col-md-3 mb-5">
-                            <label class="fw-bold">Plot Facing</label>
-                            <select class="form-control" name="booking_facing" required>
-                                <option value="Corner Facing" <?php echo ($propertydata['booking_facing'] == 'Corner Facing') ? 'selected' : ''; ?>>Corner Facing</option>
-                                <option value="Park Facing" <?php echo ($propertydata['booking_facing'] == 'Park Facing') ? 'selected' : ''; ?>>Park Facing</option>
-                                <option value="Wide Road Facing" <?php echo ($propertydata['booking_facing'] == 'Wide Road Facing') ? 'selected' : ''; ?>>Wide Road Facing</option>
-                                <option value="Behind Commercial" <?php echo ($propertydata['booking_facing'] == 'Behind Commercial') ? 'selected' : ''; ?>>Behind Commercial</option>
-                                <option value="None" <?php echo ($propertydata['booking_facing'] == 'None') ? 'selected' : ''; ?>>None</option>
-                            </select>
+                        <div class="col-md-6  mb-5">
+                            <label class="fw-bold">DOB</label>
+                            <input type="date" class="form-control py-4" name="booking_dob"
+                                value="<?php echo htmlspecialchars(@$propertydata['booking_dob']); ?>">
                         </div>
 
-
-                        <div class="col-md-3 mb-5">
-                            <label class="fw-bold">Plot Size</label>
-                            <select class="form-control" name="booking_plotsize" required>
-                                <option value="">—Please choose an option—</option>
-                                <option value="100 (Sq.Yrd) to 150 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '100 (Sq.Yrd) to 150 (Sq.Yrd)') ? 'selected' : ''; ?>>100 (Sq.Yrd) to 150 (Sq.Yrd)</option>
-                                <option value="150 (Sq.Yrd) to 200 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '150 (Sq.Yrd) to 200 (Sq.Yrd)') ? 'selected' : ''; ?>>150 (Sq.Yrd) to 200 (Sq.Yrd)</option>
-                                <option value="200 (Sq.Yrd) to 250 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '200 (Sq.Yrd) to 250 (Sq.Yrd)') ? 'selected' : ''; ?>>200 (Sq.Yrd) to 250 (Sq.Yrd)</option>
-                                <option value="250 (Sq.Yrd) to 300 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '250 (Sq.Yrd) to 300 (Sq.Yrd)') ? 'selected' : ''; ?>>250 (Sq.Yrd) to 300 (Sq.Yrd)</option>
-                                <option value="300 (Sq.Yrd) to 350 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '300 (Sq.Yrd) to 350 (Sq.Yrd)') ? 'selected' : ''; ?>>300 (Sq.Yrd) to 350 (Sq.Yrd)</option>
-                                <option value="350 (Sq.Yrd) to 400 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '350 (Sq.Yrd) to 400 (Sq.Yrd)') ? 'selected' : ''; ?>>350 (Sq.Yrd) to 400 (Sq.Yrd)</option>
-                                <option value="400 (Sq.Yrd) to 450 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '400 (Sq.Yrd) to 450 (Sq.Yrd)') ? 'selected' : ''; ?>>400 (Sq.Yrd) to 450 (Sq.Yrd)</option>
-                                <option value="450 (Sq.Yrd) to 500 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '450 (Sq.Yrd) to 500 (Sq.Yrd)') ? 'selected' : ''; ?>>450 (Sq.Yrd) to 500 (Sq.Yrd)</option>
-                                <option value="300 (Sq.Yrd) to 500 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '300 (Sq.Yrd) to 500 (Sq.Yrd)') ? 'selected' : ''; ?>>300 (Sq.Yrd) to 500 (Sq.Yrd) Global Farms Size</option>
-                                <option value="700 (Sq.Yrd) to 1000 (Sq.Yrd)" <?php echo ($propertydata['booking_plotsize'] == '700 (Sq.Yrd) to 1000 (Sq.Yrd)') ? 'selected' : ''; ?>>500 (Sq.Yrd) to 700 (Sq.Yrd) Global Farms Size</option>
-                                <option value="Area will be 100 sq feet" <?php echo ($propertydata['booking_plotsize'] == 'Area will be 100 sq feet') ? 'selected' : ''; ?>>
-                                    Area will be 100 sq feet Global Galleria Shops</option>
-                            </select>
-                        </div>
-
-
-                        <div class="col-md-3 mb-5">
-                            <label class="fw-bold">Payment Plan</label>
-                            <select class="form-control" name="booking_payplan" required>
-                                <option value="">—Please choose an option—</option>
-                                <option value="Down Payment" <?php echo ($propertydata['booking_payplan'] == 'Down Payment') ? 'selected' : ''; ?>>Down Payment</option>
-                                <option value="Basic" <?php echo ($propertydata['booking_payplan'] == 'Basic') ? 'selected' : ''; ?>>Basic</option>
-                                <option value="Six Months" <?php echo ($propertydata['booking_payplan'] == 'Six Months') ? 'selected' : ''; ?>>Six Months</option>
-                                <option value="Twelve Months" <?php echo ($propertydata['booking_payplan'] == 'Twelve Months') ? 'selected' : ''; ?>>Twelve Months</option>
-                                <option value="Eighteen Months" <?php echo ($propertydata['booking_payplan'] == 'Eighteen Months') ? 'selected' : ''; ?>>Eighteen Months</option>
-                                <option value="Twenty Four Months" <?php echo ($propertydata['booking_payplan'] == 'Twenty Four Months') ? 'selected' : ''; ?>>Twenty Four Months</option>
-                            </select>
-                        </div>
-
-
-                        <div class="col-md-3 mb-5">
-                            <label class="fw-bold">Payment Mode</label>
-                            <select class="form-control" name="booking_paymode" id="booking_paymode" required>
-                                <option value="">Select Payment Mode</option>
-                                <option value="offline" <?php echo ($propertydata['booking_paymode'] == 'offline') ? 'selected' : ''; ?>>Offline</option>
-                                <option value="netbanking" <?php echo ($propertydata['booking_paymode'] == 'netbanking') ? 'selected' : ''; ?>>Net Banking</option>
-                                <option value="online" <?php echo ($propertydata['booking_paymode'] == 'online') ? 'selected' : ''; ?>>Online</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">Primary Advisor Name</label>
-                            <select class="form-control" name="booking_advisor" required>
+                        <div class="col-md-6  mb-5">
+                            <label class="fw-bold">Advisor Name</label>
+                            <select class="form-control" name="booking_advisor" required style="height: 50px;">
                                 <option value="">—Please choose Advisor—</option>
                                 <?php
                                 $advisiorqry = mysqli_query($con, "SELECT user_id, user_name FROM user_master WHERE user_status='Enable' AND user_department='User'");
@@ -1308,34 +1179,105 @@ $paymentslipno = $propertydata['booking_no'];
                             </select>
                         </div>
 
-
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">Multi Advisors</label>
-                            <select class="form-control" name="multi_advisor">
-                                <option value="">—Please choose Multi Advisor—</option>
-                            </select>
+                        <div class="col-md-6  mb-5">
+                            <label class="fw-bold">State</label>
+                            <input type="text" class="form-control py-4" name="booking_state"
+                                value="<?php echo htmlspecialchars(@$propertydata['booking_state']); ?>">
                         </div>
 
-                        <div class="col-md-3  mb-5">
-                            <label class="fw-bold">Verification Executive</label>
-                            <select class="form-control" name="verification_executive">
-                                <option value="">—Please choose Verification Executive—</option>
-                            </select>
+                        <div class="col-md-6  mb-5">
+                            <label class="fw-bold">City</label>
+                            <input type="text" class="form-control py-4" name="booking_city"
+                                value="<?php echo htmlspecialchars(@$propertydata['booking_city']); ?>">
+                        </div>
+
+                        <div class="col-md-6  mb-5">
+                            <label class="fw-bold">Address</label>
+                            <textarea class="form-control"
+                                name="booking_address"><?php echo htmlspecialchars(@$propertydata['booking_address']); ?></textarea>
+                        </div>
+
+
+                        <!-- <div class="col-md-6  mb-5">
+                        
+                    </div> -->
+
+
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 ">
+                            <div class="col-md-12">
+                                <label class="fw-bold">Pan Details</label>
+                                <input type="text" class="form-control py-4" name="booking_panno"
+                                    value="<?php echo htmlspecialchars(@$propertydata['booking_panno']); ?>"
+                                    minlength="10" maxlength="10">
+                            </div>
+
+                            <label>Upload Pan Card</label>
+                            <?php if ($propertydata['booking_panphoto']) { ?>
+                                <div>
+                                    <img src="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
+                                        width="100">
+                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
+                                        target="_blank" class="btn btn-sm btn-info" style="margin-left: 10px;">
+                                        <i class="fa fa-eye"></i> View
+                                    </a>
+                                    <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_panphoto']); ?>"
+                                        download class="btn btn-sm btn-success" style="margin-left: 5px;">
+                                        <i class="fa fa-download"></i> Download
+                                    </a>
+                                </div>
+                            <?php } else { ?>
+                                <p>No file uploaded</p>
+                            <?php } ?>
+                            <input type="file" class="form-control" name="booking_panphoto" accept="image/*"
+                                style="margin-top: 10px;">
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="row">
+                                <div class="col-md-12  mb-2">
+                                    <label class="fw-bold">Aadhar Details</label>
+                                    <input type="text" class="form-control py-4" name="booking_aadharno"
+                                        value="<?php echo htmlspecialchars(@$propertydata['booking_aadharno']); ?>"
+                                        minlength="12" maxlength="12">
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <label>Upload Aadhar Card1</label>
+                                <?php if ($propertydata['booking_aadharphoto']) { ?>
+                                    <div>
+                                        <img src="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
+                                            width="100">
+                                        <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
+                                            target="_blank" class="btn btn-sm btn-info" style="margin-left: 10px;">
+                                            <i class="fa fa-eye"></i> View
+                                        </a>
+                                        <a href="booking-image/<?php echo htmlspecialchars($propertydata['booking_aadharphoto']); ?>"
+                                            download class="btn btn-sm btn-success" style="margin-left: 5px;">
+                                            <i class="fa fa-download"></i> Download
+                                        </a>
+                                    </div>
+                                <?php } else { ?>
+                                    <p>No file uploaded</p>
+                                <?php } ?>
+                                <input type="file" class="form-control" name="booking_aadharphoto" accept="image/*"
+                                    style="margin-top: 10px;">
+                            </div>
                         </div>
 
                     </div>
-
-
-
-
                     <div class="row">
                         <div class="col-md-12 mb-4">
                             <button type="submit" name="formupdate" class="btn btn-primary">Update Booking</button>
                         </div>
                     </div>
                 </form>
-
-
 
                 <div class="row">
                     <?php
@@ -1404,35 +1346,8 @@ $paymentslipno = $propertydata['booking_no'];
                                 <?php echo $propertydata['booking_blockno']; ?>
                             </p>
                             <hr>
-
-
-
-
                             <div>
                                 <div class="row">
-                                    <div class="col-md-12 mb-3">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <a href="#" class="btn btn-success" data-toggle="modal"
-                                                    data-target="#addbba">
-                                                    Add BBA</a>
-
-                                            </div>
-                                            <div class="col-md-4">
-                                                <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>"
-                                                    class="btn btn-warning">
-                                                    BBA</a>
-
-                                            </div>
-                                            <div class="col-md-4">
-                                                <!-- <button type="button" class="btn btn-m btn-success "
-                                                    onclick="window.location.href='booking-slip.php?slip_id=<?php echo $propertydata['booking_no']; ?>&balanceamt=<?= $totalpendingbalnce ?>'">
-                                                    Add Slip
-                                                </button> -->
-
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="table-responsive">
                                         <table id="example1" class="table table-bordered table-striped">
                                             <tr>
@@ -1764,34 +1679,34 @@ $paymentslipno = $propertydata['booking_no'];
                             $total_amount = $_POST['booking_totalamt'] ?? '';
 
                             $sql = "INSERT INTO bba (
-                                estamp_no,
-                                allottee_name,
-                                booking_no,
-                                bba_date,
-                                allottee_fname,
-                                addhar_no,
-                                allottee_address,
-                                booking_date,
-                                plot_no,
-                                plot_area,
-                                khasra_no,
-                                block_no,
-                                total_amount
-                            ) VALUES (
-                                '$estampno',
-                                '$allotteename',
-                                '$booking_no',
-                                '$bbadate',
-                                '$allotteefathersname',
-                                '$allotteeadhaarnumber',
-                                '$allotteeaddress',
-                                '$booking_date',
-                                '$plotno',
-                                '$plotarea',
-                                '$khasrano',
-                                '$booking_blockno',
-                                '$total_amount'
-                            )";
+        estamp_no,
+        allottee_name,
+        booking_no,
+        bba_date,
+        allottee_fname,
+        addhar_no,
+        allottee_address,
+        booking_date,
+        plot_no,
+        plot_area,
+        khasra_no,
+        block_no,
+        total_amount
+    ) VALUES (
+        '$estampno',
+        '$allotteename',
+        '$booking_no',
+        '$bbadate',
+        '$allotteefathersname',
+        '$allotteeadhaarnumber',
+        '$allotteeaddress',
+        '$booking_date',
+        '$plotno',
+        '$plotarea',
+        '$khasrano',
+        '$booking_blockno',
+        '$total_amount'
+    )";
 
                             if (mysqli_query($con, $sql)) {
                                 echo "<script>alert('BBA Added Successfully');</script>";
@@ -1887,7 +1802,7 @@ $paymentslipno = $propertydata['booking_no'];
                                         <h4 class="modal-title">BBA</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="" method="post" id="bbaForm">
+                                        <form action="" method="post" id="">
 
 
                                             <div class="modal-body">
@@ -2075,11 +1990,11 @@ $paymentslipno = $propertydata['booking_no'];
 
                                     </div>
 
-                                    <!-- <div class="col-md-1">
+                                    <div class="col-md-1">
                                         <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>"
                                             class="btn btn-warning">
                                             BBA</a>
-                                    </div> -->
+                                    </div>
 
                                     <div class="col-md-2">
 
@@ -2101,11 +2016,11 @@ $paymentslipno = $propertydata['booking_no'];
                                             View Advisor Slip</a>
                                     </div>
 
-                                    <!-- <div class="col-md-1">
+                                    <div class="col-md-1">
                                         <a href="#" class="btn btn-success" data-toggle="modal" data-target="#addbba">
                                             Add BBA</a>
 
-                                    </div> -->
+                                    </div>
                                 </div>
                             </div>
 

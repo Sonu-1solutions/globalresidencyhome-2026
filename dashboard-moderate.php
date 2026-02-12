@@ -306,24 +306,39 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 	var directValue = 0;
 
-	c3.generate({
-		bindto: '#chart-donut3',
-		data: {
-			columns: [
-				['Moderate', totalModerate]
-			],
-			type: 'donut',
-			colors: {
-				'Moderate': '#67b7dc'   // ✅ GREEN (yahan color change karo)
-			}
-		},
-		donut: {
-			title: totalModerate.toString()
-		},
-		legend: {
-			show: false
-		}
-	});
+var bookingColumns;
+var bookingColor;
+
+// ✅ SAME variable use karo (totalModerate)
+if (parseInt(totalModerate) === 0) {
+    bookingColumns = [
+        ['Moderate', 1]   // dummy value so chart visible rahe
+    ];
+    bookingColor = '#E0E0E0'; // gray
+} else {
+    bookingColumns = [
+        ['Moderate', totalModerate]
+    ];
+    bookingColor = '#67b7dc'; // normal color
+}
+
+c3.generate({
+    bindto: '#chart-donut3',
+    data: {
+        columns: bookingColumns,
+        type: 'donut',
+        colors: {
+            'Moderate': bookingColor
+        }
+    },
+    donut: {
+        title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
+    },
+    legend: {
+        show: false
+    }
+});
+
 
 
 </script>
