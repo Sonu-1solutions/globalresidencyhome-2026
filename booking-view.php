@@ -1656,17 +1656,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
                         <!-- Add BBA -->
 
 
@@ -1696,13 +1685,14 @@ $paymentslipno = $propertydata['booking_no'];
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">Allottee Name</label>
-                                                            <input type="text" class="form-control" name="allotteename">
+                                                            <label class="col-form-label">Allottee Name *</label>
+                                                            <input type="text" class="form-control" name="allotteename"
+                                                                value="already">
                                                         </div>
 
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">BBA Date</label>
+                                                            <label class="col-form-label">BBA Date </label>
                                                             <input type="date" class="form-control" name="bbadate">
                                                         </div>
 
@@ -1713,8 +1703,8 @@ $paymentslipno = $propertydata['booking_no'];
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">Allottee Adhaar Number</label>
-                                                            <input type="text" class="form-control"
+                                                            <label class="col-form-label">Allottee Adhaar Number *</label>
+                                                            <input type="text" class="form-control" value="already"
                                                                 name="allotteeadhaarnumber">
                                                         </div>
 
@@ -1725,18 +1715,22 @@ $paymentslipno = $propertydata['booking_no'];
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">Application Booking Date</label>
-                                                            <input type="date" class="form-control">
+                                                            <label class="col-form-label">Application Booking Date *</label>
+                                                            <input type="date" class="form-control" name="booking_date"
+                                                                value="<?= htmlspecialchars($propertydata['booking_date']); ?>">
+                                                        </div>
+
+
+                                                        <div class="col-md-4">
+                                                            <label class="col-form-label">Plot No *</label>
+                                                            <input type="text" name="plotno" class="form-control"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plotno']); ?>">
                                                         </div>
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">Plot No</label>
-                                                            <input type="text" name="plotno" class="form-control">
-                                                        </div>
-
-                                                        <div class="col-md-4">
-                                                            <label class="col-form-label">Plot Area</label>
-                                                            <input type="number" name="plotarea" class="form-control">
+                                                            <label class="col-form-label">Plot Area *</label>
+                                                            <input type="text" name="plotarea" class="form-control"
+                                                                value="<?= htmlspecialchars($propertydata['booking_plotno']); ?>">
                                                         </div>
 
                                                         <div class="col-md-4">
@@ -1757,14 +1751,12 @@ $paymentslipno = $propertydata['booking_no'];
 
 
                                                         <div class="col-md-4">
-                                                            <label class="col-form-label">Amount Received</label>
-                                                            <input type="number" name="khasrano" class="form-control">
+                                                            <label class="col-form-label">Total Amount *</label>
+                                                            <input type="text" name="khasrano" class="form-control"
+                                                                value="already">
                                                         </div>
 
-                                                        <div class="col-md-4">
-                                                            <label class="col-form-label">Annexure A Payment Plan</label>
-                                                            <input type="number" name="khasrano" class="form-control">
-                                                        </div>
+
 
 
 
@@ -2215,22 +2207,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
         <!-- Advisor pop-up -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
