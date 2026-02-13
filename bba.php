@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 // SESSION START
 if (session_status() === PHP_SESSION_NONE) {
@@ -54,21 +54,50 @@ include "layout/head.php";
 
     <div class="content">
 
-        <!-- Breadcrumb -->
+
+        <!-- BBA -->
 
         <?php
 
+        $booking_no = $_GET['booking_no'];
         $booking_id = $_GET['booking_id'];
-        if (!$booking_id) {
+
+
+        if (!$booking_no) {
             echo '<script> window.location="booking-list.php"; </script>';
             exit;
         }
 
-        $query = "SELECT * FROM booking_master WHERE booking_id = $booking_id";
+        if (!$booking_id) {
+            echo '<script>window.location="booking-list.php";</script>';
+            exit;
+        }
+
+
+        $query = "SELECT * FROM bba WHERE booking_no='$booking_no'";
         $result = mysqli_query($con, $query);
         $row = mysqli_fetch_assoc($result);
 
+
+
+
+
+
+
+
+
+if (!$result || mysqli_num_rows($result) == 0) {
+    echo "<script>alert('BBA not generated')</script>";
+    echo "<script> window.location='booking-view.php?booking_id=$booking_id'; </script>";
+    exit;
+}
+
+
+
+
+
         ?>
+
 
         <div class="d-block text-center page-breadcrumb mb-3 pagetitle">
             <div class="my-auto">
@@ -78,8 +107,7 @@ include "layout/head.php";
                     </div>
                     <div class="col-md-2">
 
-                        <a href="booking-view.php?booking_id=<?php echo $row['booking_id'] ?>"
-                            class="btn btn-sm btn-success">
+                        <a href="booking-view.php?booking_id=<?= $booking_id ?>" class="btn btn-sm btn-success">
                             ← Back
                         </a>
                     </div>
@@ -90,257 +118,11 @@ include "layout/head.php";
 
 
 
-        <table border="1" cellpadding="5" cellspacing="0" style="display: none ;">
-            <tr>
-                <th>Booking Date</th>
-                <th>Name</th>
-                <th>Addhar</th>
-                <th>Plot-Size</th>
-                <th>Plot No</th>
-                <th>Amount</th>
-
-                <!-- apne table ke hisaab se columns add karo -->
-            </tr>
-
-
-            <tr>
-                <td><?php echo $row['booking_date']; ?></td>
-                <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
-                <td><?php echo $row['booking_aadharno']; ?></td>
-                <td><?php echo $row['booking_plotsize']; ?></td>
-                <td><?php echo $row['booking_plotno']; ?></td>
-                <td><?php echo $row['booking_totalamt']; ?></td>
-
-            </tr>
-        </table>
 
 
 
 
-        <!-- /Breadcrumb -->
-
-
-
-
-
-
-
-
-        <?php
-        // PHP function for number to words
-        function numberToWords($num)
-        {
-            $ones = array(
-                "",
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-                "six",
-                "seven",
-                "eight",
-                "nine",
-                "ten",
-                "eleven",
-                "twelve",
-                "thirteen",
-                "fourteen",
-                "fifteen",
-                "sixteen",
-                "seventeen",
-                "eighteen",
-                "nineteen"
-            );
-            $tens = array(
-                "",
-                "",
-                "twenty",
-                "thirty",
-                "forty",
-                "fifty",
-                "sixty",
-                "seventy",
-                "eighty",
-                "ninety"
-            );
-
-            function convertTwoDigit($n, $ones, $tens)
-            {
-                if ($n < 20)
-                    return $ones[$n];
-                else
-                    return $tens[intval($n / 10)] . ($n % 10 ? " " . $ones[$n % 10] : "");
-            }
-
-            function convertThreeDigit($n, $ones, $tens)
-            {
-                $word = "";
-                if ($n > 99) {
-                    $word .= $ones[intval($n / 100)] . " hundred ";
-                    $n = $n % 100;
-                }
-                if ($n > 0)
-                    $word .= convertTwoDigit($n, $ones, $tens);
-                return trim($word);
-            }
-
-            $parts = explode(".", number_format($num, 2, '.', ''));
-            $integer = intval($parts[0]);
-            $decimal = intval($parts[1]);
-
-            $words = "";
-
-            $lakh = intval($integer / 100000);
-            $integer = $integer % 100000;
-            $thousand = intval($integer / 1000);
-            $integer = $integer % 1000;
-            $hundreds = $integer;
-
-            if ($lakh)
-                $words .= convertTwoDigit($lakh, $ones, $tens) . " lakh ";
-            if ($thousand)
-                $words .= convertTwoDigit($thousand, $ones, $tens) . " thousand ";
-            if ($hundreds)
-                $words .= convertThreeDigit($hundreds, $ones, $tens);
-
-            $words = trim($words);
-
-            if ($decimal > 0) {
-                $words .= " " . convertTwoDigit($decimal, $ones, $tens) . " paisa";
-            }
-
-            return ucfirst($words);
-        }
-
-        // Default balance amount
-        $balanceamt = isset($_GET['balanceamt']) ? $_GET['balanceamt'] : 369837.10;
-        ?>
-
-        <style>
-            .form-control {
-                width: 100%;
-                padding: 10px;
-                font-size: 16px;
-            }
-
-            .fw-bold {
-                font-weight: bold;
-            }
-
-            .mt-2 {
-                margin-top: 10px;
-            }
-
-            .text-primary {
-                color: #007bff;
-            }
-
-
-
-
-
-
-
-
-
-
-
-            @media print {
-
-                body {
-                    margin: 0;
-                    padding: 0;
-                }
-
-                img {
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                }
-
-                /* 🔒 Absolute text lock */
-                .print-box {
-                    position: absolute !important;
-                    transform: translateZ(0);
-                }
-
-                /* Page scaling fix */
-                @page {
-                    size: A4;
-                    margin: 0;
-                }
-            }
-
-
-            .print-box {
-                bottom: 85mm;
-                left: 25mm;
-            }
-        </style>
-
-
-        <input type="hidden" class="form-control" value="<?php echo $row['booking_totalamt']; ?>" id="totalamount"
-            oninput="updateWords()">
-
-        <!-- Default words from PHP -->
-
-
-        <script>
-            // JS function to convert number to words (simplified same logic)
-            function updateWords() {
-                let val = document.getElementById("totalamount").value;
-                document.getElementById("amountWords").innerText = numToWords(val);
-            }
-
-            function numToWords(num) {
-                num = parseFloat(num);
-                if (isNaN(num)) return "";
-
-                let ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-                    "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
-                    "seventeen", "eighteen", "nineteen"
-                ];
-                let tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-
-                function convertTwoDigit(n) {
-                    if (n < 20) return ones[n];
-                    return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
-                }
-
-                function convertThreeDigit(n) {
-                    let word = "";
-                    if (n > 99) {
-                        word += ones[Math.floor(n / 100)] + " hundred ";
-                        n = n % 100;
-                    }
-                    if (n > 0) word += convertTwoDigit(n);
-                    return word.trim();
-                }
-
-                let parts = num.toFixed(2).split(".");
-                let integer = parseInt(parts[0]);
-                let decimal = parseInt(parts[1]);
-
-                let words = "";
-                let lakh = Math.floor(integer / 100000);
-                integer = integer % 100000;
-                let thousand = Math.floor(integer / 1000);
-                integer = integer % 1000;
-                let hundreds = integer;
-
-                if (lakh) words += convertTwoDigit(lakh) + " lakh ";
-                if (thousand) words += convertTwoDigit(thousand) + " thousand ";
-                if (hundreds) words += convertThreeDigit(hundreds);
-
-                words = words.trim();
-                if (decimal > 0) words += " " + convertTwoDigit(decimal) + " paisa";
-
-                return words.charAt(0).toUpperCase() + words.slice(1);
-            }
-        </script>
-
-
+        <!-- /BBA -->
 
 
 
@@ -357,21 +139,23 @@ include "layout/head.php";
 
 
         <button onclick="printDiv()" style="
-    padding:10px 20px;
-    background:#007bff;
-    color:#fff;
-    border:none;
-    cursor:pointer;
-    margin-bottom:20px;
+            padding:10px 20px;
+            background:#007bff;
+            color:#fff;
+            border:none;
+            cursor:pointer;
+            margin-bottom:20px;
 ">
             🖨 Print BBA Document
         </button>
 
 
 
+
+
+
         <!-- PRINT AREA START -->
         <div id="printArea">
-
 
 
 
@@ -382,48 +166,111 @@ include "layout/head.php";
             foreach ($images as $img) {
                 $srno++;
                 ?>
-                <div style="margin-bottom:30px; text-align:center;">
+                <div class="print-page" style="margin-bottom:30px; text-align:center;">
 
-                    <!-- ✅ Sirf pehli image par name -->
-                    <?php if ($srno == 1) { ?>
+
+                    <!--  Sirf pehli image par name -->
+                    <?php if ($srno == 2) { ?>
                         <div style="position:relative; width:100%;">
 
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
                             <div class="print-box" style="
-                            position:absolute;
-                            bottom:320px;   /*  yaha adjust kar sakte ho */
-                            left:95px;
-                            width:100%;
-                            text-align:left;
-                            padding-left:60px;
-                            font-weight:bold;
-                            font-size:20px;
-                            color:black;
-                        ">
-                                <?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?>
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:50.5%;   /*  yaha adjust kar sakte ho */
+                                left:7%;
+                                width:100%;
+                                text-align:left;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['allottee_name']; ?>
                             </div>
 
                         </div>
 
-                    <?php } elseif ($srno == 2) { ?>
+                    <?php } elseif ($srno == 3) { ?>
                         <div style="position:relative; width:100%;">
 
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
                             <div style="
                             position:absolute;
-                            bottom:197px;   /*  yaha adjust kar sakte ho */
+                            bottom:46.60%;   /*  yaha adjust kar sakte ho */
                             left:200px;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font-size:20px;
-                            color:black;
-                        ">
+                            color:black;   ">
+
                                 <?php
-                                echo $row['booking_fname'] . ' ' . $row['booking_lname'] . ' (Aadhar No: ' . $row['booking_aadharno'] . ')';
+                                echo $row['allottee_name'] . ' (Aadhar No: ' . $row['addhar_no'] . ')';
+                                ?>
+
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom:45%;   /*  yaha adjust kar sakte ho */
+                            left:25%;
+                            width:100%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black;     ">
+
+                                <?php
+                                echo $row['allottee_fname'];
+                                ?>
+
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom:41.4%;   /*  yaha adjust kar sakte ho */
+                            left:11%;
+                            width:78%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black;     ">
+
+                                <?php
+                                echo $row['allottee_address'];
                                 ?>
 
                             </div>
@@ -435,38 +282,161 @@ include "layout/head.php";
 
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
                             <div style="
                             position:absolute;
-                            bottom:881px;   /*  yaha adjust kar sakte ho */
-                            left:497px;
+                            bottom:22.3% ;   /*  yaha adjust kar sakte ho */
+                            left:50%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font-size:20px;
-                            color:black;
-                        ">
+                            color:black;   ">
+
                                 <?php
-                                echo $row['booking_plotarea'];
+                                echo $row['booking_date'];
                                 ?>
 
                             </div>
+
+                        </div>
+
+                    <?php } elseif ($srno == 5) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <!-- Name just above Allottee(s) -->
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+
                             <div style="
                             position:absolute;
-                            bottom:633px;   /*  yaha adjust kar sakte ho */
-                            left:497px;
+                            bottom:84%;   /*  yaha adjust kar sakte ho */
+                            left:42%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font-size:20px;
-                            color:black;
-                        ">
+                            color:black; ">
+
                                 <?php
-                                echo $row['booking_plotno'];
+                                echo $row['plot_area'];
                                 ?>
 
                             </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom:82%;   /*  yaha adjust kar sakte ho */
+                            left:30%;
+                            width:100%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black; ">
+
+                                <?php
+                                echo $row['booking_date'];
+
+                                ?>
+
+
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom: 68.5%; /*  yaha adjust kar sakte ho */
+                            left:43%;
+                            width:100%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black; ">
+
+                                <?php
+                                echo $row['plot_no'];
+
+                                ?>
+
+
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom: 66.8%; /*  yaha adjust kar sakte ho */
+                            left:9%;
+                            width:100%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black; ">
+
+                                <?php
+                                echo $row['booking_date'];
+
+                                ?>
+
+
+                            </div>
+
+                        </div>
+
+                    <?php } elseif ($srno == 6) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
 
                         </div>
 
@@ -477,79 +447,335 @@ include "layout/head.php";
                             <!-- Image -->
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
-                            <!-- Name just above Allottee(s) -->
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+
+                    <?php } elseif ($srno == 8) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
 
                             <div style="
                             position:absolute;
-                            bottom:500px;   /*  yaha adjust kar sakte ho */
-                            left:880px;
+                            bottom: 63.6%; /*  yaha adjust kar sakte ho */
+                            left: 12%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font-size:20px;
-                            color:black;
-                        ">
+                            color:black; ">
+
                                 <?php
-                                echo $row['booking_plotno'];
+                                echo $row['plot_no'];
 
                                 ?>
 
 
                             </div>
+
                             <div style="
                             position:absolute;
-                            bottom:475px;   /*  yaha adjust kar sakte ho */
-                            left:250px;
+                            bottom:63.6%;   /*  yaha adjust kar sakte ho */
+                            left:38%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font-size:20px;
-                            color:black;
-                        ">
+                            color:black; ">
+
                                 <?php
-                                echo $row['booking_plotarea'];
+                                echo $row['plot_area'];
                                 ?>
 
                             </div>
+
                             <div style="
                             position:absolute;
-                            bottom:395px;   /*  yaha adjust kar sakte ho */
-                            left:750px;
+                            bottom:63.6%;   /*  yaha adjust kar sakte ho */
+                            left:73%;
+                            width:100%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            color:black; ">
+
+                                <?php
+                                echo $row['khasra_no'];
+                                ?>
+
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom: 58.5%;   /*  yaha adjust kar sakte ho */
+                            left:50%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font: size 20px;
-                            color:black;
-                        ">
+                            color:black;  ">
 
                                 <span style="font-size:20px;">
-                                    <?php echo $row['booking_totalamt']; ?>
+                                    <?php echo $row['total_amount']; ?>
                                 </span>
 
                             </div>
+
                             <div style="
                             position:absolute;
-                            bottom:370px;   /*  yaha adjust kar sakte ho */
-                            left:125px;
+                            bottom:57%;   /*  yaha adjust kar sakte ho */
+                            left:10%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font: size 20px;
-                            color:black;
-                        ">
+                            color:black;  ">
+
                                 <span id="amountWords" class="" style="font-size:20px;">
-                                    <?php echo numberToWords($row['booking_totalamt']); ?>
+                                    <?= $row['total_amount_word'] ?>
                                 </span>
 
                             </div>
 
                         </div>
+                    <?php } elseif ($srno == 9) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+                        </div>
+                    <?php } elseif ($srno == 10) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
 
 
+                        </div>
+                    <?php } elseif ($srno == 11) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+                    <?php } elseif ($srno == 12) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+                    <?php } elseif ($srno == 13) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+                    <?php } elseif ($srno == 14) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+                    <?php } elseif ($srno == 15) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+                            <div style="
+                            position:absolute;
+                            bottom:65%;   /*  yaha adjust kar sakte ho */
+                            left:11%;
+                            width:78%;
+                            text-align:left;
+                            padding-left:60px;
+                            font-weight:bold;
+                            font-size:20px;
+                            text-decoration:underline;
+                            color:black;     ">
+
+                                <?php
+                                echo $row['allottee_address'];
+                                ?>
+
+                            </div>
+
+                        </div>
+
+                         <?php } elseif ($srno == 16) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+
+                        </div>
+
+                        
 
 
 
@@ -560,21 +786,61 @@ include "layout/head.php";
                             <!-- Image -->
                             <img src="<?php echo $img; ?>" style="width:100%; display:block;">
 
+                           <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+                            
+
+                        </div>
+
+
+                    <?php } elseif ($srno == 18) { ?>
+
+                        <div style="position:relative; width:100%;">
+
+                            <!-- Image -->
+                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
+
                             <!-- Name just above Allottee(s) -->
 
+                            <div class="print-box" style="
+                                position:absolute;
+                                bottom:95%;   /*  yaha adjust kar sakte ho */
+                                /* left:95px; */
+                                width:100%;
+                                text-align:center;
+                                padding-left:60px;
+                                font-weight:bold;
+                                font-size:20px;
+                                color:black;   ">
+
+                                <?php echo $row['estamp_no']; ?>
+                            </div>
+
+                            
 
 
                             <div style="
                             position:absolute;
-                            bottom:800px;   /*  yaha adjust kar sakte ho */
+                            bottom:75%;   /*  yaha adjust kar sakte ho */
                             left:0px;
                             width:88%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font: size 20px;
-                            color:black;
-                        ">
+                            color:black;  ">
 
 
                                 <style>
@@ -621,12 +887,6 @@ include "layout/head.php";
                                     </tr>
 
                                     <?php
-                                    $booking_id = $_GET['booking_id'] ?? '';
-
-                                    if (!$booking_id) {
-                                        echo '<script>window.location="booking-list.php";</script>';
-                                        exit;
-                                    }
 
                                     $query = "SELECT * FROM booking_master WHERE booking_id='$booking_id'";
                                     $result = mysqli_query($con, $query);
@@ -647,41 +907,19 @@ include "layout/head.php";
                                 </table>
 
 
-
-
-
                             </div>
-
-
-                        </div>
-
-
-
-
-
-
-                    <?php } elseif ($srno == 18) { ?>
-
-                        <div style="position:relative; width:100%;">
-
-                            <!-- Image -->
-                            <img src="<?php echo $img; ?>" style="width:100%; display:block;">
-
-                            <!-- Name just above Allottee(s) -->
-
 
 
                             <div style="
                             position:absolute;
-                            bottom:600px;   /*  yaha adjust kar sakte ho */
+                            bottom:15%;   /*  yaha adjust kar sakte ho */
                             left:0px;
                             width:88%;
                             text-align:left;
                             padding-left:60px;
                             font-weight:bold;
                             font: size 20px;
-                            color:black;
-                        ">
+                            color:black; ">
 
 
                                 <style>
@@ -715,20 +953,20 @@ include "layout/head.php";
                                 </style>
 
                                 <div class="table-responsive">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th style=" text-align:center; ">SNO</th>
-                                        <th style=" text-align:center; ">Installment Date</th>
-                                        <th style=" text-align:center; ">Particulars</th>
-                                        <th style=" text-align:center; ">%</th>
-                                        <th style=" text-align:center; ">Amount</th>
-                                        <th style=" text-align:center; ">Remaining Amount</th>
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style=" text-align:center; ">SNO</th>
+                                                <th style=" text-align:center; ">Installment Date</th>
+                                                <th style=" text-align:center; ">Particulars</th>
+                                                <th style=" text-align:center; ">%</th>
+                                                <th style=" text-align:center; ">Amount</th>
+                                                <th style=" text-align:center; ">Remaining Amount</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                                             $sn = 1;
                                             $cumulative_amount = 0;
                                             $totalamt = $_GET['propertamt'];
@@ -741,45 +979,36 @@ include "layout/head.php";
                                                 $cumulative_amount += $installmentdata['installment_amount'];
                                                 $remaining_amount = $totalamt - $cumulative_amount;
                                                 ?>
-                                    <tr>
-                                        <td style=" text-align:center; "><?php echo $sn; ?></td>
-                                        <td style=" text-align:center; ">
-                                            <?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
-                                        </td>
-                                        <td style=" text-align:center; ">
-                                            <?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
-                                        </td>
-                                        <td style=" text-align:center; ">
-                                            <?php echo htmlspecialchars($installmentdata['installment_emiper']); ?>
-                                        </td>
-                                        <td style=" text-align:center; ">
-                                            <?php echo number_format($installmentdata['installment_amount'], 2); ?>
-                                        </td>
-                                        <td style=" text-align:center; ">
-                                            <?php echo number_format($remaining_amount, 2); ?>
-                                        </td>
-                                        <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
-                                    </tr>
-                                    <?php
+                                                <tr>
+                                                    <td style=" text-align:center; "><?php echo $sn; ?></td>
+                                                    <td style=" text-align:center; ">
+                                                        <?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
+                                                    </td>
+                                                    <td style=" text-align:center; ">
+                                                        <?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
+                                                    </td>
+                                                    <td style=" text-align:center; ">
+                                                        <?php echo htmlspecialchars($installmentdata['installment_emiper']); ?>
+                                                    </td>
+                                                    <td style=" text-align:center; ">
+                                                        <?php echo number_format($installmentdata['installment_amount'], 2); ?>
+                                                    </td>
+                                                    <td style=" text-align:center; ">
+                                                        <?php echo number_format($remaining_amount, 2); ?>
+                                                    </td>
+                                                    <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
+                                                </tr>
+                                                <?php
                                                 $sn++;
                                             }
                                             ?>
-                                </tbody>
-                            </table>
-                        </div>
-
-
-
-
+                                        </tbody>
+                                    </table>
+                                </div>
 
                             </div>
 
-
                         </div>
-
-
-
-
 
                     <?php } else { ?>
 
@@ -787,23 +1016,11 @@ include "layout/head.php";
 
                     <?php } ?>
 
-
-
-
-
                 </div>
             <?php } ?>
 
-
-
         </div>
     </div>
-
-
-
-
-
-
 
     <script>
         function printDiv() {
@@ -832,13 +1049,6 @@ include "layout/head.php";
             location.reload();
         }
     </script>
-
-
-
-
-
-
-
 
 
 

@@ -1,6 +1,6 @@
 <?php
 // error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 
 // SESSION START
 if (session_status() === PHP_SESSION_NONE) {
@@ -419,15 +419,6 @@ if (isset($_POST['formupdate'])) {
     } else {
         error_log("Advisor ID not found for advisor name: $booking_advisor");
     }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1010,7 +1001,7 @@ $paymentslipno = $propertydata['booking_no'];
                             <label class="fw-bold">Booking No</label>
 
                             <input type="text" class="form-control py-4" name="booking_no"
-                                value="<?php echo htmlspecialchars(@$propertydata['booking_no']); ?>" readonly>
+                                value="<?php echo htmlspecialchars($propertydata['booking_no']); ?>" readonly>
                         </div>
 
 
@@ -1419,7 +1410,7 @@ $paymentslipno = $propertydata['booking_no'];
 
                                             </div>
                                             <div class="col-md-4">
-                                                <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>"
+                                                <a href="bba.php?booking_id=<?php echo $booking_id; ?>&propertamt=<?= $propertydata['booking_totalamt'] ?>&booking_no=<?= $propertydata['booking_no'] ?>"
                                                     class="btn btn-warning">
                                                     BBA</a>
 
@@ -1749,49 +1740,52 @@ $paymentslipno = $propertydata['booking_no'];
 
                         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                            $estampno = $_POST['estampno'] ?? '';
-                            $booking_no = $_POST['booking_no'] ?? '';
-                            $allotteename = $_POST['allottee_name'] ?? '';
-                            $bbadate = $_POST['bbadate'] ?? '';
-                            $allotteefathersname = $_POST['allotteefathersname'] ?? '';
-                            $allotteeadhaarnumber = $_POST['allotteeadhaarnumber'] ?? '';
-                            $allotteeaddress = $_POST['allotteeaddress'] ?? '';
-                            $booking_date = $_POST['booking_date'] ?? '';
-                            $plotno = $_POST['plotno'] ?? '';
-                            $plotarea = $_POST['plotarea'] ?? '';
-                            $khasrano = $_POST['khasrano'] ?? '';
-                            $booking_blockno = $_POST['booking_blockno'] ?? '';
-                            $total_amount = $_POST['booking_totalamt'] ?? '';
+                            $estampno = mysqli_real_escape_string($con, $_POST['estampno'] ?? '');
+                            $booking_no = mysqli_real_escape_string($con, $_POST['booking_no'] ?? '');
+                            $allotteename = mysqli_real_escape_string($con, $_POST['allottee_name'] ?? '');
+                            $bbadate = mysqli_real_escape_string($con, $_POST['bbadate'] ?? '');
+                            $allotteefathersname = mysqli_real_escape_string($con, $_POST['allotteefathersname'] ?? '');
+                            $allotteeadhaarnumber = mysqli_real_escape_string($con, $_POST['allotteeadhaarnumber'] ?? '');
+                            $allotteeaddress = mysqli_real_escape_string($con, $_POST['allotteeaddress'] ?? '');
+                            $booking_date = mysqli_real_escape_string($con, $_POST['booking_date'] ?? '');
+                            $plotno = mysqli_real_escape_string($con, $_POST['plotno'] ?? '');
+                            $plotarea = mysqli_real_escape_string($con, $_POST['plotarea'] ?? '');
+                            $khasrano = mysqli_real_escape_string($con, $_POST['khasrano'] ?? '');
+                            $booking_blockno = mysqli_real_escape_string($con, $_POST['booking_blockno'] ?? '');
+                            $total_amount = mysqli_real_escape_string($con, $_POST['booking_totalamt'] ?? '');
+                            $amount_word = mysqli_real_escape_string($con, $_POST['amount_word'] ?? '');
 
                             $sql = "INSERT INTO bba (
-                                estamp_no,
-                                allottee_name,
-                                booking_no,
-                                bba_date,
-                                allottee_fname,
-                                addhar_no,
-                                allottee_address,
-                                booking_date,
-                                plot_no,
-                                plot_area,
-                                khasra_no,
-                                block_no,
-                                total_amount
-                            ) VALUES (
-                                '$estampno',
-                                '$allotteename',
-                                '$booking_no',
-                                '$bbadate',
-                                '$allotteefathersname',
-                                '$allotteeadhaarnumber',
-                                '$allotteeaddress',
-                                '$booking_date',
-                                '$plotno',
-                                '$plotarea',
-                                '$khasrano',
-                                '$booking_blockno',
-                                '$total_amount'
-                            )";
+                                    estamp_no,
+                                    allottee_name,
+                                    booking_no,
+                                    bba_date,
+                                    allottee_fname,
+                                    addhar_no,
+                                    allottee_address,
+                                    booking_date,
+                                    plot_no,
+                                    plot_area,
+                                    khasra_no,
+                                    block_no,
+                                    total_amount,
+                                    total_amount_word
+                                ) VALUES (
+                                    '$estampno',
+                                    '$allotteename',
+                                    '$booking_no',
+                                    '$bbadate',
+                                    '$allotteefathersname',
+                                    '$allotteeadhaarnumber',
+                                    '$allotteeaddress',
+                                    '$booking_date',
+                                    '$plotno',
+                                    '$plotarea',
+                                    '$khasrano',
+                                    '$booking_blockno',
+                                    '$total_amount',
+                                    '$amount_word'
+                                )";
 
                             if (mysqli_query($con, $sql)) {
                                 echo "<script>alert('BBA Added Successfully');</script>";
@@ -1801,6 +1795,10 @@ $paymentslipno = $propertydata['booking_no'];
                         }
                         ?>
 
+
+
+
+                        <!-- Amount word converter -->
 
 
                         <?php
@@ -1871,6 +1869,8 @@ $paymentslipno = $propertydata['booking_no'];
                             return trim($result) . " Rupees" . $points . " Only";
                         }
                         ?>
+
+                        <!-- Amount word converter -->
 
 
 
@@ -1990,7 +1990,7 @@ $paymentslipno = $propertydata['booking_no'];
 
                                                         <div class="col-md-4">
                                                             <label class="col-form-label">Amount (In Words)</label>
-                                                            <input type="text" class="form-control"
+                                                            <input type="text" name="amount_word" class="form-control"
                                                                 value="<?= numberToWords($totalreceiveamt); ?>" readonly>
                                                         </div>
 
@@ -2587,15 +2587,6 @@ $paymentslipno = $propertydata['booking_no'];
 </script>
 
 <!-- Advisor percentage -->
-
-
-
-
-
-
-
-
-
 
 
 
