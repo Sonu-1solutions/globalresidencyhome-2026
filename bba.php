@@ -477,8 +477,8 @@ if (!$result || mysqli_num_rows($result) == 0) {
 
                             <div style="
                             position:absolute;
-                            bottom: 63.6%; /*  yaha adjust kar sakte ho */
-                            left: 12%;
+                            bottom: 65.5%; /*  yaha adjust kar sakte ho */
+                            left: 70%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
@@ -497,7 +497,7 @@ if (!$result || mysqli_num_rows($result) == 0) {
                             <div style="
                             position:absolute;
                             bottom:63.6%;   /*  yaha adjust kar sakte ho */
-                            left:38%;
+                            left:21%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;
@@ -514,7 +514,7 @@ if (!$result || mysqli_num_rows($result) == 0) {
                             <div style="
                             position:absolute;
                             bottom:63.6%;   /*  yaha adjust kar sakte ho */
-                            left:73%;
+                            left: 60%;
                             width:100%;
                             text-align:left;
                             padding-left:60px;

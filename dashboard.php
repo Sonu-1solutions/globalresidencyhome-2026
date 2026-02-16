@@ -92,18 +92,68 @@ $total_online_booking = $getOnlineBookingRow['total_online'] ?? 0;
 
 // TOTAL PENDING BOOKING
 
-$gettotalpendingqry = "
-    SELECT COUNT(*) AS total_pending 
-    FROM booking_master 
-    WHERE booking_installstatus = 'Pending'
+$pendingQry = "
+    SELECT COUNT(*) AS total_pending
+    FROM booking_master bm
+    LEFT JOIN (
+        SELECT registration_number, SUM(total_amout) AS total_received
+        FROM payment_slip
+        GROUP BY registration_number
+    ) ps ON ps.registration_number = bm.booking_no
+    WHERE bm.booking_status = 'Enabled'
+    AND bm.booking_totalamt > 0
+    AND IFNULL(ps.total_received,0) < bm.booking_totalamt
 ";
 
-$gettotalpendingres = mysqli_query($con, $gettotalpendingqry);
-$row = mysqli_fetch_assoc($gettotalpendingres);
-
+$res = mysqli_query($con, $pendingQry);
+$row = mysqli_fetch_assoc($res);
 $total_pending = $row['total_pending'] ?? 0;
 
-// echo $total_pending;
+
+
+// total completed
+
+
+$completedQry = "
+    SELECT COUNT(*) AS total_completed
+    FROM booking_master bm
+    LEFT JOIN (
+        SELECT registration_number, SUM(total_amout) AS total_received
+        FROM payment_slip
+        GROUP BY registration_number
+    ) ps ON ps.registration_number = bm.booking_no
+    WHERE bm.booking_status = 'Enabled'
+    AND bm.booking_totalamt > 0
+    AND ps.total_received >= bm.booking_totalamt
+";
+
+
+$completedRes = mysqli_query($con, $completedQry);
+$completedRow = mysqli_fetch_assoc($completedRes);
+$total_completed = $completedRow['total_completed'] ?? 0;
+
+// Total N/A
+
+
+$naQry = "
+    SELECT COUNT(*) AS total_na
+    FROM booking_master bm
+    LEFT JOIN (
+        SELECT registration_number, SUM(total_amout) AS total_received
+        FROM payment_slip
+        GROUP BY registration_number
+    ) ps ON ps.registration_number = bm.booking_no
+    WHERE bm.booking_status = 'Enabled'
+    AND bm.booking_totalamt = 0
+    AND IFNULL(ps.total_received,0) = 0
+";
+
+$res = mysqli_query($con, $naQry);
+$row = mysqli_fetch_assoc($res);
+$total_na = $row['total_na'] ?? 0;
+
+
+
 
 
 
@@ -144,11 +194,11 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 <style>
 	.pending-count {
-    font-size: 48px;
-    font-weight: 700;
-    color: #ff9f40; /* orange look */
-}
-
+		font-size: 48px;
+		font-weight: 700;
+		color: #ff9f40;
+		/* orange look */
+	}
 </style>
 
 <!-- Page Wrapper -->
@@ -163,16 +213,11 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 		<div class="content">
 			<div class="d-block text-center page-breadcrumb mb-3 pagetitle">
 				<div class="my-auto">
-
 					<h1>Admin Dashboard</h1>
 				</div>
 			</div>
 
 			<div class="row">
-
-
-
-			
 				<!-- TOTAL ADMIN -->
 				<div class="col-md-3">
 					<div class="row card1 mt-5">
@@ -278,17 +323,43 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="col-md-4">
-    <div class="card1 mt-5 text-center">
-        <div class="card-header">
-            <h4 class="card-title mb-0">Total Pending</h4>
-        </div>
-        <div class="card-body">
-            <h1 class="pending-count"><?php echo $total_pending; ?></h1>
-            <p class="text-muted mb-0">Pending Installments</p>
+					<div class="row mb-4">
+
+    <!-- Pending -->
+    <div class="col-md-3">
+        <div class="card1 text-center">
+            <div class="card-header">
+                <h4 class="mb-0">Total Pending</h4>
+            </div>
+            <div class="card-body">
+                <h1 style="color:#ff9f40;font-weight:700;">
+                    <?= $total_pending ?>
+                </h1>
+            </div>
         </div>
     </div>
+
+	    <!-- Completed -->
+    <div class="col-md-3">
+        <div class="card1 text-center">
+            <div class="card-header">
+                <h4 class="mb-0">Total Completed</h4>
+            </div>
+            <div class="card-body">
+                <h1 style="color:#28a745;font-weight:700;">
+                    <?= $total_completed ?>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+	<div class="col-md-4">
+    <div class="card1 text-center">
+        <h4>N/A</h4>
+        <h2><?= $total_na ?></h2>
+    </div>
 </div>
+
 
 				</div>
 			</div>
@@ -307,7 +378,6 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 	var totalUsers = <?php echo (int) $total_users; ?>;
 	var remainingUsers = <?php echo (int) $remaining_users; ?>;
 	var totalModerate = <?= $total_moderate ?>;
-
 	var onlineBooking = <?php echo (int) $total_online_booking; ?>;
 
 

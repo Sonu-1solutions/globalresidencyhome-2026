@@ -589,11 +589,16 @@ $result = mysqli_query($con, $query);
                                             $total = (float) $row['booking_totalamt'];
                                             $received = (float) $totalreceiveamt1;
 
-                                            echo ($total > 0 && $received >= $total)
-                                                ? 'Completed'
-                                                : 'Pending';
+                                            if ($total == 0 && $received == 0) {
+                                                echo 'N/A';
+                                            } elseif ($total > 0 && $received >= $total) {
+                                                echo 'Completed';
+                                            } else {
+                                                echo 'Pending';
+                                            }
                                             ?>
                                         </td>
+
 
                                         <td><?= $row['advisor_amount']; ?></td>
                                         <td><?= $row['booking_createat']; ?></td>
