@@ -1,5 +1,3 @@
-
-
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -51,7 +49,8 @@ include "layout/head.php";
 $getuserqry = "
     SELECT COUNT(user_id) AS total_users 
     FROM user_master 
-    WHERE user_status='Enable' 
+    WHERE user_status='Enable'
+	AND user_department='User' 
     AND user_id!='1'
 ";
 $getuserres = mysqli_query($con, $getuserqry);
@@ -61,6 +60,18 @@ $total_users = $getuserrow['total_users'] ?? 0;
 
 
 
+
+// TOTAL ADMIN
+$getAdminQry = "
+    SELECT COUNT(user_id) AS total_admin
+    FROM user_master
+    WHERE user_status = 'Enable'
+    AND user_id != 1
+    AND LOWER(TRIM(user_department)) = 'admin'
+";
+$getAdminRes = mysqli_query($con, $getAdminQry);
+$getAdminRow = mysqli_fetch_assoc($getAdminRes);
+$total_admin = (int) ($getAdminRow['total_admin'] ?? 0);
 
 
 
@@ -79,19 +90,23 @@ $getOnlineBookingRow = mysqli_fetch_assoc($getOnlineBookingRes);
 $total_online_booking = $getOnlineBookingRow['total_online'] ?? 0;
 
 
+// TOTAL PENDING BOOKING
 
-/* ================= TOTAL DIRECT BOOKING ================= */
-/* agar direct ka koi field hai (example: booking_type = 'Direct') */
-// $getDirectBookingQry = "
-//     SELECT COUNT(booking_id) AS total_direct 
-//     FROM booking_master 
-//     WHERE booking_status = 'Enabled'
-//     AND booking_type = 'Direct'
-// ";
-// $getDirectBookingRes = mysqli_query($con, $getDirectBookingQry);
-// $getDirectBookingRow = mysqli_fetch_assoc($getDirectBookingRes);
+$gettotalpendingqry = "
+    SELECT COUNT(*) AS total_pending 
+    FROM booking_master 
+    WHERE booking_installstatus = 'Pending'
+";
 
-// $total_direct_booking = $getDirectBookingRow['total_direct'] ?? 0;
+$gettotalpendingres = mysqli_query($con, $gettotalpendingqry);
+$row = mysqli_fetch_assoc($gettotalpendingres);
+
+$total_pending = $row['total_pending'] ?? 0;
+
+// echo $total_pending;
+
+
+
 
 
 // TOTAL MODERATE
@@ -125,6 +140,17 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 ?>
 
+
+
+<style>
+	.pending-count {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ff9f40; /* orange look */
+}
+
+</style>
+
 <!-- Page Wrapper -->
 <div class="main-wrapper">
 
@@ -144,9 +170,28 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 			<div class="row">
 
+
+
+			
+				<!-- TOTAL ADMIN -->
+				<div class="col-md-3">
+					<div class="row card1 mt-5">
+						<div class="card-header">
+							<h4 class="card-title mb-0">
+								Total Admin : <?= $total_admin ?>
+							</h4>
+						</div>
+						<a href="admin-list.php">
+							<div class="card-body">
+								<div id="chart-donut4"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+
 				<!--  TOTAL USER  -->
 
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 
 
@@ -179,9 +224,13 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 					</div>
 				</div>
 
-				<!--  TOTAL USER  -->
 
-				<div class="col-md-4">
+
+
+
+				<!--  TOTAL MODERATE  -->
+
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 						<div class="card-header">
 							<h4 class="card-title mb-0">
@@ -198,7 +247,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 				</div>
 
 				<!--  TOTAL BOOKING  -->
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 
 
@@ -226,6 +275,22 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 					</div>
 				</div>
 
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-4">
+    <div class="card1 mt-5 text-center">
+        <div class="card-header">
+            <h4 class="card-title mb-0">Total Pending</h4>
+        </div>
+        <div class="card-body">
+            <h1 class="pending-count"><?php echo $total_pending; ?></h1>
+            <p class="text-muted mb-0">Pending Installments</p>
+        </div>
+    </div>
+</div>
+
+				</div>
 			</div>
 
 		</div>
@@ -266,27 +331,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 		legend: { show: false }
 	});
 
-	/* TOTAL USER DONUT */
-	// c3.generate({
-	// 	bindto: '#chart-donut3',
-	// 	data: {
-	// 		columns: [
-	// 			['Remaining', remainingUsers],
-	// 			['Users', totalUsers]
-	// 		],
-	// 		type: 'donut',
-	// 		colors: {
-	// 			'Remaining': '#F2F2F2',
-	// 			'Users': '#6771dc'
-	// 		}
-	// 	},
-	// 	donut: {
-	// 		title: totalUsers.toString()
-	// 	},
-	// 	legend: { show: false }
-	// });
 
-	/* BOOKING DUMMY */
 	/* ONLINE BOOKING DONUT */
 	c3.generate({
 		bindto: '#chart-donut2',
@@ -306,63 +351,88 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 	});
 
 
+
+	// TOTAL MODERATE 
+
 	var directValue = 0;
 
-var moderateColumns;
-var moderateColor;
+	var moderateColumns;
+	var moderateColor;
 
-if (parseInt(totalModerate) === 0) {
-    moderateColumns = [
-        ['Moderate', 1]   // dummy value so donut render ho
-    ];
-    moderateColor = '#E0E0E0'; // GRAY when zero
-} else {
-    moderateColumns = [
-        ['Moderate', totalModerate]
-    ];
-    moderateColor = '#67b7dc'; // color
-}
+	if (parseInt(totalModerate) === 0) {
+		moderateColumns = [
+			['Moderate', 1]   // dummy value so donut render ho
+		];
+		moderateColor = '#E0E0E0'; // GRAY when zero
+	} else {
+		moderateColumns = [
+			['Moderate', totalModerate]
+		];
+		moderateColor = '#67b7dc'; // color
+	}
 
-c3.generate({
-    bindto: '#chart-donut3',
-    data: {
-        columns: moderateColumns,
-        type: 'donut',
-        colors: {
-            'Moderate': moderateColor
-        }
-    },
-    donut: {
-        title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
-    },
-    legend: {
-        show: false
-    }
-});
+	c3.generate({
+		bindto: '#chart-donut3',
+		data: {
+			columns: moderateColumns,
+			type: 'donut',
+			colors: {
+				'Moderate': moderateColor
+			}
+		},
+		donut: {
+			title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
+		},
+		legend: {
+			show: false
+		}
+	});
+
+
+
+	// /TOTAL ADMIN
+
+
+	var totalAdmin = <?= $total_admin ?>;
+
+	var adminColumns;
+	var adminColor;
+
+	if (parseInt(totalAdmin) === 0) {
+		adminColumns = [
+			['Admin', 1] // dummy value
+		];
+		adminColor = '#E0E0E0'; // gray when zero
+	} else {
+		adminColumns = [
+			['Admin', totalAdmin]
+		];
+		adminColor = '#517e9e'; // admin color (change if you want)
+	}
+
+	c3.generate({
+		bindto: '#chart-donut4',
+		data: {
+			columns: adminColumns,
+			type: 'donut',
+			colors: {
+				'Admin': adminColor
+			}
+		},
+		donut: {
+			title: (parseInt(totalAdmin) === 0) ? '0' : totalAdmin.toString()
+		},
+		legend: {
+			show: false
+		}
+	});
+
 
 
 
 </script>
 
-<!-- Delete Modal -->
-<!-- <div class="modal fade" id="delete_modal">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-body text-center">
-				<span class="avatar avatar-xl bg-transparent-danger text-danger mb-3">
-					<i class="ti ti-trash-x fs-36"></i>
-				</span>
-				<h4 class="mb-1">Confirm Delete</h4>
-				<p class="mb-3">You want to delete all the marked items, this cant be undone once you delete.</p>
-				<div class="d-flex justify-content-center">
-					<a href="javascript:void(0);" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</a>
-					<a href="employee-dashboard.html" class="btn btn-danger">Yes, Delete</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- /Delete Modal -->
+
 
 <?php
 include "layout/footer.php";

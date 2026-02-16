@@ -8587,3 +8587,17 @@ Stack trace:
 [13-Feb-2026 12:57:28 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 926
 [13-Feb-2026 12:57:28 Europe/Berlin] Advisor 'Lakshay Dhall' not found in user_master for booking_id=2855
 [13-Feb-2026 12:57:28 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 1429
+[16-Feb-2026 05:17:42 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:17:42 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:17:42 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:17:42 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:17:42 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 1420
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 917
+[16-Feb-2026 05:21:30 Europe/Berlin] Advisor 'Lakshay Dhall' not found in user_master for booking_id=2855
+[16-Feb-2026 05:21:30 Europe/Berlin] PHP Warning:  Undefined variable $totalpendingbalnce in C:\xampp\htdocs\globalresidencyhome.com\global2\booking-view.php on line 1420

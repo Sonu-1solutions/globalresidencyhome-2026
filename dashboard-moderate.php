@@ -50,6 +50,7 @@ $getuserqry = "
     SELECT COUNT(user_id) AS total_users 
     FROM user_master 
     WHERE user_status='Enable' 
+	AND user_department='User'
     AND user_id!='1'
 ";
 $getuserres = mysqli_query($con, $getuserqry);
@@ -59,9 +60,17 @@ $total_users = $getuserrow['total_users'] ?? 0;
 
 
 
-
-
-
+// TOTAL ADMIN
+$getAdminQry = "
+    SELECT COUNT(user_id) AS total_admin
+    FROM user_master
+    WHERE user_status = 'Enable'
+    AND user_id != 1
+    AND LOWER(TRIM(user_department)) = 'admin'
+";
+$getAdminRes = mysqli_query($con, $getAdminQry);
+$getAdminRow = mysqli_fetch_assoc($getAdminRes);
+$total_admin = (int) ($getAdminRow['total_admin'] ?? 0);
 
 
 
@@ -77,19 +86,6 @@ $getOnlineBookingRow = mysqli_fetch_assoc($getOnlineBookingRes);
 $total_online_booking = $getOnlineBookingRow['total_online'] ?? 0;
 
 
-
-/* ================= TOTAL DIRECT BOOKING ================= */
-/* agar direct ka koi field hai (example: booking_type = 'Direct') */
-// $getDirectBookingQry = "
-//     SELECT COUNT(booking_id) AS total_direct 
-//     FROM booking_master 
-//     WHERE booking_status = 'Enabled'
-//     AND booking_type = 'Direct'
-// ";
-// $getDirectBookingRes = mysqli_query($con, $getDirectBookingQry);
-// $getDirectBookingRow = mysqli_fetch_assoc($getDirectBookingRes);
-
-// $total_direct_booking = $getDirectBookingRow['total_direct'] ?? 0;
 
 
 // TOTAL MODERATE
@@ -142,9 +138,29 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 			<div class="row">
 
+
+
+
+			
+				<!-- TOTAL ADMIN -->
+				<div class="col-md-3">
+					<div class="row card1 mt-5">
+						<div class="card-header">
+							<h4 class="card-title mb-0">
+								Total Admin : <?= $total_admin ?>
+							</h4>
+						</div>
+						<a href="moderate-admin-list.php">
+							<div class="card-body">
+								<div id="chart-donut4"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+
 				<!--  TOTAL USER  -->
 
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 
 
@@ -177,9 +193,11 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 					</div>
 				</div>
 
+
+
 				<!--  TOTAL USER  -->
 
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 						<div class="card-header">
 							<h4 class="card-title mb-0">
@@ -196,7 +214,7 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 				</div>
 
 				<!--  TOTAL BOOKING  -->
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="row card1 mt-5">
 
 
@@ -306,38 +324,78 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 
 	var directValue = 0;
 
-var bookingColumns;
-var bookingColor;
+	var bookingColumns;
+	var bookingColor;
 
-// ✅ SAME variable use karo (totalModerate)
-if (parseInt(totalModerate) === 0) {
-    bookingColumns = [
-        ['Moderate', 1]   // dummy value so chart visible rahe
-    ];
-    bookingColor = '#E0E0E0'; // gray
-} else {
-    bookingColumns = [
-        ['Moderate', totalModerate]
-    ];
-    bookingColor = '#67b7dc'; // normal color
-}
+	// ✅ SAME variable use karo (totalModerate)
+	if (parseInt(totalModerate) === 0) {
+		bookingColumns = [
+			['Moderate', 1]   // dummy value so chart visible rahe
+		];
+		bookingColor = '#E0E0E0'; // gray
+	} else {
+		bookingColumns = [
+			['Moderate', totalModerate]
+		];
+		bookingColor = '#67b7dc'; // normal color
+	}
 
-c3.generate({
-    bindto: '#chart-donut3',
-    data: {
-        columns: bookingColumns,
-        type: 'donut',
-        colors: {
-            'Moderate': bookingColor
-        }
-    },
-    donut: {
-        title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
-    },
-    legend: {
-        show: false
-    }
-});
+	c3.generate({
+		bindto: '#chart-donut3',
+		data: {
+			columns: bookingColumns,
+			type: 'donut',
+			colors: {
+				'Moderate': bookingColor
+			}
+		},
+		donut: {
+			title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
+		},
+		legend: {
+			show: false
+		}
+	});
+
+
+
+
+
+
+
+	var totalAdmin = <?= $total_admin ?>;
+
+	var adminColumns;
+	var adminColor;
+
+	if (parseInt(totalAdmin) === 0) {
+		adminColumns = [
+			['Admin', 1] // dummy value
+		];
+		adminColor = '#E0E0E0'; // gray when zero
+	} else {
+		adminColumns = [
+			['Admin', totalAdmin]
+		];
+		adminColor = '#517e9e'; // admin color (change if you want)
+	}
+
+	c3.generate({
+		bindto: '#chart-donut4',
+		data: {
+			columns: adminColumns,
+			type: 'donut',
+			colors: {
+				'Admin': adminColor
+			}
+		},
+		donut: {
+			title: (parseInt(totalAdmin) === 0) ? '0' : totalAdmin.toString()
+		},
+		legend: {
+			show: false
+		}
+	});
 
 
 

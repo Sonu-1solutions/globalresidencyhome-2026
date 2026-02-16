@@ -82,17 +82,11 @@ include "layout/head.php";
 
 
 
-
-
-
-
 if (!$result || mysqli_num_rows($result) == 0) {
     echo "<script>alert('BBA not generated')</script>";
     echo "<script> window.location='booking-view.php?booking_id=$booking_id'; </script>";
     exit;
 }
-
-
 
 
 
@@ -120,11 +114,7 @@ if (!$result || mysqli_num_rows($result) == 0) {
 
 
 
-
-
         <!-- /BBA -->
-
-
 
 
 
@@ -146,7 +136,7 @@ if (!$result || mysqli_num_rows($result) == 0) {
             cursor:pointer;
             margin-bottom:20px;
 ">
-            🖨 Print BBA Document
+             Print BBA Document
         </button>
 
 
