@@ -148,6 +148,9 @@ function numberToWords($num) {
         $words .= " " . convertTwoDigit($decimal,$ones,$tens) . " paisa";
     }
  
+    
+    $words .= " Only";
+
     return ucfirst($words);
 }
  
@@ -205,7 +208,7 @@ $balanceamt = isset($_GET['balanceamt']) ? $_GET['balanceamt'] : '0';
             words = words.trim();
             if (decimal > 0) words += " " + convertTwoDigit(decimal) + " paisa";
 
-            return words.charAt(0).toUpperCase() + words.slice(1);
+           return words.charAt(0).toUpperCase() + words.slice(1) + " Only";
         }
         </script>
 

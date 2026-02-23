@@ -653,11 +653,11 @@ $result = mysqli_query($con, $query);
                                                                     </div>
                                                                     <div class="col-md-2 bgb">
                                                                         <span class="fw600">Advisor Percentage</span><br>
-                                                                        <!-- <?php echo $row1['percentage']; ?> -->
+                                                                        <?php echo $row1['percentage']; ?>
                                                                     </div>
                                                                     <div class="col-md-2 bgb">
                                                                         <span class="fw600">Advisor Amount</span><br>
-                                                                        <!-- <?php echo $row1['advisor_amount']; ?> -->
+                                                                        <?php echo $row1['advisor_amount']; ?>
                                                                     </div>
                                                                 </div>
                                                             </div>

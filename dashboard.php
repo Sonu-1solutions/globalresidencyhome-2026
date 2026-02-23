@@ -92,65 +92,65 @@ $total_online_booking = $getOnlineBookingRow['total_online'] ?? 0;
 
 // TOTAL PENDING BOOKING
 
-$pendingQry = "
-    SELECT COUNT(*) AS total_pending
-    FROM booking_master bm
-    LEFT JOIN (
-        SELECT registration_number, SUM(total_amout) AS total_received
-        FROM payment_slip
-        GROUP BY registration_number
-    ) ps ON ps.registration_number = bm.booking_no
-    WHERE bm.booking_status = 'Enabled'
-    AND bm.booking_totalamt > 0
-    AND IFNULL(ps.total_received,0) < bm.booking_totalamt
-";
+// $pendingQry = "
+//     SELECT COUNT(*) AS total_pending
+//     FROM booking_master bm
+//     LEFT JOIN (
+//         SELECT registration_number, SUM(total_amout) AS total_received
+//         FROM payment_slip
+//         GROUP BY registration_number
+//     ) ps ON ps.registration_number = bm.booking_no
+//     WHERE bm.booking_status = 'Enabled'
+//     AND bm.booking_totalamt > 0
+//     AND IFNULL(ps.total_received,0) < bm.booking_totalamt
+// ";
 
-$res = mysqli_query($con, $pendingQry);
-$row = mysqli_fetch_assoc($res);
-$total_pending = $row['total_pending'] ?? 0;
+// $res = mysqli_query($con, $pendingQry);
+// $row = mysqli_fetch_assoc($res);
+// $total_pending = $row['total_pending'] ?? 0;
 
 
 
 // total completed
 
 
-$completedQry = "
-    SELECT COUNT(*) AS total_completed
-    FROM booking_master bm
-    LEFT JOIN (
-        SELECT registration_number, SUM(total_amout) AS total_received
-        FROM payment_slip
-        GROUP BY registration_number
-    ) ps ON ps.registration_number = bm.booking_no
-    WHERE bm.booking_status = 'Enabled'
-    AND bm.booking_totalamt > 0
-    AND ps.total_received >= bm.booking_totalamt
-";
+// $completedQry = "
+//     SELECT COUNT(*) AS total_completed
+//     FROM booking_master bm
+//     LEFT JOIN (
+//         SELECT registration_number, SUM(total_amout) AS total_received
+//         FROM payment_slip
+//         GROUP BY registration_number
+//     ) ps ON ps.registration_number = bm.booking_no
+//     WHERE bm.booking_status = 'Enabled'
+//     AND bm.booking_totalamt > 0
+//     AND ps.total_received >= bm.booking_totalamt
+// ";
 
 
-$completedRes = mysqli_query($con, $completedQry);
-$completedRow = mysqli_fetch_assoc($completedRes);
-$total_completed = $completedRow['total_completed'] ?? 0;
+// $completedRes = mysqli_query($con, $completedQry);
+// $completedRow = mysqli_fetch_assoc($completedRes);
+// $total_completed = $completedRow['total_completed'] ?? 0;
 
 // Total N/A
 
 
-$naQry = "
-    SELECT COUNT(*) AS total_na
-    FROM booking_master bm
-    LEFT JOIN (
-        SELECT registration_number, SUM(total_amout) AS total_received
-        FROM payment_slip
-        GROUP BY registration_number
-    ) ps ON ps.registration_number = bm.booking_no
-    WHERE bm.booking_status = 'Enabled'
-    AND bm.booking_totalamt = 0
-    AND IFNULL(ps.total_received,0) = 0
-";
+// $naQry = "
+//     SELECT COUNT(*) AS total_na
+//     FROM booking_master bm
+//     LEFT JOIN (
+//         SELECT registration_number, SUM(total_amout) AS total_received
+//         FROM payment_slip
+//         GROUP BY registration_number
+//     ) ps ON ps.registration_number = bm.booking_no
+//     WHERE bm.booking_status = 'Enabled'
+//     AND bm.booking_totalamt = 0
+//     AND IFNULL(ps.total_received,0) = 0
+// ";
 
-$res = mysqli_query($con, $naQry);
-$row = mysqli_fetch_assoc($res);
-$total_na = $row['total_na'] ?? 0;
+// $res = mysqli_query($con, $naQry);
+// $row = mysqli_fetch_assoc($res);
+// $total_na = $row['total_na'] ?? 0;
 
 
 
@@ -321,189 +321,189 @@ $remaining_users = $getuserrow1['total_users'] ?? 0;
 				</div>
 
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="row mb-4">
+			<!-- <div class="row"> -->
+				<!-- <div class="col-md-12"> -->
+					<!-- <div class="row mb-4"> -->
 
-    <!-- Pending -->
-    <div class="col-md-3">
-        <div class="card1 text-center">
-            <div class="card-header">
-                <h4 class="mb-0">Total Pending</h4>
-            </div>
-            <div class="card-body">
-                <h1 style="color:#ff9f40;font-weight:700;">
-                    <?= $total_pending ?>
-                </h1>
-            </div>
-        </div>
-    </div>
+						<!-- Pending -->
+						<!-- <div class="col-md-3">
+							<div class="card1 text-center">
+								<div class="card-header">
+									<h4 class="mb-0">Total Pending</h4>
+								</div>
+								<div class="card-body">
+									<h1 style="color:#ff9f40;font-weight:700;">
+										<?= $total_pending ?>
+									</h1>
+								</div>
+							</div>
+						</div> -->
 
-	    <!-- Completed -->
-    <div class="col-md-3">
-        <div class="card1 text-center">
-            <div class="card-header">
-                <h4 class="mb-0">Total Completed</h4>
-            </div>
-            <div class="card-body">
-                <h1 style="color:#28a745;font-weight:700;">
-                    <?= $total_completed ?>
-                </h1>
-            </div>
-        </div>
-    </div>
+						<!-- Completed -->
+						<!-- <div class="col-md-3">
+							<div class="card1 text-center">
+								<div class="card-header">
+									<h4 class="mb-0">Total Completed</h4>
+								</div>
+								<div class="card-body">
+									<h1 style="color:#28a745;font-weight:700;">
+										<?= $total_completed ?>
+									</h1>
+								</div>
+							</div>
+						</div> -->
 
-	<div class="col-md-4">
-    <div class="card1 text-center">
-        <h4>N/A</h4>
-        <h2><?= $total_na ?></h2>
-    </div>
-</div>
+						<!-- <div class="col-md-4">
+							<div class="card1 text-center">
+								<h4>N/A</h4>
+								<h2><?= $total_na ?></h2>
+							</div>
+						</div> -->
 
 
-				</div>
-			</div>
+					<!-- </div> -->
+				<!-- </div> -->
 
+			<!-- </div> -->
 		</div>
+
 	</div>
 
-</div>
+
+	<!--  JS  -->
+	<script src="assets/plugins/c3-chart/d3.v5.min.js"></script>
+	<script src="assets/plugins/c3-chart/c3.min.js"></script>
+
+	<script>
+		var totalUsers = <?php echo (int) $total_users; ?>;
+		var remainingUsers = <?php echo (int) $remaining_users; ?>;
+		var totalModerate = <?= $total_moderate ?>;
+		var onlineBooking = <?php echo (int) $total_online_booking; ?>;
 
 
-<!--  JS  -->
-<script src="assets/plugins/c3-chart/d3.v5.min.js"></script>
-<script src="assets/plugins/c3-chart/c3.min.js"></script>
-
-<script>
-	var totalUsers = <?php echo (int) $total_users; ?>;
-	var remainingUsers = <?php echo (int) $remaining_users; ?>;
-	var totalModerate = <?= $total_moderate ?>;
-	var onlineBooking = <?php echo (int) $total_online_booking; ?>;
-
-
-	/* TOTAL USER DONUT */
-	c3.generate({
-		bindto: '#chart-donut',
-		data: {
-			columns: [
-				['Remaining', remainingUsers],
-				['Users', totalUsers]
-			],
-			type: 'donut',
-			colors: {
-				'Remaining': '#F2F2F2',
-				'Users': '#6771dc'
-			}
-		},
-		donut: {
-			title: totalUsers.toString()
-		},
-		legend: { show: false }
-	});
+		/* TOTAL USER DONUT */
+		c3.generate({
+			bindto: '#chart-donut',
+			data: {
+				columns: [
+					['Remaining', remainingUsers],
+					['Users', totalUsers]
+				],
+				type: 'donut',
+				colors: {
+					'Remaining': '#F2F2F2',
+					'Users': '#6771dc'
+				}
+			},
+			donut: {
+				title: totalUsers.toString()
+			},
+			legend: { show: false }
+		});
 
 
-	/* ONLINE BOOKING DONUT */
-	c3.generate({
-		bindto: '#chart-donut2',
-		data: {
-			columns: [
-				['Online', onlineBooking]
-			],
-			type: 'donut',
-			colors: {
-				'Online': '#6794dc'
-			}
-		},
-		donut: {
-			title: onlineBooking.toString()
-		},
-		legend: { show: false }
-	});
+		/* ONLINE BOOKING DONUT */
+		c3.generate({
+			bindto: '#chart-donut2',
+			data: {
+				columns: [
+					['Online', onlineBooking]
+				],
+				type: 'donut',
+				colors: {
+					'Online': '#6794dc'
+				}
+			},
+			donut: {
+				title: onlineBooking.toString()
+			},
+			legend: { show: false }
+		});
 
 
 
-	// TOTAL MODERATE 
+		// TOTAL MODERATE 
 
-	var directValue = 0;
+		var directValue = 0;
 
-	var moderateColumns;
-	var moderateColor;
+		var moderateColumns;
+		var moderateColor;
 
-	if (parseInt(totalModerate) === 0) {
-		moderateColumns = [
-			['Moderate', 1]   // dummy value so donut render ho
-		];
-		moderateColor = '#E0E0E0'; // GRAY when zero
-	} else {
-		moderateColumns = [
-			['Moderate', totalModerate]
-		];
-		moderateColor = '#67b7dc'; // color
-	}
-
-	c3.generate({
-		bindto: '#chart-donut3',
-		data: {
-			columns: moderateColumns,
-			type: 'donut',
-			colors: {
-				'Moderate': moderateColor
-			}
-		},
-		donut: {
-			title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
-		},
-		legend: {
-			show: false
+		if (parseInt(totalModerate) === 0) {
+			moderateColumns = [
+				['Moderate', 1]   // dummy value so donut render ho
+			];
+			moderateColor = '#E0E0E0'; // GRAY when zero
+		} else {
+			moderateColumns = [
+				['Moderate', totalModerate]
+			];
+			moderateColor = '#67b7dc'; // color
 		}
-	});
 
-
-
-	// /TOTAL ADMIN
-
-
-	var totalAdmin = <?= $total_admin ?>;
-
-	var adminColumns;
-	var adminColor;
-
-	if (parseInt(totalAdmin) === 0) {
-		adminColumns = [
-			['Admin', 1] // dummy value
-		];
-		adminColor = '#E0E0E0'; // gray when zero
-	} else {
-		adminColumns = [
-			['Admin', totalAdmin]
-		];
-		adminColor = '#517e9e'; // admin color (change if you want)
-	}
-
-	c3.generate({
-		bindto: '#chart-donut4',
-		data: {
-			columns: adminColumns,
-			type: 'donut',
-			colors: {
-				'Admin': adminColor
+		c3.generate({
+			bindto: '#chart-donut3',
+			data: {
+				columns: moderateColumns,
+				type: 'donut',
+				colors: {
+					'Moderate': moderateColor
+				}
+			},
+			donut: {
+				title: (parseInt(totalModerate) === 0) ? '0' : totalModerate.toString()
+			},
+			legend: {
+				show: false
 			}
-		},
-		donut: {
-			title: (parseInt(totalAdmin) === 0) ? '0' : totalAdmin.toString()
-		},
-		legend: {
-			show: false
+		});
+
+
+
+		// /TOTAL ADMIN
+
+
+		var totalAdmin = <?= $total_admin ?>;
+
+		var adminColumns;
+		var adminColor;
+
+		if (parseInt(totalAdmin) === 0) {
+			adminColumns = [
+				['Admin', 1] // dummy value
+			];
+			adminColor = '#E0E0E0'; // gray when zero
+		} else {
+			adminColumns = [
+				['Admin', totalAdmin]
+			];
+			adminColor = '#517e9e'; // admin color (change if you want)
 		}
-	});
+
+		c3.generate({
+			bindto: '#chart-donut4',
+			data: {
+				columns: adminColumns,
+				type: 'donut',
+				colors: {
+					'Admin': adminColor
+				}
+			},
+			donut: {
+				title: (parseInt(totalAdmin) === 0) ? '0' : totalAdmin.toString()
+			},
+			legend: {
+				show: false
+			}
+		});
 
 
 
 
-</script>
+	</script>
 
 
 
-<?php
-include "layout/footer.php";
-?>
+	<?php
+	include "layout/footer.php";
+	?>

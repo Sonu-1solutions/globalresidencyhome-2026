@@ -1387,9 +1387,9 @@ $paymentslipno = $propertydata['booking_no'];
                                     while ($row = mysqli_fetch_assoc($multiqry)) {
                                         echo "<h6>" . htmlspecialchars($row['user_name']) . ",</h6>";
                                     }
-                                }else{
-                                 
-                                    echo "<center><br><b>Multi Advisors Not Selected </b></center>";   
+                                } else {
+
+                                    echo "<center><br><b>Multi Advisors Not Selected </b></center>";
                                 }
                                 ?>
                             </small>
@@ -1407,7 +1407,6 @@ $paymentslipno = $propertydata['booking_no'];
                         </div>
                     </div>
                 </form>
-
 
 
 
@@ -2127,7 +2126,9 @@ $paymentslipno = $propertydata['booking_no'];
 
                                                         <div class="col-md-4">
                                                             <label class="col-form-label">Khasra No</label>
-                                                            <input type="number" name="khasrano" class="form-control">
+                                                            <input type="text" name="khasrano" class="form-control"
+                                                                pattern="[0-9/]+" title="Only numbers and / allowed" >
+
                                                         </div>
 
 
@@ -2154,14 +2155,7 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-
-
-
-
                         <!-- Add BAA -->
-
-
-
 
 
 
@@ -2438,13 +2432,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-
-
-
-
-
-
-
         <!-- Advisor pop-up -->
         <div class="modal fade" id="advisorSlip" role="dialog">
             <div class="modal-dialog payslip-sec">
@@ -2552,6 +2539,8 @@ $paymentslipno = $propertydata['booking_no'];
                                                         alert("Deleted Successfully");
                                                         // table reload
                                                         loadAdvisorPaymentTable();
+                                                        
+                                                        window.location.reload();
                                                     } else {
                                                         alert("Delete Failed");
                                                     }
@@ -2603,6 +2592,12 @@ $paymentslipno = $propertydata['booking_no'];
                                 $paysliptamtdata = mysqli_fetch_assoc($paysliptamtres);
                                 $advisor_receive_amt = $paysliptamtdata['advisirtamt'] ?? 0;
 
+                                $advisroremainbalance = $totaladvisoramt - $advisor_receive_amt;
+
+                                if($advisroremainbalance > 1){
+
+                                echo "advisroremainbalance";
+
                                 ?>
 
                                 <hr>
@@ -2625,7 +2620,7 @@ $paymentslipno = $propertydata['booking_no'];
                                             <div class="col-md-2 mb-3">
                                                 <label for="">Remaining Amount</label>
                                                 <input type="text" class="form-control" name="advisor_remaining_amt"
-                                                    value="<?= $totaladvisoramt - $advisor_receive_amt ?>" readonly>
+                                                    value="<?= $advisroremainbalance ?>" readonly>
                                             </div>
 
                                             <div class="col-md-2 mb-3">
@@ -2786,6 +2781,9 @@ $paymentslipno = $propertydata['booking_no'];
                                                         alert("Payment Saved Successfully");
                                                         $('#advisorPaymentForm')[0].reset();
                                                         loadAdvisorPaymentTable()
+                                                        
+                                                        window.location.reload();
+
                                                     } else {
                                                         alert("Error: " + response);
                                                     }
@@ -2797,6 +2795,14 @@ $paymentslipno = $propertydata['booking_no'];
 
 
                                 <?php
+
+                            } else {
+                                echo "<center><h4 class='mt-4 mb-5 text-success'>Advisor Payment Distributed</h4</center>";
+                            }
+    
+
+                            } else {
+                                echo "<center><h4 class='mt-4 mb-5 text-warning'>Advisor Fully Payment Not Received</h4</center>";
                             }
                             // if pending advisor amount is less than or equal to 0, show a message
                             ?>
