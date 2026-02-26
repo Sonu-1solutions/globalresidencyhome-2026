@@ -2444,7 +2444,6 @@ $paymentslipno = $propertydata['booking_no'];
 
 
 
-
         <!-- Advisor pop-up -->
         <div class="modal fade" id="advisorSlip" role="dialog">
             <div class="modal-dialog payslip-sec">
@@ -2465,93 +2464,45 @@ $paymentslipno = $propertydata['booking_no'];
                                 <div class="col-md-4">
 
                                     <h4 class="text-center">Payment Received From Client Side</h4>
-                                    <div class="form-box">
-                                        <h3>Advisor Entry Form</h3>
+                                    <div class="table-responsive">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>SNO</th>
+                                                    <th>Slip Id</th>
+                                                    <th>Current Date</th>
+                                                    <th>Advisor Received Amt</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
-                                        <form method="post">
-                                            <input type="text" name="booking_no" placeholder="Booking No"
-                                                value="<?= $paymentslipno ?>">
+                                                <?php
+                                                $sn = 1;
+                                                $totalamt = $propertydata['booking_totalamt'];
+                                                $paymentslipno = $propertydata['booking_no'];
+                                                $installmentqry = "SELECT * FROM `payment_slip` WHERE registration_number='$paymentslipno' ORDER BY id ASC";
+                                                $installmentres = mysqli_query($con, $installmentqry);
+                                                if (!$installmentres) {
+                                                    error_log("Failed to fetch installments: " . mysqli_error($con));
+                                                }
+                                                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
 
-                                            <input type="number" name="advisor_id" placeholder="Advisor ID">
-
-                                            <input type="text" name="advisor_name" placeholder="Advisor Name" required>
-
-                                            <input type="number" step="0.01" name="current_advisor_amt"
-                                                placeholder="Current Advisor Amount" required>
-
-                                            <input type="number" step="0.01" name="crt_advisor_percent"
-                                                placeholder="Advisor Percent" required>
-
-                                            <input type="number" step="0.01" name="advisor_tamount"
-                                                value="<?= $totaladvisoramt ?>">
-
-
-                                            <?php
-
-                                            $fetchadvisorque = "SELECT `booking_advisorid`,`multi_advisorid` FROM `booking_master` WHERE booking_no='$paymentslipno'";
-                                            $fetchadvisorres = mysqli_query($con, $fetchadvisorque);
-
-                                            $advisorid = '';
-                                            $multiadvisorid = '';
-
-                                            if ($fetchadvisorres && mysqli_num_rows($fetchadvisorres) > 0) {
-                                                $fetchadvisordata = mysqli_fetch_assoc($fetchadvisorres);
-
-                                                $advisorid = $fetchadvisordata['booking_advisorid'] ?? '';
-                                                $multiadvisorid = $fetchadvisordata['multi_advisorid'] ?? '';
-                                            }
-
-
-                                            $multi_array = !empty($multiadvisorid) ? explode(',', $multiadvisorid) : [];
-                                            $primary_array = !empty($advisorid) ? [$advisorid] : [];
-                                            $all_advisors_array = array_merge($primary_array, $multi_array);
-                                            $all_advisors_array = array_unique($all_advisors_array);
-
-
-                                            $getAdvisorNames = false;
-
-                                            if (!empty($all_advisors_array)) {
-
-                                                $id_list = implode(',', $all_advisors_array);
-
-                                                $getAdvisorNames = mysqli_query($con, "SELECT user_id, user_name FROM user_master WHERE user_id IN ($id_list)");
-                                            }
-
-
-
-                                            $paysliptamtque = "SELECT SUM(`advisor_receive_amt`) AS 'advisirtamt' FROM `advisor_payments` WHERE `booking_no`='$paymentslipno'";
-                                            $paysliptamtres = mysqli_query($con, $paysliptamtque);
-                                            $paysliptamtdata = mysqli_fetch_assoc($paysliptamtres);
-                                            $advisor_receive_amt = $paysliptamtdata['advisirtamt'] ?? 0;
-
-                                            $advisroremainbalance = $totaladvisoramt - $advisor_receive_amt;
-
-
-                                            ?>
-
-
-                                            <div class="col-md-2 mb-3">
-                                                <label for="">Select Advisors
-                                                    (<?= count($all_advisors_array) ?>)</label>
-                                                <select class="form-control" name="advisor_id" id="advisorSelect"
-                                                    required>
-                                                    <option value="">-- Select Advisor --</option>
-
-                                                    <?php
-                                                    if (!empty($all_advisors_array)) {
-                                                        $id_list = implode(',', $all_advisors_array);
-                                                        $getAdvisorNames = mysqli_query($con, "SELECT user_id, user_name FROM user_master WHERE user_id IN ($id_list)");
-                                                        while ($row = mysqli_fetch_assoc($getAdvisorNames)) {
-                                                            echo "<option value='" . htmlspecialchars($row['user_id']) . "'>" . htmlspecialchars($row['user_name']) . "</option>";
-                                                        }
+                                                    if (!empty($installmentdata['advisor_amount'])) {
+                                                        ?>
+                                                        <tr>
+                                                            <td><?php echo $sn; ?></td>
+                                                            <td><?php echo htmlspecialchars($installmentdata['slip_id']); ?>
+                                                            </td>
+                                                            <td><?php echo $installmentdata['current_date']; ?></td>
+                                                            <td><?php echo $installmentdata['advisor_amount']; ?></td>
+                                                        </tr>
+                                                        <?php
+                                                        $sn++;
                                                     }
-                                                    ?>
-                                                </select>
-                                            </div>
-
-
-                                            <button type="submit" name="save">Save Data</button>
-                                        </form>
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
                                     </div>
 
                                 </div>
@@ -2706,17 +2657,15 @@ $paymentslipno = $propertydata['booking_no'];
                                                     <label for="equalDivide">
                                                         <!-- <input class="form-check-input" type="checkbox" id="equalDivide"
                                                         style="width: 11px;height: 11px;border: 1px solid;"> Equal Divide -->
-                                                        <!-- <input class="form-check-input" type="checkbox" id="equalDivide" checked
+                                                        <input class="form-check-input" type="checkbox" id="equalDivide" checked
                                                          style="width: 11px;height: 11px;border: 1px solid;"> Equal
-                                                        Divide -->
+                                                        Divide
 
-                                                        Release Amount
                                                     </label>
                                                     <!-- <input type="text" class="form-control" name="advisor_receive_amt"
                                                     placeholder="Receive Amount" required> -->
-
                                                     <input type="text" class="form-control" name="advisor_receive_amt"
-                                                        placeholder="Receive Amount" required>
+                                                        placeholder="Receive Amount" required readonly>
 
                                                 </div>
 
@@ -2991,28 +2940,6 @@ $paymentslipno = $propertydata['booking_no'];
 </script>
 
 <!-- Advisor percentage -->
-
-
-<script>
-    function calculateAdvisorAmount() {
-        let totalAmt = parseFloat(document.querySelector('[name="advisor_tamount"]').value) || 0;
-        let percentInput = document.querySelector('[name="crt_advisor_percent"]');
-        let percent = parseFloat(percentInput.value) || 0;
-
-        //  100 se zyada allow nahi
-        if (percent > 100) {
-            alert("Advisor percentage cannot be more than 100%.");
-            percentInput.value = 100;
-            percent = 100;
-        }
-
-        let currentAmt = (totalAmt * percent) / 100;
-        document.querySelector('[name="current_advisor_amt"]').value = currentAmt.toFixed(2);
-    }
-
-    document.querySelector('[name="crt_advisor_percent"]').addEventListener('input', calculateAdvisorAmount);
-    document.querySelector('[name="advisor_tamount"]').addEventListener('input', calculateAdvisorAmount);
-</script>
 
 
 

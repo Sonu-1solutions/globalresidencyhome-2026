@@ -78,7 +78,7 @@ include "layout/head.php";
 
         <?php
 
-        
+
         if (isset($_POST['slipbtn'])) {
 
             // GET se aaya hua slip_id (primary key)
@@ -92,7 +92,7 @@ include "layout/head.php";
             $plotno = $_POST['plotno'];
             $plotsize = $_POST['plotsize'];
             $totalamout = $_POST['totalamout'];
-            
+
             $currentamt = $_POST['currentamt'];
             $remainamt = $_POST['remainamt'];
 
@@ -117,14 +117,14 @@ include "layout/head.php";
         WHERE slip_id = '$payslip_id'
     ";
 
-        if (mysqli_query($con, $updateQry)) {
-            echo "<script>
+            if (mysqli_query($con, $updateQry)) {
+                echo "<script>
                 alert('Payment Slip Updated Successfully');
                 window.location.href = 'booking-slip-list.php?slip_id={$slip_id}';
             </script>";
-        } else {
-            echo 'Error: ' . mysqli_error($con);
-        }
+            } else {
+                echo 'Error: ' . mysqli_error($con);
+            }
 
         }
         ?>
@@ -208,6 +208,7 @@ include "layout/head.php";
                                     "eighteen",
                                     "nineteen"
                                 );
+
                                 $tens = array(
                                     "",
                                     "",
@@ -238,6 +239,7 @@ include "layout/head.php";
                                     }
                                     if ($n > 0)
                                         $word .= convertTwoDigit($n, $ones, $tens);
+
                                     return trim($word);
                                 }
 
@@ -249,8 +251,10 @@ include "layout/head.php";
 
                                 $lakh = intval($integer / 100000);
                                 $integer = $integer % 100000;
+
                                 $thousand = intval($integer / 1000);
                                 $integer = $integer % 1000;
+
                                 $hundreds = $integer;
 
                                 if ($lakh)
@@ -266,7 +270,8 @@ include "layout/head.php";
                                     $words .= " " . convertTwoDigit($decimal, $ones, $tens) . " paisa";
                                 }
 
-                                return ucfirst($words);
+                                // ⭐ yahin main fix
+                                return ucwords($words);
                             }
                             ?>
 
@@ -290,11 +295,20 @@ include "layout/head.php";
                                         if (n < 20) return ones[n];
                                         return tens[Math.floor(n / 10)] + (n % 10 ? " " + ones[n % 10] : "");
                                     }
+
                                     function convertThreeDigit(n) {
                                         let word = "";
-                                        if (n > 99) { word += ones[Math.floor(n / 100)] + " hundred "; n = n % 100; }
+                                        if (n > 99) {
+                                            word += ones[Math.floor(n / 100)] + " hundred ";
+                                            n = n % 100;
+                                        }
                                         if (n > 0) word += convertTwoDigit(n);
                                         return word.trim();
+                                    }
+
+                                    // ⭐ ucwords equivalent in JS
+                                    function capitalizeWords(str) {
+                                        return str.replace(/\b\w/g, char => char.toUpperCase());
                                     }
 
                                     let parts = num.toFixed(2).split(".");
@@ -303,9 +317,9 @@ include "layout/head.php";
 
                                     let words = "";
                                     let lakh = Math.floor(integer / 100000);
-                                    integer = integer % 100000;
+                                    integer %= 100000;
                                     let thousand = Math.floor(integer / 1000);
-                                    integer = integer % 1000;
+                                    integer %= 1000;
                                     let hundreds = integer;
 
                                     if (lakh) words += convertTwoDigit(lakh) + " lakh ";
@@ -313,9 +327,11 @@ include "layout/head.php";
                                     if (hundreds) words += convertThreeDigit(hundreds);
 
                                     words = words.trim();
-                                    if (decimal > 0) words += " " + convertTwoDigit(decimal) + " paisa";
 
-                                    return words.charAt(0).toUpperCase() + words.slice(1);
+                                    if (decimal > 0)
+                                        words += " " + convertTwoDigit(decimal) + " paisa";
+
+                                    return capitalizeWords(words);
                                 }
                             </script>
                             <!-- <div class="">
@@ -405,7 +421,8 @@ include "layout/head.php";
                                         <div class="col-md-4 mb-4">
                                             <label class="fw-bold">Total Amount *</label>
                                             <input type="hidden" name="currentamt" value="<?= $slipqryres['total_amout']; ?>">
-                                            <input type="hidden" name="remainamt" value="<?= $slipqryres['remaing_balance']; ?>">
+                                            <input type="hidden" name="remainamt"
+                                                value="<?= $slipqryres['remaing_balance']; ?>">
                                             <input type="number" class="form-control" id="totalamount"
                                                 value="<?= $slipqryres['total_amout']; ?>" style=" height:50px;"
                                                 name="totalamout" oninput="updateWords()" required>

@@ -101,76 +101,106 @@ include "layout/head.php";
             $currentDate = date('d-m-Y');
             ?>
             <div id="printableArea<?php echo $count++ ?>">
-              <div class="payment-slip" style="position: relative; width: 100%; margin: 0 auto;display: inline-block;">
-                <img class="slip-img" src="https://globalresidencyhome.com/erp/booking-image/payment-slip.png">
+              <div class="payment-slip">
 
+                <img src="booking-image/payment-slip.png" class="slip-img">
 
-                <input
-                  style="position: absolute;top: 31%;left: 8%;font-size: 25px;font-weight: 500;font-family: fantasy;letter-spacing: 3px;text-align: center;border: none;background: transparent;padding: 0;"
-                  type="text" value="<?= $slipdata['slip_id']; ?>" maxlength="4" readonly>
+                <!-- Slip No -->
+                <div class="slip-text" style="top:250px; left:130px; font-size:22px; font-weight: 700; ">
+                  <?= $slipdata['slip_id']; ?>
+                </div>
 
-                <p style="position: absolute;top: 32%;right: 8%;font-size: 16px;font-weight: 500;width: 150px;color: #000;">
+                <!-- Date -->
+                <div class="slip-text" style="top:253px; right:120px;">
                   <?= $slipdata['current_date']; ?>
-                </p>
+                </div>
 
-                <p
-                  style="position: absolute;top: 40%;left: 34%;font-size: 16px;font-weight: 500;width: 55%;color: #000;text-transform: capitalize;">
-                  <?= $slipdata['receive_name']; ?> ( <?= $slipdata['registration_number']; ?>)
-                </p>
+                <!-- Received From -->
+                <div class="slip-text" style="top:318px; left:380px; width:650px; font-weight: 600;">
+                  <?= $slipdata['receive_name']; ?> (<?= $slipdata['registration_number']; ?>)
+                </div>
 
-                <input
-                  style="position: absolute;top: 47.5%;left: 26%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 71%;"
-                  type="text" value="<?= $slipdata['amount_in_word']; ?>" readonly>
+                <!-- Amount In Words -->
+                <div class="slip-text" style="top:378px; left:300px; width:750px;">
+                  <?= $slipdata['amount_in_word']; ?>
+                </div>
 
-                <input
-                  style="position: absolute;top: 54%;right: 30px;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 26%;"
-                  type="text" value="<?= $slipdata['payment_by']; ?>" readonly>
+                <!-- Payment Mode -->
+                <div class="slip-text" style="top:434px; right:20px; width:300px;">
+                  <?= $slipdata['payment_by']; ?>
+                </div>
 
-                <input
-                  style="position: absolute;bottom: 34.8%;left: 19%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 49%;"
-                  type="text" value="<?= $slipdata['drawn_on']; ?>" readonly>
+                <!-- Drawn On -->
+                <div class="slip-text" style="top:500px; left:230px; width:500px;">
+                  <?= $slipdata['drawn_on']; ?>
+                </div>
 
-                <input
-                  style="position: absolute;bottom: 34.8%;right: 30px;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 22%;"
-                  type="text" value="<?= $slipdata['payment_by_date']; ?>" readonly>
+                <!-- Payment Date -->
+                <div class="slip-text" style="top:500px; left:840px; width:300px;">
+                  <?= $slipdata['payment_by_date']; ?>
+                </div>
 
+                <!-- Project Name -->
+                <div class="slip-text" style="top:555px; left:260px; width:750px;">
+                  <?= $slipdata['project_name']; ?>
+                </div>
 
+                <!-- Plot No -->
+                <div class="slip-text" style="top:619px; left:220px; width:250px;">
+                  <?= $slipdata['plot_no']; ?>
+                </div>
 
-                <p
-                  style="position: absolute;bottom: 26%;left: 21%;font-size: 16px;font-weight: 500;width: 76%;color: #000;">
-                  <?php echo $slipdata['project_name']; ?>
-                </p>
+                <!-- Plot Size -->
+                <div class="slip-text" style="top:619px; right:120px; width:250px;">
+                  <?= $slipdata['plot_size']; ?>
+                </div>
 
-                <input
-                  style="position: absolute;bottom: 19.8%;left: 16%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 30%;"
-                  type="text" value="<?php echo $slipdata['plot_no']; ?>" readonly>
-
-                <input
-                  style="position: absolute;bottom: 19.8%;right: 7%;font-size: 16px;font-weight: 500;border: none;background: transparent;padding: 0;width: 30%;"
-                  type="text" value="<?php echo $slipdata['plot_size']; ?>" readonly> 
-
-
-                <input
-                  style="position: absolute;bottom: 8.5%;left: 10%;font-size: 20px;font-weight: 600;border: none;background: transparent;padding: 0;width: 15%;font-family: cursive;"
-                  type="text" value="<?php echo $slipdata['total_amout']; ?>" readonly>
+                <!-- Amount -->
+                <div class="slip-text" style="top:700px; left:120px; font-weight: 500; font-size:22px;">
+                  <?= sprintf("%.2f", $slipdata['total_amout']); ?>
+                </div>
 
               </div>
             </div>
-            <button class="btn btn-primary my-3" onclick="printDiv('printableArea<?php echo $countbtn++ ?>')"
-              style="font-size: 18px;padding:">Print Now</button>
 
-         
+            <button class="btn btn-danger mt-3 mb-3" onclick="downloadPDF('printableArea<?php echo $countbtn++ ?>')">
+              Download PDF
+            </button>
+            <style>
+              .payment-slip {
+                position: relative;
+                width: 1123px;
+                /* A4 Landscape */
+                height: 794px;
+                margin: auto;
+                /* font-family: Arial, sans-serif; */
+              }
+
+              .slip-img {
+                width: 1123px;
+                height: 794px;
+              }
+
+              .slip-text {
+                position: absolute;
+                font-size: 16px;
+                font-weight: 500;
+                color: #000;
+                white-space: nowrap;
+              }
+            </style>
+
 
 
             <?php
-              if($sn == 1){
-            ?>
+            if ($sn == 1) {
+              ?>
               <a href="booking-slip_edit.php?slip_id=<?= $slipdata['registration_number']; ?>&slipno=<?= $slipdata['slip_id']; ?>"
-                class="btn btn-m btn-success action-btn">
+                class="btn btn-m btn-success action-btn mt-3 mb-3">
                 Edit
               </a>
-            <?php
-              }
+              <?php
+            }
             ?>
 
 
@@ -192,7 +222,7 @@ include "layout/head.php";
   </div>
 </div>
 
-<script>
+<!-- <script>
   function printDiv(divName) {
     var printContents = document.getElementById(divName).innerHTML;
     var originalContents = document.body.innerHTML;
@@ -202,6 +232,39 @@ include "layout/head.php";
     window.print();
 
     document.body.innerHTML = originalContents;
+  }
+</script> -->
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+  async function downloadPDF(divId) {
+
+    await document.fonts.ready;
+
+    const element = document.getElementById(divId);
+
+    const canvas = await html2canvas(element, {
+      scale: 2,
+      useCORS: true,
+      allowTaint: true
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('landscape', 'mm', 'a4');
+
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save("PaymentSlip.pdf");
   }
 </script>
 

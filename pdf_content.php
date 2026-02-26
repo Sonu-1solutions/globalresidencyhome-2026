@@ -10,12 +10,27 @@
 
     p {
         font-size: 14px !important;
+        text-align: justify;
+        line-height: 1.4;
+        padding: 0px 40px 0px 40px;
+    }
+
+    .pright {
+        padding: 0px 40px 0px 40px;
     }
 
 
-    table {
+    /* table {
         width: 700px;
         border-collapse: collapse;
+    } */
+
+    table {
+        width: 88% !important;
+        border-collapse: collapse;
+        margin-top: 10px !important;
+        margin-left: 41px !important;
+        margin-bottom: 40px !important;
     }
 
     td {
@@ -32,11 +47,48 @@
     td:last-child {
         width: 65%;
     }
+
+    @page {
+        margin: 80px 40px 70px 40px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .page-break {
+        page-break-after: always;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    table td {
+        border: 1px solid #000;
+        padding: 6px;
+    }
 </style>
 
 
 
+<?php
 
+
+$query = "SELECT * FROM bba WHERE booking_no='$booking_no'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_assoc($result);
+
+
+?>
 
 
 
@@ -46,8 +98,8 @@
 
 
 <div class="container">
-    <!-- <h2>Page 1</h2> -->
-    <h3 style="text-align: center; margin-top: 500px;">“GLOBAL RESIDENCY HOMES”</h3>
+
+    <h3 style="text-align: center; margin-top: 400px;">“GLOBAL RESIDENCY HOMES”</h3>
     <h3 style="text-align: center; margin-bottom: 135px;">PHULERA, JAIPUR, RAJASTHAN</h3>
     <p>Please read carefully..........</p>
     <p>Important Instructions to the Allottee(s)</p>
@@ -61,8 +113,16 @@
         perform his obligations as per the conditions stipulated in the Agreement. Thereafter the
         Allottee(s)
         has applied for allotment of an plot/shop in the Said Complex and has requested the firm to allot a
-        plot/shop. The Allottee(s) agrees and confirms to sign the Agreement in entirety and to abide by the
-        terms and conditions of the Agreement and the terms and conditions, as mentioned herein.
+        plot/shop. The Allottee(s) agrees and confirms to sign the Agreement in entirety and to abide by the terms and
+        conditions of the Agreement and the terms and conditions, as mentioned herein.
+    </p>
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+    <p>
+
     </p>
 
     <p>
@@ -101,7 +161,9 @@
         faithfully abide by all the terms and conditions of this Agreement.
     </p>
 
-    <p>(Allottee(s)</p>
+
+    <span class="pright"> <b> <?php echo $row['allottee_name']; ?> </b></span>
+    <p>(Allottee(s) </p>
 
     <p>Instructions for execution of the Agreement:</p>
 
@@ -122,20 +184,28 @@
     <p>4) Witnesses signatures to be done only on Witness space.</p>
 
 
-    <div class="page-number">Page 1</div>
+
 
 </div>
 <div class="page-break"></div>
 <div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
-    <h2>Page 2</h2>
+
+
+
     <h3 style="text-align: center">“GLOBAL RESIDENCY HOMES”</h3>
     <h3 style="text-align: center">PHULERA, JAIPUR, RAJASTHAN</h3>
     <h3 style="text-align: center; margin-top: 30px;">BUILDER-BUYER AGREEMENT</h3>
 
-    <p>This Agreement (the <b>‘Agreement’</b>) is made at Delhi on this</p>
+    <p>This Agreement (the <b>‘Agreement’</b>) is made at Delhi on this <strong> <?php
+    if (!empty($row['bba_date'])) {
+        $date = strtotime($row['bba_date']);
+        echo date("jS \\d\\a\\y \\o\\f F Y", $date);
+    }
+    ?></strong></p>
 
-    <h3 style="text-align: center">BY AND BETWEEN</h3>
+    <p style="text-align: center"><b>BY AND BETWEENM</b></p>
 
     <p>
         <b>M/s. SHAAN REALTECH PVT LTD,</b> firm presently having its Registered Office at Office -1, 2nd
@@ -146,56 +216,58 @@
         executors, successors) acting through its Authorized Signatory of the <b>FIRST PART</b>.
     </p>
 
-    <h3 style="text-align: center">AND</h3>
+    <h4 style="text-align: center">AND</h4>
 
-    <p>(FOR INDIVIDUALS)</p>
+    <span class="pright">(FOR INDIVIDUALS)</span><br><br>
+    <span class="pright">1st ALLOTTEE</span><br>
+    <span class="pright">Mr/Ms/Mrs <strong> <?php
+    echo $row['allottee_name'] . ' (Aadhar No: ' . $row['addhar_no'] . ')';
+    ?></strong></span><br>
+    <span class="pright">Son/Daughter/Wife of <strong> <?php
+    echo $row['allottee_fname'];
+    ?></strong></span><br>
+    <p class="pright">R/O <strong> <?php
+    echo $row['allottee_address'];
+    ?></strong></p>
 
-    <p>1st ALLOTTEE</p>
+    <h4 style="text-align: center">AND</h4>
 
-    <p>Mr/Ms/Mrs</p>
+    <span class="pright">2nd ALLOTTEE</span><br>
+    <span class="pright">Mr/Ms/Mrs ………………………………………………………………………………………………………</span><br>
+    <span class="pright">Son/Daughter/Wife of………………………………………………………………………………</span><br>
+    <span class="pright">R/O ……………………………………………………………………………………………</span>
 
-    <p>Son/Daughter/Wife of</p>
-    <p>R/O</p>
-
-    <h3 style="text-align: center">AND</h3>
-    <p>2nd ALLOTTEE</p>
-    <p>Mr/Ms/Mrs……………………………………………………………………………………………………………………………………………</p>
-    <p>Son/Daughter/Wife of ………………………………………………………………………………………………………………………</p>
-    <p>R/o…………………………………………………………………………………………………………………………………………………………</p>
-
-    <h3 style="text-align: center">AND</h3>
-    <p>3rd ALLOTTEE</p>
-    <p>Mr/Ms/Mrs.______________________________________________________________</p>
-    <p>Son/Daughter/Wife of ________________________________________________</p>
-    <p>R/o ___________________________________________________________________</p>
-
-    <h3>OR</h3>
-    <p>(FOR FIRMS)</p>
-
+    <h4 style="text-align: center">AND</h4>
+    <span class="pright">3rd ALLOTTEE</span><br>
+    <span class="pright">Mr/Ms/Mrs ………………………………………………………………………………………………………</span><br>
+    <span class="pright">Son/Daughter/Wife of………………………………………………………………………………</span><br>
+    <span class="pright">R/O ……………………………………………………………………………………………</span> <br>
 
 </div>
 <div class="page-break"></div>
 <div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
-    <h2>Page 3</h2>
-    <p>M/s._____________________________________________________________ a partnership/proprietorship firm
-        duly
-        registered and having its office at___________________________________________ through its
-        Authorized
-        Signatory Partner/ Sole Proprietor Mr. / Ms. / Mrs
-        ______________________________________________________________R/o_________________________________________________________________________________
-    </p>
+    <p> <b> OR </b> </p>
+    <span class="pright">(FOR FIRMS)</span><br>
+    <span class="pright">M/s.________________________________a partnership/proprietorship firm duly registered
+        and</span> <span class="pright">having its office at</span><br>
+    <span class="pright"> ________________________________________ through its Authorized Signatory Partner/ Sole
+    </span><br>
+    <span class="pright">Proprietor Mr. / Ms. / Mrs __________________________________________________</span><br>
+    <span class="pright">R/o___________________________________________________________________</span>
 
-    <h3>OR</h3>
+
+    <p><b> OR </b></p>
 
     <p>(FOR COMPANIES)</p>
-    <p>M/s._______________________________________________________________ a firm duly registered under
-        Companies Act, 1965 having its registered office
-        at_______________________________________________________________________ through its duly
-        Authorized
-        Signatory Mr./Ms./Mrs ___________________________________________________ authorized by board
-        resolution
-        dated ___________.</p>
+    <span class="pright">M/s.____________________________________________________ a firm duly</span>
+    <span class="pright">registered under Companies Act, 1965 having its registered office </span> <br>
+    <span class="pright"> _____________________________through its duly at Authorized Signatory Mr./Ms.</span><br>
+    <span class="pright"> /Mrs ____________________________________________ authorized by board resolution </span>
+    <span class="pright"> dated ___________.</span>
+
+
 
     <p># (Strike out whatever is not applicable)</p>
     <p>Hereinafter jointly and severally referred to as the <b>'Allottee'</b> (which expression unless
@@ -217,7 +289,6 @@
 
     </p>
 
-
     <p>
         <b>AND WHEREAS</b>
         it is clarified that the firm has not intended to convey right or interest in any of the land
@@ -228,12 +299,22 @@
 
     </p>
 
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
     <p>
         <b>Allottee(s) Representations</b>
     </p>
 
     <p>
-        <b>AND WHEREAS</b> the Allottee(s) vide Application Dated applied for allotment of Said Plot//shop
+        <b>AND WHEREAS</b> the Allottee(s) vide Application Dated <strong><?php
+        if (!empty($row['booking_date'])) {
+            echo date("jS F Y", strtotime($row['booking_date']));
+        }
+        ?></strong> applied for allotment of Said Plot//shop
         (herein after defined) in the Said Complex after perusal and understanding the terms and conditions
         of
         this Agreement
@@ -254,16 +335,16 @@
         <b>AND WHEREAS</b> the Allottee after fully satisfying himself about the right, title, interest and
         limitation of the firm in the said land / complex has shown interest in the Complex and has
         approached
-        the Firm for allotment of Plot/shop admeasuring Sq. yd.vide application form dated
+        the Firm for allotment of Plot/shop admeasuring <strong><?php
+        echo $row['plot_area'];
+        ?></strong> Sq. yd.vide application form dated <strong><?php
+        if (!empty($row['booking_date'])) {
+            echo date("jS F Y", strtotime($row['booking_date']));
+        }
+        ?></strong>
 
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-    <h2>Page 4</h2>
     <p>
         <b>AND WHEREAS</b> the Allottee has read and understood the advance payment plans offered by SHAAN
         REALTECH PVT LTD, and hereby agree to abide by the conditions mentioned in it and the Allottee
@@ -277,7 +358,14 @@
 
     <p>
         <b>AND WHEREAS</b> in pursuance to the aforesaid application for allotment the firm accepted the
-        application of the Allottee and allotted /shop/Plot No___in GLOBAL RESIDENCY HOMES on dated _____ to
+        application of the Allottee and allotted /shop/Plot No <strong><?php
+        echo $row['plot_no'];
+
+        ?></strong> in <b> GLOBAL RESIDENCY HOMES </b> on dated <strong><?php
+        if (!empty($row['booking_date'])) {
+            echo date("jS F Y", strtotime($row['booking_date']));
+        }
+        ?></strong> to
         the
         Allottee and the Allottee has verified and satisfied with the records which entitle the firm to
         execute
@@ -321,12 +409,17 @@
         and
         the Allottee;
     </p>
-
     <p>
         <b>‘Allottee’</b> means the person(s) named and referred to as party and who is being allotted the
         Said
         Plot//shop and who has signed and executed the Agreement.
     </p>
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
     <p>
         <b>'Date of Possession'</b> shall mean the date on which the actual physical possession is taken or
@@ -354,13 +447,6 @@
         includes any further increase in such charges.
     </p>
 
-
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-    <h2>Page 5</h2>
     <p>
         <b>"Force Majeure"</b> means any event or combination of events or circumstances beyond the control
         of
@@ -374,17 +460,17 @@
     </p>
 
     <p>
-        (a) acts of God i.e. fire, drought, flood, earthquake, epidemics, natural disasters;<br>
-        (b) explosions or accidents, air crashes and shipwrecks, act of terrorism;<br>
-        (c) strikes or lock outs, industrial dispute;<br>
-        (d) non-availability of cement, steel or other construction material due to strikes of
+        <b>(a)</b> acts of God i.e. fire, drought, flood, earthquake, epidemics, natural disasters;<br>
+        <b>(b)</b> explosions or accidents, air crashes and shipwrecks, act of terrorism;<br>
+        <b>(c)</b> strikes or lock outs, industrial dispute;<br>
+        <b>(d)</b> non-availability of cement, steel or other construction material due to strikes of
         manufacturers,
         suppliers, transporters or other intermediaries or due to any reason whatsoever;<br>
-        (e) war and hostilities of war, riots, bandh, act of terrorism or civil commotion;<br>
-        (f) the promulgation of or amendment in any law, rule or regulation or the issue of any injunction,
+        <b>(e)</b> war and hostilities of war, riots, bandh, act of terrorism or civil commotion;<br>
+        <b>(f)</b> the promulgation of or amendment in any law, rule or regulation or the issue of any injunction,
         court order or direction from any Governmental Authority that prevents or restricts a party from
         complying with any or all the terms and conditions as agreed in this Agreement;<br>
-        (g) any legislation, order or rule or regulation made or issued by the Govt. or any other Authority
+        <b>(g)</b> any legislation, order or rule or regulation made or issued by the Govt. or any other Authority
         or
         if any Governmental Authority(ies) refuses, delays, withholds, denies the grant of necessary
         approvals
@@ -392,7 +478,7 @@
         permissions,
         notices, notifications by the Governmental Authority(ies) become subject matter of any suit / writ
         before a competent court or; for any reason whatsoever;<br>
-        (h) any event or circumstances analogous to the foregoing.
+        <b>(h)</b> any event or circumstances analogous to the foregoing.
     </p>
 
     <p>
@@ -407,6 +493,13 @@
         the
         cost of development of major infrastructure projects.
     </p>
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
     <p>
         <b> “Governmental Authority”</b> or “Governmental Authorities” shall mean any government authority,
@@ -443,13 +536,6 @@
         Maintenance Agreement.
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-    <h2>Page 6</h2>
     <p>
         <b>“Non Refundable Amounts”</b> means the interest paid or payable on delayed payments, brokerage
         paid/payable by the Firm, if any, etc.
@@ -472,7 +558,8 @@
     </p>
 
     <p>
-        <b>“Said Complex”</b> means the “GLOBAL RESIDENCY HOMES”, HABASPURA, PHULERA, JAIPUR, RAJASTHAN
+        <b>“Said Complex”</b> means the <strong> “GLOBAL RESIDENCY HOMES”, HABASPURA, PHULERA, JAIPUR,
+            RAJASTHAN</strong>
         comprising of residential plot/shop buildings, shops, club house swimming pool, gym etc., community
         shopping, nursery school, and any other building Amenities and Facilities as may be approved by the
         Governmental Authority.
@@ -487,20 +574,26 @@
         include
         other amounts, charges, security amount etc., which are payable in accordance with the terms of the
         Application/Agreement, including but not limited to : - <br>
-        i) Wealth tax, government rates tax on land, fees or levies of all and any kinds by whatever name
+        <b>i.</b> Wealth tax, government rates tax on land, fees or levies of all and any kinds by whatever name
         called. <br>
-        ii) IBMS. <br>
-        iii) Maintenance charges, property tax, municipal tax on the Said Plot/shop. <br>
-        iv) Stamp duty, registration and incidental charges as well as expenses for execution of the
-        Agreement
+        <b>ii.</b> IBMS. <br>
+        <b>iii.</b> Maintenance charges, property tax, municipal tax on the Said Plot/shop. <br>
+
+    </p>
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center> <br>
+    <p>
+        <b>iv.</b> Stamp duty, registration and incidental charges as well as expenses for execution of the Agreement
         and conveyance deed etc. <br>
-        v) Taxes and Cesses. <br>
-        vi) The cost for electric and water meter as well as charges for water and electricity connection
+        <b>v.</b> Taxes and Cesses. <br>
+        <b>vi.</b> The cost for electric and water meter as well as charges for water and electricity connection
         and
         consumption.<br>
-        vii) Club membership fees and club charges, as applicable.<br>
-        viii) Escalation charges.<br>
-        ix) Any other charges that may be payable by the Allottee(s) as per the other terms of the Agreement
+        <b>vii.</b>Club membership fees and club charges, as applicable.<br>
+        <b>viii.</b> Escalation charges.<br>
+        <b>ix.</b> Any other charges that may be payable by the Allottee(s) as per the other terms of the Agreement
         and
         such other charges as may be demanded by the Firm which amounts shall be payable by the Allottee(s)
         in
@@ -510,40 +603,50 @@
 
     </p>
 
-
-
     <p>
         <b>Interpretation</b> <br>
         Unless the context otherwise requires in this Agreement: <br>
-        a. the use of words importing the singular shall include plural and masculine shall include feminine
+        <b>a.</b> the use of words importing the singular shall include plural and masculine shall include feminine
         gender and vice versa; <br>
-        b. reference to any law shall include such law as from time to time enacted, amended, supplemented
+        <b>b.</b> reference to any law shall include such law as from time to time enacted, amended, supplemented
         or
         re-enacted; <br>
-        c. reference to the words “include” or “including” shall be construed without limitation; <br>
-        d. reference to this Agreement, or any other agreement, deed or other instrument or document shall
+        <b> c.</b> reference to the words “include” or “including” shall be construed without limitation; <br>
+        <b> d.</b> reference to this Agreement, or any other agreement, deed or other instrument or document shall
         be
         construed as a reference to this Agreement or such agreement, deed or other instrument or document
         as
         the same may from time to time be amended, varied, supplemented or novated.
+    </p>
+    <p>
+        The Allottee(s) agrees that wherever in this Agreement, it is explicitly mentioned that the Allottee(s) has
+        understood or acknowledged obligations of the Allottee(s) or the rights of theFirm, the Allottee(s) has
+        given consent to the actions of the Firm or the Allottee(s) has acknowledged that the Allottee(s) has no
+        right of whatsoever nature, the Allottee(s) in furtherance of the same, shall do all such acts, deeds or
+        things, as the Firm may deem necessary and/or execute such documents/deeds in favour of the Firm at
+        the first request without any protest or demur.
+
 
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-    <h2>Page 7</h2>
     <p>
-        1. That the Firm hereby agrees to sell/ convey/ Transfer the /shop/Plot NO. ____ admeasuring ____
+        <b>1.</b> That the Firm hereby agrees to sell/ convey/ Transfer the /shop/Plot NO. <strong><?php
+        echo $row['plot_no'];
+
+        ?> </strong> admeasuring <strong><?php
+         echo $row['plot_area'];
+         ?></strong>
         SqYd
-        in favour of Allottee, Khasra no.______ at Village Habaspura, Tehsil Phulera, Dist. Jaipur, State –
+        in favour of Allottee, Khasra no. <strong><?php
+        echo $row['khasra_no'];
+        ?></strong> at Village Habaspura, Tehsil Phulera, Dist. Jaipur, State –
         Rajasthan.
     </p>
 
     <p>
-        2. The Allottee(s) has paid a sum of Rs. _____ /- (____) being part payment towards the Total Price
+        <b>2.</b> The Allottee(s) has paid a sum of Rs.
+        <strong><?php echo $row['total_amount'] . "/- (RUPEES"; ?></strong> /- (
+        <strong><?php echo $row['total_amount_word'] ?></strong>) being part payment towards the Total Price
         at
         the time of Application, the receipt of which the Firm both hereby acknowledge and the Allottee(s)
         agrees to pay the remaining price of the Plot//shop as prescribed in schedule of payments
@@ -554,37 +657,41 @@
 
     </p>
 
-    <p>
-        3. The Allottee(s) agrees and confirms that out of the total amount(s) paid/payable by the
-        Allottee(s)
-        for the Said Plot/shop, 50% of the Total Price of the Said Plot/shop shall be treated as Earnest
-        Money
-        to ensure fulfillment of the terms and conditions as contained in the Application and this
-        Agreement. In
-        the event, the Allottee(s) fails to perform any obligations or commit breach of any of the terms and
-        conditions, mentioned in the Application and/or this Agreement, including but not limited to the
-        occurrence of any event of default as stated in this Agreement and the failure of the Allottee(s) to
-        sign and return this Agreement in original to the Firm within 30 days of dispatch, the Allottee(s)
-        agrees, consents and authorizes the Firm to cancel the allotment and on such cancellation, the
-        Allottee(s) authorizes the Firm to forfeit the Earnest Money along with Non Refundable Amounts.
-        Thereafter the Allottee(s) shall be left with no right, interest and lien on the Said Plot/shop/Said
-        Complex. This is in addition to any other remedy/right, which the Firm may have. If the amount paid
-        by
-        the Allottee(s) is less than the forfeitable amount, then the Allottee(s) undertakes to make good
-        the
-        shortfall of the forfeitable amounts.
-    </p>
+
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
 
     <p>
-        4. The Allottee understands that the part advance given by him/them is towards provisional
+        <b>3.</b> The Allottee(s) agrees and confirms that out of the total amount(s) paid/payable by the Allottee(s)
+        for the Said Plot/shop, 50% of the Total Price of the Said Plot/shop shall be treated as Earnest
+        Money to ensure fulfillment of the terms and conditions as contained in the Application and this
+        Agreement. In the event, the Allottee(s) fails to perform any obligations or commit breach of any
+        of the terms and conditions, mentioned in the Application and/or this Agreement, including but
+        not limited to the occurrence of any event of default as stated in this Agreement and the failure
+        of the Allottee(s) to sign and return this Agreement in original to the Firm within 30 days of
+        dispatch, the Allottee(s) agrees, consents and authorizes the Firm to cancel the allotment and on
+        such cancellation, the Allottee(s) authorizes the Firm to forfeit the Earnest Money along with Non
+        Refundable Amounts. Thereafter the Allottee(s) shall be left with no right, interest and lien on the
+        Said Plot/shop/Said Complex. This is in addition to any other remedy/right, which the Firm may
+        have. If the amount paid by the Allottee(s) is less than the forfeitable amount, then the Allottee(s)
+        undertakes to make good the shortfall of the forfeitable amounts.
+    </p>
+    <p>
+        <b>4.</b> The Allottee understands that the part advance given by him/them is towards provisional
         registration
         against to probable’s allotments of plot(s)/shop(s)/in the ongoing project. That further Understand
         the
         Allotee at the provisional registration against a probable’s allotment is subject to the following
-        conditions: <br>
+        conditions: <br> <br>
 
-        I. EDC And IDC shall be charged extra @ 150/Sq. yard for plots and @ 50 /Sq. ft. for shop. <br>
-        II. PLC(s) determined by the firm shall be charged extra and will be charged proportionally with
+        <b>I.</b> EDC And IDC shall be charged extra @ 150/Sq. yard for plots and @ 50 /Sq. ft. for shop. <br>
+        <b>II.</b> PLC(s) determined by the firm shall be charged extra and will be charged proportionally with
         every
         Advances payment installments. There will be three types of PLC applicable on both plots and Shops
         (1)
@@ -592,20 +699,12 @@
         PLC’s-
         6% of BSP, Two PLC’s- 9% of BSP, Three PLC’s 12% of BSP.
     </p>
-
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-    <h2>Page 8</h2>
-    <p> III. All other charges like maintenance deposits and such other charges as may be determined by the
+    <p> <b>III.</b> All other charges like maintenance deposits and such other charges as may be determined by the
         firm
         at the time of allotment/possession, shall be charged extra and compulsory to initiate final
         registration process. <br>
-        IV. Registration charge, stamp duty and service tax will be extra as per the applicable rate.<br>
-        V. The all PDC’s towards part advance payment installments for provisional registration must be
-        honored.
+        <b>IV.</b> Registration charge, stamp duty and service tax will be extra as per the applicable rate.<br>
+        <b>V.</b> The all PDC’s towards part advance payment installments for provisional registration must be honored.
         In the first instance. In the case any PDC is dishonored, firm reserves the right to cancel the
         provisional registration without any notice. it is further understood that, without any prejudice to
         firms any right in case of the dishonor of Allottee part advance payment cheque, firm may at its own
@@ -613,17 +712,26 @@
         bouncing
         charge of Rs 1500/ instance and cheque collection charge of Rs 1500/ Instance within 7 days from the
         date of cheque bouncing.<br>
-        VI. Any variation in the total sale consideration, due to change in EDC, infrastructure development
+        <b>VI.</b> Any variation in the total sale consideration, due to change in EDC, infrastructure development
         charges or any other charges so demanded by the state government and /or authorities or any other
         government department, the Agreement as apportioned by the firm shall be final and bindings on
-        Allottee.
+        Allottee.<br>
 
         The Allottee(s) shall make all payments within the stipulated time as mentioned in the schedule of
         payments as given in Annexure-A annexed to this Agreement and other charges and amounts, as may be
         demanded by the Firm from time to time, without any reminders from the Firm, through A/c payee
-        cheque(s)/ demand draft(s) in favour of ‘_SHAAN REALTECH PVT LTD_' or transfer online to:
+        cheque(s)/ demand draft(s) in favour of SHAAN REALTECH PVT LTD or transfer online to:
 
     </p>
+
+
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
     <table>
         <tr>
@@ -648,41 +756,30 @@
         </tr>
     </table>
 
-
-
     <p>
-        5. The Allottee understands that the project is still at the concept stage and decision and
+        <b> 5. </b>The Allottee understands that the project is still at the concept stage and decision and
         developments
         will to an extent depend on the kind of Allottee response as generated by this and like request
         besides
         the completions of land acquisition, conversion and approval of plans.
 
     </p>
-
     <p>
-        6. The Allottee further understands that the Agreement paid hereby and through the provisional
+        <b>6.</b> The Allottee further understands that the Agreement paid hereby and through the provisional
         registration against a probable’s allotment shall be converted into allotment only upon the
         intimations
         by the firm post sanctions of the plans provided all payments due have been paid timely.
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-
-    <h2>Page 9</h2>
     <p>
-        7. The Allottee understands that the allotment shall be subject to due execution of the firms
+        <b>7.</b> The Allottee understands that the allotment shall be subject to due execution of the firms
         Agreement
         in its standard format including maintenance agreement IBMS as per Annexure B and acceptance by him/
         them of all term and condition of the firm.
     </p>
 
     <p>
-        8. A. The Allottee understands that there is a lock in period of 24 months from the date of the
+        <b>8.</b> A. The Allottee understands that there is a lock in period of 24 months from the date of the
         realization of first part advance payment with a grace period of 6 months in order to claim 18%
         interest
         for delay on possession on the paid amount unless there shall be delay or failure due to Force
@@ -725,6 +822,13 @@
         Lights, Security System, etc…..
     </p>
 
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+
     <p>
         D. If the Firm is unable to construct/continue or complete the construction of the Said
         Building/Said
@@ -750,23 +854,18 @@
         absolute
         and binding, the Firm will, subject to provisions of law/court order, refund within reasonable time
         to
-        the Allottee(s) the amounts received from the Allottee(s) after deducting Non Refundable Amounts,
-        but
-        without any interest or compensation and the decision of the Firm in this regard shall be final and
+        the Allottee(s) the
+    </p>
+
+    <p>
+        amounts received from the Allottee(s) after deducting Non Refundable Amounts,
+        but without any interest or compensation and the decision of the Firm in this regard shall be final and
         binding on the Allottee(s) save as otherwise provided herein, the Allottee(s) shall be left with no
         other right, claim of whatsoever nature against the Firm under or in relation to this Agreement.
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-
-    <h2>Page 10</h2>
     <p>
-        9. The Allottee(s) authorizes the Firm to adjust/appropriate all payments that shall be made by the
+        <b>9.</b> The Allottee(s) authorizes the Firm to adjust/appropriate all payments that shall be made by the
         Allottee(s) under any head(s) of dues against outstanding heads in Allottee’s name and the
         Allottee(s)
         shall not have a right to object/demand/direct the Firm to adjust the payments in any manner
@@ -775,7 +874,7 @@
     </p>
 
     <p>
-        10. The Allottee(s) agrees that time is essence with respect to payment of Total Price and other
+        <b>10.</b> The Allottee(s) agrees that time is essence with respect to payment of Total Price and other
         charges, deposits and amounts payable by the Allottee(s) as per this Agreement and/or as demanded by
         the
         Firm from time to time and also to perform/observe all the other obligations of the Allottee(s)
@@ -792,13 +891,12 @@
     </p>
 
     <p>
-        11. If any delay in due payment, then the firm will charge 18% p.a interest on pro-rata basis and if
+        <b>11.</b> If any delay in due payment, then the firm will charge 18% p.a interest on pro-rata basis and if
         such delay continue for 90 days then allotment will automatically get transfer to Market Payment
         Plan.
     </p>
-
     <p>
-        12. The Allottee(s) has seen and accepted the schedule of payments, (as given in Annexure-A) .The
+        <b> 12.</b> The Allottee(s) has seen and accepted the schedule of payments, (as given in Annexure-A) .The
         Firm
         may in its sole discretion or as may be directed by any Governmental Authority (ies) or due to Force
         Majeure conditions carry out, such additions, alterations, deletions and/ or modifications in the
@@ -812,10 +910,29 @@
     </p>
 
     <p>
-        13. In case of any alteration/modifications resulting in (+)(-)10% change in the plot Area of the
+        <b>13.</b> In case of any alteration/modifications resulting in (+)(-)10% change in the plot Area of the
         Said
         Plot/shop any time prior to and upon the grant of intimation letter/Conveyance Deed/ registration,
         the
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+
+    <p>
         Firm shall intimate in writing to the Allottee(s) the changes thereof and the resultant change, if
         any,
         in the Total Price of the Said Plot/shop to be paid by the Allottee(s) and the Allottee(s) agrees to
@@ -836,9 +953,8 @@
         and the Allottee(s) shall have no right, interest or claim of any nature whatsoever on the Said
         Plot/shop.
     </p>
-
     <p>
-        14. The Firm, upon obtaining necessary approvals from the Govt authority shall offer in writing
+        <b>14.</b> The Firm, upon obtaining necessary approvals from the Govt authority shall offer in writing
         possession of the Said Plot/shop to the Allottee(s). Within 30 days from the date of issue of such
         notice and the Firm shall give possession of the Said Plot/shop to the Allottee(s) provided the
         Allottee(s) is not in default of any of the terms and conditions of this Agreement and has complied
@@ -852,16 +968,8 @@
 
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-
-    <h2>Page 11</h2>
     <p>
-        15. Upon receiving a written intimation from the Firm in terms of clause 13 above, the Allottee(s)
+        <b>15.</b> Upon receiving a written intimation from the Firm in terms of clause 13 above, the Allottee(s)
         shall
         within the time stipulated by the Firm, take possession of the Said Plot//shop from the Firm by
         executing necessary indemnities, undertakings, and such other documentation as the Firm may
@@ -912,7 +1020,7 @@
     </p>
 
     <p>
-        16. If for any reasons other than those given in clauses 8(b), 8(c) and clause 28, the Firm is
+        <b>16.</b> If for any reasons other than those given in clauses 8(b), 8(c) and clause 28, the Firm is
         unable to
         or fails to deliver possession of the Said Plot//shop to the Allottee(s) within Twenty Four(24)
         months
@@ -938,20 +1046,10 @@
         as
         aforesaid, then the Allottee’s right to terminate this Agreement shall stand waived off and the
         Allottee(s) shall continue to be bound by the provisions of this Agreement.
-
     </p>
 
-
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-
-    <h2>Page 12</h2>
     <p>
-        17. Subject to the terms and conditions of the Agreement, in case of any delay other than clause 28
+        <b>17.</b> Subject to the terms and conditions of the Agreement, in case of any delay other than clause 28
         and
         conditions as mentioned in clause 8(b) and 8(c) by the Firm incompletion of handing over possession
         of
@@ -967,7 +1065,7 @@
     </p>
 
     <p>
-        18. The Firm, its associates/subsidiaries shall execute a Conveyance Deed to convey the title, of
+        <b>18.</b> The Firm, its associates/subsidiaries shall execute a Conveyance Deed to convey the title, of
         the
         Said Plot/shop in favour of the Allottee(s), provided the Allottee(s) has paid the Total Price and
         other
@@ -976,7 +1074,7 @@
     </p>
 
     <p>
-        19. In order to provide necessary maintenance services, upon the completion of the Said
+        <b>19.</b> In order to provide necessary maintenance services, upon the completion of the Said
         Building/Said
         Complex the maintenance of the Said Building / Said Complex may be handed over to the Maintenance
         Agency. The Allottee(s) agrees to execute Maintenance Agreement (draft given in annexure-B__ to this
@@ -988,11 +1086,17 @@
         of the Maintenance Agreement and to pay promptly all the demands, bills, charges as may be raised by
         the
         Maintenance Agency from time to time. the Firm reserves the right to change, modify, amend, impose
-        additional conditions in the Maintenance Agreement at the time of its final execution. The
-        Maintenance
-        Charges shall become applicable/payable from the date of intimation letter or the date of Conveyance
-        deed whichever is earlier. It is further specifically clarified that the draft Maintenance
-        Agreement,
+        additional conditions in the Maintenance Agreement at the time of its final execution.
+    </p>
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+
+    <p>
+        The MaintenanceCharges shall become applicable/payable from the date of intimation letter or the date of
+        Conveyance deed whichever is earlier. It is further specifically clarified that the draft Maintenance Agreement,
         set out in annexure-_B_ to this Agreement is merely an indicative Maintenance Agreement that is
         proposed
         to be entered into with the Allottee(s) for maintenance and upkeep of the Said Building / Said
@@ -1009,8 +1113,8 @@
         assigns.
     </p>
 
-    <p>
-        20. The total Maintenance Charges shall be more elaborately described in the Maintenance Agreement
+     <p>
+        <b>20.</b> The total Maintenance Charges shall be more elaborately described in the Maintenance Agreement
         (draft given in annexure -_B_). The Allottee(s) undertakes to pay the same promptly. It is agreed by
         the
         Allottee(s) that the payment of Maintenance Charges will be applicable whether or not the possession
@@ -1028,7 +1132,7 @@
     </p>
 
     <p>
-        21. The Allottee(s) shall not use the Said Plot//shop for any purpose other than for residential
+        <b>21.</b> The Allottee(s) shall not use the Said Plot//shop for any purpose other than for residential
         purpose
         or commercial use, as prescribed; or use the same in a manner that may cause nuisance or annoyance
         to
@@ -1041,20 +1145,12 @@
         or loss due to misuse for which the Allottee(s) / occupant shall be solely responsible.
     </p>
 
-
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-    <h2>Page 13</h2>
     <p>
-        22. (a). The Allottee(s) agrees and understands that terms and conditions of the Agreement may be
+        <b>22.</b> (a). The Allottee(s) agrees and understands that terms and conditions of the Agreement may be
         modified/amended by the Firm in accordance with any directions/order of any court of law,
         Governmental
         Authority, in compliance with applicable law and such amendment shall be binding on the Allottee(s).
     </p>
-
     <p>
         (b). The Allottee(s) further agrees that the Maintenance Schedule (annexure-_B_) attached to this
         Agreement is annexed to acquaint the Allottee(s) with the terms and conditions as may be stipulated
@@ -1066,14 +1162,27 @@
         further understands that the Firm shall have the right to impose additional terms and conditions or
         to
         modify/amend/change the terms and conditions as stated in this draft in the final document to be
-        executed at the appropriate time. The Firm further reserves the right to correct, modify, amend or
-        change all the annexures attached to this Agreement and also annexures which are indicated to be
-        tentative at any time prior to the execution of the Conveyance Deed/intimation letter of the Said
-        Plot//shop.
+        executed at the appropriate time. 
     </p>
 
+
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+
+   <p>The Firm further reserves the right to correct, modify, amend or
+        change all the annexures attached to this Agreement and also annexures which are indicated to be
+        tentative at any time prior to the execution of the Conveyance Deed/intimation letter of the Said
+        Plot//shop.</p>
+
+    
     <p>
-        23. The Allottee(s) agrees that the provisions of this Agreement, Maintenance Agreement, and those
+        <b>23.</b> The Allottee(s) agrees that the provisions of this Agreement, Maintenance Agreement, and those
         contained in other annexures are specific and applicable to plot//shops offered for sale in the Said
         Complex and these provisions cannot be read in evidence or interpreted in any manner in or for the
         purpose of any suit or proceedings before any Court(s), Commission, Consumer Disputes Forum(s) or
@@ -1083,7 +1192,7 @@
     </p>
 
     <p>
-        24. The Allottee(s) agrees and understands that if any provision of this Agreement is determined to
+        <b>24.</b> The Allottee(s) agrees and understands that if any provision of this Agreement is determined to
         be
         void or unenforceable under applicable law, such provisions shall be deemed amended or deleted in so
         far
@@ -1094,13 +1203,13 @@
     </p>
 
     <p>
-        25. The Firm shall not be responsible or liable for not performing any of its obligations or
+        <b>25.</b> The Firm shall not be responsible or liable for not performing any of its obligations or
         undertakings provided for in this Agreement if such performance is prevented due to Force Majeure
         conditions.
     </p>
 
     <p>
-        26. The execution of this Agreement will be complete only upon its execution by the Firm through its
+        <b> 26.</b> The execution of this Agreement will be complete only upon its execution by the Firm through its
         authorized signatory at the Firms head office at, Office -1, 2nd Floor, A-12, A-13, Sector-16,
         Noida,
         Uttar Pradesh 201301, after the copies are duly executed by the Allottee(s) and are received by the
@@ -1109,14 +1218,16 @@
     </p>
 
     <p>
-        27. All notices are to be served on the Allottee(s) as contemplated in this Agreement shall be
+        <b>27.</b> All notices are to be served on the Allottee(s) as contemplated in this Agreement shall be
         deemed to
         have been duly served if sent to the Allottee(s) or the Firm by registered post at their respective
         addresses specified below:
     </p>
 
     <p>
-        <b>R/O _________</b>
+        <b>R/O <?php
+        echo $row['allottee_address'];
+        ?></b>
     </p>
 
     <p>
@@ -1126,14 +1237,8 @@
         posted at the above address shall be deemed to have been received by the Allottee(s).
     </p>
 
-</div>
-<div class="page-break"></div>
-<div class="container">
-
-
-    <h2>Page 14</h2>
-    <p>
-        28. The Allottee(s) agrees that all defaults, breaches and/or non-compliance of any of the terms and
+        <p>
+        <b>28.</b> The Allottee(s) agrees that all defaults, breaches and/or non-compliance of any of the terms and
         conditions of this Agreement shall be deemed to be events of defaults liable for consequences
         stipulated
         herein. Some of the indicative events of defaults are mentioned below which are merely illustrative
@@ -1142,7 +1247,7 @@
     </p>
 
     <p>
-        I. Failure to make payments within the time as stipulated in the schedule of payments as given in
+        <b>I.</b> Failure to make payments within the time as stipulated in the schedule of payments as given in
         annexure-A_and failure to pay the stamp duty, legal, registration, any incidental charges, any
         increases
         in security including but not limited to IBMS as demanded by the Firm , any other charges, deposits
@@ -1153,12 +1258,24 @@
 
     </p>
 
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+    
+
+
+
     <p>
-        II. Failure to take possession of the Said Plot//shop within the time stipulated by the Firm .
+        <b>II.</b> Failure to take possession of the Said Plot//shop within the time stipulated by the Firm .
     </p>
 
     <p>
-        III. Failure to execute Maintenance Agreement and/or to pay on or before its due date the
+        <b>III.</b> Failure to execute Maintenance Agreement and/or to pay on or before its due date the
         Maintenance
         Charges, maintenance security deposits, deposits/charges for bulk supply of electrical energy or any
         increases in respect thereof, as demanded by the Firm , its nominee, other Body or Association of
@@ -1168,20 +1285,18 @@
 
 
     <p>
-        IV. Assignment of this Agreement or any interest of the Allottee(s) in this Agreement without prior
+        <b>IV.</b> Assignment of this Agreement or any interest of the Allottee(s) in this Agreement without prior
         written consent of the Firm .
     </p>
-
     <p>
-        V. Dishonour of any cheque(s) given by the Allottee(s) for any reason whatsoever.
+        <b>V.</b> Dishonour of any cheque(s) given by the Allottee(s) for any reason whatsoever.
     </p>
 
     <p>
-        VI. Escalation Charges
+        <b>VI.</b> Escalation Charges
     </p>
-
     <p>
-        VII. Any other acts, deeds or things which the Allottee(s) may commit, omit or fail to perform in
+        <b>VII.</b> Any other acts, deeds or things which the Allottee(s) may commit, omit or fail to perform in
         terms
         of this Agreement, any other undertaking, affidavit/Agreement/indemnity etc. or as demanded by the
         Firm
@@ -1222,9 +1337,8 @@
         liquidated
         damages which the Firm might have suffered due to such breach committed by the Allottee(s).
     </p>
-
     <p>
-        29. All or any disputes arising out or touching upon or in relation to the terms this Builder Buyer
+        <b>29.</b> All or any disputes arising out or touching upon or in relation to the terms this Builder Buyer
         Agreement including the interpretation and validity of the terms thereof and the respective rights
         and
         obligations of the parties, which cannot be amicably settled, shall be settled through arbitration.
@@ -1240,41 +1354,35 @@
         of the competent courts of Rajasthan.
     </p>
 
-
-
 </div>
 <div class="page-break"></div>
 <div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
 
-    <h2>Page 15</h2>
     <p>
-        30. That no Allottee shall have any rights to invoke jurisdiction of Civil Court directly without
+        <b> 30.</b> That no Allottee shall have any rights to invoke jurisdiction of Civil Court directly without
         availing remedy of Arbitration.
     </p>
 
     <p>
-        31. You are requested to keep one copy of this Agreement with you and return the second copy to us
+        <b>31.</b> You are requested to keep one copy of this Agreement with you and return the second copy to us
         duly
         signed within 7 days failing of which we will presume that the given terms & conditions of this
         Agreement are acceptable to you.
     </p>
 
     <p>
-        32. This provisional agreement shall be null and void after final registration of plot/plots.
+        <b>32.</b> This provisional agreement shall be null and void after final registration of plot/plots.
 
     </p>
-
     <p>
         For & on Behalf of
-    </p>
+    </p><br><br><br>
 
     <p>
-        SHAAN REALTECH PVT LTD
-    </p>
-
-    <p>
+        <b>SHAAN REALTECH PVT LTD</b><br> 
         (Authorized signatory)
-    </p>
+    <p><br><br><br>
 
     <p>
         IN WITNESS WHEREOF the parties hereto have hereunto and to a duplicate copy hereof set and
@@ -1295,7 +1403,7 @@
         <b>WITNESSES:</b><br>
         1. Signature ___________________________________<br>
         Name_______________________________________<br>
-        Address_____________________________________
+        Address_____________________________________<br>
         (to be completed by the Allottee(s)
 
     </p>
@@ -1308,18 +1416,29 @@
     </p>
 
     <p>
-        SIGNED AND DELIVERED by the within named Firm at _______ on
+        SIGNED AND DELIVERED by the within named Firm at _______ on<br>
         ____________________in the presence of:
 
     </p>
 
     <p>
-        ___________________________
+        ___________________________<br>
         (AUTHORISED SIGNATORY)
 
     </p>
 
-    <p>
+
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+    
+
+        <p>
         <b>WITNESSES:</b><br>
         1. Signature ___________________________________<br>
         Name_______________________________________<br>
@@ -1336,4 +1455,165 @@
         ____________________________________________
 
     </p>
+
+
+
+</div>
+<div class="page-break"></div>
+<div class="container">
+
+    <center><u> <?php echo $row['estamp_no']; ?></u> </center>
+
+
+    <style>
+        /* Table overall */
+        #example1 {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* important for wrapping */
+        }
+
+        /* Table headers & cells */
+        #example1 th,
+        #example1 td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            font-size: 13px;
+            /* text-align: left; */
+            vertical-align: top;
+
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        /* Optional: header styling */
+        #example1 th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+    </style>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <tr>
+            <th style="width:70px;">Booking Date</th>
+            <th style="width:90px;">Client Name</th>
+            <th style="width:80px;">Allotted Unit</th>
+            <th style="width:80px;">Area (Sq. Yds.)</th>
+            <th style="width:90px;">Payment Plan</th>
+            <th style="width:110px;">Basic Sales Price (Per Sq. Yard)</th>
+            <th style="width:60px;">PLC</th>
+            <th style="width:60px;">IDC</th>
+            <th style="width:90px;">Total Cost</th>
+        </tr>
+
+        <?php
+
+        $query = "SELECT * FROM booking_master WHERE booking_id='$booking_id'";
+        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_assoc($result);
+        ?>
+
+        <tr>
+            <td><?php echo $row['booking_date']; ?></td>
+            <td><?php echo $row['booking_fname'] . ' ' . $row['booking_lname']; ?></td>
+            <td><?php echo $row['booking_plotno']; ?></td>
+            <td><?php echo $row['booking_plotarea']; ?></td>
+            <td><?php echo $row['booking_payplan']; ?></td>
+            <td><?php echo $row['booking_plotrate']; ?></td>
+            <td><?php echo $row['booking_plc']; ?></td>
+            <td><?php echo $row['booking_idc']; ?></td>
+            <td><?php echo $row['booking_totalamt']; ?></td>
+        </tr>
+    </table>
+
+
+
+
+
+    <style>
+        /* Table overall */
+        #example1 {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* important for wrapping */
+        }
+
+        /* Table headers & cells */
+        #example1 th,
+        #example1 td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 13px;
+            /* text-align: left; */
+            vertical-align: top;
+
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        /* Optional: header styling */
+        #example1 th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+    </style>
+
+    <div class="table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th style=" text-align:center; ">SNO</th>
+                    <th style=" text-align:center; ">Installment Date</th>
+                    <th style=" text-align:center; ">Particulars</th>
+                    <th style=" text-align:center; ">%</th>
+                    <th style=" text-align:center; ">Amount</th>
+                    <th style=" text-align:center; ">Remaining Amount</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $sn = 1;
+                $cumulative_amount = 0;
+                $totalamt = $propertamt;
+                $installmentqry = "SELECT * FROM `installment_master` WHERE installment_bookingid='$booking_id' ORDER BY installment_date";
+                $installmentres = mysqli_query($con, $installmentqry);
+                if (!$installmentres) {
+                    error_log("Failed to fetch installments: " . mysqli_error($con));
+                }
+                while ($installmentdata = mysqli_fetch_assoc($installmentres)) {
+                    $cumulative_amount += $installmentdata['installment_amount'];
+                    $remaining_amount = $totalamt - $cumulative_amount;
+                    ?>
+                    <tr>
+                        <td style=" text-align:center; "><?php echo $sn; ?></td>
+                        <td style=" text-align:center; ">
+                            <?php echo date('d/m/Y', strtotime($installmentdata['installment_date'])); ?>
+                        </td>
+                        <td style=" text-align:center; ">
+                            <?php echo htmlspecialchars($installmentdata['installment_particular']); ?>
+                        </td>
+                        <td style=" text-align:center; ">
+                            <?php echo htmlspecialchars($installmentdata['installment_emiper']); ?>
+                        </td>
+                        <td style=" text-align:center; ">
+                            <?php echo number_format($installmentdata['installment_amount'], 2); ?>
+                        </td>
+                        <td style=" text-align:center; ">
+                            <?php echo number_format($remaining_amount, 2); ?>
+                        </td>
+                        <!-- <td><?php echo number_format($remaining_amount, 2); ?></td> -->
+                    </tr>
+                    <?php
+                    $sn++;
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </div>
